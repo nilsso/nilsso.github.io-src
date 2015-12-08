@@ -11,18 +11,21 @@
     
     <item>
       <title>Music Theory Video</title>
-      <link>http://sweedjesus.github.io/post/2015-10-24-music-theory-video/music-theory-video/</link>
+      <link>http://sweedjesus.github.io/post/music-theory-video/</link>
       <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://sweedjesus.github.io/post/2015-10-24-music-theory-video/music-theory-video/</guid>
+      <guid>http://sweedjesus.github.io/post/music-theory-video/</guid>
       <description>&lt;p&gt;&lt;html&gt;
     &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/html&gt;&lt;/p&gt;
 
+&lt;!---   [Script][script]--&gt;
+
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;.&#34;&gt;Script&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Lilypond source code: &lt;a href=&#34;./prelude_lead_sheet.ly&#34;&gt;Figured bass&lt;/a&gt; | &lt;a href=&#34;./prelude_figured_bass.ly&#34;&gt;Lead sheets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lilypond source code: &lt;a href=&#34;../../data/prelude_lead_sheet.ly&#34;&gt;Figured bass&lt;/a&gt; | &lt;a href=&#34;../../data/prelude_figured_bass.ly&#34;&gt;Lead sheets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;!--[script]: ../../data/script.docx--&gt;
 </description>
     </item>
     
