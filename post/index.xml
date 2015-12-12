@@ -22,7 +22,7 @@
 &lt;!---   [Script][script]--&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Lilypond source code: &lt;a href=&#34;../../data/prelude_lead_sheet.ly&#34;&gt;Figured bass&lt;/a&gt; | &lt;a href=&#34;../../data/prelude_figured_bass.ly&#34;&gt;Lead sheets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lilypond source code: &lt;a href=&#34;../../data/prelude_figured_bass.ly&#34;&gt;Figured bass&lt;/a&gt; | &lt;a href=&#34;../../data/prelude_lead_sheet.ly&#34;&gt;Lead sheets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--[script]: ../../data/script.docx--&gt;
