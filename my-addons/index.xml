@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My-addons on SweedJesus</title>
+    <link>http://sweedjesus.github.io/my-addons/</link>
+    <description>Recent content in My-addons on SweedJesus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Dec 2015 13:34:48 -0800</lastBuildDate>
+    <atom:link href="http://sweedjesus.github.io/my-addons/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My WoW Addons</title>
+      <link>http://sweedjesus.github.io/my-addons/</link>
+      <pubDate>Mon, 14 Dec 2015 13:34:48 -0800</pubDate>
+      
+      <guid>http://sweedjesus.github.io/my-addons/</guid>
+      <description>
+
+&lt;h1 id=&#34;vanilla-addons:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Vanilla AddOns&lt;/h1&gt;
+
+&lt;p&gt;AddOns for Classic World of Warcraft servers like Nostalrius.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All direct &amp;ldquo;addon.zip&amp;rdquo; downloads need to have the contained folder
+renamed from &amp;ldquo;addon-master&amp;rdquo; to just &amp;ldquo;addon&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;ll be a lot easier to keep up-to-date with these projects if you &lt;a href=&#34;http://localhost:1313/articles/2015-03-07-git-introduction/&#34;&gt;learn
+to use Git&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;sjcpp-https-github-com-sweedjesus-sjcpp-archive-master-zip-repo-https-github-com-sweedjesus-sjcpp:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjCPP/archive/master.zip&#34;&gt;sjCPP&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjCPP&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Color Picker Plus back-port; original by
+&lt;a href=&#34;http://www.curse.com/users/jaslm&#34;&gt;jaslm&lt;/a&gt;
+(&lt;a href=&#34;http://www.curseforge.com/projects/27280/&#34;&gt;ColorPickerPlus&lt;/a&gt;).&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ColorPickerPlus hooks into the standard Color Picker to provide&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;text entry for colors (RGB and hex values),&lt;/li&gt;
+&lt;li&gt;text entry for the alpha value (transparency/opacity),&lt;/li&gt;
+&lt;li&gt;copy and paste of a single color,&lt;/li&gt;
+&lt;li&gt;a movable frame,&lt;/li&gt;
+&lt;li&gt;a color swatch for the color that you will be replacing&lt;/li&gt;
+&lt;li&gt;a color swatch for the copied color that may be pasted.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these enhancements, you can precisely describe a color and coordinate
+  colors within and between add-ons.&lt;/p&gt;
+
+&lt;p&gt;A shift-click on the Copy button will paste the decimal RGB values for the
+  chosen color into the chat window. This was added as a utility for add-on
+  developers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;sjchatscan-https-github-com-sweedjesus-sjchatscan-archive-master-zip-wip-repo-https-github-com-sweedjesus-sjchatscan:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjChatScan/archive/master.zip&#34;&gt;sjChatScan&lt;/a&gt; (WIP) (&lt;a href=&#34;https://github.com/SweedJesus/sjChatScan&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Provides chat phrase matching and displays matched message as notifications.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjdsds-https-github-com-sweedjesus-sjdsds-archive-master-zip-repo-https-github-com-sweedjesus-sjdsds:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjDSDS/archive/master.zip&#34;&gt;sjDSDS&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjDSDS&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Plays a Dark Souls like &amp;ldquo;YOU DIED&amp;rdquo; animation on character death.  Accounts for
+false-flag situations (hunter feign-death, priest spirit of redemption.&lt;/p&gt;
+
+&lt;p&gt;This addon was made as an answer to a request in /nosg/ (Nostalrius general on
+4chan) and is a complete reimplementation of
+&lt;a href=&#34;http://www.curseforge.com/projects/74838/&#34;&gt;DarkSoulsDeathScreen&lt;/a&gt; by
+&lt;a href=&#34;http://www.curse.com/users/latreese&#34;&gt;latreese&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjfont-https-github-com-sweedjesus-sjfont-archive-master-zip-repo-https-github-com-sweedjesus-sjfont:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjFont/archive/master.zip&#34;&gt;sjFont&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjFont&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Overrides system fonts with custom fonts and scaling. Retains original system
+font sizes and stylings.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjmacro-https-github-com-sweedjesus-sjmacro-archive-master-zip-repo-https-github-com-sweedjesus-sjmacro:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjMacro/archive/master.zip&#34;&gt;sjMacro&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjMacro&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Provides various functions to simplify mouse-over spell macros, using a
+priority list to determine the spell target (default: mouse-over &amp;gt; target &amp;gt;
+player). As a bonus includes and smart-buff feature if playing a class which
+can buff.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjuf-https-github-com-sweedjesus-sjuf-archive-master-zip-wip-repo-https-github-com-sweedjesus-sjuf:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjUF/archive/master.zip&#34;&gt;sjUF&lt;/a&gt; (WIP) (&lt;a href=&#34;https://github.com/SweedJesus/sjUF&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Simple unit frame overhaul.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjui-https-github-com-sweedjesus-sjui-archive-master-zip-repo-https-github-com-sweedjesus-sjui:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjUI/archive/master.zip&#34;&gt;sjUI&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjUI&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Simple user interface overhaul; restyles the following elements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Minimap&lt;/li&gt;
+&lt;li&gt;Action bars and buttons&lt;/li&gt;
+&lt;li&gt;Micro menu buttons&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

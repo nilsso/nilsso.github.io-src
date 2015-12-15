@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SweedJesus</title>
+    <link>http://sweedjesus.github.io/</link>
+    <description>Recent content on SweedJesus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Dec 2015 13:34:48 -0800</lastBuildDate>
+    <atom:link href="http://sweedjesus.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My WoW Addons</title>
+      <link>http://sweedjesus.github.io/my-addons/</link>
+      <pubDate>Mon, 14 Dec 2015 13:34:48 -0800</pubDate>
+      
+      <guid>http://sweedjesus.github.io/my-addons/</guid>
+      <description>
+
+&lt;h1 id=&#34;vanilla-addons:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Vanilla AddOns&lt;/h1&gt;
+
+&lt;p&gt;AddOns for Classic World of Warcraft servers like Nostalrius.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All direct &amp;ldquo;addon.zip&amp;rdquo; downloads need to have the contained folder
+renamed from &amp;ldquo;addon-master&amp;rdquo; to just &amp;ldquo;addon&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;ll be a lot easier to keep up-to-date with these projects if you &lt;a href=&#34;http://localhost:1313/articles/2015-03-07-git-introduction/&#34;&gt;learn
+to use Git&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;sjcpp-https-github-com-sweedjesus-sjcpp-archive-master-zip-repo-https-github-com-sweedjesus-sjcpp:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjCPP/archive/master.zip&#34;&gt;sjCPP&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjCPP&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Color Picker Plus back-port; original by
+&lt;a href=&#34;http://www.curse.com/users/jaslm&#34;&gt;jaslm&lt;/a&gt;
+(&lt;a href=&#34;http://www.curseforge.com/projects/27280/&#34;&gt;ColorPickerPlus&lt;/a&gt;).&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ColorPickerPlus hooks into the standard Color Picker to provide&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;text entry for colors (RGB and hex values),&lt;/li&gt;
+&lt;li&gt;text entry for the alpha value (transparency/opacity),&lt;/li&gt;
+&lt;li&gt;copy and paste of a single color,&lt;/li&gt;
+&lt;li&gt;a movable frame,&lt;/li&gt;
+&lt;li&gt;a color swatch for the color that you will be replacing&lt;/li&gt;
+&lt;li&gt;a color swatch for the copied color that may be pasted.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these enhancements, you can precisely describe a color and coordinate
+  colors within and between add-ons.&lt;/p&gt;
+
+&lt;p&gt;A shift-click on the Copy button will paste the decimal RGB values for the
+  chosen color into the chat window. This was added as a utility for add-on
+  developers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;sjchatscan-https-github-com-sweedjesus-sjchatscan-archive-master-zip-wip-repo-https-github-com-sweedjesus-sjchatscan:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjChatScan/archive/master.zip&#34;&gt;sjChatScan&lt;/a&gt; (WIP) (&lt;a href=&#34;https://github.com/SweedJesus/sjChatScan&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Provides chat phrase matching and displays matched message as notifications.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjdsds-https-github-com-sweedjesus-sjdsds-archive-master-zip-repo-https-github-com-sweedjesus-sjdsds:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjDSDS/archive/master.zip&#34;&gt;sjDSDS&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjDSDS&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Plays a Dark Souls like &amp;ldquo;YOU DIED&amp;rdquo; animation on character death.  Accounts for
+false-flag situations (hunter feign-death, priest spirit of redemption.&lt;/p&gt;
+
+&lt;p&gt;This addon was made as an answer to a request in /nosg/ (Nostalrius general on
+4chan) and is a complete reimplementation of
+&lt;a href=&#34;http://www.curseforge.com/projects/74838/&#34;&gt;DarkSoulsDeathScreen&lt;/a&gt; by
+&lt;a href=&#34;http://www.curse.com/users/latreese&#34;&gt;latreese&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjfont-https-github-com-sweedjesus-sjfont-archive-master-zip-repo-https-github-com-sweedjesus-sjfont:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjFont/archive/master.zip&#34;&gt;sjFont&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjFont&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Overrides system fonts with custom fonts and scaling. Retains original system
+font sizes and stylings.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjmacro-https-github-com-sweedjesus-sjmacro-archive-master-zip-repo-https-github-com-sweedjesus-sjmacro:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjMacro/archive/master.zip&#34;&gt;sjMacro&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjMacro&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Provides various functions to simplify mouse-over spell macros, using a
+priority list to determine the spell target (default: mouse-over &amp;gt; target &amp;gt;
+player). As a bonus includes and smart-buff feature if playing a class which
+can buff.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjuf-https-github-com-sweedjesus-sjuf-archive-master-zip-wip-repo-https-github-com-sweedjesus-sjuf:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjUF/archive/master.zip&#34;&gt;sjUF&lt;/a&gt; (WIP) (&lt;a href=&#34;https://github.com/SweedJesus/sjUF&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Simple unit frame overhaul.&lt;/p&gt;
+
+&lt;h2 id=&#34;sjui-https-github-com-sweedjesus-sjui-archive-master-zip-repo-https-github-com-sweedjesus-sjui:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjUI/archive/master.zip&#34;&gt;sjUI&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjUI&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;Simple user interface overhaul; restyles the following elements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Minimap&lt;/li&gt;
+&lt;li&gt;Action bars and buttons&lt;/li&gt;
+&lt;li&gt;Micro menu buttons&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Music Theory Video</title>
+      <link>http://sweedjesus.github.io/post/2015-12-02-music-theory-video/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sweedjesus.github.io/post/2015-12-02-music-theory-video/</guid>
+      <description>&lt;p&gt;&lt;html&gt;
+&lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/xpIBckOfozU&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/html&gt;&lt;/p&gt;
+
+&lt;!---   [Script][script]--&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lilypond source code: &lt;a href=&#34;../../data/prelude_figured_bass.ly&#34;&gt;Figured bass&lt;/a&gt; | &lt;a href=&#34;../../data/prelude_lead_sheet.ly&#34;&gt;Lead sheets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--[script]: ../../data/script.docx--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Checking spell ranks in Vanilla WoW</title>
+      <link>http://sweedjesus.github.io/post/2015-10-24-spell-ranks-vanilla-wow/</link>
+      <pubDate>Sat, 24 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sweedjesus.github.io/post/2015-10-24-spell-ranks-vanilla-wow/</guid>
+      <description>&lt;p&gt;I wanted to improve an existing addon for mouse-over spell casting by reducing
+some of the repeated code and by adding smart buff down-ranking. This second
+feature proved to be a little interesting.&lt;/p&gt;
+
+&lt;p&gt;Checking for buffs and spells outside of the combat log is completely
+unintuitive task in Vanilla WoW. You can&amp;rsquo;t call some function to get all the
+information about a spell by it&amp;rsquo;s ID or name. You want to know if a player
+knows a spell? You have to crawl the spellbook to see if there&amp;rsquo;s a match for
+what you&amp;rsquo;re looking for. But what exactly is there to match? A spell name?  No,
+you get to check paths of textures.&lt;/p&gt;
+
+&lt;p&gt;Call &lt;code&gt;GetSpellTexture&lt;/code&gt; with the index of a spell in the spellbook to get
+spell&amp;rsquo;s icon texture path, then check check it against what you&amp;rsquo;re looking for.&lt;/p&gt;
+
+&lt;p&gt;As far as I have been able to tell, this is the most trivial way to scan one&amp;rsquo;s
+spell book currently. This technique is also the same for checking buffs and
+debuffs without scanning for aura gains and fades in the combat log. What a
+pain.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://sweedjesus.github.io/about/</link>
+      <pubDate>Sat, 07 Mar 2015 16:45:53 -0800</pubDate>
+      
+      <guid>http://sweedjesus.github.io/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;testing-hugo:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Testing Hugo&lt;/h2&gt;
+
+&lt;p&gt;Used to used plain HTML and CSS, then Jekyll. And now I&amp;rsquo;m checking out Hugo to
+see if I like it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Introduction</title>
+      <link>http://sweedjesus.github.io/articles/2015-03-07-git-introduction/</link>
+      <pubDate>Sat, 07 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sweedjesus.github.io/articles/2015-03-07-git-introduction/</guid>
+      <description>
+
+&lt;p&gt;This introduction will go over what Git and Github are and why we as a team chose to use them.
+Further articles on Git and Github will go over &lt;em&gt;how&lt;/em&gt; to use these tools. Git is a fundamental tool to this team, just as fundamental as Solidworks is to the mechanical. Those who are interested in software development or interested in developing this website, you&amp;rsquo;ll need to know Git.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-git:01285f92ea7a2f4968f3fe3bdfce1b37&#34;&gt;What is Git?&lt;/h2&gt;
+
+&lt;p&gt;Directly from the &lt;a href=&#34;www.git-scm.com&#34;&gt;Git&lt;/a&gt; homepage:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.&lt;/p&gt;
+
+&lt;p&gt;Git is easy to learn and has a tiny footprint with lightning fast performance.
+It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple work-flows.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In a nutshell, Git is an &lt;strong&gt;SCM tool&lt;/strong&gt; that the San Diego City Robotics software team adopted to make collaboration easy and accessible.
+Git was created by Linus Torvalds, attributed creator of the Linux kernel, and is used by teams and companies across the entire tech industry to manage their software.&lt;/p&gt;
+
+&lt;h3 id=&#34;scm:01285f92ea7a2f4968f3fe3bdfce1b37&#34;&gt;SCM?&lt;/h3&gt;
+
+&lt;p&gt;SCM (software configuration management) is the task of tracking and controlling changes in the lifetime of a software project, and Git is an SCM tool.
+It is a principle with many subsystems, one being a version control system.&lt;/p&gt;
+
+&lt;p&gt;Also known as &amp;ldquo;revision control&amp;rdquo; or &amp;ldquo;source control&amp;rdquo;, a version control system aims to manage changes made to components of a project; in the case of a software project, changes in the source code.
+Changes in a project typically include new files, file deletions and changes within files.
+Such changes without a version control system can make collaborative projects extremely messy.
+Git and other systems like it make collaboration much easier by tracking these changes on a server.
+This way when one team-member changes a file, every team-member sees what changed and every team-member has access to those changes.
+It does this by keeping a history of &amp;ldquo;snapshots&amp;rdquo;, i.e. statuses of all the files in the project at a specific point in time.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-github:01285f92ea7a2f4968f3fe3bdfce1b37&#34;&gt;What is GitHub?&lt;/h2&gt;
+
+&lt;p&gt;Coming soon.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua on SweedJesus</title>
+    <link>http://sweedjesus.github.io/tags/lua/</link>
+    <description>Recent content in Lua on SweedJesus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sweedjesus.github.io/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Checking spell ranks in Vanilla WoW</title>
+      <link>http://sweedjesus.github.io/post/2015-10-24-spell-ranks-vanilla-wow/</link>
+      <pubDate>Sat, 24 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sweedjesus.github.io/post/2015-10-24-spell-ranks-vanilla-wow/</guid>
+      <description>&lt;p&gt;I wanted to improve an existing addon for mouse-over spell casting by reducing
+some of the repeated code and by adding smart buff down-ranking. This second
+feature proved to be a little interesting.&lt;/p&gt;
+
+&lt;p&gt;Checking for buffs and spells outside of the combat log is completely
+unintuitive task in Vanilla WoW. You can&amp;rsquo;t call some function to get all the
+information about a spell by it&amp;rsquo;s ID or name. You want to know if a player
+knows a spell? You have to crawl the spellbook to see if there&amp;rsquo;s a match for
+what you&amp;rsquo;re looking for. But what exactly is there to match? A spell name?  No,
+you get to check paths of textures.&lt;/p&gt;
+
+&lt;p&gt;Call &lt;code&gt;GetSpellTexture&lt;/code&gt; with the index of a spell in the spellbook to get
+spell&amp;rsquo;s icon texture path, then check check it against what you&amp;rsquo;re looking for.&lt;/p&gt;
+
+&lt;p&gt;As far as I have been able to tell, this is the most trivial way to scan one&amp;rsquo;s
+spell book currently. This technique is also the same for checking buffs and
+debuffs without scanning for aura gains and fades in the combat log. What a
+pain.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

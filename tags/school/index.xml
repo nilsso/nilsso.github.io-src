@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>School on SweedJesus</title>
+    <link>http://sweedjesus.github.io/tags/school/</link>
+    <description>Recent content in School on SweedJesus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Dec 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sweedjesus.github.io/tags/school/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Music Theory Video</title>
+      <link>http://sweedjesus.github.io/post/2015-12-02-music-theory-video/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sweedjesus.github.io/post/2015-12-02-music-theory-video/</guid>
+      <description>&lt;p&gt;&lt;html&gt;
+&lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/xpIBckOfozU&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/html&gt;&lt;/p&gt;
+
+&lt;!---   [Script][script]--&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lilypond source code: &lt;a href=&#34;../../data/prelude_figured_bass.ly&#34;&gt;Figured bass&lt;/a&gt; | &lt;a href=&#34;../../data/prelude_lead_sheet.ly&#34;&gt;Lead sheets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--[script]: ../../data/script.docx--&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

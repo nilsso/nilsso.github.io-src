@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on SweedJesus</title>
+    <link>http://sweedjesus.github.io/about/</link>
+    <description>Recent content in Abouts on SweedJesus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Mar 2015 16:45:53 -0800</lastBuildDate>
+    <atom:link href="http://sweedjesus.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>http://sweedjesus.github.io/about/</link>
+      <pubDate>Sat, 07 Mar 2015 16:45:53 -0800</pubDate>
+      
+      <guid>http://sweedjesus.github.io/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;testing-hugo:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Testing Hugo&lt;/h2&gt;
+
+&lt;p&gt;Used to used plain HTML and CSS, then Jekyll. And now I&amp;rsquo;m checking out Hugo to
+see if I like it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
