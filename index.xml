@@ -24,13 +24,13 @@
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;All direct &amp;ldquo;addon.zip&amp;rdquo; downloads need to have the contained folder
-renamed from &amp;ldquo;addon-master&amp;rdquo; to just &amp;ldquo;addon&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;For an addon to be parsed, the &lt;strong&gt;folder name and &amp;ldquo;addon.toc&amp;rdquo; must match&lt;/strong&gt;
+(e.g. &amp;ldquo;ColorPickerPlus/ColorPickerPlus.toc&amp;rdquo;)&lt;/li&gt;
 &lt;li&gt;It&amp;rsquo;ll be a lot easier to keep up-to-date with these projects if you &lt;a href=&#34;http://localhost:1313/articles/2015-03-07-git-introduction/&#34;&gt;learn
 to use Git&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;sjcpp-https-github-com-sweedjesus-sjcpp-archive-master-zip-repo-https-github-com-sweedjesus-sjcpp:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjCPP/archive/master.zip&#34;&gt;sjCPP&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjCPP&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+&lt;h2 id=&#34;sjcpp-https-github-com-sweedjesus-colorpickerplus-releases-repo-https-github-com-sweedjesus-colorpickerplus-releases:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/ColorPickerPlus/releases&#34;&gt;sjCPP&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/ColorPickerPlus/releases&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
 
 &lt;p&gt;Color Picker Plus back-port; original by
 &lt;a href=&#34;http://www.curse.com/users/jaslm&#34;&gt;jaslm&lt;/a&gt;
@@ -60,7 +60,7 @@ to use Git&lt;/a&gt;!&lt;/li&gt;
 
 &lt;p&gt;Provides chat phrase matching and displays matched message as notifications.&lt;/p&gt;
 
-&lt;h2 id=&#34;sjdsds-https-github-com-sweedjesus-sjdsds-archive-master-zip-repo-https-github-com-sweedjesus-sjdsds:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/sjDSDS/archive/master.zip&#34;&gt;sjDSDS&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/sjDSDS&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
+&lt;h2 id=&#34;dsds-https-github-com-sweedjesus-dsds-releases-repo-https-github-com-sweedjesus-dsds:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;https://github.com/SweedJesus/DSDS/releases&#34;&gt;DSDS&lt;/a&gt; (&lt;a href=&#34;https://github.com/SweedJesus/DSDS&#34;&gt;repo&lt;/a&gt;)&lt;/h2&gt;
 
 &lt;p&gt;Plays a Dark Souls like &amp;ldquo;YOU DIED&amp;rdquo; animation on character death.  Accounts for
 false-flag situations (hunter feign-death, priest spirit of redemption.&lt;/p&gt;
