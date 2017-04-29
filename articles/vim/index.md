@@ -5,10 +5,6 @@ title: Vim
 
 *(Page is under construction)*
 
-<div style="background-color:#30A757;margin:10px;padding:10px;border-radius:2px;">
-<img src="Vimlogo.svg" alt="Vim logo" style="display:block;margin:auto;width:50%;">
-</div>
-
 In this article I just want to summarize some information, and to break down
 some of the concepts and philosophies of Vim which I keep in mind that help me
 be productive. I don't mean this page to be any sort of tutorial on how to learn
@@ -48,7 +44,7 @@ is: strive to perform tasks in the least amount of actions as possible. See the
 ### Content at a glance...
 
 1.  [Modes](#modes)
-1.  [Commands and Motions](#commands-and-motions)
+1.  [Commands, Motions, and Selections](#commands-motions-and-selections)
 1.  [Registers and Macros](#registers-and-macros)
 1.  [Becoming Lazy](#becoming-lazy)
 
@@ -65,7 +61,7 @@ On the other hand modal editors have more modes than just "insert text". Vim has
 the following modes: *normal* mode, *insert* mode, *visual* mode, *command-line*
 mode, *ex* mode, and *select* mode.
 
-<small>See `:help vim-modes`</small>
+> See **:help vim-modes**
 
 ### *normal* mode
 
@@ -76,7 +72,7 @@ modes).
 <kbd>esc</kbd>
 Enter normal mode (from insert, visual, or command-line modes)
 
-<small>See `:help Normal-mode`</small>
+> See **:help Normal-mode**
 
 ### *insert* mode
 
@@ -96,7 +92,7 @@ Enter insert mode at the very *first* non-whitespace character on the line
 <kbd>A</kbd>
 enter insert mode at one character past the very *last* character on the line
 
-<small>See `:help Insert-mode`</small>
+> See **:help Insert-mode**
 
 ### *visual* mode
 
@@ -113,13 +109,25 @@ Enter visual mode line-wise
 <kbd>ctrl-v</kbd>
 Enter visual mode block-wise
 
-<small>See `:help Visual-mode`</small>
+> See **:help Visual-mode**
 
 ### *command-line* mode
 
-<small>See `:help Command-line-mode`</small>
+> See **:help Command-line-mode**
 
-## Commands and Motions
+## Commands, Motions, and Selections
+
+First off, you'll want to know that a...
+
+- `word` : is a "sequence of letters, digits and underscores, or a sequence of
+  other non-blank characters, separated with white space".
+- `WORD` : is a "sequence of non-blank characters, separated with white space.
+  An empty line is also considered to be a WORD").
+- and then there's also `sentence`s, `paragraphs`s, and `section`s.
+
+> See **:help object-motions** and the **Selections** header below
+
+### Commands
 
 ### Motions
 
@@ -132,37 +140,55 @@ I think it is easy to take these commands for granted at first, but once the
 surface is scratched, the utility of using commands with motions becomes
 magical.
 
-<html>
-<table class="table">
-<tr><th>Motion</th><th>What it does</th></tr>
-<tr><td><kbd>w</kbd></td><td>To the beginning of the next word</td></tr>
-<!--<tr><th><kbd>e</kbd></th><th>To the end of the current word</th></tr>-->
-<!--<tr><th><kbd>W</kbd></th><th>To the beginning of the next WORD</th></tr>-->
-<!--<tr><th><kbd>E</kbd></th><th>To the end of the current WORD</th></tr>-->
-<!--<tr><th><kbd>b</kbd></th><th>Go backward a word</th></tr>-->
-<!--<tr><th><kbd>B</kdb></th><th>Go backward a WORD</th></tr>-->
-</table>
-</html>
+#### Word motions
 
-<kbd>ciw</kbd>
-Delete the word that the cursor is on and go into insert mode.
+<kbd>w</kbd> To the beginning of the next word.
 
-<kbd>ci(</kbd>
-Delete everything within the parentheses surrounding wherever the cursor is and
-then go into insert mode.
+<kbd>e</kbd> To the end of the current word.
 
-<kbd>dt␣</kbd>
-(␣ meaing a space character) Delete everything from where the cursor is to
-*before* the next space character.
+<kbd>W</kbd> To the beginning of the next WORD.
 
-<kbd>df␣</kbd>
-Delete up to and including the next space
+<kbd>E</kbd> To the end of the current WORD.
 
-<kbd>vi"</kbd>
-Visually select all inside double quotes
+<kbd>b</kbd> Go backward a word.
 
-<kbd>va"</kbd>
-Visually select all inside and including double quotes
+<kbd>B</kbd> Go backward a WORD.
+
+#### Other motions
+
+<kbd>gg</kbd> Go to the first line by default.
+
+<kbd>G</kbd> Go to the very last line by default.
+
+<kbd>0</kbd> Go to the very first character of the line.
+
+<kbd>^</kbd> Go to the very first non-whitespace character of the line.
+
+<kbd>$</kbd> Go to the very last character of the line.
+
+### Selections
+
+Selections are slightly different than motions in that they don't move the
+cursor but they do alter the way in which commands work. They will apply a
+command or operation to something like a word, or a sentence, or a block of text
+inside paired parenthesis, etc. A single selection can do a lot to make life in
+Vim easy.
+
+<kbd>aw</kbd> A word
+
+<kbd>aW</kbd> A WORD
+
+<kbd>iw</kbd> An inner word
+
+<kbd>iW</kbd> An inner WORD
+
+### Command & Motion Examples
+
+- Re-indent everything <kbd>gg=G</kbd>
+- Delete to the next word: <kbd>daw</kbd>
+- Change a sentence: <kbd>cas</kbd>
+- Delete everything inside parenthesis: <kbd>di)</kbd>
+- Visually select a paragraph: <kbd>vap</kbd>
 
 ## Registers and Macros
 
@@ -186,7 +212,7 @@ tempted to:
 
 1.  press <kbd>l</kbd> nineteen time to move the cursor to the `)`
 1.  enter insert mode by pressing <kbd>i</kbd>, then press <kbd>backspace</kbd>
-    nineteen times to delete all that text
+nineteen times to delete all that text
 1.  then finally press <kbd>escape</kbd> to change back to normal mode.
 
 Or you could just type <kbd>di)</kbd>, which will delete all the text within the

@@ -28,10 +28,10 @@ github_dotfiles: dotfiles
 
 # Build settings
 markdown: kramdown
-#theme: minima
+theme: minima
 gems:
   #-jekyll-octicons
-  #- jekyll-feed
+  #-jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock

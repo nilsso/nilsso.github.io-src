@@ -35,11 +35,11 @@ sine of variable x squared: \\( sin(x^2) \\)
 Input:
 
 {% highlight tex %}
-$$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$
+$$ \mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p} $$
 {% endhighlight %}
 
 Output:
 
-$$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$
+$$ \mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p} $$
 
 [mathjax-home]: https://www.mathjax.org/
