@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Vim
+layout: default
+title: "Vim"
 ---
 
 *(Page is under construction)*

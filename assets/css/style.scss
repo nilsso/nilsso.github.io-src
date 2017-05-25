@@ -1,0 +1,32 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22.5px !important;
+}
+
+h3 {
+  font-size: 17.55px !important;
+}
+
+blockquote {
+  font-style: normal !important;
+  font-size: 15px !important;
+  p {
+    margin-bottom: 20px !important;
+  }
+}
+
+body {
+  font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+ul ul {
+  margin-bottom: 0 !important;
+}

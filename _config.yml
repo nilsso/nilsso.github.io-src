@@ -18,8 +18,6 @@ author: Nils Olsson
 email: nilso@enosis.net
 description: > # this means to ignore newlines until "baseurl:"
   I'm a professional student, programmer, singer, and video-game enthusiast.
-  I like writing addons for World of Warcraft, food, movies, music, and so
-  much more.
 baseurl: "~fire22/blog/_site" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: #fucktwitter
@@ -28,10 +26,13 @@ github_dotfiles: dotfiles
 
 # Build settings
 markdown: kramdown
-theme: minima
+#theme: minima
+theme: jekyll-theme-minimal
 gems:
   #-jekyll-octicons
   #-jekyll-feed
 exclude:
+  - .git
+  - node_modules
   - Gemfile
   - Gemfile.lock

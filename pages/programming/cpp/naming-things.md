@@ -1,8 +1,6 @@
 ---
-layout: post
-title: "C++ Naming Conventions"
-date: 2017-04-27 10:00:00 -0700
-categories: programming c++
+layout: default
+title: "Naming Things"
 ---
 
 Naming conventions for things like member variables can be very personal, almost
@@ -21,6 +19,12 @@ need for 'getThis' or 'setThat'.
 
 (I thought [this post][link] also had some good suggestions, but my particular
 style differs quite a bit)
+
+## My convensions
+
+1. *Non*-static Member variables start with "**m_**"
+2. Static member variables start with "**s_**"
+3. Constant member variables in all caps
 
 *Here's an example of how I do my naming:*
 

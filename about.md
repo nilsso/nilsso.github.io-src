@@ -1,32 +1,41 @@
 ---
-layout: page
-title: About
-permalink: about.html
+layout: default
+title: "About"
 ---
 
-{{ site.description }}
+# About me
 
-## References
+My main on [Elysium (Anathema)][elysium] is Miraculin, 60 priest in [Titans of
+War][tow].
 
-[Markdown
-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-for writing blog posts in Jekyll
+On Steam I'm [SweedJesus][steam-profile].
 
-[cppreference.com](http://cppreference.com)
-for all of your C++ reference needs
+I play [Factorio][factorio] and [Counter-Strike: GO][csgo] a lot,
 
-[Game Programming Patterns](http://gameprogrammingpatterns.com/)
-by Robert Nystrom
+Though I've been playing [PLAYERUNKNOWN'S BATTLEGROUNDS][pubg] a lot recently
+too
 
-## This site uses
+[elysium]: https://elysium-project.org
+[tow]: http://titansofwar.org
+[steam-profile]: https://steamcommunity.com/id/SweedJesus
+[factorio]: https://factorio.com
+[csgo]: https://store.steampowered.com/app/730/CounterStrike_Global_Offensive
+[pubg]: https://store.steampowered.com/app/578080/PLAYERUNKNOWNS_BATTLEGROUNDS
 
-Minima:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+# About this site
 
-Jekyll:
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I'm using [Jekyll][jekyll] to build it.
 
-AnchorJS:
-[anchorjs](https://www.bryanbraun.com/anchorjs/)
+The base theme is the [Minimal][minimal] theme by [GitHub Pages][github-pages],
+with modified layouts, includes and styles.
+
+I'm also using the JavaScript libraries [AnchorJS][anchorjs],
+[MathJax][mathjax], and [VexFlow][vexflow] throughout the content.
+
+[jekyll]: https://jekyllrb.com
+[github-pages]: https://pages.github.com
+[minimal]: https://pages-themes.github.io/minimal
+[anchorjs]: https://bryanbraun.com/anchorjs
+[mathjax]: https://mathjax.org
+[vexflow]: http://vexflow.com
+

@@ -1,6 +1,27 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: default
+title: "Contents"
 ---
+
+Music
+
+- [Theory](pages/music/theory)
+- [Synthesis (theory 4 presentation)](pages/music/synthesis)
+
+---
+
+Programming
+
+- [AddOns](pages/programming/addons)
+- C++
+  - [Naming things](pages/programming/cpp/naming-things)
+- [Git](pages/programming/git)
+- [Vim](pages/programming/vim)
+- [Web](pages/programming/web)
+
+---
+
+Math
+
+- [Math notes](pages/math)
+

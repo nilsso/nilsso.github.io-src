@@ -1,6 +1,6 @@
 ---
-layout: page
-title: AddOns
+layout: default
+title: "AddOns"
 ---
 
 AddOns for World of Warcraft will always have a special place in my heart as I
@@ -18,7 +18,7 @@ is a list of some of my AddOns for Vanilla World of Warcraft:
 
 - - -
 
-## [sjMacro][sjmacro-repo]
+### [sjMacro][sjmacro-repo]
 
 An addon that seeks to provide mouse-over ability casting to vanilla WoW,
 something that wasn't added until the expansion after Vanilla. Seeks to be as
@@ -28,7 +28,7 @@ dedicated, small, addon in the future.
 
 - - -
 
-## [DarkSoulsDeathScreen (DSDS)][dsds-repo]
+### [DarkSoulsDeathScreen (DSDS)][dsds-repo]
 
 Written for a request, displays the graphic and plays the sound of the
 ubiquitous YOU DIED message from Dark Souls.
@@ -39,7 +39,7 @@ ubiquitous YOU DIED message from Dark Souls.
 
 - - -
 
-## [Color Picker Plus][cpp-repo]
+### [Color Picker Plus][cpp-repo]
 
 [sjmacro-repo]: https://github.com/SweedJesus/sjMacro
 [dsds-repo]: https://github.com/SweedJesus/DSDS
