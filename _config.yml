@@ -18,7 +18,7 @@ author: Nils Olsson
 email: nilso@enosis.net
 description: > # this means to ignore newlines until "baseurl:"
   I'm a professional student, programmer, singer, and video-game enthusiast.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "~fire22/blog/_site" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: #fucktwitter
 github_username: SweedJesus

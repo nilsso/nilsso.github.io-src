@@ -3,59 +3,37 @@ layout: default
 title: "Web Stuff"
 ---
 
-- [Jekyll][jekyll-home]
+## Jekyll
 
+([Homepage](https://jekyllrb.com))
 A simple, blog-aware, static site generator for personal, project, or
 organization sites written in Ruby. Probably obvious already but this site uses
-Jekyll.
+Jekyll. These are some of the resources listed on the Jekyll site about Jekyll:
 
-- [Markdown][markdown-home]
+- [CloudCannon---Jekyll Tips](https://learn.cloudcannon.com/):
+  Didn't know what CloudCannon was before checking the resources, but it's just
+a WYSIWYG Jekyll hosting service (think CMS). Don't think much about it but
+their learning area is good. Some of the page topics: installing Jekyll,
+intro to the Liquid templating language, [Jekyll cheatsheet][], etc.
 
-Text-to-HTML conversion tool for web writers.
+[jekyll cheatsheet]: http://jekyll.tips/jekyll-cheat-sheet/
 
-- [AnchorJS][anchorjs-home]
+## Markdown
 
-Add deep anchor links to your docs.
+([Homepage](https://daringfireball.net/projects/markdown/))
+The opposite of a markup language like HTML, Markdown seeks to simplify content
+creation and maintenance by being human readable.
 
-- [MathJax][mathjax-home]
+## CSS
 
-A JavaScript display engine for mathematics that works in all browsers. Uses
-LaTeX syntax.
+- [Bootstrap 3](http://getbootstrap.com/):
+the most popular HTML, CSS, and JS framework. Uses jQuery and defines all sorts
+of good looking and ubiquitous components, especially the Grid system.
 
-<script type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+## Javascript
 
-Input:
-
-{% highlight tex %}
-$$a^2 + b^2 = c^2$$
-{% endhighlight %}
-
-Output:
-
-$$a^2 + b^2 = c^2$$
-
-Input:
-
-{% highlight tex %}
-sine of variable x squared: \\( sin(x^2) \\)
-{% endhighlight %}
-
-Output:
-
-sine of variable x squared: \\( sin(x^2) \\)
-
-Input:
-
-{% highlight tex %}
-$$ \mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p} $$
-{% endhighlight %}
-
-Output:
-
-$$ \mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}_{k,p} $$
-
-[jekyll-home]: http://jekyllrb.com/
-[markdown-home]: https://daringfireball.net/projects/markdown/
-[anchorjs-home]: https://www.bryanbraun.com/anchorjs/
-[mathjax-home]: https://www.mathjax.org/
+- [AnchorJS](https://www.bryanbraun.com/anchorjs/):
+add deep anchor links to your docs.
+- [MathJax](https://www.mathjax.org/):
+a display engine for mathematics that works in all browsers, and uses LaTeX
+syntax.
