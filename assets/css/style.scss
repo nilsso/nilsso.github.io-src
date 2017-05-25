@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 h1 {
-  font-size: 28px;
+  font-size: 28px !important;
 }
 
 h2 {
@@ -15,16 +15,20 @@ h3 {
   font-size: 17.55px !important;
 }
 
+body {
+  font-family: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+code, kbd, pre, samp {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important;
+}
+
 blockquote {
   font-style: normal !important;
   font-size: 15px !important;
   p {
     margin-bottom: 20px !important;
   }
-}
-
-body {
-  font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 ul ul {
