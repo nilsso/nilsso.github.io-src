@@ -1,5 +1,7 @@
 {
   "dependencies": {
     "anchor-js": "^3.2.2"
+  },
+  "devDependencies": {
   }
 }

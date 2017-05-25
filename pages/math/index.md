@@ -51,11 +51,11 @@ to compute them. The discriminant of the quadratic polynomial is:
 By evaluating the discriminant of a quadratic polynomial one of the following
 can be determined about the polynomial:
 
-1.  If the discriminant is zero, the polynomial has one "double root" (a root
+1.  If the discriminant is *zero*, the polynomial has one "double root" (a root
 with [multiplicity][] two, i.e. value which is unique but appears twice within
 the set of roots),
-2.  If the discriminant is positive, the polynomial has two real roots,
-3.  If the discriminant is negative, the polynomial has no real roots.
+2.  If the discriminant is *positive*, the polynomial has two real roots,
+3.  If the discriminant is *negative*, the polynomial has no real roots.
 
 [discriminant]: https://en.wikipedia.org/wiki/Discriminant
 [multiplicity]: https://en.wikipedia.org/wiki/Multiplicity\_(mathematics)
@@ -63,31 +63,44 @@ the set of roots),
 ### Factoring
 
 Having evaluated the discriminant the completely factored form of a quadratic
-polynomial can be generalized as:
+polynomial can be generalized for the following cases:
 
-1.  If no roots, completely factored form is
-\\[ a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right) \\]
+1.  If no roots:
+\\[
+a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right)
+\tag{a}
+\label{quadratic:a}
+\\]
 
 2.  If two roots (\\(\alpha\_1\\) and \\(\alpha\_2\\)):
-\\[ a \left( x - \alpha\_1 \right)\left( x - \alpha\_2 \right) \\]
+\\[
+a \left( x - \alpha\_1 \right)\left( x - \alpha\_2 \right)
+\tag{b}
+\label{quadratic:b}
+\\]
 
 3.  If one root (\\(\alpha\_1\\)):
-\\[ a \left( x - \alpha\_1 \right)\left( x - \alpha\_1 \right) \\]
+\\[
+a \left( x - \alpha\_1 \right)\left( x - \alpha\_1 \right)
+\tag{c}
+\label{quadratic:c}
+\\]
 
-*Example:*
+*Example:*\\
+Factor and determine any and all roots of the quadratic polynomial:
+\\[ 2x^2 + 4x - 2 = 0 \\]
 
-Factor \\( 2x^2 + 4x - 2 = 0 \\)
+Because the discriminant (\\((4) - 4(2)(-2) = 20\\)) is positive the polynomial
+will have two real roots and the completely factored form will be in the form of
+\ref{quadratic:b}
 
-1.  factor 2 from left:
-\\( x^2 + 2x - 1 = 0 \\)
-2.  add 1 to both sides:
-\\( x^2 + 2x = 1 \\)
-3.  complete the square:
-\\( ((2)/2)^2 = 1,\quad x^2 + 2x + 1 = 2 \\)
-4.  factor left:
-\\( (x + 1)^2 = 2 \\)
-5.  solve for x:
-\\( x = \\{ -1 + \sqrt{2}, -1 - \sqrt{2} \\} \\)
+-- | -- | --
+   | 
+1. | Factor 2 from left  | \\( x^2 + 2x - 1 = 0 \\)
+2. | Add 1 to both sides | \\( x^2 + 2x = 1 \\)
+3. | Complete the square | \\( ((2)/2)^2 = 1,\quad x^2 + 2x + 1 = 2 \\)
+4. | Factor left         | \\( (x + 1)^2 = 2 \\)
+5. | Solve for x         | \\( x = -1 \pm \sqrt{2} \\)
 
 <!--\\begin{align\*}-->
 <!--&\text{(initial)} &-->
