@@ -1,0 +1,28 @@
+{% assign num_example_groups = num_example_groups | plus: 1 %}
+
+{% capture n %}{{ include.title
+  | downcase | replace: ' ', '-' }}-example{% endcapture %}
+
+<div id="{{n}}-accordion"
+     class="panel-group" role="tablist" aria-multiselectable="true">
+  <div id="{{n}}-heading"
+       class="panel-heading" role="tab">
+    <h4 class="panel-title">
+      <a role="button"
+         data-toggle="collapse"
+         data-parent="#{{n}}-accordion"
+         href="#{{n}}-collapse">
+        Example: {{include.title}}
+      </a>
+    </h4>
+  </div>
+  <div id="{{n}}-collapse"
+       class="panel-collapse collapse"
+       role="tabpanel"
+       aria-labelledby="{{n}}-heading">
+    <div class="panel-body">
+      {% capture contents %}{% include_relative examples/{{include.file}}.md %}{% endcapture %}
+      {{ contents | markdownify }}
+    </div>
+  </div>
+</div>

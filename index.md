@@ -4,14 +4,12 @@ title: "Contents"
 ---
 
 Music
-
 - [Theory](pages/music/theory)
 - [Synthesis (theory 4 presentation)](pages/music/synthesis)
 
 ---
 
 Programming
-
 - [AddOns](pages/programming/addons)
 - C++
   - [Naming things](pages/programming/cpp/naming-things)
@@ -22,6 +20,6 @@ Programming
 ---
 
 Math
-
-- [Math notes](pages/math)
+- [Algebra](pages/math/algebra)
+- [Calculus](#)
 

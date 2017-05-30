@@ -15,8 +15,8 @@ h3 {
   font-size: 17.55px !important;
 }
 
-body {
-  font-family: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+body, p {
+  font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 code, kbd, pre, samp {
@@ -24,14 +24,20 @@ code, kbd, pre, samp {
 }
 
 blockquote {
-  font-style: normal !important;
   font-size: 15px !important;
-  p {
+  p, ul, ol {
     margin-bottom: 20px !important;
   }
 }
 
-ul ul {
-  margin-bottom: 0 !important;
+ul {
+  ul {
+    margin-bottom: 0 !important;
+  }
+}
+
+.panel-group {
+  background: #f6f6f6;
+  border-radius: 10px;
 }
 
