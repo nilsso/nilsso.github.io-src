@@ -20,7 +20,7 @@
        class="panel-collapse collapse"
        role="tabpanel"
        aria-labelledby="{{n}}-heading">
-    <div class="panel-body well">
+    <div class="panel-body">
       {% capture contents %}{% include_relative examples/{{include.file}}.md %}{% endcapture %}
       {{ contents | markdownify }}
     </div>

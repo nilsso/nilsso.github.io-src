@@ -38,9 +38,7 @@ ul {
 
 .panel-group {
   background: #f6f6f6;
+  border: 1px solid #ddd;
   border-radius: 10px;
 }
 
-.panel-group .panel-heading + .panel-collapse > .panel-body {
-    border-top: 0 !important;
-}
