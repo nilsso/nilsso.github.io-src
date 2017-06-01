@@ -13,23 +13,25 @@ addition, multiplication and exponentiation to a non-negative integer power. A
 polynomial with a single indeterminate x can always be written in the form:
 
 \\[
-a\_{n}x^{n} + a\_{n-1}x^{n-1} + \dots + a\_{1}x + a\_{0},
+a\_{n}x^{n} + a\_{n-1}x^{n-1} + \dots + a\_{1}x + a\_{0} \tag{1.0}\label{polynomial}
 \\]
 
-Where \\(a\_{0},\dots,a\_{n}\\) are contants and \\(x\\) is the indeterminate.
+Where \\(a\_{0},\dots,a\_{n}\\) are constants and \\(x\\) is the indeterminate.
 
-Monomials have one term (e.g. \\(16x^4\\)), binomials two unlike terms (e.g.
-\\(2x + 1\\)), trinomials three (e.g. \\(x^2 + 2x + 1\\)) and so on. Polynomials
-can easily be added, subtracted and multiplied (using FOIL). When dividing use
-either [polynomial long division][] or [synthetic division].
+Each coefficient and/or indeterminate entity is called a term, the degree of a
+term is sum of the degrees of its indeterminates, and the degree of a polynomial
+is the largest degree of its terms. Polynomials can easily be added, subtracted
+and multiplied (using FOIL). When dividing use either [polynomial long
+division][] or [synthetic division][]. A few polynomial forms with low degrees
+have specific names:
 
-{% include example.html
-title="Polynomial division"
-file="polynomial_division" %}
-
-{% include example.html
-title="Synthetic division"
-file="synthetic_division" %}
+*Monomial*: A one term polynomial | \\(a_{0}x^{n_0}\\)
+*Binomial*: A two term polynomial | \\(a_{1}x^{n_1}+a_{0}x^{n_0}\\)
+*Trinomial*: A three term polynomial | \\(a_{2}x^{n_2}+a_{1}x^{n_1}+a_{0}x^{n_0}\\)
+*Monic polynomial*: Any polynomial with a leading term coefficient of 1 | \\((1)x^2+bx+c\\)
+*Constant polynomial*: A zero degree monomial | \\(a\\)
+*Linear polynomial*: A degree one binomial | \\(ax+b\\)
+*Quadratic polynomial*: A degree two binomial | \\(ax^2+bx+c\\)
 
 [polynomial long division]: https://en.wikipedia.org/wiki/Polynomial_long_division
 [synthetic division]: https://en.wikipedia.org/wiki/Synthetic_division
@@ -39,21 +41,35 @@ file="synthetic_division" %}
 Whole numbers are factored using prime numbers, and by the same token
 polynomials are factored using prime/irreducible polynomials (depending on the
 field the coefficients are said to belong to---integers, real, complex, etc.).
-Factoring algebraic expressions is a game of recognizing forms and applying
-formulas. Some of the most common formulas are:
+The following formulas are useful for recognizing common patterns of factoring,
+with the expanded form on the left and the factored form on the right:
 
-Greatest common factor | \\(ca+cv=c(a+b)\\)
-Difference of squares | \\(a^2-b^2=(a+b)(a-b)\\)
-Perfect square | \\(a^2+2ab+b^2=(a+b)^2\\)
-Perfect square | \\(a^2-2ab+b^2=(a-b)^2\\)
-Sum of cubes | \\(a^3+b^3=(a+b)(a^2-ab+b^2)\\)
-Difference of cubes | \\(a^3-b^3=(a-b)(a^2+ab+b^2)\\)
+*Greatest common factor* | \\(ca+cv=c(a+b)\\)
+| \\(x^2-(r-s)x+rs=(x-r)(x-s)\\)
+*Perfect square* | \\(a^2+2ab+b^2=(a+b)^2\\)
+*Perfect square* | \\(a^2-2ab+b^2=(a-b)^2\\)
+*Difference of squares* | \\(a^2-b^2=(a+b)(a-b)\\)
+*Sum of cubes* | \\(a^3+b^3=(a+b)(a^2-ab+b^2)\\)
+*Difference of cubes* | \\(a^3-b^3=(a-b)(a^2+ab+b^2)\\)
 
-Be able to recognize these.
+{% include example.html
+tag="factoring-1"
+title="Factoring #1"
+file="factoring01" %}
+
+{% include example.html
+tag="factoring-2"
+title="Factoring #2"
+file="factoring02" %}
+
+{% include example.html
+tag="factoring-3"
+title="Factoring #3"
+file="factoring03" %}
 
 ### Roots
 
-**Fundamental theorem of algebra**
+Fundamental theorem of algebra
 
 > Every non-constant single-variable polynomial with complex coefficients has at
 > least one complex root.
@@ -79,6 +95,26 @@ Or by referencing the form of polynomials,
 A polynomial is completely factored if it is written as a product of a real
 number (same as the leading coefficient), and a collection of monic quadratic
 polynomials that do not have roots, and of monic linear polynomials.
+
+### Rational root theorem
+
+The [rational root theorem][] (or test) provides a list of *possible* roots of a
+polynomial with all integer coefficients, given the constant term and leading
+term coefficient.
+
+>  Given a polynomial equation in the form \ref{polynomial} with \\(a_0\\) and
+>  \\(a_n\\) that are non-zero, then the fraction \\(p/q\\) is a possible root
+>  of the polynomial where \\(p\\) is an integer factor of the constant term
+>  \\(a_0\\), and \\(q\\) is an integer factor of the leading coefficient
+>  \\(a_n\\). This generates a list of possibilities which can then be tested
+>  through trial and error.
+
+{% include example.html
+tag="rational-root-1"
+title="Rational Root #1"
+file="rational-root01" %}
+
+[rational root theorem]: https://en.wikipedia.org/wiki/Rational_root_theorem
 
 ## Quadratic polynomials
 
@@ -116,25 +152,25 @@ cases:
 
 1.  Discriminant is negative---no real roots:
 \\[
-a \left( x^2 + \frac{b}{a}x + \frac{c}{a} \right)
-\tag{a}
-\label{quadratic:a}
+a\left(x^2 + \frac{b}{a}x + \frac{c}{a}\right)
+\tag{2.0}
+\label{factored-quadratic:a}
 \\]
 
 2.  Discriminant is positive---two real roots
 (\\(\alpha\_1\\) and \\(\alpha\_2\\)):
 \\[
 a \left( x - \alpha\_1 \right)\left( x - \alpha\_2 \right)
-\tag{b}
-\label{quadratic:b}
+\tag{2.1}
+\label{factored-quadratic:b}
 \\]
 
 3.  Discriminant is equal to zero---one real root
 (\\(\alpha\_1\\)):
 \\[
 a \left( x - \alpha\_1 \right)\left( x - \alpha\_1 \right)
-\tag{c}
-\label{quadratic:c}
+\tag{2.2}
+\label{factored-quadratic:c}
 \\]
 
 Two major methods
@@ -149,9 +185,12 @@ ax^2 + bx + \left(\frac{b}{2}\right)^2 = - c + \left(\frac{b}{2}\right)^2
 \frac{-b \pm \sqrt{ b^2 - 4ac }}{2a}
 \\]
 
+<div class="example-group">
 {% include example.html
-title="Quadratic factoring"
-file="quadratic_factoring" %}
+tag="quadratic-factoring-1"
+title="Quadratic factoring #1"
+file="quadratic_factoring01" %}
+</div>
 
 ## Cubic polynomials
 
@@ -165,22 +204,6 @@ Following from the Fundamental Theorem of Algebra, the completely factored form
 of a cubic polynomial will be either the product of a constant and three linear
 polynomials, or of a constant, one linear polynomial and one quadratic
 polynomial with no rational roots.
-
-### Rational root theorem
-
-The [rational root test][] can be used to determine if the polynomial has any
-rational roots.
-
-0 rational roots: cube roots
-
-3 rational roots:
-
-1 rational root: \\(x - \alpha_1\\) can be factored out using [polynomial long
-division][] or [synthetic division][].
-
-[rational root test]: https://en.wikipedia.org/wiki/Rational_root_theorem
-[polynomial long division]: https://en.wikipedia.org/wiki/Rational_root_theorem
-[synthetic division]: https://en.wikipedia.org/wiki/Synthetic_division
 
 ## Sources
 
