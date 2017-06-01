@@ -211,5 +211,5 @@ polynomial with no rational roots.
 - Wikipedia
   - [Discriminant](https://en.wikipedia.org/wiki/Discriminant)
 - [Mathwords](http://www.mathwords.com)
-  - [Double root](http://www.mathwords.com/d/double\_root.htm)
+  - [Double root](http://www.mathwords.com/d/double_root.htm)
   - [Multiplicity](http://www.mathwords.com/m/multiplicity.htm)
