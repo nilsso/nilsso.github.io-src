@@ -1,39 +1,39 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+@import "style.scss";
 
-h1 {
-  font-size: 28px !important;
-}
+//h1 {
+  //font-size: 28px !important;
+//}
 
-h2 {
-  font-size: 22.5px !important;
-}
+//h2 {
+  //font-size: 22.5px !important;
+//}
 
-h3 {
-  font-size: 17.55px !important;
-}
+//h3 {
+  //font-size: 17.55px !important;
+//}
 
-body, p {
-  font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
+//body, p {
+  //font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+//}
 
-code, kbd, pre, samp {
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important;
-}
+//code, kbd, pre, samp {
+  //font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important;
+//}
 
-blockquote {
-  font-size: 15px !important;
-  p, ul, ol {
-    margin-bottom: 20px !important;
-  }
-}
+//blockquote {
+  //font-size: 15px !important;
+  //p, ul, ol {
+    //margin-bottom: 20px !important;
+  //}
+//}
 
-ul {
-  ul {
-    margin-bottom: 0 !important;
-  }
-}
+//ul {
+  //ul {
+    //margin-bottom: 0 !important;
+  //}
+//}
 
 

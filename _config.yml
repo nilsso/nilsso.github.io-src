@@ -27,7 +27,7 @@ github_dotfiles: dotfiles
 # Build settings
 markdown: kramdown
 #theme: minima
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
 gems:
   #-jekyll-octicons
   #-jekyll-feed

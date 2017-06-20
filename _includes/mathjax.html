@@ -1,18 +1,22 @@
 <!-- MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-    extensions: [
+        extensions: [
       "tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js",
       "AssistiveMML.js", "a11y/accessibility-menu.js"
+      //, "[siunitx]/siunitx.js"
     ],
+    jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
     TeX: {
       equationNumbers: { autoNumber: "AMS" },
       extensions: [
         "AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"
+        //, "[siunitx]/siunitx.js"
       ]
-    }
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
   });
+  //MathJax.Ajax.config.path['siunitx']="https://rawgit.com/burnpanck/MathJax-siunitx/master/siunitx.js";
 </script>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">

@@ -1,11 +1,29 @@
 <header>
   <h2 id="site-title">{{ site.title }} <small><a href="{{ '/' | relative_url }}">home</a></small></h2>
-  <div id="site-description"><p>{{ site.description }}</p></div>
-  <div id="site-info">
+  <span id="site-info">
+    <p id="author-description">{{ site.description }}</p>
     <p>
-    {% include icon-github.svg %}
-    / <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a>
+      {% include icon-github.svg %} /
+      <a id="author-github" href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a>
     </p>
-    <p><a href='{{ "/about" | relative_url }}'>About</a></p>
-  </div>
+    <hr/>
+    <p>
+    Math / <a href="{{ 'pages/math/algebra' | relative_url }}">Algebra</a><br/>
+    Math / <a href="{{ 'pages/math/trigonometry' | relative_url }}">Trigonometry</a><br/>
+    Math / <a href="{{ 'pages/math/calculus' | relative_url }}">Calculus</a><br/>
+    </p>
+    <hr/>
+    <p>
+    Music / <a href="{{ 'pages/music/theory' | relative_url }}">Theory</a><br/>
+    Music / <a href="{{ 'pages/music/synthesis' | relative_url }}">Synthesis</a><br/>
+    </p>
+    <hr/>
+    <p>
+    Programming / <a href="{{ 'pages/programming/addons' | relative_url }}">AddOns</a><br/>
+    Programming / C++ / <a href="{{ 'pages/programming/cpp/naming-things' | relative_url }}">Naming things</a><br/>
+    Programming / <a href="{{ 'pages/programming/git' | relative_url }}">Git</a><br/>
+    Programming / <a href="{{ 'pages/programming/vim' | relative_url }}">Vim</a><br/>
+    Programming / <a href="{{ 'pages/programming/web' | relative_url }}">Web</a><br/>
+    </p>
+  </span>
 </header>
