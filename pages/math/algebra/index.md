@@ -36,12 +36,20 @@ y=a^x\iff\log_a y=x
 It follows then that because of the rules of exponents that the following rules
 for logarithms exist:
 
-Log of a product rule  | \\(\log_a(MN)=log_a(M)+log_a(N)\\)
-Log of a quotient rule | \\(\log_a(M/N)=log_a(M)-log_a(N)\\)
-Log of a power rule    | \\(\log_a(M^N)=N\log_a(M)\\)
-Log of a root rule     | \\(\log_a(\sqrt[N]{M})=\frac{\log_a(M)}{N}\\)
-Zero exponent          | \\(\log_a(1)=0\\)
-Changing of base       | \\(\log_a(M)=\frac{\log_k(M)}{\log_k(a)}\\)
+#### Properties of logarithms
+
+Log of a product| $\log_a(uv)=log_a(u)+log_a(v)\$
+Log of a quotient| $\log_a(u/v)=log_a(u)-log_a(v)\$
+Log of a power| $\log_a(u^v)=v\log_a(u)\$
+Log of a root| $\log_a(\sqrt[v]{u})=\frac{\log_a(u)}{v}\$
+Zero exponent | $\log_a(1)=0\$
+Changing of base | $\log_a(u)=\frac{\log_k(u)}{\log_k(a)}\$
+
+#### Properties of natural logarithms
+
+Natural log of a product |$\ln(uv)=\ln u+\ln v$
+Natural log of a quotient |$\ln\left(\frac{u}{v}\right)=\ln u-\ln v$
+Natural log of a power | $\ln u^n=n\ln u$
 
 # Polynomials
 
@@ -281,22 +289,22 @@ Before even attempting to factor a quadratic polynomial the completely factored
 form can be determined by evaluating the discriminant to be one of the following
 cases:
 
-1.  Discriminant is negative---no real roots:
+1. Discriminant is negative---no real roots:
 \\[
 a\left(x^2 + \frac{b}{a}x + \frac{c}{a}\right)
 \tag{2.0}
 \label{factored-quadratic:a}
 \\]
 
-2.  Discriminant is positive---two real roots
-(\\(\alpha\_1\\) and \\(\alpha\_2\\)):
+2. Discriminant is positive---two real roots
+($\alpha_1$ and $\alpha_2$):
 \\[
 a \left( x - \alpha\_1 \right)\left( x - \alpha\_2 \right)
 \tag{2.1}
 \label{factored-quadratic:b}
 \\]
 
-3.  Discriminant is equal to zero---one real root
+3. Discriminant is equal to zero---one real root
 (\\(\alpha\_1\\)):
 \\[
 a \left( x - \alpha\_1 \right)\left( x - \alpha\_1 \right)
@@ -307,13 +315,15 @@ a \left( x - \alpha\_1 \right)\left( x - \alpha\_1 \right)
 ### Completing the Square
 
 Given a quadratic equation that does *not* factor easily (doesn't fit any of the
-[factoring formulas](#factoring)) we can add a constant to either side of the
-equation to turn the quadratic into a perfect square; we call this process
-completing the square. The general form of this process and result is:
+[factoring formulas](#factoring)) we can add "zero" (or the sum of opposites) to
+turn the quadratic into a perfect square; we call this process completing the
+square. The general form of this process and result given the
+polynomial $x^2+bx+c$ is:
 
-\\[
-ax^2 + bx + \left(\frac{b}{2}\right)^2 = - c + \left(\frac{b}{2}\right)^2
-\\]
+$$
+x^2+bx+\left(\frac{b}{2}\right)^2+c-\left(\frac{b}{2}\right)^2\Rightarrow
+\left(x+\frac{b}{2}\right)^2+c-\left(\frac{b}{2}\right)^2
+$$
 
 However the leading term coefficient \\(a\\) must be 1; if it isn't then it must
 be factored out. Completing the square isn't so useful if the leading

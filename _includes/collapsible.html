@@ -18,7 +18,7 @@
     <div class="panel-body">
 {% capture contents %}
 {% if include.content %}{{ include.content }}{% endif %}
-{% if include.file %}{% include_relative examples/{{ include.file }}.md %}{% endif %}
+{% if include.file %}{% include_relative {{ include.file }}.md %}{% endif %}
 {% endcapture %}
       {{ contents | markdownify }}
     </div>

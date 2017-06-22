@@ -70,10 +70,10 @@ $\pi$            | $180\deg$ |                   |
 \tan^{-1}\theta
 \\]
 
---|--:|--
 Definition                | Domain         | Range
+--|:--:|:--:
 $y=\sin x$, $x=\arcsin y$ | $-1\le x\le 1$ | $-\frac{\pi}{2}\le y\le\frac{\pi}{2}$
-$y=\cos x$, $x=\arccos y$ | $-1\le x\le 1$ | $0\le y\pi$
+$y=\cos x$, $x=\arccos y$ | $-1\le x\le 1$ | $0\le y\le\pi$
 $y=\tan x$, $x=\arctan y$ | $\mathbb{R}$   | $-\frac{\pi}{2}\lt y\lt\frac{\pi}{2}$
 
 # Identities
