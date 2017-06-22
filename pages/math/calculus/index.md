@@ -227,10 +227,10 @@ $$
 - Substitute
 
 $$
-\begin{gather}
+\begin{gather*}
 m=x^2-1 \\
 \frac{m^4-8x\cdot m^3}{m^8}
-\end{gather}
+\end{gather*}
 $$
 
 - GCM

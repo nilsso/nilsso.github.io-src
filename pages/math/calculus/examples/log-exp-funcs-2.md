@@ -14,11 +14,11 @@ $$
 - U-substitution
 
 $$
-\begin{gather}
+\begin{gather*}
 u=5r^{1/2},\quad du=\frac{5}{2}r^{-1/2} \\
 \frac{2}{5}\int\left[e^{5r^{1/2}}\cdot\frac{5}{2}r^{-1/2}dr\right]=
 \frac{2}{5}\int e^u du
-\end{gather}
+\end{gather*}
 $$
 
 - Evaluate and re-resubstitute
