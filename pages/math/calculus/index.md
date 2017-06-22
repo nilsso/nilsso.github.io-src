@@ -430,12 +430,12 @@ $$
 
 {% include collapsible.html
 tag="log-exp-funcs-1"
-title="Example: Log funcs #1"
+title="Example: Log./exp. functions #1"
 file="examples/log-exp-funcs-1"%}
 
 {% include collapsible.html
 tag="log-exp-funcs-2"
-title="Example: Log funcs #2"
+title="Example: Log./exp. functions #2"
 file="examples/log-exp-funcs-2"%}
 
 ---

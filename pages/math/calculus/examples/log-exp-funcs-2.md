@@ -29,3 +29,10 @@ $$
 \frac{2}{5}e^{5r^{1/2}}+C
 $$
 
+Answer:
+
+$$
+\int\frac{e^{5\sqrt{r}}}{\sqrt{r}}dr=
+\frac{2}{5}e^{5\sqrt{r}+C
+$$
+
