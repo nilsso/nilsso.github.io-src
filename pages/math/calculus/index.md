@@ -139,124 +139,12 @@ $$
 {% include collapsible.html
 tag="chain-rule-1-pr"
 title="Example: Chain rule #1 (Product rule)"
-content="
-$$
-\text{Find } f'(x) \text{ for } f(x)=
-\frac{x}{\left(x^2-1\right)^4}
-$$
-
-- Rewrite the function as a product of functions
-$$
-\deriv(x\cdot(x^2-1)^{-4})
-$$
-
-- Product rule
-
-$$
-\deriv(x)\cdot(x^2-1)^{-4}+x\cdot\deriv((x^2-1)^{-4})
-$$
-
-- Power rule
-
-$$
-(x^2-1)^{-4}+x\cdot\deriv((x^2-1)^{-4})
-$$
-
-- Chain rule
-$$
-(x^2-1)^{-4}+x\cdot -4(x^2-1)^{-5}\cdot\deriv(x^2-1)
-$$
-
-- Chain rule cont.
-$$
-(x^2-1)^{-4}+x\cdot -4(x^2-1)^{-5}\cdot2x
-$$
-
-- Simplify
-$$
-\frac{1}{(x^2-1)^4}-\frac{8x^2}{(x^2-1)^5}
-$$
-
-- Common denominator
-
-$$
-\frac{x^2-1}{(x^2-1)^5}-\frac{8x^2}{(x^2-1)^5}
-$$
-
-- Simplify
-
-$$
-\frac{-7x^2-1}{(x^2-1)^5}
-$$
-"%}
+file="examples/chain-rule-1-product-rule"%}
 
 {% include collapsible.html
 tag="chain-rule-1-qr"
 title="Example: Chain rule #1 (Quotient rule)"
-content="
-$$
-\text{Find}\quad f'(x)\quad\text{for}\quad f(x)=\frac{x}{\left(x^2-1\right)^4}
-$$
-
-- Quotient rule
-
-$$
-\frac{(x^2-1)^4\cdot\deriv(x)-
-x\cdot\deriv((x^2-1)^4)}
-{((x^2-1)^4)^2}
-$$
-
-- Power rule
-
-$$
-\frac{(x^2-1)^4-x\cdot\deriv((x^2-1)^4)}{((x^2-1)^4)^2}
-$$
-
-- Chain rule
-
-$$
-\frac{(x^2-1)^4-x\cdot4(x^2-1)^3)\cdot 2x}{((x^2-1)^4)^2}
-$$
-
-- Simplify
-
-$$
-\frac{(x^2-1)^4-8x(x^2-1)^3}{(x^2-1)^8}
-$$
-
-- Substitute
-
-$$
-\begin{gather*}
-m=x^2-1 \\
-\frac{m^4-8x\cdot m^3}{m^8}
-\end{gather*}
-$$
-
-- GCM
-
-$$
-\frac{m^3(m-8x)}{m^8}
-$$
-
-- Divide
-
-$$
-\frac{m-8x}{m^5}
-$$
-
-- Re-substitute
-
-$$
-\frac{(x^2-1)-8x}{(x^2-1)^5}
-$$
-
-- Simplify
-
-$$
-\frac{-7x^2-1}{(x^2-1)^5}
-$$
-"%}
+file="examples/chain-rule-1-quotient-rule"%}
 
 ---
 
@@ -293,25 +181,33 @@ $$
 Addition of definite integrals
 
 $$
+\begin{equation}
 \int_a^b f(x)dx+\int_b^c f(x)dx=\int_a^c f(x)dx
+\end{equation}
 $$
 
 Integral of area 0
 
 $$
+\begin{equation}
 \int_a^a f(x)dx
+\end{equation}
 $$
 
 Inversion of an integral is its negative
 
 $$
+\begin{equation}
 \int_a^b f(x)dx=-\int_b^a f(x)dx
+\end{equation}
 $$
 
 Multiplying by a constant $c$
 
 $$
+\begin{equation}
 \int cf(x)dx=c\int f(x)dx
+\end{equation}
 $$
 
 Distributive property
