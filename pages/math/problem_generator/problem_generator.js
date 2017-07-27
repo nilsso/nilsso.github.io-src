@@ -1,7 +1,3 @@
-var pattern = /\%\w/g;
-
-var generator = problem_generators["series-geometric"];
-
 //! Generate random integer
 //! @param min minimum value
 //! @param max maximum value
@@ -15,10 +11,9 @@ function randomInt(min, max) {
 //! @param generator generator string
 function generateProblem(generator) {
   var symbols = [];
-  generator.replace(pattern,
+  generator.replace(/\%\w/g,
     match => {
       if (symbols.indexOf(match) == -1) symbols.push(match)});
-
   for (i in symbols) {
     var value = randomInt(1, 10);
     generator = generator.replace(RegExp(symbols[i], 'g'), value);
