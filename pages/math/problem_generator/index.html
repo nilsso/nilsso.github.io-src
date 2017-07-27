@@ -17,6 +17,8 @@
           src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
           integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
           crossorigin="anonymous"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
     <!-- MathJax -->
     <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -30,7 +32,7 @@ MathJax.Hub.Config({
   <body>
     <div class="container-fluid" style="margin-top:20px;">
 
-      <div class="dropdown">
+      <div id="generators" class="dropdown">
         <button
            class="btn btn-default dropdown-toggle" type="button"
            id="dropdownMenu1" data-toggle="dropdown"
@@ -46,7 +48,7 @@ MathJax.Hub.Config({
 
       <div id="problem"></div>
     </div>
-    <footer class="footer">
+    <footer id="footer">
       (press space for a new problem)
     </footer>
     <script src="./problem_generator.js"></script>
