@@ -5,13 +5,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="{{ "style.css" | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ page.url }}style.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- MathJax -->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        tex2jax: { preview: "none" }
+        CommonHTML: {
+          scale: 400
+        }
       });
     </script>
     <script type="text/javascript"
@@ -28,16 +30,31 @@
     </div>
     <script src="./problem_generator.js"></script>
     <script>
-$(function() {
-  var generator = problem_generators["series-geometric"];
-  var problem  = "\\["+generateProblem(generator)+"\\]";
-  var ele = $("#problem");
+var element = $("#problem");
+var generator = problem_generators["series-geometric"];
 
-  ele.html(problem);
-  MathJax.Hub.Queue(
-    function() {
+// Render a new problem
+// @param element element to set html of
+// @param generator problem generator string to use
+function renderNewProblem(ele, gen) {
+  ele.fadeOut(300, function() {
+    ele.html("\\[" + generateProblem(gen) + "\\]")
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub], function() {
       ele.fadeIn(300);
     });
+  });
+}
+
+// On document load
+$(function() {
+  renderNewProblem(element, generator);
+});
+
+// On keyup
+$('body').keyup(function(e) {
+  if (e.keyCode == 32) { // space
+    renderNewProblem(element, generator);
+  }
 });
     </script>
   </body>
