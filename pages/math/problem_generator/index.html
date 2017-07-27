@@ -9,14 +9,8 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
-    <script
-          src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-          crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
     <!-- MathJax -->
@@ -25,19 +19,12 @@ MathJax.Hub.Config({
         messageStyle: "none",
       });
     </script>
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default">
-    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default"></script>
   </head>
   <body>
-    <div class="container-fluid" style="margin-top:20px;">
-
+    <div class="container-fluid clickable-div" style="margin-top:20px;">
       <div id="generators" class="dropdown">
-        <button
-           class="btn btn-default dropdown-toggle" type="button"
-           id="dropdownMenu1" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="true">
-          Generators <span class="caret"></span>
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Generators <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a href="#">Geometric Series</a></li>
@@ -45,11 +32,10 @@ MathJax.Hub.Config({
           <li><a href="#">...</a></li>
         </ul>
       </div>
-
       <div id="problem"></div>
     </div>
     <footer id="footer">
-      (press space for a new problem)
+      (press space or click for a new problem)
     </footer>
     <script src="./problem_generator.js"></script>
     <script>
@@ -74,6 +60,9 @@ $(function() {
 });
 
 // On keyup
+$('body').on("click", function(e) {
+  renderNewProblem(element, generator);
+});
 $('body').keyup(function(e) {
   if (e.keyCode == 32) { // space
     renderNewProblem(element, generator);

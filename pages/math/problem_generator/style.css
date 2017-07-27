@@ -4,13 +4,13 @@ body {
 }
 #generators {
   display: inline-block;
+  position: fixed;
 }
 #problem {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-size: 3em;
   text-align: center;
 }
@@ -19,8 +19,7 @@ body {
   bottom: 0px;
   width: 100%;
   margin-bottom: 20px;
-
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
   font-family: 'Droid Serif', serif;
 }
