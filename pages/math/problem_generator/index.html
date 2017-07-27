@@ -26,10 +26,8 @@ MathJax.Hub.Config({
       <div id="generators" class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Generators <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">Geometric Series</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">...</a></li>
+        <ul id="generators" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <!--<li><a href="#">Geometric Series</a></li>-->
         </ul>
       </div>
       <div id="problem"></div>
@@ -45,6 +43,11 @@ problem_generators = {
   "Geometric sequence" : "it's nothing!",
   "Geometric series"   : "\\sum_{n=1}^\\infty %a(%r)^n"
 }
+var menu = $("#generators");
+//for (i in problem_generators) {
+//  menu.append
+//}
+      
 var generator = problem_generators["series-geometric"];
 
 // Render a new problem
