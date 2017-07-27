@@ -40,6 +40,11 @@ MathJax.Hub.Config({
     <script src="./problem_generator.js"></script>
     <script>
 var element = $("#problem");
+      
+problem_generators = {
+  "Geometric sequence" : "it's nothing!",
+  "Geometric series"   : "\\sum_{n=1}^\\infty %a(%r)^n"
+}
 var generator = problem_generators["series-geometric"];
 
 // Render a new problem
