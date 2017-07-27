@@ -8,9 +8,18 @@
     <link rel="stylesheet" type="text/css" href="{{ page.url }}style.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
     <!-- MathJax -->
     <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
+MathJax.Hub.Config({
         messageStyle: "none",
       });
     </script>
@@ -19,14 +28,27 @@
     </script>
   </head>
   <body>
-    <div id="content">
-      <div class="outter">
-        <div class="middle">
-          <div id="problem" class="inner" style="display:none"></div>
-        </div>
+    <div class="container-fluid" style="margin-top:20px;">
+
+      <div class="dropdown">
+        <button
+           class="btn btn-default dropdown-toggle" type="button"
+           id="dropdownMenu1" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="true">
+          Generators <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Geometric Series</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">...</a></li>
+        </ul>
       </div>
-      <div id="footer">(press space for a new problem)</div>
+
+      <div id="problem"></div>
     </div>
+    <footer class="footer">
+      (press space for a new problem)
+    </footer>
     <script src="./problem_generator.js"></script>
     <script>
 var element = $("#problem");
