@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 .MathJax {
-  font-size: 1em;
+  font-size: 40px; !important
 }
 .outter {
   display: table;
