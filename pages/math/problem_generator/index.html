@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: { preview: "none" }
+      });
+    </script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML-full">
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="outter">
+        <div class="middle">
+          <div id="problem" class="inner" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./problem_generator.js"></script>
+    <script>
+$(function() {
+  var generator = problem_generators["series-geometric"];
+  var problem  = "\\["+generateProblem(generator)+"\\]";
+  var ele = $("#problem");
+
+  ele.html(problem);
+  MathJax.Hub.Queue(
+    function() {
+      ele.fadeIn(300);
+    });
+});
+    </script>
+  </body>
+</html>
