@@ -1,8 +1,3 @@
-problem_generators = {
-  "sequence-geometric" : String.raw`%a %a %b %b %c %c`,
-  "series-geometric"   : "\\sum_{n=1}^\\infty %a(%r)^n"
-}
-
 var pattern = /\%\w/g;
 
 var generator = problem_generators["series-geometric"];
