@@ -2,8 +2,6 @@
 layout: default
 ---
 
-# About me
-
 My main on [Elysium (Anathema)][elysium] is Miraculin, 60 priest in [Titans of
 War][tow].
 
