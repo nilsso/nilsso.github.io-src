@@ -1,3 +1,0 @@
-[submodule "pages/math/problem_generator"]
-	path = pages/math/problem_generator
-	url = git@github.com:SweedJesus/problem-generator.git
