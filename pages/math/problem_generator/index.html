@@ -5,77 +5,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="{{ page.url }}style.css">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
-    <!-- MathJax -->
+    <link id="bootstrap" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ page.url }}style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav nav-left">
+        <form>
+          <select id="generators" class="form-control"></select>
+        </form>
+      </div>
+      <div class="nav nav-right">
+        <a href="https://github.com/SweedJesus/">
+          <svg viewBox="0 0 16 16" width="16px" height="16px" style="position:relative; top:2px;"><path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg> Github
+        </a>
+      </div>
+    </nav>
+    <div id="problem"></div>
+    <footer class="footer">
+      <p>(press space or click for a new problem)</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-        messageStyle: "none",
+      MathJax.Hub.Config({
+        messageStyle: "none"
       });
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default"></script>
-  </head>
-  <body>
-    <div class="container-fluid clickable-div" style="margin-top:20px;">
-      <div id="generators" class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Generators <span class="caret"></span>
-        </button>
-        <ul id="generators" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <!--<li><a href="#">Geometric Series</a></li>-->
-        </ul>
-      </div>
-      <div id="problem"></div>
-    </div>
-    <footer id="footer">
-      (press space or click for a new problem)
-    </footer>
-    <script src="./problem_generator.js"></script>
-    <script>
-var element = $("#problem");
-      
-problem_generators = {
-  "Geometric sequence" : "it's nothing!",
-  "Geometric series"   : "\\sum_{n=1}^\\infty %a(%r)^n"
-}
-var menu = $("#generators");
-//for (i in problem_generators) {
-//  menu.append
-//}
-      
-var generator = problem_generators["Geometric series"];
-
-// Render a new problem
-// @param element element to set html of
-// @param generator problem generator string to use
-function renderNewProblem(ele, gen) {
-  ele.fadeOut(300, function() {
-    ele.html("\\[" + generateProblem(gen) + "\\]")
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub], function() {
-      ele.fadeIn(300);
-    });
-  });
-}
-
-// On document load
-$(function() {
-  renderNewProblem(element, generator);
-});
-
-// On keyup
-$("#problem").on("click", function(e) {
-  renderNewProblem(element, generator);
-});
-$("body").keyup(function(e) {
-  if (e.keyCode == 32) { // space
-    renderNewProblem(element, generator);
-  }
-});
-    </script>
+    <script src="{{ page.url }}problem_generator.js"></script>
   </body>
 </html>
