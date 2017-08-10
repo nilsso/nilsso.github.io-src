@@ -1,25 +1,17 @@
+<!-- MathJax -->
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: [
     "tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js",
-    "AssistiveMML.js", "a11y/accessibility-menu.js"
-  ],
-  jax: ["input/TeX","output/HTML-CSS"],
+    "AssistiveMML.js", "a11y/accessibility-menu.js" ],
   TeX: {
-    equationNumbers: { autoNumber: "AMS" },
     extensions: [
-      "AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"
-    ]
-  },
+      "AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js" ]},
   tex2jax: {
     inlineMath: [["$","$"],["\\(","\\)"]],
-    displayMath: [["$$","$$"],["\\[","\\]"]]
-  },
-  menuSettings: {
-    zoom: "Hover"
-  }
+    displayMath: [["$$","$$"],["\\[","\\]"]]},
+  menuSettings: { zoom: "Hover" },
 });
 </script>
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
