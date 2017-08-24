@@ -2,15 +2,14 @@
 layout: default
 ---
 
-My main on [Elysium (Anathema)][elysium] is Miraculin, 60 priest in [Titans of
-War][tow].
+I enjoy a lot about music, like singing, music theory and composition, piano,
+black metal, classical, etc.
 
-On Steam I'm [SweedJesus][steam-profile].
+I also like computer games a lot; always have always will.
 
-I play [Factorio][factorio] and [Counter-Strike: GO][csgo] a lot,
-
-Though I've been playing [PLAYERUNKNOWN'S BATTLEGROUNDS][pubg] a lot recently
-too
+On Steam I'm [SweedJesus][steam-profile], and on the Vanilla private server
+[Elysium (Anathema)][elysium] my main is Miraculin, 60 priest in [Titans of War][tow]
+(a guild which has since moved to play on other servers).
 
 [elysium]: https://elysium-project.org
 [tow]: http://titansofwar.org
