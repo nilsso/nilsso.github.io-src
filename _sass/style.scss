@@ -4,14 +4,13 @@
 @import "fonts";
 @import "rouge";
 
-$font-color-a: #727272;
+$font-color-a: #404040;
 $font-color-b: #4d4d4d;
 
 html * {
-  background-color: #fff;
   //font: 14.5px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:$font-color-a;
-  font-size: 14pt;
+  //font-size: 14pt;
 }
 
 body {
@@ -19,12 +18,8 @@ body {
   margin:0 auto;
 }
 
-span.index-a {
-  color: $font-color-a;
-}
-
-span.index-b {
-  color: $font-color-b;
+p, ul, ol, table, pre, dl {
+  margin:0 0 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,12 +35,12 @@ h1:first-of-type {
   padding-top: 0;
 }
 
-p, ul, ol, table, pre, dl {
-  margin:0 0 20px;
-}
-
 h1, h2, h3 {
   line-height:1.1;
+}
+
+h3, h4, h5, h6 {
+  color:#494949;
 }
 
 h1 {
@@ -54,10 +49,6 @@ h1 {
 
 h2 {
   font-size:26px;
-}
-
-h3, h4, h5, h6 {
-  color:#494949;
 }
 
 a {
@@ -142,12 +133,10 @@ th {
 }
 
 img {
-  max-width:100%;
+  max-width:70%;
 }
 
-// -----------------------------------------------------------------------------
-// Panels
-
+// Global page header
 header {
   width: auto;
   //width:270px;
@@ -211,11 +200,13 @@ header ul a strong {
   color:#222;
 }
 
+// Page title (below header)
 title {
   @extend h1;
   display: block;
 }
 
+// Where content goes
 article {
 }
 
@@ -230,9 +221,6 @@ footer {
 div > :last-child {
   margin-bottom: 0;
 }
-
-// -----------------------------------------------------------------------------
-// Media queries
 
 @media print, screen and (max-width: 960px) {
   header, article, footer {
