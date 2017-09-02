@@ -5,10 +5,10 @@ title: "Linear Algebra"
 
 {% include mathjax.html %}
 
-## Matrices
+# Matrices
 
 A matrix is a rectangular array of real numbers where the exact location of
-elements is crucial. A matrix has dimensions has *m* rows and *n* columns
+elements is crucial. A matrix has dimensions has m rows and n columns
 written as $m\times n$. The location of element is given by its "i"th
 row and "j"th column positions and is the "ij"th element.
 
@@ -21,9 +21,9 @@ a_{1j} & a_{2j} & \cdots & a_{ij}
 \end{matrix}\right) = (a_{ij})\in \mathbb{R}^{m\times n}
 $$
 
-### Basic operations
+## Basic operations
 
-#### Matrix addition
+### Matrix addition
 
 $$
 \begin{gather*}
@@ -32,7 +32,7 @@ A+B = (a_{ij}+b_{ij})
 \end{gather*}
 $$
 
-#### Scalar multiplication
+### Scalar multiplication
 
 $$
 \begin{gather*}
@@ -41,11 +41,11 @@ k\cdot A = (k\cdot a_{ij})
 \end{gather*}
 $$
 
-#### Matrix multiplication
+### Matrix multiplication
 
 Multiplication is defined for two behaviors:
 
-1. The product of a matrix and a vector
+#### 1. The product of a matrix and a vector
 
 A vector (or column matrix) is a matrix with a single column.
 
@@ -87,29 +87,11 @@ $$
 $$
 " %}
 
-2. The product of two matrices
+#### 2. The product of two matrices
 
-For two matrices to be multiplied the left matrix must have *n* number of
-columns and the right matrix must have *n* number of rows. For example, the
-matrix
-
-$$
-\left(
-\begin{matrix}
-1 & 1 & 4 \\
-3 & 1 & 7 \\
-\end{matrix}
-\right)
-\left(
-\begin{matrix}
-5 & 1 \\
-8 & 2 \\
-0 & 0 \\
-1 & 0 \\
-\end{matrix}
-\right)
-$$
-cannot be multiplied in that order, but switch the order and you can.
+For two matrices to be multiplied the left matrix *must* have n number of
+columns and the right matrix *must* have n number of rows. For example, the
+matrices.
 
 {% include collapsible.html
 tag="matrix-mult-2"

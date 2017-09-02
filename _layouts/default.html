@@ -2,7 +2,16 @@
 <html lang="{{ site.lang | default: "en-US" }}">
 {% include head.html %}
 <body>
-  {% include header.html %}
+  <div>
+    <h2 id="site-title">
+      {{ site.title }}
+      <small>
+        <a href="{{ '/' | relative_url }}">home</a> /
+        <a href="https://github.com/{{ site.github_username }})">github</a>
+      </small>
+    </h2>
+  </div>
+  <hr/>
   <article>
     {% if page.title %}
     <title id="page-title">
