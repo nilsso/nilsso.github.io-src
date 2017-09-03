@@ -7,7 +7,8 @@
 $font-color-a: #404040;
 $font-color-b: #4d4d4d;
 
-$color-c: #267CB9;
+$color-c: #277fbe;
+$color-d: #6bb0e1;
 
 html * {
   //font: 14.5px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -108,7 +109,7 @@ code, pre {
 }
 
 kbd {
-  color: $color-c;
+  color: $color-d;
 }
 
 pre {
