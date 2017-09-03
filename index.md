@@ -39,7 +39,7 @@ metal, post metal, folk metal), classical (as in all of the eras), electronic
 music (trance, electro house, etc.).
 
 I also love computer games. Always have always will. On Steam I'm
-[SweedJesus][steam-profile], and on the Vanilla private server [Elysium
+[SweedJesus][steam], and on the Vanilla private server [Elysium
 (Anathema)][elysium] my main is Miraculin, 60 priest in [Titans of War][tow] (a
 guild which has since moved to play on other servers).
 
