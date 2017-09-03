@@ -2,30 +2,25 @@
 layout: default
 ---
 
-<html>
-  <div id="site-index">
-    <p>
-      Math / <a href="{{ 'pages/math/algebra' | relative_url }}">Algebra</a><br/>
-      Math / <a href="{{ 'pages/math/trigonometry' | relative_url }}">Trigonometry</a><br/>
-      Math / <a href="{{ 'pages/math/calc-2' | relative_url }}">Calculus 2</a><br/>
-      Math / <a href="{{ 'pages/math/calc-3' | relative_url }}">Calculus 3</a><br/>
-      Math / <a href="{{ 'pages/math/linear-algebra' | relative_url }}">Linear Algebra</a><br/>
-      Math / <a href="{{ 'problem-generator' | relative_url }}">Problem Generator</a><br/>
-      <br/>
-      Music / <a href="{{ 'pages/music/theory' | relative_url }}">Theory</a><br/>
-      Music / <a href="{{ 'pages/music/synthesis' | relative_url }}">Synthesis</a><br/>
-      <br/>
-      Programming / <a href="{{ 'pages/programming/addons' | relative_url }}">AddOns</a><br/>
-      Programming / C++ / <a href="{{ 'pages/programming/cpp/naming-things' | relative_url }}">Naming things</a><br/>
-      Programming / <a href="{{ 'pages/programming/git' | relative_url }}">Git</a><br/>
-      Programming / <a href="{{ 'pages/programming/vim' | relative_url }}">Vim</a><br/>
-      Programming / <a href="{{ 'pages/programming/web' | relative_url }}">Web</a><br/>
-    </p>
-  </div>
-  <hr/>
-</html>
+### Index
 
-# About Me
+Math / [Algebra](pages/math/algebra)  
+Math / [Trigonometry](pages/math/trigonometry)  
+Math / [Calculus 2](pages/math/calc-2)  
+Math / [Calculus 3](pages/math/calc-3)  
+Math / [Linear Algebra](pages/math/linear-algebra)  
+Math / [Problem Generator](problem-generator)  
+
+Music / [Theory](pages/music/theory)  
+Music / [Synthesis](pages/music/synthesis)  
+
+Programming / [AddOns](pages/programming/addons)  
+Programming / C++ / [Naming things](pages/programming/cpp/naming-things)  
+Programming / [Git](pages/programming/git)  
+Programming / [Vim](pages/programming/vim)  
+Programming / [Web](pages/programming/web)  
+
+### About Me
 
 I'm a professional student, programmer, singer, and video-game enthusiast.
 
@@ -43,7 +38,7 @@ guild which has since moved to play on other servers).
 [tow]: http://titansofwar.org
 [steam]: https://steamcommunity.com/id/SweedJesus
 
-# About this site
+### About this site
 
 I'm using [Jekyll][jekyll] to build it.
 
