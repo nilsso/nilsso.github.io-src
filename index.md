@@ -11,14 +11,10 @@ layout: default
       Math / <a href="{{ 'pages/math/calc-3' | relative_url }}">Calculus 3</a><br/>
       Math / <a href="{{ 'pages/math/linear-algebra' | relative_url }}">Linear Algebra</a><br/>
       Math / <a href="{{ 'problem-generator' | relative_url }}">Problem Generator</a><br/>
-    </p>
-    <hr/>
-    <p>
+      <br/>
       Music / <a href="{{ 'pages/music/theory' | relative_url }}">Theory</a><br/>
       Music / <a href="{{ 'pages/music/synthesis' | relative_url }}">Synthesis</a><br/>
-    </p>
-    <hr/>
-    <p>
+      <br/>
       Programming / <a href="{{ 'pages/programming/addons' | relative_url }}">AddOns</a><br/>
       Programming / C++ / <a href="{{ 'pages/programming/cpp/naming-things' | relative_url }}">Naming things</a><br/>
       Programming / <a href="{{ 'pages/programming/git' | relative_url }}">Git</a><br/>
