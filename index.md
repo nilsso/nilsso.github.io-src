@@ -2,8 +2,6 @@
 layout: default
 ---
 
-### Index
-
 Math / [Algebra](pages/math/algebra)  
 Math / [Trigonometry](pages/math/trigonometry)  
 Math / [Calculus 2](pages/math/calc-2)  
@@ -20,7 +18,7 @@ Programming / [Git](pages/programming/git)
 Programming / [Vim](pages/programming/vim)  
 Programming / [Web](pages/programming/web)  
 
-### About Me
+# About Me
 
 I'm a professional student, programmer, singer, and video-game enthusiast.
 
@@ -38,7 +36,7 @@ guild which has since moved to play on other servers).
 [tow]: http://titansofwar.org
 [steam]: https://steamcommunity.com/id/SweedJesus
 
-### About this site
+# About this site
 
 I'm using [Jekyll][jekyll] to build it.
 
