@@ -18,6 +18,8 @@ Programming / [Git](pages/programming/git)
 Programming / [Vim](pages/programming/vim)  
 Programming / [Web](pages/programming/web)  
 
+---
+
 # About Me
 
 I'm a professional student, programmer, singer, and video-game enthusiast.
