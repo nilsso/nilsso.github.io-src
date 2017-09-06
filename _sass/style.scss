@@ -7,6 +7,9 @@
 $font-color-a: #404040;
 $font-color-b: #4d4d4d;
 
+$color-c: #277fbe;
+$color-d: #6bb0e1;
+
 html * {
   //font: 14.5px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:$font-color-a;
@@ -16,6 +19,7 @@ html * {
 body {
   width:860px;
   margin:0 auto 38.2vh auto;
+  padding-bottom: 20vh;
 }
 
 p, ul, ol, table, pre, dl {
@@ -103,6 +107,10 @@ code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color:#333;
   font-size:12px;
+}
+
+kbd {
+  color: $color-d;
 }
 
 pre {
