@@ -14,17 +14,12 @@
   <hr/>
   <article>
     {% if page.title %}
-    <title id="page-title">
-      {{ page.title }}
-      {% if page.subtitle %}
-      <small>{{ page.subtitle }}</small>
-      {% endif %}
-    </title>
+    <title id="page-title">{{ page.title }}</title>
+    <hr/>
     {% endif %}
     <div id="content">
       {{ content }}
     </div>
-    <div id="whitespace" style="height:50vh;"></div>
     {% include footer.html %}
   </article>
 </body>

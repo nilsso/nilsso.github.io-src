@@ -5,6 +5,15 @@ title: "Calculus 3"
 
 {% include mathjax.html %}
 
+# Randomized study guides
+
+Made using my [quiz-generator](github.com://SweedJesus/quiz-generator).
+
+1. [Cumulative review](./cumulative-review.pdf)
+1. [Exam 1 review](./exam01-review.pdf)
+
+# My notes
+
 ## Vectors
 
 A vector (or euclidean vector)
@@ -54,7 +63,31 @@ $$
 \langle\frac{w_1}{\|\vec w\|},\cdots,\frac{w_n}{\|\vec w\|}\rangle
 $$
 
-### Planes
+### Dot product
 
-Given a vector $$ \vec{PQ} \sqrt 2 $$
+The dot product of two vectors returns a scalar value.
+
+### Cross product
+
+The cross product (or vector product) of two vectors returns a vector value
+known as the normal vector (of the arguments).
+
+$$
+\vec n=\vec a\times \vec b
+$$
+
+## Planes
+
+- Equation of a plane given three points (vectors)
+
+    $$
+    \begin{align*}
+    & P(x_P,y_P,z_P), Q(x_Q,y_Q,z_Q), R(x_R,y_R,z_R) \\
+    & \vec u=\vec{PQ}\text{ or }\vec{PR} \\
+    & \vec n=\vec{PQ}\times \vec{PR}=\langle a,b,c\rangle \\
+    & \vec n\cdot\vec u=a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+    \end{align*}
+    $$
+
+- Distance between a point and a plane
 

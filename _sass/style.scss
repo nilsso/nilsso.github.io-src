@@ -15,7 +15,7 @@ html * {
 
 body {
   width:860px;
-  margin:0 auto;
+  margin:0 auto 38.2vh auto;
 }
 
 p, ul, ol, table, pre, dl {
@@ -24,11 +24,11 @@ p, ul, ol, table, pre, dl {
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
-  margin:0 0 20px;
+  margin:0 0 2rem;
 }
 
 h1, h2, h3 {
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 h1:first-of-type {

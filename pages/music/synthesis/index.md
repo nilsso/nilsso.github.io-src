@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Sound and Synthesis"
-subtitle: "Theory 4 Presentation"
 ---
 
 ## What is hearing?
