@@ -4,21 +4,23 @@ title: "Calculus 3"
 ---
 
 {% include mathjax.html %}
+{% include page-toc.html %}
 
 # Randomized study guides
 
 Made using my [quiz-generator](github.com://SweedJesus/quiz-generator).
 
-1. [Cumulative review](./cumulative-review.pdf)
-1. [Exam 1 review](./exam01-review.pdf)
+1. [Exam 1 review](exam01-review.pdf)
+  - Contains: quizes 1--4
+1. [Cumulative review](cumulative-review.pdf)
+  - Contains: quizes 1--4
 
 # My notes
 
 ## Vectors
 
-A vector (or euclidean vector)
-
-$$ \vec u=\langle u_1,u_2\rangle $$
+-- | --
+A vector (or euclidean vector) | $ \vec u=\langle u_1,u_2\rangle $
 
 ### Properties
 
@@ -90,4 +92,11 @@ $$
     $$
 
 - Distance between a point and a plane
+
+## Shapes in 3D space
+
+## Vector calculus
+
+-- | --
+Arc length (3 dimensional *V*) | $ L=\int_{t=a}^{t=b}\sqrt{[f'(t)]^2+[g'(t)]^2+[h'(t)]^2}dt $
 

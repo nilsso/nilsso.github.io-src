@@ -4,11 +4,12 @@ title: "Linear Algebra"
 ---
 
 {% include mathjax.html %}
+{% include page-toc.html %}
 
 # Matrices
 
 A matrix is a rectangular array of real numbers where the exact location of
-elements is crucial. A matrix has dimensions has m rows and n columns
+elements is crucial. A matrix has dimensions has *m* rows and *n* columns
 written as $m\times n$. The location of element is given by its "i"th
 row and "j"th column positions and is the "ij"th element.
 
@@ -23,7 +24,7 @@ $$
 
 ## Basic operations
 
-### Matrix addition
+#### Matrix addition
 
 $$
 \begin{gather*}
@@ -32,7 +33,7 @@ A+B = (a_{ij}+b_{ij})
 \end{gather*}
 $$
 
-### Scalar multiplication
+#### Scalar multiplication
 
 $$
 \begin{gather*}
@@ -41,11 +42,11 @@ k\cdot A = (k\cdot a_{ij})
 \end{gather*}
 $$
 
-### Matrix multiplication
+#### Matrix multiplication
 
 Multiplication is defined for two behaviors:
 
-#### 1. The product of a matrix and a vector
+1. The product of a matrix and a vector
 
 A vector (or column matrix) is a matrix with a single column.
 
@@ -87,11 +88,29 @@ $$
 $$
 " %}
 
-#### 2. The product of two matrices
+2. The product of two matrices
 
-For two matrices to be multiplied the left matrix *must* have n number of
-columns and the right matrix *must* have n number of rows. For example, the
-matrices.
+For two matrices to be multiplied the left matrix must have *n* number of
+columns and the right matrix must have *n* number of rows. For example, the
+matrix
+
+$$
+\left(
+\begin{smallmatrix}
+1 & 1 & 4 \\
+3 & 1 & 7 \\
+\end{smallmatrix}
+\right)
+\left(
+\begin{smallmatrix}
+5 & 1 \\
+8 & 2 \\
+0 & 0 \\
+1 & 0 \\
+\end{smallmatrix}
+\right)
+$$
+cannot be multiplied in that order, but switch the order and you can.
 
 {% include collapsible.html
 tag="matrix-mult-2"
@@ -144,4 +163,21 @@ $$
 \right)
 $$
 " %}
+
+# Systems of Linear Equations
+
+$$
+\begin{gather*}
+x+y+z=5\\
+2x+3y+4z=10
+\end{gather*}
+$$
+
+## Gaussian Elination
+
+## Gauss-Jordan Elimination
+
+## Elementary Operations
+
+### Elementary Matrices
 
