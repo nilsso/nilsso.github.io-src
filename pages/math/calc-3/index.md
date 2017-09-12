@@ -4,18 +4,12 @@ title: "Calculus 3"
 ---
 
 {% include mathjax.html %}
-{% include page-toc.html %}
+{% include page-toc.html id-after="page-title" %}
 
-# Randomized study guides
-
-Made using my [quiz-generator](github.com://SweedJesus/quiz-generator).
+Randomized study exams for MATH-252, made using my [quiz-generator](github.com://SweedJesus/quiz-generator):
 
 1. [Exam 1 review](exam01-review.pdf)
-  - Contains: quizes 1--4
 1. [Cumulative review](cumulative-review.pdf)
-  - Contains: quizes 1--4
-
-# My notes
 
 ## Vectors
 

@@ -1,24 +1,42 @@
+<!--
+  Table of contents generator
+  by SweedJesus (https://sweedjesus.github.io)
+
+  Only recognizes h2's and below
+  To be "included" using Liquid templates (i.e. through Jekyll)
+
+  Arguments:
+  id-after: An html id selector to paste the finished template behind.
+-->
+<script type="text/javascript">
+if(typeof jQuery == 'undefined') {
+  document.write('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></'+'script>');
+}
+</script>
 <script type="text/javascript">
 $(document).ready(function() {
   // Initialize template
   var toc =
-    '<nav role="navigation" class="table-of-contents">' +
+    '<div class="table-of-contents">' +
     '<h4>Table of contents:</h4>';
 
-  // Popolate items array
-  items = [];
-  $('#content h1,#content h2,#content h3').each(function() {
+  // Header level to start counting at
+  var MIN_LEVEL = 2;
+
+  // Accumulate item information
+  var items = [];
+  $('#content h2,#content h3,#content h4').each(function() {
     items.push({
-      level: this.nodeName.match(/[\d]/)[0] - 1,
+      level: this.nodeName.match(/[\d]/)[0] - MIN_LEVEL,
       link: this.id,
       title: $(this).text()
     });
   });
-
   // Create lines
   var item;
   for (var i = 0; i < items.length; ++i) {
     item = items[i];
+    console.log(item);
     if (i == 0 || item.level > items[i-1].level) {
       toc += '<ol type="' + ['1','a','i'][item.level] + '">';
     }
@@ -29,13 +47,11 @@ $(document).ready(function() {
     }
     toc += '<li><a href="#' + item.link + '">' + item.title + '</a></li>';
   }
-
   // Close template
   toc +=
     '</ol>' +
-    '</nav>';
-
+    '</div>';
   // Add to page
-  $('#page-title').after(toc);
+  $('#{{ include.id-after }}').after(toc);
 });
 </script>
