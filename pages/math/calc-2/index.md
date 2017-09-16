@@ -3,11 +3,11 @@ layout: default
 title: "Calculus"
 ---
 
-{% include page-toc.html %}
 {% include mathjax.html %}
+{% include page-toc.html id-after="page-title" %}
 
-<div style="display:none">
-$
+<script>
+$$
 \DeclareMathOperator{\arccsc}{arccsc}
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccot}{arccot}
@@ -19,8 +19,8 @@ $
 \DeclareMathOperator{\arccsch}{arccsch}
 \DeclareMathOperator{\arcsech}{arcsech}
 \DeclareMathOperator{\arccoth}{arccoth}
-$
-</div>
+$$
+</script>
 
 # Limits
 
