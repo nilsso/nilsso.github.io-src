@@ -36,7 +36,6 @@ $(document).ready(function() {
   var item;
   for (var i = 0; i < items.length; ++i) {
     item = items[i];
-    console.log(item);
     if (i == 0 || item.level > items[i-1].level) {
       toc += '<ol type="' + ['1','a','i'][item.level] + '">';
     }

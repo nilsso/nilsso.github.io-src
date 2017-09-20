@@ -6,37 +6,29 @@ title: "Calculus 3"
 {% include mathjax.html %}
 {% include page-toc.html id-after="page-title" %}
 
-<script>
-\DeclareMathOperator{\arccsc}{arccsc}
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\sech}{sech}
-\DeclareMathOperator{\csch}{csch}
-\DeclareMathOperator{\arcsinh}{arcsinh}
-\DeclareMathOperator{\arccosh}{arccosh}
-\DeclareMathOperator{\arctanh}{arctanh}
-\DeclareMathOperator{\arccsch}{arccsch}
-\DeclareMathOperator{\arcsech}{arcsech}
-\DeclareMathOperator{\arccoth}{arccoth}
-</script>
+<div id="mathjax-preamble" style="display:none;">
+$$
+\renewcommand{\vec}[1]{\mathbf{#1}}
+$$
+</div>
 
 ## Vectors
 
 -- | --
-A vector | $$\mathbf u=\langle u_1,\cdots,u_n\rangle$$
+A vector | $$\vec u=\langle u_1,\cdots,u_n\rangle$$
 
 ### Properties
 
 -- | --
-Commutative addition | $$\mathbf u+\mathbf w\equiv\langle u_1+w_1,\cdots,u_n+w_n\rangle$$
-Scalar multiplication | $$k\mathbf u=\langle ku_1,\cdots,ku_n\rangle$$
+Commutative addition | $$\vec u+\vec w\equiv\langle u_1+w_1,\cdots,u_n+w_n\rangle$$
+Scalar multiplication | $$k\vec u=\langle ku_1,\cdots,ku_n\rangle$$
 
 ### Identities
 
 -- | --
-Zero vector | $ \mathbf 0=\langle 0,0\rangle $
-Inverse identity | $ \mathbf u+(-\mathbf u)=0 $
-Additive identity | $ \mathbf u+\mathbf 0=\mathbf u $
+Zero vector | $ \vec 0=\langle 0,0\rangle $
+Inverse identity | $ \vec u+(-\vec u)=0 $
+Additive identity | $ \vec u+\vec 0=\vec u $
 
 ### Dot product
 
@@ -45,7 +37,7 @@ and the angle $$\alpha$$ between them. Conceptually, it is the product of their
 magnitudes by how much they are in the same direction.
 
 $$
-\mathbf u\cdot\mathbf w=u_1+w_1+\cdots+u_n+w_n=\lVert\mathbf u\rVert\lVert\mathbf w\rVert\cos\alpha
+\vec u\cdot\vec w=u_1+w_1+\cdots+u_n+w_n=\lVert\vec u\rVert\lVert\vec w\rVert\cos\alpha
 $$
 
 #### Vector projection
@@ -55,9 +47,9 @@ another vector. In the form below, $$\theta$$ is the angle between the two
 vectors. The second form is useful if the angle is unknown.
 
 $$
-\text{proj}_{\mathbf w}\mathbf u=
-(\|\mathbf u\|\cos\theta \mathbf)\mathbf w=
-\frac{\mathbf u\cdot\mathbf w}{\|\mathbf u\|\|\mathbf u\|}\mathbf w
+\text{proj}_{\vec w}\vec u=
+(\|\vec u\|\cos\theta \vec)\vec w=
+\frac{\vec u\cdot\vec w}{\|\vec u\|\|\vec u\|}\vec w
 $$
 
 Consider that the operation is simply a scalar multiplication.
@@ -72,7 +64,7 @@ $$
 a=(u_yw_z-u_zw_y)\\
 b=(u_xw_z-u_zw_x)\\
 c=(u_xw_y-u_yw_x)\\
-\mathbf u\times\mathbf w=\langle a,-b,c\rangle
+\vec u\times\vec w=\langle a,-b,c\rangle
 \end{gather*}
 $$
 
@@ -82,7 +74,7 @@ The magnitude of a vector is the distance between the origin and the point at
 the components of the vector, and equivalent to the hypotenuse of the triangle
 formed by the components.
 
-$$\lVert\mathbf u\rVert\equiv\sqrt{u_1^2+\cdots+u_n^2}$$
+$$\lVert\vec u\rVert\equiv\sqrt{u_1^2+\cdots+u_n^2}$$
 
 ### Unit vectors
 
@@ -92,8 +84,8 @@ vector *u* is defined as a vector with the components of the original divided
 by the magnitude of the original:
 
 $$
-\mathbf u\equiv\mathbf u\cdot\frac{1}{\lVert\mathbf u\rVert}=
-\langle\frac{u_1}{\lVert\mathbf u\rVert},\cdots,\frac{u_n}{\lVert\mathbf u\rVert}\rangle
+\vec u\equiv\vec u\cdot\frac{1}{\lVert\vec u\rVert}=
+\langle\frac{u_1}{\lVert\vec u\rVert},\cdots,\frac{u_n}{\lVert\vec u\rVert}\rangle
 $$
 
 ### Vector planes
@@ -101,36 +93,36 @@ $$
 $$
 \begin{align*}
 & P(x_P,y_P,z_P), Q(x_Q,y_Q,z_Q), R(x_R,y_R,z_R) \\
-& \mathbf u=\mathbf{PQ}\text{ or }\mathbf{PR} \\
-& \mathbf n=\mathbf{PQ}\times \mathbf{PR}=\langle a,b,c\rangle \\
-& \mathbf n\cdot\mathbf u=a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+& \vec u=\vec{PQ}\text{ or }\vec{PR} \\
+& \vec n=\vec{PQ}\times \vec{PR}=\langle a,b,c\rangle \\
+& \vec n\cdot\vec u=a(x-x_0)+b(y-y_0)+c(z-z_0)=0
 \end{align*}
 $$
 
 ## Vector calculus
 
 -- | --
-Position vector | $$\displaystyle\mathbf r=\langle r_1,\cdots,r_n\rangle$$
-Velocity vector | $$\displaystyle\mathbf v=\mathbf r'=\langle r_1',\cdots,r_n'\rangle$$
-Acceleration vector | $$\displaystyle\mathbf a=\mathbf v'=\langle v_1',\cdots,v_2'\rangle$$
-Arc length | $$\displaystyle s=\int_a^b\lVert\mathbf r\rVert dt=\int_a^b\sqrt{r_1^2+\cdots+r_n^2}dt$$
-Tangent unit vector | $$\displaystyle \mathbf T=\mathbf v\cdot\frac{1}{\lVert\mathbf v\rVert}$$
-Normal unit vector | $$\mathbf N$$
+Position vector | $$\displaystyle\vec r=\langle r_1,\cdots,r_n\rangle$$
+Velocity vector | $$\displaystyle\vec v=\vec r'=\langle r_1',\cdots,r_n'\rangle$$
+Acceleration vector | $$\displaystyle\vec a=\vec v'=\langle v_1',\cdots,v_2'\rangle$$
+Arc length | $$\displaystyle L=\int_a^b\lVert\vec v\rVert dt$$
+Tangent unit vector | $$\displaystyle \vec T=\vec v\cdot\frac{1}{\lVert\vec v\rVert}$$
+Normal unit vector | $$\vec N$$
 
 ### Motion
 
 ---
 
-## Practices Materials
+## Class materials
 
 Randomized study exams for MATH-252,
 made using my [quiz-generator](github.com://SweedJesus/quiz-generator)
-(note that not all of the corresponding problem answers are entered).
+(note that not all of the corresponding problem answers are entered):
 
 1. [Exam 1 review](exam01-review.pdf)
 1. [Cumulative review](cumulative-review.pdf)
 
-Cheat-sheets
+Exam cheat-sheets:
 
 1. [Exam 1 cheatsheet](exam01-cheatsheet.pdf)
 
