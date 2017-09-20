@@ -72,7 +72,7 @@ $$
 a=(u_yw_z-u_zw_y)\\
 b=(u_xw_z-u_zw_x)\\
 c=(u_xw_y-u_yw_x)\\
-\mathbf u\times\mathbf w=\langle a,b,c\rangle
+\mathbf u\times\mathbf w=\langle a,-b,c\rangle
 \end{gather*}
 $$
 
