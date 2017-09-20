@@ -1,0 +1,43 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xfrac}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\begin{document}
+
+\section*{Vectors}
+\begin{gather*}
+  \vec u=\langle u_{x},u_{y},u_{z}\rangle,\vec w=\langle w_{x},w_{y},w_{z}\rangle \\
+  \|\vec u\|=\sqrt{{(u_{x})}^2+{(u_{y})}^2+{(u_{z})}^2} \\
+  \vec u\cdot\vec w=(u_{x}w_x)+(u_{y}w_{y})+(u_{z}w_{z})=\|\vec u\|\|\vec w\|\cos\theta \\
+  \vec u\times\vec w=\langle(u_{y}w_{z}-u_{z}w_{y}),(-[u_{x}w_{z}-u_{z}w_{x}]),(u_{x}w_{y}-u_{y}w_{x})\rangle \\
+  \|\vec u\times\vec w\|=\|\vec u\|\|\vec w\|\sin\theta \\
+  \text{proj}_{\vec w}\vec u=\frac{\vec u\cdot\vec w}{\|\vec u\|\|\vec u\|}\vec w \\
+\end{gather*}
+
+\section*{Surfaces}
+\begin{gather*}
+  (ax+by^2=c)\Rightarrow\text{parabola} \\
+  (ax^2+by^2=c)\Rightarrow\text{circle/ellipse} \\
+  (ax^2-by^2=k^2+c)\Rightarrow\text{hyperbola (one-sheet)} \\
+  (ax^2-by^2=k^2-c)\Rightarrow\text{hyperbola (two-sheets)}
+\end{gather*}
+
+\section*{Vector value functions}
+\begin{gather*}
+  \vec r(t)=\langle x(t),y(t),z(t)\rangle \\
+  \vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle \\
+  \vec a(t)=\vec v'(t)=\langle x''(t),y''(t),z''(t)\rangle \\
+  L=\int_a^b\|\vec v(t)\|dt \\
+  \vec T(t)=\frac{1}{\|\vec v\|}\vec v \\
+  \vec N(t)=\frac{1}{\|\vec T'(t)\|}\vec T'(t) \\
+  k=\left\|\vec T'(t)\right\|\frac{1}{\|\vec v\|} \\
+  \vec a(t)=a_{\vec T}\vec T+a_{\vec N}\vec N \\
+  \text{linear component: }a_{\vec T}=\frac{d^2s}{dt^2}=\frac{\vec v\cdot\vec a}{\|\vec v\|} \\
+  \text{angular component: }a_{\vec N}={\left(\frac{ds}{dt}\right)}^2 k=\frac{\|\vec v\times\vec a\|}{\|\vec v\|}\\
+\end{gather*}
+
+\end{document}

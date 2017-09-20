@@ -121,7 +121,7 @@ Normal unit vector | $$\mathbf N$$
 
 ---
 
-## Practices quizes
+## Practices Materials
 
 Randomized study exams for MATH-252,
 made using my [quiz-generator](github.com://SweedJesus/quiz-generator)
@@ -129,4 +129,8 @@ made using my [quiz-generator](github.com://SweedJesus/quiz-generator)
 
 1. [Exam 1 review](exam01-review.pdf)
 1. [Cumulative review](cumulative-review.pdf)
+
+Cheat-sheets
+
+1. [Exam 1 cheatsheet](exam01-cheatsheet.pdf)
 
