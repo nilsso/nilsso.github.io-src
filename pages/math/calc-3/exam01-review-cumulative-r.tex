@@ -1,0 +1,309 @@
+\documentclass[fleqn]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{resizegather}
+\usepackage{systeme}
+\usepackage{xfrac}
+\usepackage{gensymb}
+\usepackage{nth}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\mathindent}{0pt}
+\setlength{\delimitershortfall}{0pt}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccoth}{arccoth}
+\def\deriv{\frac{d}{dx}}
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\begin{document}
+\section*{Math 252 Exam 1 Practice Test (Problems)}
+%\begin{multicols*}{2}
+\begin{itemize}
+
+\item[\hyperlink{1-answer}{1}.]\hypertarget{1-problem}{}
+
+Given $\vec u=\langle 8,-4,1\rangle$ and $\vec v=\langle -4,4,2\rangle$,\\
+find the angle $\theta$ between $\vec u$ and $\vec v$.
+\smallskip
+
+\item[\hyperlink{2-answer}{2}.]\hypertarget{2-problem}{}
+
+Indentify via cross-sections the surface defined by the following:
+$$ 3^2-y^2+3z^2+9=0 $$
+\smallskip
+
+\item[\hyperlink{3-answer}{3}.]\hypertarget{3-problem}{}
+
+Using \(P(-4,1,2)\), \(Q(1,-3,4)\), \(R(-1,0,2)\),
+\begin{enumerate}[a.]
+  \item Find an equation of the plane passing through the points.
+  \item Find parametric equations for the line through P and parallel to \(a=\langle 2,-1,4\rangle\).
+  \item Find the distance from the point \((5,-3,2)\) to the plane.
+  \item Find the area of the parallelogram determined by \(P\), \(Q\), and \(R\).
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{4-answer}{4}.]\hypertarget{4-problem}{}
+
+Find an equation of the plane passing through the points
+$P(-2,0,3)$, $Q(1,2,4)$, and $R(-3,1,0)$.
+\smallskip
+
+\item[\hyperlink{5-answer}{5}.]\hypertarget{5-problem}{}
+
+Indentify via cross-sections the surface defined by the following:
+$$ 2y^2=3z^2=12 $$
+\smallskip
+
+\item[\hyperlink{6-answer}{6}.]\hypertarget{6-problem}{}
+
+Indentify via cross-sections the surface defined by the following:
+$$ y=x^2 $$
+\smallskip
+
+\item[\hyperlink{7-answer}{7}.]\hypertarget{7-problem}{}
+
+Identify the surface \(2x^2-3y^2+6z^2=6\).
+\smallskip
+
+\item[\hyperlink{8-answer}{8}.]\hypertarget{8-problem}{}
+
+Find the center and radius of the sphere given by $x^2+y^2+z^2-8x+6x=0$
+\smallskip
+
+\item[\hyperlink{9-answer}{9}.]\hypertarget{9-problem}{}
+
+Using $\mathbf u=\langle 8,3,-5\rangle,\mathbf v=\langle 4,-4,-2\rangle$,\\
+find $\|\mathbf u\|,\|\mathbf v\|$.
+\smallskip
+
+\item[\hyperlink{10-answer}{10}.]\hypertarget{10-problem}{}
+
+Identify the surface \(x^2-6y+5z^2=0\).
+\smallskip
+
+\item[\hyperlink{11-answer}{11}.]\hypertarget{11-problem}{}
+
+Given $\vec u=\langle 8,-4,1\rangle$ and $\vec v=\langle -4,4,2\rangle$,\\
+font $\vec u\times\vec v$.
+\smallskip
+
+\item[\hyperlink{12-answer}{12}.]\hypertarget{12-problem}{}
+
+Using \(\vec r(t)=\langle t\cos t,t\sin t,t^2\rangle\) at \(t=0\),
+\begin{enumerate}[a.]
+  \item Find \(\vec v\) and \(\vec a\).
+  \item Find \(\vec T\) and \(\vec N\).
+  \item Find \(K\).
+  \item By first finding \(a_{\vec T}\) and \(a_{\vec N}\),\\
+    express \(a=a_{\vec T}\vec T+a_{\vec N}\vec N\).
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{13-answer}{13}.]\hypertarget{13-problem}{}
+
+Indentify via cross-sections the surface defined by the following:
+$$ x=3y^2+5z^2 $$
+\smallskip
+
+\item[\hyperlink{14-answer}{14}.]\hypertarget{14-problem}{}
+
+Identify the surface \(4x^2+4y^2+z^2=4\).
+\smallskip
+
+\item[\hyperlink{15-answer}{15}.]\hypertarget{15-problem}{}
+
+Given $\vec u=\langle 8,-4,1\rangle$ and $\vec v=\langle -4,4,2\rangle$,\\
+find $\text{proj}_{\vec v}\vec u$.
+\smallskip
+
+\item[\hyperlink{16-answer}{16}.]\hypertarget{16-problem}{}
+
+Given $\vec u=\langle 8,-4,1\rangle$ and $\vec v=\langle -4,4,2\rangle$,\\
+find $\|\vec u\|$ and $\|\vec v\|$.
+\smallskip
+
+\item[\hyperlink{17-answer}{17}.]\hypertarget{17-problem}{}
+
+Find the set of parametric equations for the line through $Q(1,2,4)$ and
+parallel to $a=\langle 4,-3,-2\rangle$.
+\smallskip
+
+\item[\hyperlink{18-answer}{18}.]\hypertarget{18-problem}{}
+
+A baseball is thrown from the stands 128 feet above the field at an angle of
+30 degrees up from the horizontal with an initial speed of 64 feet per second.
+\begin{enumerate}[a.]
+  \item Give the position vector for any time \(t\).
+  \item When will the ball strike the ground?
+  \item How far away will the ball strike the ground?
+  \item What is the speed of the ball when it strikes the ground?
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{19-answer}{19}.]\hypertarget{19-problem}{}
+
+Using $\mathbf u=\langle 8,3,-5\rangle,\mathbf v=\langle 4,-4,-2\rangle$,\\
+find $3u-4v$.
+\smallskip
+
+\item[\hyperlink{20-answer}{20}.]\hypertarget{20-problem}{}
+
+Identify the surface \(x=y^2\).
+\smallskip
+
+\item[\hyperlink{21-answer}{21}.]\hypertarget{21-problem}{}
+
+Find the distance from the point $(-4,-1,5)$ to the plane determined by the
+points $P(-2,0,3)$, $Q(1,2,4)$, and $R(-3,1,0)$.
+\smallskip
+
+\item[\hyperlink{22-answer}{22}.]\hypertarget{22-problem}{}
+
+Using \(\vec u=\langle-4,6,5\rangle\) and \(\vec v=\langle 2,-3,1\rangle\),
+\begin{enumerate}[a.]
+  \item Find \(\|\vec u\|\) and \(\|\vec v\|\).
+  \item Find \(\vec u\cdot\vec v\).
+  \item Find the angle \(\theta\) between \(\vec u\) and \(\vec v\).
+  \item Find \(\text{proj}_{\vec v}\vec u\).
+  \item Find \(\vec u\times\vec v\).
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{23-answer}{23}.]\hypertarget{23-problem}{}
+
+Find a vector orthogonal to the plane determined by the points
+$P(-2,0,3)$, $Q(1,2,4)$, and $R(-3,1,0)$.
+\smallskip
+
+\item[\hyperlink{24-answer}{24}.]\hypertarget{24-problem}{}
+
+Given $\vec u=\langle 8,-4,1\rangle$ and $\vec v=\langle -4,4,2\rangle$,\\
+find $\vec u\cdot\vec v$.
+\smallskip
+\end{itemize}
+%\end{multicols*}
+\newpage
+\section*{Math 252 Exam 1 Practice Test (Answers)}
+%\begin{multicols*}{2}
+\begin{itemize}
+
+\item[\hyperlink{1-problem}{1}.]\hypertarget{1-answer}{}$\theta=\arccos\left(-\frac{23}{27}\right)=148.4\degree$
+\smallskip
+
+\item[\hyperlink{2-problem}{2}.]\hypertarget{2-answer}{}Circular hyperboloid of two sheets
+\smallskip
+
+\item[\hyperlink{3-problem}{3}.]\hypertarget{3-answer}{}\begin{enumerate}[a.]
+  \item \(2x+6y+7z-12=0\)
+  \item \(x=2t-4,\ y=-t+1,\ z=4t+2\)
+  \item \(D=\frac{6}{\sqrt{89}}\)
+  \item \(A=\sqrt{89}\)
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{4-problem}{4}.]\hypertarget{4-answer}{}$-7x+8y+5z=29$
+\smallskip
+
+\item[\hyperlink{5-problem}{5}.]\hypertarget{5-answer}{}Elliptical cylinder
+\smallskip
+
+\item[\hyperlink{6-problem}{6}.]\hypertarget{6-answer}{}Parabolic cylinder
+\smallskip
+
+\item[\hyperlink{7-problem}{7}.]\hypertarget{7-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{8-problem}{8}.]\hypertarget{8-answer}{}$C(4,-3,0),\rho=5$
+\smallskip
+
+\item[\hyperlink{9-problem}{9}.]\hypertarget{9-answer}{}$\|\mathbf u\|=7\sqrt 2,\|\mathbf v\|=6$
+\smallskip
+
+\item[\hyperlink{10-problem}{10}.]\hypertarget{10-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{11-problem}{11}.]\hypertarget{11-answer}{}$\vec u\times\vec v=\langle -12,-20,16\rangle$
+\smallskip
+
+\item[\hyperlink{12-problem}{12}.]\hypertarget{12-answer}{}\begin{enumerate}[a.]
+  \item
+    \(\begin{aligned}[t]
+      \vec v&=\langle-t\sin t+\cos t,t\cos t+\sin t,2t\rangle \\
+      \vec a&=\langle-t\cos t-2\sin t,-t\sin t+2\cos t,2\rangle
+    \end{aligned}\)
+  \item
+    \(\begin{aligned}[t]
+      \|\vec v\|&=\frac{}{} \\
+      \vec T&= \\
+      \vec N&=
+    \end{aligned}\)
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{13-problem}{13}.]\hypertarget{13-answer}{}Elliptical paraboloid
+\smallskip
+
+\item[\hyperlink{14-problem}{14}.]\hypertarget{14-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{15-problem}{15}.]\hypertarget{15-answer}{}$\text{proj}_{\vec v}\vec u=
+-\frac{23}{18}\langle -4,4,2\rangle=
+\langle -\frac{46}{9},-\frac{46}{9},-\frac{23}{9}\rangle$
+\smallskip
+
+\item[\hyperlink{16-problem}{16}.]\hypertarget{16-answer}{}$\|\vec u\|=9,\|\vec v\|=6$
+\smallskip
+
+\item[\hyperlink{17-problem}{17}.]\hypertarget{17-answer}{}$x=1+4t,y=2-3t,z=4-2t;t\in\mathbb{R}$
+\smallskip
+
+\item[\hyperlink{18-problem}{18}.]\hypertarget{18-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{19-problem}{19}.]\hypertarget{19-answer}{}$\langle 8,25,-7\rangle$
+\smallskip
+
+\item[\hyperlink{20-problem}{20}.]\hypertarget{20-answer}{}Parabolic cylinder
+\smallskip
+
+\item[\hyperlink{21-problem}{21}.]\hypertarget{21-answer}{}$h=\frac{16}{\sqrt{138}}$
+\smallskip
+
+\item[\hyperlink{22-problem}{22}.]\hypertarget{22-answer}{}\begin{enumerate}[a.]
+  \item
+    \(\begin{aligned}[t]
+      \|\vec u\|&=\sqrt{77} \\
+      \|\vec v\|&=\sqrt{14}
+    \end{aligned}\)
+  \item \(\vec u\cdot\vec v=-21\)
+  \item \(\theta=\arccos\left(\frac{-21}{7\sqrt{22}}\right)\)
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{23-problem}{23}.]\hypertarget{23-answer}{}$\vec n=\vec{PQ}\times\vec{PR}=\langle -7,8,5\rangle$
+\smallskip
+
+\item[\hyperlink{24-problem}{24}.]\hypertarget{24-answer}{}$\vec u\cdot\vec v=-46$
+\smallskip
+\end{itemize}
+%\end{multicols*}
+\end{document}

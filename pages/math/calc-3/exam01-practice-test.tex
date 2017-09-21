@@ -1,0 +1,164 @@
+\documentclass[fleqn]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{resizegather}
+\usepackage{systeme}
+\usepackage{xfrac}
+\usepackage{gensymb}
+\usepackage{nth}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\mathindent}{0pt}
+\setlength{\delimitershortfall}{0pt}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccoth}{arccoth}
+\def\deriv{\frac{d}{dx}}
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\begin{document}
+\section*{Math 252 Exam 1 Practice Test (Problems)}
+%\begin{multicols*}{2}
+\begin{itemize}
+
+\item[\hyperlink{1-answer}{1}.]\hypertarget{1-problem}{}
+
+Using \(\vec u=\langle-4,6,5\rangle\) and \(\vec v=\langle 2,-3,1\rangle\),
+\begin{enumerate}[a.]
+  \item Find \(\|\vec u\|\) and \(\|\vec v\|\).
+  \item Find \(\vec u\cdot\vec v\).
+  \item Find the angle \(\theta\) between \(\vec u\) and \(\vec v\).
+  \item Find \(\text{proj}_{\vec v}\vec u\).
+  \item Find \(\vec u\times\vec v\).
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{2-answer}{2}.]\hypertarget{2-problem}{}
+
+Using \(P(-4,1,2)\), \(Q(1,-3,4)\), \(R(-1,0,2)\),
+\begin{enumerate}[a.]
+  \item Find an equation of the plane passing through the points.
+  \item Find parametric equations for the line through P and parallel to \(a=\langle 2,-1,4\rangle\).
+  \item Find the distance from the point \((5,-3,2)\) to the plane.
+  \item Find the area of the parallelogram determined by \(P\), \(Q\), and \(R\).
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{3-answer}{3}.]\hypertarget{3-problem}{}
+
+Identify the surface \(x=y^2\).
+\smallskip
+
+\item[\hyperlink{4-answer}{4}.]\hypertarget{4-problem}{}
+
+Identify the surface \(4x^2+4y^2+z^2=4\).
+\smallskip
+
+\item[\hyperlink{5-answer}{5}.]\hypertarget{5-problem}{}
+
+Identify the surface \(2x^2-3y^2+6z^2=6\).
+\smallskip
+
+\item[\hyperlink{6-answer}{6}.]\hypertarget{6-problem}{}
+
+Identify the surface \(x^2-6y+5z^2=0\).
+\smallskip
+
+\item[\hyperlink{7-answer}{7}.]\hypertarget{7-problem}{}
+
+A baseball is thrown from the stands 128 feet above the field at an angle of
+30 degrees up from the horizontal with an initial speed of 64 feet per second.
+\begin{enumerate}[a.]
+  \item Give the position vector for any time \(t\).
+  \item When will the ball strike the ground?
+  \item How far away will the ball strike the ground?
+  \item What is the speed of the ball when it strikes the ground?
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{8-answer}{8}.]\hypertarget{8-problem}{}
+
+Using \(\vec r(t)=\langle t\cos t,t\sin t,t^2\rangle\) at \(t=0\),
+\begin{enumerate}[a.]
+  \item Find \(\vec v\) and \(\vec a\).
+  \item Find \(\vec T\) and \(\vec N\).
+  \item Find \(K\).
+  \item By first finding \(a_{\vec T}\) and \(a_{\vec N}\),\\
+    express \(a=a_{\vec T}\vec T+a_{\vec N}\vec N\).
+\end{enumerate}
+\smallskip
+\end{itemize}
+%\end{multicols*}
+\newpage
+\section*{Math 252 Exam 1 Practice Test (Answers)}
+%\begin{multicols*}{2}
+\begin{itemize}
+
+\item[\hyperlink{1-problem}{1}.]\hypertarget{1-answer}{}\begin{enumerate}[a.]
+  \item
+    \(\begin{aligned}[t]
+      \|\vec u\|&=\sqrt{77} \\
+      \|\vec v\|&=\sqrt{14}
+    \end{aligned}\)
+  \item \(\vec u\cdot\vec v=-21\)
+  \item \(\theta=\arccos\left(\frac{-21}{7\sqrt{22}}\right)\)
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{2-problem}{2}.]\hypertarget{2-answer}{}\begin{enumerate}[a.]
+  \item \(2x+6y+7z-12=0\)
+  \item \(x=2t-4,\ y=-t+1,\ z=4t+2\)
+  \item \(D=\frac{6}{\sqrt{89}}\)
+  \item \(A=\sqrt{89}\)
+\end{enumerate}
+\smallskip
+
+\item[\hyperlink{3-problem}{3}.]\hypertarget{3-answer}{}Parabolic cylinder
+\smallskip
+
+\item[\hyperlink{4-problem}{4}.]\hypertarget{4-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{5-problem}{5}.]\hypertarget{5-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{6-problem}{6}.]\hypertarget{6-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{7-problem}{7}.]\hypertarget{7-answer}{}ANSWER
+\smallskip
+
+\item[\hyperlink{8-problem}{8}.]\hypertarget{8-answer}{}\begin{enumerate}[a.]
+  \item
+    \(\begin{aligned}[t]
+      \vec v&=\langle-t\sin t+\cos t,t\cos t+\sin t,2t\rangle \\
+      \vec a&=\langle-t\cos t-2\sin t,-t\sin t+2\cos t,2\rangle
+    \end{aligned}\)
+  \item
+    \(\begin{aligned}[t]
+      \|\vec v\|&=\frac{}{} \\
+      \vec T&= \\
+      \vec N&=
+    \end{aligned}\)
+\end{enumerate}
+\smallskip
+\end{itemize}
+%\end{multicols*}
+\end{document}

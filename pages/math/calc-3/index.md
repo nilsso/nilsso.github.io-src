@@ -8,6 +8,7 @@ title: "Calculus 3"
 
 <div id="mathjax-preamble" style="display:none;">
 $$
+\let\oldvec\vec
 \renewcommand{\vec}[1]{\mathbf{#1}}
 $$
 </div>
@@ -102,27 +103,30 @@ $$
 ## Vector calculus
 
 -- | --
-Position vector | $$\displaystyle\vec r=\langle r_1,\cdots,r_n\rangle$$
-Velocity vector | $$\displaystyle\vec v=\vec r'=\langle r_1',\cdots,r_n'\rangle$$
-Acceleration vector | $$\displaystyle\vec a=\vec v'=\langle v_1',\cdots,v_2'\rangle$$
-Arc length | $$\displaystyle L=\int_a^b\lVert\vec v\rVert dt$$
+Position vector     | $$\displaystyle \vec d(t)=\vec r(t)=\langle x(t),y(t),z(t)\rangle$$
+Velocity vector     | $$\displaystyle \vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle$$
+Acceleration vector | $$\displaystyle \vec a(t)=\vec r''(t)=\langle x''(t),y''(t),z''(t)\rangle$$
+Arc length          | $$\displaystyle L=\int_a^b\lVert\vec v\rVert dt$$
 Tangent unit vector | $$\displaystyle \vec T=\vec v\cdot\frac{1}{\lVert\vec v\rVert}$$
-Normal unit vector | $$\vec N$$
+Normal unit vector  | $$\displaystyle \vec N$$
 
 ### Motion
 
 ---
 
-## Class materials
+## Class resources
 
+<!--
 Randomized study exams for MATH-252,
 made using my [quiz-generator](github.com://SweedJesus/quiz-generator)
 (note that not all of the corresponding problem answers are entered):
+-->
 
-1. [Exam 1 review](exam01-review.pdf)
-1. [Cumulative review](cumulative-review.pdf)
+### Exam 1
 
-Exam cheat-sheets:
-
-1. [Exam 1 cheatsheet](exam01-cheatsheet.pdf)
+Document | LaTeX source
+-- | --
+[Practice test](exam01-practice-test.pdf) | [(source)](exam01-practice-test.tex)
+[Cumulative review (random)](exam01-review-cumulative-r.pdf) | [(source)](exam01-review-cumulative-r.tex)
+[Cheatsheet](exam01-cheatsheet.pdf) | [(source)](exam01-cheatsheet.tex)
 

@@ -1,43 +1,86 @@
 \documentclass[fleqn]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabularx, booktabs}
+\usepackage{amsmath, amssymb}
 \usepackage{xfrac}
 \usepackage{lmodern}
+\usepackage{lipsum}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\let\oldvec\vec
 \renewcommand{\vec}[1]{\mathbf{#1}}
+\allowdisplaybreaks[1]
+\renewcommand{\arraystretch}{1.5}
 \begin{document}
 
 \section*{Vectors}
-\begin{gather*}
-  \vec u=\langle u_{x},u_{y},u_{z}\rangle,\vec w=\langle w_{x},w_{y},w_{z}\rangle \\
-  \|\vec u\|=\sqrt{{(u_{x})}^2+{(u_{y})}^2+{(u_{z})}^2} \\
-  \vec u\cdot\vec w=(u_{x}w_x)+(u_{y}w_{y})+(u_{z}w_{z})=\|\vec u\|\|\vec w\|\cos\theta \\
-  \vec u\times\vec w=\langle(u_{y}w_{z}-u_{z}w_{y}),(-[u_{x}w_{z}-u_{z}w_{x}]),(u_{x}w_{y}-u_{y}w_{x})\rangle \\
-  \|\vec u\times\vec w\|=\|\vec u\|\|\vec w\|\sin\theta \\
-  \text{proj}_{\vec w}\vec u=\frac{\vec u\cdot\vec w}{\|\vec u\|\|\vec u\|}\vec w \\
-\end{gather*}
+\begin{tabularx}{\linewidth}{r l}
+  Magnitude: &
+    \( \|\vec u\|=\sqrt{{(u_{x})}^2+{(u_{y})}^2+{(u_{z})}^2} \) \\
+  Dot product: &
+    \( \vec u\cdot\vec v=
+      (u_{x}v_x)+(u_{y}v_{y})+(u_{z}v_{z})=
+      \|\vec u\|\|\vec v\|\cos\theta \) \\
+  & \( \vec u\cdot\vec v=0\mid\vec u\perp\vec v \) \\
+  Projection of \(u\) onto \(v\): &
+    \( \text{proj}_{\vec v}\vec u =
+      \|\vec u\|\cos\theta\left(\frac{\vec u}{\|\vec u\|}\right)=
+      \frac{\vec u\cdot\vec v}{\|\vec u\|\|\vec u\|}\vec v \) \\
+  Cross product: &
+    \( \vec u\times\vec v=
+      \langle (u_{y}v_{z}-u_{z}v_{y}),-(u_{x}v_{z}-u_{z}v_{x}),(u_{x}v_{y}-u_{y}v_{x})\rangle \) \\
+  & \( \vec u\times\vec v=0\mid\vec u\parallel\vec v \) \\
+  Equation of \(PQR\) plane: &
+    \begin{tabular}[t]{@{}l}
+      \( \vec n=\vec u\times\vec v=\langle a,b,c\rangle \) \\
+      \( a(x-x_0)+b(y-y_0)+c(z-z_0)=0 \) \\
+      \( ax+by+cz+d=0 \)
+    \end{tabular} \\
+  Area of \(PQR\) parallelogram: & \( \|\vec u\times\vec v\|=\|\vec u\|\|\vec v\|\sin\theta \) \\
+  Line through \(P\), \(\parallel\) to \(\vec a\): &
+    \( x=(a_x t+P_x),\ y=(a_y t+P_y),\ z=(a_z t+P_z) \) \\
+  Distance \(D\) of point \(P\) from plane \(\vec a\): &
+    \begin{tabular}[t]{@{}l}
+      \( \vec a=ax+by+cz+d=0,\ P=\langle x_1,y_1,z_1\rangle \) \\
+      \( D=\left|\frac{ax_1+by_1+cz_1+d}{\sqrt{a^2+b^2+c^2}}\right| \)
+    \end{tabular} \\
+\end{tabularx}
 
 \section*{Surfaces}
-\begin{gather*}
-  (ax+by^2=c)\Rightarrow\text{parabola} \\
-  (ax^2+by^2=c)\Rightarrow\text{circle/ellipse} \\
-  (ax^2-by^2=k^2+c)\Rightarrow\text{hyperbola (one-sheet)} \\
-  (ax^2-by^2=k^2-c)\Rightarrow\text{hyperbola (two-sheets)}
-\end{gather*}
+\begin{tabularx}{\linewidth}{r l}
+  Parabola: & \( ax+by^2=c \) \\
+  Circle: & \( ax^2+ay^2=c \) \\
+  Ellipse: & \( ax^2+by^2=c \) \\
+  Hyperbola (one-sheet): & \( ax^2-by^2=k^2+c \) \\
+  Hyperbola (two-sheets): & \( ax^2-by^2=k^2-c \) \\
+\end{tabularx}
 
-\section*{Vector value functions}
-\begin{gather*}
-  \vec r(t)=\langle x(t),y(t),z(t)\rangle \\
-  \vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle \\
-  \vec a(t)=\vec v'(t)=\langle x''(t),y''(t),z''(t)\rangle \\
-  L=\int_a^b\|\vec v(t)\|dt \\
-  \vec T(t)=\frac{1}{\|\vec v\|}\vec v \\
-  \vec N(t)=\frac{1}{\|\vec T'(t)\|}\vec T'(t) \\
-  k=\left\|\vec T'(t)\right\|\frac{1}{\|\vec v\|} \\
-  \vec a(t)=a_{\vec T}\vec T+a_{\vec N}\vec N \\
-  \text{linear component: }a_{\vec T}=\frac{d^2s}{dt^2}=\frac{\vec v\cdot\vec a}{\|\vec v\|} \\
-  \text{angular component: }a_{\vec N}={\left(\frac{ds}{dt}\right)}^2 k=\frac{\|\vec v\times\vec a\|}{\|\vec v\|}\\
-\end{gather*}
+\section*{Vector-value functions}
+\begin{tabularx}{\linewidth}{r l}
+  Arc length: & \( L=\int_a^b\|\vec v(t)\|dt \) \\
+\end{tabularx}
+
+\section*{Trajectory}
+\begin{tabularx}{\linewidth}{r l}
+  Initial velocity: & \( \langle u_0,v_0\rangle=\langle\|\vec v_0\|\cos\alpha,\|\vec v_0\|\sin\alpha\rangle \) \\
+  Position: & \( \vec r(t)=\langle x(t),y(t)\rangle=\langle u_0t+x_0,-\tfrac{1}{2}gt^2+v_0t+y_0\rangle \) \\
+  Time of flight: & \( T=(-\tfrac{1}{2}gt^2+v_0t+y_0=0)\mid t>0 \) \\
+\end{tabularx}
+
+\section*{Motion}
+\begin{tabularx}{\linewidth}{r l}
+  Position: & \( \vec d(t)=\vec r(t)=\langle x(t),y(t),z(t)\rangle \) \\
+  Velocity: & \( \vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle \) \\
+  Acceleration: &
+    \( \vec a(t)=\vec r''(t)=
+      \langle x''(t),y''(t),z''(t)\rangle \) \\
+  & \( \vec a(t)=a_{\vec T}\vec T+a_{\vec N}\vec N \) \\
+  Unit tangent:      & \( \vec T(t)=\frac{1}{\|\vec v(t)\|}\vec v(t) \) \\
+  Unit normal:       & \( \vec N(t)=\frac{1}{\|\vec T'(t)\|}\vec T'(t),\ \vec N(s)=\frac{1}{k}\vec T'(s) \) \\
+  & \( \vec T\cdot\vec N=0 \) \\
+  Curvature:         & \( k=\|\vec T'(s)\|=\frac{\|\vec T'(t)\|}{\|\vec r'(t)\|}=\frac{\|\vec v(t)\times\vec a(t)\|}{\|\vec v(t)\|^3} \) \\
+  Linear component:  & \( a_{\vec T}=\frac{d^2s}{dt^2}=\frac{\vec v\cdot\vec a}{\|\vec v\|} \) \\
+  Angular component: & \( a_{\vec N}={\left(\frac{ds}{dt}\right)}^2 k=\frac{\|\vec v\times\vec a\|}{\|\vec v\|} \) \\
+\end{tabularx}
 
 \end{document}

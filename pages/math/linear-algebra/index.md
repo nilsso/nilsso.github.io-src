@@ -6,6 +6,13 @@ title: "Linear Algebra"
 {% include mathjax.html %}
 {% include page-toc.html id-after="page-title" %}
 
+<div id="mathjax-preamble" style="display:none;">
+$$
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\mathbf{#1}}
+$$
+</div>
+
 ## Matrices
 
 A matrix is a rectangular array of real numbers where the exact location of
@@ -104,38 +111,61 @@ single element changed. Because any matrix can be expressed as the result of a
 series of matrix operations, then any non-elementary matrix can be expressed as
 the product of a series of elementary matrix.
 
-## Vector spaces
+## Vectors
 
-A vector space is a collection of vectors which can be added together or be
-multiplied by scalars. Of the properties of a vector space, closure properties
-guarantee that addition or scalar multiplication return a value that is also a
-member of the vector space. If a vector space *has* these properties, it *has*
-closure, else it does not. I refer to a general vector space here as simply
-$$V$$, with vectors $$\mathbf v$$, $$\mathbf u$$ and $$\mathbf w$$ as a part of
-that vector space ($$\mathbf v,\mathbf u,\mathbf w\in V$$).
+A vector can be described as an ordered set of coordinates in $$n$$ dimensions,
+but also as a direction to move in space and the amount which to move. Both are
+valid. Notationally, a vector can have an arrow above the symbol
+($$\oldvec{u}$$) or can be bold ($$\vec{u}$$), but both express the same
+meaning in that the symbol u is a vector. What is not inherently encoded is the
+dimension the vector is in, that that depends on context.
 
 -- | --
-Zero element | $$\mathbf 0=(0,0)\in V$$
-Closure of addition | $$\mathbf u+\mathbf v\in V$$
-Closure of scalar multiplication | $$\alpha\mathbf v\in V$$
-Associativity of additon | $$\mathbf u+(\mathbf v+\mathbf w)=(\mathbf u+\mathbf v)+\mathbf w$$
-Commutativity of addition | $$\mathbf v+\mathbf u=\mathbf u+\mathbf v$$
-Identity element of addition | $$\mathbf v+\mathbf 0=\mathbf v$$
-Inverse elements of addition | $$\mathbf v+(-\mathbf v)=0$$
-Identity element of multiplication | $$1\cdot\mathbf v=\mathbf v$$
-Distributivity of scalar multiplication | $$\alpha(\mathbf v+\mathbf u)=\alpha\mathbf u+\alpha\mathbf v$$
-| $$(\alpha+\beta)\mathbf u=\alpha\mathbf u+\beta\mathbf u$$
+A vector | $$\vec u=\langle u_1,u_2,\cdots,u_n\rangle\in\mathbb R^n$$
+Closure of addition | $$\vec u+\vec v=\langle (u_1+w_1),\cdots,(u_n+w_n)\rangle\in\mathbb R^n$$
+Closure of scalar multiplication | $$\alpha\vec u=\langle \alpha u_1,\cdots,\alpha u_n\rangle\in\mathbb R^n$$
+Zero element | $$\vec 0=\langle 0_1,\cdots,0_n\rangle\in\mathbb R^n$$
+Associativity of additon | $$\vec u+(\vec v+\vec w)=(\vec u+\vec v)+\vec w$$
+Commutativity of addition | $$\vec u+\vec v=\vec v+\vec u$$
+Identity element of addition | $$\vec v+\vec 0=\vec v$$
+Inverse elements of addition | $$\vec v+(-\vec v)=0$$
+Identity element of multiplication | $$ 0\cdot\vec u=\vec 0$$
+| $$1\cdot\vec v=\vec v$$
+Distributivity of scalar multiplication | $$\alpha(\vec v+\vec u)=\alpha\vec u+\alpha\vec v$$
+| $$(\alpha+\beta)\vec u=\alpha\vec u+\beta\vec u$$
+
+## Vector spaces
+
+A vector space is a collection $$V$$ of vector elements  which can be added
+together or be multiplied by scalars. Of the properties of a vector space,
+closure properties guarantee that addition or scalar multiplication return a
+value that is also a member of the vector space. If a vector space *has* these
+properties, it *has* closure, else it does not. A vector space satisfy the
+conditions:
+
+-- | --
+Closure of addition | $$\vec u+\vec v\in V$$
+Closure of scalar multiplication | $$\alpha\vec v\in V$$
 
 ### Subspaces
 
+A subspace $$W$$ is a subset of vector-space $$V$$
+
 <!--- Linear independence-->
 
-<!--A set of vectors $$S_n=\{\mathbf v_1,\cdots,\mathbf v_n\}$$ is said to linearly-->
-<!--independent if any equation $$\alpha_1\mathbf v_1+\cdots+\alpha_n\mathbf-->
-<!--v_n=0$$,-->
+A set of vectors $$S_n=\{\vec v_1,\cdots,\vec v_n\}$$ is said to linearly
+independent if any equation $$\alpha_1\vec v_1+\cdots+\alpha_n\vec
+v_n=0$$,
 
 <!--Row reduce-->
 
 <!--"The whole space"?-->
 
 ### Basis, span and dependence
+
+In the *xy* coordinate system the basis vectors are $$\hat\imath$$ and
+$$\hat\jmath$$ (pronounced i-hat and j-hat), $$\hat\imath$$ being 1 unit in the
+x-axis and $$\hat\jmath$$ being 1 unit in the y-axis. Vectors are basically
+series of scalars that multiply base vectors.
+
+
