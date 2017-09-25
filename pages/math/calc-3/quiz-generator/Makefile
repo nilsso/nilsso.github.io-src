@@ -10,6 +10,8 @@ define compile=
 	make clean
 endef
 
+all: clean remove quizes exam01-all
+
 # Compile a single quiz
 quiz%: in/quiz%.tex
 	$(eval num=`sed 's/quiz0*\([0-9]*\)/\1/' <<< $@`)
@@ -23,6 +25,8 @@ quizes:
 		if [ ! -f $$f.pdf ]; then make $$f; fi; \
 	done
 	gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=quizes.pdf quiz*.pdf
+
+exam01-all: exam01-practice exam01-review
 
 exam01-practice:
 	$(eval files=in/exam01-practice.tex)
