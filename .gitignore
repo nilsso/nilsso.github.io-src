@@ -1,8 +1,15 @@
+Gemfile.lock
 _site
 .bundle
 .sass-cache
 .jekyll-metadata
 node_modules
-Gemfile.lock
 *.log
 *.aux
+*.out
+*.tex
+*.pdf
+
+pages/math/calc-3/originals
+pages/math/calc-3/Makefile
+
