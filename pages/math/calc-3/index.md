@@ -121,6 +121,7 @@ of my [quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote
 over the 2017 summer.
 
 -- | --
+**Quizes** | [All quizes](quiz-generator/quizes.pdf)
 **Exam 1** | [Cheatsheet](exam01-cheatsheet.pdf)
            | [Cumulative review (random)](quiz-generator/exam01-review.pdf)
            | [Practice test](quiz-generator/exam01-practice.pdf)
