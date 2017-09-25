@@ -116,17 +116,12 @@ Normal unit vector  | $$\displaystyle \vec N$$
 
 ## Class resources
 
-<!--
-Randomized study exams for MATH-252,
-made using my [quiz-generator](github.com://SweedJesus/quiz-generator)
-(note that not all of the corresponding problem answers are entered):
--->
+Study materials for the class Math-252. Quizes and review tests are the product
+of my [quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote
+over the 2017 summer.
 
-### Exam 1
-
-Document | LaTeX source
 -- | --
-[Practice test](exam01-practice-test.pdf) | [(source)](exam01-practice-test.tex)
-[Cumulative review (random)](exam01-review-cumulative-r.pdf) | [(source)](exam01-review-cumulative-r.tex)
-[Cheatsheet](exam01-cheatsheet.pdf) | [(source)](exam01-cheatsheet.tex)
+**Exam 1** | [Cheatsheet](exam01-cheatsheet.pdf)
+           | [Cumulative review (random)](quiz-generator/exam01-review.pdf)
+           | [Practice test](quiz-generator/exam01-practice.pdf)
 
