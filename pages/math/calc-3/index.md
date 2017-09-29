@@ -89,6 +89,12 @@ $$
 \langle\frac{u_1}{\lVert\vec u\rVert},\cdots,\frac{u_n}{\lVert\vec u\rVert}\rangle
 $$
 
+Here is one significant note in determining a unit vector: the unit vector in
+the direction of a vector will be the same after multiplying the vector by a
+posiive scalar. This can be extremely useful in simplifying the derivative of
+the principle unit tangent vector, because so often the original will involve
+a quotient and thus the derivative the quotient rule.
+
 ### Vector planes
 
 $$
@@ -103,14 +109,20 @@ $$
 ## Vector calculus
 
 -- | --
-Position vector     | $$\displaystyle \vec d(t)=\vec r(t)=\langle x(t),y(t),z(t)\rangle$$
-Velocity vector     | $$\displaystyle \vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle$$
-Acceleration vector | $$\displaystyle \vec a(t)=\vec r''(t)=\langle x''(t),y''(t),z''(t)\rangle$$
-Arc length          | $$\displaystyle L=\int_a^b\lVert\vec v\rVert dt$$
-Tangent unit vector | $$\displaystyle \vec T=\vec v\cdot\frac{1}{\lVert\vec v\rVert}$$
-Normal unit vector  | $$\displaystyle \vec N$$
+Position | $$\vec d(t)=\vec r(t)=\langle x(t),y(t),z(t)\rangle$$
+Velocity | $$\vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle$$
+Acceleration | $$\vec a(t)=\vec r''(t)=\langle x''(t),y''(t),z''(t)\rangle$$
+Arc length | $$L=\int_a^b\lVert\vec v\rVert dt$$
 
 ### Motion
+
+The unit tangent is a vector in the same direction as any vector given by the
+velocity vector for a value of *t*, but with magnitude equal to one.
+
+-- | --
+Unit tangent | $$\vec T(t)=\frac{1}{\lVert\vec v\rVert}\vec v$$
+Unit normal | $$\vec N(t)=\frac{1}{\lVert\vec T'(t)\rVert}\vec T'(t)$$
+Acceleration | $$\vec a(t)=a_{\vec T}\vec T+a_{\vec N}\vec N$$
 
 ---
 

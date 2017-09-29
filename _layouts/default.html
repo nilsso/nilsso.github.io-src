@@ -2,20 +2,12 @@
 <html lang="{{ site.lang | default: "en-US" }}">
 {% include head.html %}
 <body>
-  <div>
-    <h2 id="site-title">
-      {{ site.title }}
-      <small>
-        <a href="{{ '/' | relative_url }}">home</a> /
-        <a href="https://github.com/{{ site.github_username }}">github</a>
-      </small>
-    </h2>
-  </div>
+  {% include header.html %}
   <article>
-    <title id="page-title">{{ page.title }}</title>
     {% if page.title %}
-    <hr/>
+    <title>{{ page.title }}</title>
     {% endif %}
+    <hr/>
     <div id="content">
       {{ content }}
     </div>

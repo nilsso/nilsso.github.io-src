@@ -36,6 +36,9 @@ exam01-review:
 	$(eval files=in/{quiz0{1..7},exam01-practice}.tex)
 	$(call compile,Math 252 Exam 1 Review,exam01-review,${files})
 
+exam01:
+	$(call compile,Math 252 Exam 1,exam01,in/exam01.tex)
+
 .PHONY: help clean remove quizes
 
 clean:

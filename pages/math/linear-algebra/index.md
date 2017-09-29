@@ -147,6 +147,24 @@ conditions:
 Closure of addition | $$\vec u+\vec v\in V$$
 Closure of scalar multiplication | $$\alpha\vec v\in V$$
 
+### Linear combinations
+
+Suppose $$\vec v_1,\vec v_2,\cdots,\vec v_n$$ are vectors and
+$$\alpha_1,\alpha_2,\cdots,\alpha_n$$ are real numbers, then the vector $$\vec
+w=\alpha_1\vec v_1+\alpha_2\vec v_2+\cdots+\alpha_n\vec v_n$$ is called a
+*linear combination* of $$\vec v_1,\vec v_2,\cdots,\vec v_n$$.
+
+### Span
+
+The set of all linear combinations of a collection of vectors is called the span
+and expressed as:
+
+$$\{\alpha_1\vec v_1+\alpha_2\vec v_2+\cdots+\alpha\vec v_n| \alpha_1,\alpha_2,\cdots,\alpha_n\in\vec R\}$$
+
+Given a vector $$\vec w$$, $$\vec w\in\vec R^2$$ is a linear combination of
+$$\vec v_1,\vec v_2,\cdots,\vec v_m$$ if and only if the equation $$A\vec X=\vec
+w$$ has a solution.
+
 ### Subspaces
 
 A subspace $$W$$ is a subset of vector-space $$V$$
