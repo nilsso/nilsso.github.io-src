@@ -39,6 +39,10 @@ exam01-review:
 exam01:
 	$(call compile,Math 252 Exam 1,exam01,in/exam01.tex)
 
+cumulative:
+	$(eval files=in/*.tex)
+	$(call compile,Math 252 Cumulative Review,cumulative,${files})
+
 .PHONY: help clean remove quizes
 
 clean:

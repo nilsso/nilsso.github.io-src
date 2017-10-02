@@ -31,9 +31,6 @@ gems:
   #-jekyll-octicons
   #-jekyll-feed
 exclude:
-  - .git
   - node_modules
   - Gemfile
   - Gemfile.lock
-  - *.aux
-  - *.log

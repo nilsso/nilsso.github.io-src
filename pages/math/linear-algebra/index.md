@@ -136,54 +136,47 @@ Distributivity of scalar multiplication | $$\alpha(\vec v+\vec u)=\alpha\vec u+\
 
 ## Vector spaces
 
-A vector space is a collection $$V$$ of vector elements  which can be added
-together or be multiplied by scalars. Of the properties of a vector space,
-closure properties guarantee that addition or scalar multiplication return a
-value that is also a member of the vector space. If a vector space *has* these
-properties, it *has* closure, else it does not. A vector space satisfy the
-conditions:
+A *vector space* is a collection of vector elements  which can be added together
+or be multiplied by scalars. Of the properties of a vector space, closure
+properties guarantee that addition or scalar multiplication return a value that
+is also a member of the vector space. A vector space must have these two
+properties to be considered a vector space.
 
 -- | --
 Closure of addition | $$\vec u+\vec v\in V$$
 Closure of scalar multiplication | $$\alpha\vec v\in V$$
 
-### Linear combinations
-
-Suppose $$\vec v_1,\vec v_2,\cdots,\vec v_n$$ are vectors and
-$$\alpha_1,\alpha_2,\cdots,\alpha_n$$ are real numbers, then the vector $$\vec
-w=\alpha_1\vec v_1+\alpha_2\vec v_2+\cdots+\alpha_n\vec v_n$$ is called a
-*linear combination* of $$\vec v_1,\vec v_2,\cdots,\vec v_n$$.
-
-### Span
-
-The set of all linear combinations of a collection of vectors is called the span
-and expressed as:
-
-$$\{\alpha_1\vec v_1+\alpha_2\vec v_2+\cdots+\alpha\vec v_n| \alpha_1,\alpha_2,\cdots,\alpha_n\in\vec R\}$$
-
-Given a vector $$\vec w$$, $$\vec w\in\vec R^2$$ is a linear combination of
-$$\vec v_1,\vec v_2,\cdots,\vec v_m$$ if and only if the equation $$A\vec X=\vec
-w$$ has a solution.
-
-### Subspaces
-
-A subspace $$W$$ is a subset of vector-space $$V$$
-
-<!--- Linear independence-->
-
-A set of vectors $$S_n=\{\vec v_1,\cdots,\vec v_n\}$$ is said to linearly
-independent if any equation $$\alpha_1\vec v_1+\cdots+\alpha_n\vec
-v_n=0$$,
-
-<!--Row reduce-->
-
-<!--"The whole space"?-->
-
 ### Basis, span and dependence
 
-In the *xy* coordinate system the basis vectors are $$\hat\imath$$ and
-$$\hat\jmath$$ (pronounced i-hat and j-hat), $$\hat\imath$$ being 1 unit in the
-x-axis and $$\hat\jmath$$ being 1 unit in the y-axis. Vectors are basically
-series of scalars that multiply base vectors.
+A *span* is the set of all possible vectors from a linear combination of
+vectors. Two non-parallel vectors have the span of all vectors within the plane
+on which the two vectors lie; three non-parallel vectors have the span of all
+three-dimensional space.
 
+The *basis* of a vector space is a set of *n* linearly independent vectors that
+span the full space in *n*-dimensions. In the case of the two vectors defining
+the span within a plane, the basis of that span are the two original vectors.
+The basis set of three unit vectors in the direction of the x-axis, the y-axis
+and z-axies respectively is called the *standard* basis, and notated as
+$$\hat i$$, $$\hat j$$ and $$\hat k$$ (i-hat, j-hat, k-hat).
+
+$$
+\hat i=e_1=e_x=(1,0,0)\\
+\hat j=e_2=e_y=(0,1,0)\\
+\hat k=e_3=e_z=(0,0,1)
+$$
+
+By defining the basis of a vector space we can describe any vector in that space
+as the linear combination of the basis vectors.
+
+$$
+\vec A=(A_x)\hat i+(A_y)\hat j+(A_z)\hat k
+$$
+
+For a set of vectors to be basis they must all be linearly independent;
+basically meaning that of the vectors in the set, none are multiples. Consider a
+set of three vectors of which two are parallel. Because any point on the line
+on which both the parallel vectors lie can be produced by multiplying either of
+the vectors by some scalar, we could reduce the set and have no loss of span by
+removing one of the parallel vectors.
 
