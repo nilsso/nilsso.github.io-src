@@ -33,9 +33,10 @@ $$
 
 ### Matrix addition
 
+Given two matrices, $$A=(a_{ij})\in\mathbb{R}^{m\times n}$$
+
 $$
 \begin{gather*}
-A=(a_{ij})\in\mathbb{R}^{m\times n} \\
 A+B = (a_{ij}+b_{ij})
 \end{gather*}
 $$
@@ -158,19 +159,19 @@ span the full space in *n*-dimensions. In the case of the two vectors defining
 the span within a plane, the basis of that span are the two original vectors.
 The basis set of three unit vectors in the direction of the x-axis, the y-axis
 and z-axies respectively is called the *standard* basis, and notated as
-$$\hat i$$, $$\hat j$$ and $$\hat k$$ (i-hat, j-hat, k-hat).
+$$\hat\imath$$, $$\hat\jmath$$ and $$\hat k$$ (i-hat, j-hat, k-hat).
 
 $$
-\hat i=e_1=e_x=(1,0,0)\\
-\hat j=e_2=e_y=(0,1,0)\\
-\hat k=e_3=e_z=(0,0,1)
+\hat \imath=e_1=e_{x}=(1,0,0)\\
+\hat \jmath=e_2=e_{y}=(0,1,0)\\
+\hat k=e_3=e_{z}=(0,0,1)
 $$
 
 By defining the basis of a vector space we can describe any vector in that space
 as the linear combination of the basis vectors.
 
 $$
-\vec A=(A_x)\hat i+(A_y)\hat j+(A_z)\hat k
+\vec A=(A_{x})\hat\imath+(A_{y})\hat\jmath+(A_z)\hat k
 $$
 
 For a set of vectors to be basis they must all be linearly independent;
