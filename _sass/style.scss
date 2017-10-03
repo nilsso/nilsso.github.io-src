@@ -1,8 +1,8 @@
 // Clone of Jekyll Minimal theme
 // https://github.com/pages-themes/minimal
 
-@import "fonts";
-@import "rouge";
+//@import "fonts";
+//@import "rouge";
 
 $font-color-a: #404040;
 $font-color-b: #4d4d4d;
@@ -18,6 +18,7 @@ $font-size-Big:    200%;
 html {
   color: $font-color-a;
   font-size: $font-size-normal;
+  font-family: 'Mukta', sans-serif;
 }
 
 body {
