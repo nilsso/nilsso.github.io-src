@@ -10,6 +10,6 @@ node_modules
 *.tex
 *.pdf
 
-pages/math/calc-3/originals
-pages/math/calc-3/Makefile
+pages/notes/math/calc-3/originals
+pages/notes/math/calc-3/quiz-generator
 

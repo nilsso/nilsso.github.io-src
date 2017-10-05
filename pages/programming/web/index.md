@@ -18,22 +18,27 @@ intro to the Liquid templating language, [Jekyll cheatsheet][], etc.
 
 [jekyll cheatsheet]: http://jekyll.tips/jekyll-cheat-sheet/
 
-## Markdown
+## Content
 
-([Homepage](https://daringfireball.net/projects/markdown/))
-The opposite of a markup language like HTML, Markdown seeks to simplify content
-creation and maintenance by being human readable.
+- [Markdown](https://daringfireball.net/projects/markdown/):
+  The opposite of a markup language like HTML, Markdown seeks to simplify
+  content creation and maintenance by being human readable (get it, mark*up* and
+  mark*down*).
 
 ## CSS
 
-- [Bootstrap 3](http://getbootstrap.com/):
+- ~~[Bootstrap 3](http://getbootstrap.com/):
 the most popular HTML, CSS, and JS framework. Uses jQuery and defines all sorts
-of good looking and ubiquitous components, especially the Grid system.
+of good looking and ubiquitous components, especially the Grid system.~~ I just
+do everything by hand these days, and/or borrow directly from Bootstrap.
 
 ## Javascript
 
+- [jQuery](https://jquery.com):
+    Super popular JavaScript library that's basically ubiquitous across the
+    internet.
 - [AnchorJS](https://www.bryanbraun.com/anchorjs/):
-add deep anchor links to your docs.
+    Adds deep anchor links to content.
 - [MathJax](https://www.mathjax.org/):
-a display engine for mathematics that works in all browsers, and uses LaTeX
-syntax.
+    A display engine for mathematics that works in all browsers, and uses LaTeX
+    syntax.

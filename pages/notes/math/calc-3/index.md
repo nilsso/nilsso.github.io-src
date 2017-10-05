@@ -124,17 +124,78 @@ Unit tangent | $$\vec T(t)=\frac{1}{\lVert\vec v\rVert}\vec v$$
 Unit normal | $$\vec N(t)=\frac{1}{\lVert\vec T'(t)\rVert}\vec T'(t)$$
 Acceleration | $$\vec a(t)=a_{\vec T}\vec T+a_{\vec N}\vec N$$
 
+## Partial Derivatives
+
+Given a function dependent on multiple variables, in taking the partial
+derivative of that function with respect to one of the variables we can treat
+the other variables like constants and derivate just as if it were a normal
+single variable derivative. This process is the same for any function of any
+number of variables.
+
+$$
+z=f(x,y),\ \frac{\delta z}{\delta x}=\frac{\delta}{\delta x}f(x,y)=f_{x}(x,y)
+$$
+
+Given $$z=f(x,y)=x^2+\sin y$$:
+
+- Partial with respect to *x* :
+    $$\displaystyle\frac{\delta z}{\delta x}=2x$$
+
+- Second partial with respect to *x* :
+    $$\displaystyle\frac{\delta^2 z}{\delta x^2}=2$$
+
+- Partial with respect to *y* :
+    $$\displaystyle\frac{\delta z}{\delta y}=\cos y$$
+
+- Second partial with respect to *y* :
+    $$\displaystyle\frac{\delta^2 z}{\delta y^2}=-\sin y$$
+
+Given a function that is a composition of other functions of dependent
+variables, taking the partial derivative will involve chain rule just as usual
+but while obeying the properties above (everything that isn't a function that is
+not power of the dependent variable is considered a constant).
+
+Given $$z=f(x,y),\ x=h(u,v)\, y=g(u,v)$$:
+
+$$
+\frac{\delta z}{\delta u}=
+\frac{\delta z}{\delta x}\frac{\delta x}{\delta u}+
+\frac{\delta z}{\delta y}\frac{\delta y}{\delta u}
+$$
+
+### Directional Derivative and Incline
+
+The directional derivative at point $P(a,b)$ of function $f$ (that's
+differentiable at $P$) and unit vector $\vec u$:
+
+$$
+D_u(a,b)=\nabla f(a,b)\cdot\vec u
+$$
+
+### Extrema
+
+Just as in calculus 1,
+
+- 1st derivative test: extrema (critical point)
+- 2nd derivative test: concavity (min/max)
+
+$$
+f_{xx}f_{yy}-(f_{xy})^2
+\begin{cases}
+  >0&\text{: extrema} \\
+  =0&\text{: don't know}\\
+  <0&\text{: saddle-point}
+\end{cases}
+$$
+
 ---
 
 ## Class resources
 
-Study materials for the class Math-252. Quizes and review tests are the product
-of my [quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote
-over the 2017 summer.
+Here are some study materials I've put together using the
+[quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote over the
+summer of 2017.
 
--- | --
-**Quizes** | [All quizes](quiz-generator/quizes.pdf)
-**Exam 1** | [Cheatsheet](exam01-cheatsheet.pdf)
-           | [Cumulative review (random)](quiz-generator/exam01-review.pdf)
-           | [Practice test](quiz-generator/exam01-practice.pdf)
-
+-- | -- | --
+Exam 1 | [Cheatsheet](exam01-cheatsheet.pdf) | [Cumulative review (random)](quiz-generator/exam01-review.pdf)
+Exam 2 | [Cheatsheet](exam02-cheatsheet.pdf) | [Cumulative review (random)](quiz-generator/exam02-review.pdf)

@@ -181,3 +181,62 @@ on which both the parallel vectors lie can be produced by multiplying either of
 the vectors by some scalar, we could reduce the set and have no loss of span by
 removing one of the parallel vectors.
 
+## Transformations
+
+Given T, a linear transformation of vector v from vector space V into W,
+the *kernel* is a subset of V where $$T(\vec v)=0$$. Since $$\text{kern}(t)$$ is
+a subspace of V, then it must have the following properties of closure:
+
+- $T(\alpha\vec v)=0=\alpha T(\vec v)$
+- $T(\vec v+\vec w)=T(\vec v)+T(\vec w)$
+
+Range of T is the set of all vectors in W of the form $$T(\vec v)$$, thus
+$$\text{range}(T)$$ is a subspace of $$W$$.
+
+If $\vec w\in\text{range}(T)$ then $\vec w=T(\vec v)$ for some $\vec v$ in $V$.
+
+$$\alpha\vec w=\alpha(T(\vec v))=T(\alpha\vec v)\Rightarrow\alpha\vec w \in\text{range}(T)$$
+
+If $\vec w_1,\vec w_2\in\text{range}(T)$ then $\vec w_1=T(\vec v_1),\vec
+w_2=T(\vec v_2)$
+
+- $T$ is injective (1 to 1) if $\text{kern}(T)=\{0\}$. A function $f(x)$ is 1 to
+    1 if $x_1\neq x_2\Rightarrow f(x_1)\neq f(x_2)$ following the horizontal line
+    test.
+- $T$ is surjective (onto) if $\text{range}(T)=W$.
+
+How to show if kernel is injective?
+
+If $T$ a linear transformation is 1 to 1 then $\text{kern}(T)=\{0\}$.
+Given $\vec{v_1},\vec{v_2}\in V$ then
+
+$$
+\begin{gather}
+T(T(\vec{v_1})=T(\vec{v_2} \\
+T(\vec{v_1})-T(\vec{v_2})=0 \\
+T(\vec{v_1}-\vec{v_2})=0 \\
+\text{if kern}(T)=\{0\}
+v1-v2=0
+v1=v2
+If ker(T) = 0 then T is 1-1
+
+\end{gather}
+$$
+
+Assume that $T$ is 1 to 1, show for ker(T)={0}
+
+T(0)=0 by linear
+0 is in ker(T)
+If $T$ is 1 to 1 then $\vec 0$ is only vector that
+$T(v)=0\Rightarrow \text{ker}(T)=\{0\}$.
+
+If T:V->V is a linear transofmration and T is 1 to 1, then what we say about the
+matrix of T? (V is finite dimensional)
+
+If T is 1 to 1 then T^-1 exists
+
+T: v->w->T^{-1}(v)
+Then the matrix A (of T) also must have an inverse A^{-1}.
+
+---
+
