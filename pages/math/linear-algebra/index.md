@@ -162,9 +162,11 @@ and z-axies respectively is called the *standard* basis, and notated as
 $$\hat\imath$$, $$\hat\jmath$$ and $$\hat k$$ (i-hat, j-hat, k-hat).
 
 $$
+\begin{gather}
 \hat \imath=e_1=e_{x}=(1,0,0)\\
 \hat \jmath=e_2=e_{y}=(0,1,0)\\
 \hat k=e_3=e_{z}=(0,0,1)
+\end{gather}
 $$
 
 By defining the basis of a vector space we can describe any vector in that space
@@ -192,6 +194,8 @@ a subspace of V, then it must have the following properties of closure:
 
 Range of T is the set of all vectors in W of the form $$T(\vec v)$$, thus
 $$\text{range}(T)$$ is a subspace of $$W$$.
+
+<!--
 
 If $\vec w\in\text{range}(T)$ then $\vec w=T(\vec v)$ for some $\vec v$ in $V$.
 
@@ -238,6 +242,8 @@ If T is 1 to 1 then T^-1 exists
 T: v->w->T^{-1}(v)
 Then the matrix A (of T) also must have an inverse A^{-1}.
 
+-->
+
 ### Change in basis
 
 Given a vector $\vec v$ defined by it's coordinates $\langle v_1,v_2\rangle$
@@ -250,7 +256,7 @@ basis $W$.
 
 $$
 W=\left[\begin{matrix}w_{1x}&w_{1y}\\w_{2x}&w_{2y}\end{matrix}\right];\
-W^{-1}(\vec v)_S\rightarrow(\vec v)_W\\
+W^{-1}(\vec v)_S\rightarrow(\vec v)_W
 $$
 
 In any change of the base the actually vector remains the same, but is now
