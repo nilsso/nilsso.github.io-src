@@ -203,16 +203,16 @@
 <path style="fill:none;stroke-width:0.6376;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M -1.555142 2.074094 C -1.426236 1.29675 -0.000455 0.128781 0.39017 -0.000125 C -0.000455 -0.129031 -1.426236 -1.297 -1.555142 -2.070437 " transform="matrix(1,0,0,-1,161.26608,119.453)"/>
 <path style="fill:none;stroke-width:0.6376;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M -1.555861 2.073625 C -1.423049 1.296281 -0.00117375 0.128313 0.389451 -0.00059375 C -0.00117375 -0.1295 -1.423049 -1.293562 -1.555861 -2.070906 " transform="matrix(0,-1,-1,0,76.933,35.11992)"/>
 <g style="fill:rgb(0%,0%,100%);fill-opacity:1;">
-  <use xlink:href="#glyph0-3" x="156.819" y="129.98"/>
+  <use xlink:href="#glyph0-3" x="157.26" y="129.98"/>
 </g>
 <g style="fill:rgb(0%,0%,100%);fill-opacity:1;">
-  <use xlink:href="#glyph5-2" x="162.928" y="131.474"/>
+  <use xlink:href="#glyph5-1" x="163.369" y="131.474"/>
 </g>
 <g style="fill:rgb(0%,0%,100%);fill-opacity:1;">
-  <use xlink:href="#glyph0-3" x="63.788" y="37.071"/>
+  <use xlink:href="#glyph0-3" x="62.907" y="36.393"/>
 </g>
 <g style="fill:rgb(0%,0%,100%);fill-opacity:1;">
-  <use xlink:href="#glyph5-1" x="69.897" y="38.565"/>
+  <use xlink:href="#glyph5-2" x="69.016" y="37.887"/>
 </g>
 </g>
 </svg>
