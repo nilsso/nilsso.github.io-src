@@ -241,11 +241,20 @@ Then the matrix A (of T) also must have an inverse A^{-1}.
 ### Change in basis
 
 Given a vector $\vec v$ defined by it's coordinates $\langle v_1,v_2\rangle$
-within the standard basis $U=\langle u_1,u_2\rangle=\langle e_i,e_j\rangle$,
-how can we describe these coordinates in a non-standard basis?
+within the standard basis $S=\langle u_1,u_2\rangle=\langle e_i,e_j\rangle$,
+how can we describe these coordinates in a non-standard basis? Given a second
+basis $W=\langle w_1,w_2\rangle$ that is non-standard ( $W\neq\langle
+e_i,e_j\rangle$) we can convert the standard coordinates of the vector $\vec v$
+to non-standard ordinates by applying the inverse of the matrix representing
+basis $W$.
 
-Given a second basis $W=\langle w_1,w_2\rangle$ that is non-standard (
-$W\neq\langle e_i,e_j\rangle$)
+$$
+W=\left[\begin{matrix}w_{1x}&w_{1y}\\w_{2x}&w_{2y}\end{matrix}\right];\
+W^{-1}(\vec v)_S\rightarrow(\vec v)_W\\
+$$
+
+In any change of the base the actually vector remains the same, but is now
+described by using different coefficients for the different base.
 
 ![change-of-basis](img-change-of-basis.svg){:width="512px"}
 
