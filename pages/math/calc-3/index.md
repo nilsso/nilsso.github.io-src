@@ -99,9 +99,9 @@ a quotient and thus the derivative the quotient rule.
 
 $$
 \begin{align*}
-& P(x_P,y_P,z_P), Q(x_Q,y_Q,z_Q), R(x_R,y_R,z_R) \\
-& \vec u=\vec{PQ}\text{ or }\vec{PR} \\
-& \vec n=\vec{PQ}\times \vec{PR}=\langle a,b,c\rangle \\
+& P(x_P,y_P,z_P), Q(x_Q,y_Q,z_Q), R(x_R,y_R,z_R)\\
+& \vec u=\vec{PQ}\text{ or }\vec{PR}\\
+& \vec n=\vec{PQ}\times \vec{PR}=\langle a,b,c\rangle\\
 & \vec n\cdot\vec u=a(x-x_0)+b(y-y_0)+c(z-z_0)=0
 \end{align*}
 $$
@@ -182,8 +182,8 @@ Just as in calculus 1,
 $$
 f_{xx}f_{yy}-(f_{xy})^2
 \begin{cases}
-  >0&\text{: extrema} \\
-  =0&\text{: don't know}\\
+  >0&\text{: extrema}\\
+  =0&\text{: (we don't know)}\\
   <0&\text{: saddle-point}
 \end{cases}
 $$

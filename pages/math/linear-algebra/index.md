@@ -238,5 +238,14 @@ If T is 1 to 1 then T^-1 exists
 T: v->w->T^{-1}(v)
 Then the matrix A (of T) also must have an inverse A^{-1}.
 
----
+### Change in basis
+
+Given a vector $\vec v$ defined by it's coordinates $\langle v_1,v_2\rangle$
+within the standard basis $U=\langle u_1,u_2\rangle=\langle e_i,e_j\rangle$,
+how can we describe these coordinates in a non-standard basis?
+
+Given a second basis $W=\langle w_1,w_2\rangle$ that is non-standard (
+$W\neq\langle e_i,e_j\rangle$)
+
+![change-of-basis](img-change-of-basis.svg){:width="512px"}
 

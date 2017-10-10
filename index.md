@@ -5,11 +5,11 @@ layout: default
 Music / [Theory](pages/music/theory)  
 Music / [Synthesis](pages/music/synthesis)  
 
-Notes / Math / [Algebra](pages/notes/math/algebra)  
-Notes / Math / [Trigonometry](pages/notes/math/trigonometry)  
-Notes / Math / [Calculus 2](pages/notes/math/calc-2)  
-Notes / Math / [Calculus 3](pages/notes/math/calc-3)  
-Notes / Math / [Linear Algebra](pages/notes/math/linear-algebra)  
+Math / [Algebra](pages/math/algebra)  
+Math / [Trigonometry](pages/math/trigonometry)  
+Math / [Calculus 2](pages/math/calc-2)  
+Math / [Calculus 3](pages/math/calc-3)  
+Math / [Linear Algebra](pages/math/linear-algebra)  
 
 Programming / [AddOns](pages/programming/addons)  
 Programming / C++ / [Naming things](pages/programming/cpp/naming-things)  
