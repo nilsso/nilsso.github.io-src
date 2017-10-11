@@ -163,6 +163,14 @@ $$
 \frac{\delta z}{\delta y}\frac{\delta y}{\delta u}
 $$
 
+### Gradient
+
+The gradient of a function \(f(x,y)\):
+
+$$
+\nabla f(x,y)=\langle f_x(x,y),f_y(x,y)\rangle
+$$
+
 ### Directional Derivative and Incline
 
 The directional derivative at point $P(a,b)$ of function $f$ (that's
@@ -173,6 +181,8 @@ D_u(a,b)=\nabla f(a,b)\cdot\vec u
 $$
 
 ### Extrema
+
+#### Of a function
 
 Just as in calculus 1,
 
@@ -188,9 +198,27 @@ f_{xx}f_{yy}-(f_{xy})^2
 \end{cases}
 $$
 
+#### Of a function and a constraint
+
+Given a function $f(x,y)$ and constraint $g(x,y)$ we can derive the following
+system of equations:
+
+$$
+\begin{aligned}
+\nabla f(x,y)&=\lambda\nabla g(x,y)\\
+\langle f_x,f_y\rangle&=\lambda\langle g_x,g_y\rangle\\
+f_x&=\lambda g_x\\
+f_y&=\lambda g_y
+\end{aligned}
+$$
+
+From these we can solve for x, for y and for $\lambda$ and determine posible
+extreme value points of the original function. Some posibilities may invalidate
+the constraint and can therefore be disqualified.
+
 ---
 
-## Class resources
+## Course resources
 
 Here are some study materials I've put together using the
 [quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote over the
