@@ -4,11 +4,10 @@
 //@import "fonts";
 //@import "rouge";
 
-$font-color-a: #404040;
-$font-color-b: #4d4d4d;
-
-$color-c: #277fbe;
-$color-d: #6bb0e1;
+$color-a: #222222; // Gray (light)
+$color-b: #404040; // Gray (dark)
+$color-c: #6bb0e1; // Blue (light)
+$color-d: #277fbe; // Blue (dark)
 
 $font-size-normal: 1.0em;
 $font-size-small:  80%;
@@ -16,7 +15,7 @@ $font-size-big:    140%;
 $font-size-Big:    200%;
 
 html {
-  color: $font-color-a;
+  color: $color-a;
   font-size: $font-size-normal;
   font-family: 'Mukta', sans-serif;
 }
@@ -26,31 +25,21 @@ body {
   margin: 0 auto 38.2vh auto;
 }
 
-p, ul, ol, table, pre, dl {
-  &:last-child {
-    margin: 0 0 20px;
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
-  color: #222;
-  margin: 0 0 2rem;
-}
-
-h1, h2, h3 {
-  padding-top: 2rem;
-}
-
-h1:first-of-type {
-  padding-top: 0;
-}
-
-h1, h2, h3 {
   line-height: 1.1;
 }
 
+h1, h2  {
+  color: $color-a;
+  margin-bottom: 2rem;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+}
+
 h3, h4, h5, h6 {
-  color: #494949;
+  color: $color-b;
 }
 
 h1, h2 {
@@ -62,12 +51,12 @@ h3 {
 }
 
 a {
-  color: #267CB9;
+  color: $color-d;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: #069;
+  color: $color-c;
 }
 
 a small {
@@ -94,14 +83,14 @@ hr {
   border: 0;
   background: #e5e5e5;
   height: 1px;
-  margin: 0 0 20px;
+  margin: 0 0 2rem;
 }
 
 blockquote {
   font-size: inherit;
   border-left: 1px solid #e5e5e5;
   margin: 0;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 2rem;
   font-style: normal;
 }
 
@@ -111,7 +100,10 @@ code, pre {
 }
 
 kbd {
-  color: $color-d;
+  color: white;
+  background: $color-b;
+  padding: 2px 4px;
+  border-radius: 2px;
 }
 
 pre {
@@ -123,7 +115,7 @@ pre {
 }
 
 figure {
-  margin: 16px 40px;
+  margin: 1rem 3rem;
 }
 
 div > .highlighter-rouge {
