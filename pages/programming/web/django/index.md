@@ -22,13 +22,13 @@ The database needs to be migrated.
 
 Instead of the full method for rendering an HTTP response view,
 
-{% highlight python %}
+```python
 from django.http import HttpResponse
 from django.template import loader
 def someView(request):
     template = loader.get_template("MY_APP/index.html")
     return HttpResponse(template.render({ }, request))
-{% endhighlight %}
+```
 
 There exists an API shortcut which performs the same action
 
