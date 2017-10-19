@@ -216,6 +216,13 @@ From these we can solve for x, for y and for $\lambda$ and determine posible
 extreme value points of the original function. Some posibilities may invalidate
 the constraint and can therefore be disqualified.
 
+## Integration
+
+$$
+A=\lim_{\|P\|\to 0} \sum^n_{i=1}\sum^m_{j=1}f(x_i,y_j)\Delta y_j\Delta x_i
+=\int\int f(x,y)dy\ dx
+$$
+
 ---
 
 ## Course resources

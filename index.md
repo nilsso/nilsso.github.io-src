@@ -17,6 +17,7 @@ Programming / [Git](pages/programming/git)
 Programming / [Math Problem Generator](problem-generator)  
 Programming / [Vim](pages/programming/vim)  
 Programming / [Web](pages/programming/web)  
+Programming / Web / [Django](pages/programming/web/django)  
 
 ---
 

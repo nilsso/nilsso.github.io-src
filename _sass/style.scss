@@ -107,6 +107,7 @@ blockquote {
 
 code, pre {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  font-size: 0.9em;
   color: #333;
 }
 
@@ -120,6 +121,14 @@ pre {
   border-radius: 5px;
   border: 1px solid #e5e5e5;
   overflow-x: auto;
+}
+
+figure {
+  margin: 16px 40px;
+}
+
+div > .highlighter-rouge {
+  @extend figure;
 }
 
 table {
