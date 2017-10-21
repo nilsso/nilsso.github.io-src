@@ -26,8 +26,6 @@ Vidya /
 
 ---
 
-<p style="">Test</p>
-
 # About Me
 
 I'm a professional student, a programmer, a singer, and a video-game enthusiast.
