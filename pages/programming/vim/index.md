@@ -3,7 +3,26 @@ layout: default
 title: "Vim"
 ---
 
-*(Page is under construction)*
+<!--
+Surround Word with <kbd>&lt and &gt;</kbd>:
+vaWBvi<kbd>&lt;Ea&gt;</kbd>
+-->
+
+# Useful commands
+
+## Screen navigation
+
+<kbd>&lt;c-y&gt;</kbd> | Move screen up | <kbd>zz</kbd> | Move current line to middle screen
+<kbd>&lt;c-e&gt;</kbd> | Move screen down | <kbd>zb</kbd> | Move current line to bottom screen
+<kbd>&lt;c-u&gt;</kbd> | Move screen up ½ page | <kbd>zt</kbd> | Move current line to top screen
+<kbd>&lt;c-d&gt;</kbd> | Move screen down ½ page
+<kbd>&lt;c-b&gt;</kbd> | Move screen up a page (cursor to first line)
+<kbd>&lt;c-f&gt;</kbd> | Move screen down a page (cursor to last line)
+
+<!--
+---
+
+# Tutorial
 
 In this article I just want to summarize some information, and to break down
 some of the concepts and philosophies of Vim which I keep in mind that help me
@@ -222,4 +241,5 @@ forty. Here's some other ways you could also accomplish the same task:
 <kbd>dt)</kbd> Delete everything up to before the next `)`
 
 <kbd>d8w</kbd> Delete eight words forward
+-->
 

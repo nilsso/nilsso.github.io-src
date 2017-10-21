@@ -3,6 +3,10 @@ layout: default
 title: "Web Stuff"
 ---
 
+## My probjects
+
+- [Math Problem Generator]({{ site.url }}/problem-generator)
+
 ## Jekyll
 
 ([Homepage](https://jekyllrb.com))
