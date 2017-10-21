@@ -9,6 +9,6 @@ node_modules
 *.out
 *.tex
 
-pages/notes/math/calc-3/originals
-pages/notes/math/calc-3/quiz-generator
+pages/math/calc-3/originals
+pages/math/calc-3/quiz-generator
 

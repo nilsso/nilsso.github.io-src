@@ -2,22 +2,26 @@
 layout: default
 ---
 
-Music / [Theory](pages/music/theory)  
-Music / [Synthesis](pages/music/synthesis)  
-
-Math / [Algebra](pages/math/algebra)  
-Math / [Trigonometry](pages/math/trigonometry)  
-Math / [Calculus 2](pages/math/calc-2)  
-Math / [Calculus 3](pages/math/calc-3)  
-Math / [Linear Algebra](pages/math/linear-algebra)  
-
-Programming / [AddOns](pages/programming/addons)  
-Programming / C++ / [Naming things](pages/programming/cpp/naming-things)  
-Programming / [Git](pages/programming/git)  
-Programming / [Math Problem Generator](problem-generator)  
-Programming / [Vim](pages/programming/vim)  
-Programming / [Web](pages/programming/web)  
-Programming / Web / [Django](pages/programming/web/django)  
+Music /
+[Theory](pages/music/theory) /
+[Synthesis](pages/music/synthesis)
+<br/>
+Math /
+[Algebra](pages/math/algebra) /
+[Trigonometry](pages/math/trigonometry) /
+[Calculus 2](pages/math/calc-2) /
+[Calculus 3](pages/math/calc-3) /
+[Linear Algebra](pages/math/linear-algebra)
+<br/>
+Programming /
+[Git](pages/programming/git) /
+[Vim](pages/programming/vim) /
+[Web](pages/programming/web) /
+[C++](pages/programming/cpp) /
+[Python](pages/programming/python/django)
+<br/>
+Vidya /
+[AddOns](pages/vidya/wow-addons)
 
 ---
 
@@ -46,7 +50,8 @@ guild which has since moved to play on other servers).
 I'm using [Jekyll][jekyll] to build it.
 
 Originally I used the [Minimal][minimal] theme by [GitHub Pages][github-pages],
-but I've heavily modified it.
+and then I heavily modified it, but now I use layouts and style-sheets that I've
+written from scratch.
 
 I'm also using the JavaScript libraries [AnchorJS][anchorjs],
 [MathJax][mathjax], and [VexFlow][vexflow] throughout the content.

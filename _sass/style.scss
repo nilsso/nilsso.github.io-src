@@ -12,7 +12,8 @@ $color-d: #277fbe; // Blue (dark)
 $font-size-normal: 1.0em;
 $font-size-small:  80%;
 $font-size-big:    140%;
-$font-size-Big:    200%;
+$font-size-Big:    180%;
+$font-size-BIG:    200%;
 
 html {
   color: $color-a;
@@ -30,24 +31,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2  {
-  color: $color-a;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 
   &:first-of-type {
     padding-top: 0;
   }
 }
 
-h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   color: $color-b;
 }
 
-h1, h2 {
+h1 {
+  font-size: $font-size-BIG;
+  color: $color-a;
+}
+
+h2 {
   font-size: $font-size-Big;
 }
 
 h3 {
   font-size: $font-size-big;
+}
+
+p, ol, ul, table, pre {
+  margin: 1rem 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 a {
@@ -124,7 +137,7 @@ div > .highlighter-rouge {
 
 table {
   border-collapse: collapse;
-  //width: 100%;
+  width: 100%;
   //table-layout: fixed;
 }
 
@@ -174,6 +187,7 @@ title {
 // Where content goes
 article {
   border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 2rem;
 }
 
 footer {
