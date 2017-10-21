@@ -1,11 +1,12 @@
 ---
 layout: default
 title: "Haskell notes"
+toc: true
 ---
 
 {% include mathjax.html %}
 
-## The lambda calculus
+# Lambda calculus
 
 Identity function and alpha equivalence:
 

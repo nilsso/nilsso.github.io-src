@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Trigonometry"
+toc: true
 ---
 
-{% include page-toc.html %}
 {% include mathjax.html %}
 
 # Unit circle

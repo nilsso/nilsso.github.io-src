@@ -11,8 +11,8 @@ $color-d: #277fbe; // Blue (dark)
 
 $font-size-normal: 1.0em;
 $font-size-small:  80%;
-$font-size-big:    140%;
-$font-size-Big:    180%;
+$font-size-big:    120%;
+$font-size-Big:    160%;
 $font-size-BIG:    200%;
 
 html {
@@ -60,6 +60,14 @@ p, ol, ul, table, pre {
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+ol, ul {
+  padding: 0 0 0 2rem ;
+
+  ol, ul {
+    margin: 0;
   }
 }
 
@@ -137,7 +145,7 @@ div > .highlighter-rouge {
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  //width: 100%;
   //table-layout: fixed;
 }
 
@@ -179,15 +187,15 @@ nav {
   }
 }
 
-title {
-  @extend h1;
-  display: block;
-}
-
 // Where content goes
 article {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 2rem;
+}
+
+#page-title {
+  color: $color-b;
+  margin-top: 0;
 }
 
 footer {
@@ -202,9 +210,15 @@ footer {
 //margin-bottom: 0;
 //}
 
-.table-of-contents {
-  h4 {
-    margin-bottom: 0;
+//.table-of-contents {
+  //h4 {
+    //margin-bottom: 0;
+  //}
+//}
+
+.toc-entry {
+  .toc-h4, .toc-h5, .toc-h6 {
+    display: none;
   }
 }
 

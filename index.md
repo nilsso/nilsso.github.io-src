@@ -18,12 +18,15 @@ Programming /
 [Vim](pages/programming/vim) /
 [Web](pages/programming/web) /
 [C++](pages/programming/cpp) /
-[Python](pages/programming/python/django)
+[Python](pages/programming/python) /
+[Haskell](pages/programming/haskell)
 <br/>
 Vidya /
 [AddOns](pages/vidya/wow-addons)
 
 ---
+
+<p style="">Test</p>
 
 # About Me
 

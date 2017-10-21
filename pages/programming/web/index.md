@@ -1,11 +1,14 @@
 ---
 layout: default
-title: "Web Stuff"
+title: "Web Programming Notes"
+toc: true
 ---
 
-## My probjects
+# Static websites
 
-- [Math Problem Generator]({{ site.url }}/problem-generator)
+A static website is the simplest type of website where there is no database or
+programming going on serverside to "serve" content and instead there's just
+the content as it is.
 
 ## Jekyll
 
@@ -22,21 +25,26 @@ intro to the Liquid templating language, [Jekyll cheatsheet][], etc.
 
 [jekyll cheatsheet]: http://jekyll.tips/jekyll-cheat-sheet/
 
-## Content
+# Markdown
 
 - [Markdown](https://daringfireball.net/projects/markdown/):
   The opposite of a markup language like HTML, Markdown seeks to simplify
-  content creation and maintenance by being human readable (get it, mark*up* and
-  mark*down*).
+  content creation and maintenance by being more human readable.
+- [Kramdown](https://kramdown.gettalong.org):
+  The default Markdown engine used by Jekyll.
 
-## CSS
+# CSS
 
-- ~~[Bootstrap 3](http://getbootstrap.com/):
-the most popular HTML, CSS, and JS framework. Uses jQuery and defines all sorts
-of good looking and ubiquitous components, especially the Grid system.~~ I just
-do everything by hand these days, and/or borrow directly from Bootstrap.
+- [SASS](http://sass-lang.com/guide):
+  A preprocessed, more powerful version of just CSS alone.
 
-## Javascript
+- ~~[Bootstrap](http://getbootstrap.com/):
+  The most popular HTML, CSS, and JS framework. Uses jQuery and defines all
+  sorts of good looking and ubiquitous components, especially the Grid system.~~
+  I just do everything by hand these days, and/or borrow directly from
+  Bootstrap.
+
+# Javascript
 
 - [jQuery](https://jquery.com):
     Super popular JavaScript library that's basically ubiquitous across the
@@ -46,3 +54,9 @@ do everything by hand these days, and/or borrow directly from Bootstrap.
 - [MathJax](https://www.mathjax.org/):
     A display engine for mathematics that works in all browsers, and uses LaTeX
     syntax.
+
+# My web projects
+
+- [This website]({{ site.url }})
+- [Math Problem Generator]({{ site.url }}/problem-generator)
+- [San Diego Mesa College SHPE website](https://mesa-sd-shpe.github.io)

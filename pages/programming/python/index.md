@@ -1,9 +1,10 @@
 ---
 layout: default
-title: "Django Notes"
+title: "Python Notes"
+toc: true
 ---
 
-$$test$$
+# Django
 
 ## Models
 

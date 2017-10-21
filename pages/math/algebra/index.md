@@ -1,14 +1,14 @@
 ---
 layout: default
 title: "Algebra"
+toc: true
 ---
 
-{% include page-toc.html %}
 {% include mathjax.html %}
 
 # Exponents and Logarithms
 
-#### Exponentiation rules
+<strong>Exponentiation rules</strong>
 
 Product rule             | \\(a^{p/q}a^{r/s}=a^{p/q+r/s}=a^{\\frac{ps+qr}{qs}}\\)
 Quotient rule            | \\(a^{p/q}/ a^{r/s}=a^{p/q-r/s}\\)
@@ -36,7 +36,7 @@ y=a^x\iff\log_a y=x
 It follows then that because of the rules of exponents that the following rules
 for logarithms exist:
 
-#### Properties of logarithms
+<strong>Properties of logarithms</strong>
 
 Log of a product| $\log_a(uv)=log_a(u)+log_a(v)\$
 Log of a quotient| $\log_a(u/v)=log_a(u)-log_a(v)\$
@@ -45,7 +45,7 @@ Log of a root| $\log_a(\sqrt[v]{u})=\frac{\log_a(u)}{v}\$
 Zero exponent | $\log_a(1)=0\$
 Changing of base | $\log_a(u)=\frac{\log_k(u)}{\log_k(a)}\$
 
-#### Properties of natural logarithms
+<strong>Properties of natural logarithms</strong>
 
 Natural log of a product |$\ln(uv)=\ln u+\ln v$
 Natural log of a quotient |$\ln\left(\frac{u}{v}\right)=\ln u-\ln v$
@@ -104,7 +104,7 @@ irreducible polynomials can either be linear or quadratic.
 The following formulas are useful for recognizing common patterns of factoring,
 with the expanded form on the left and the factored form on the right:
 
-#### Factoring Formulas
+<strong>Factoring Formulas</strong>
 
 Greatest common factor | \\(ca+cv=c(a+b)\\)
 | \\(x^2-(r-s)x+rs=(x-r)(x-s)\\)
@@ -114,23 +114,23 @@ Difference of squares | \\(a^2-b^2=(a+b)(a-b)\\)
 Sum of cubes | \\(a^3+b^3=(a+b)(a^2-ab+b^2)\\)
 Difference of cubes | \\(a^3-b^3=(a-b)(a^2+ab+b^2)\\)
 
-{% include collapsible.html
-tag="factoring-1"
-title="Example: Factoring #1"
-content="
-"%}
+<!--\{\% include collapsible.html-->
+<!--tag="factoring-1"-->
+<!--title="Example: Factoring #1"-->
+<!--content="-->
+<!--"%}-->
 
-{% include collapsible.html
-tag="factoring-2"
-title="Example: Factoring #2"
-content="
-"%}
+<!--\{\% include collapsible.html-->
+<!--tag="factoring-2"-->
+<!--title="Example: Factoring #2"-->
+<!--content="-->
+<!--"%}-->
 
-{% include collapsible.html
-tag="factoring-3"
-title="Example: Factoring #3"
-content="
-"%}
+<!--\{\% include collapsible.html-->
+<!--tag="factoring-3"-->
+<!--title="Example: Factoring #3"-->
+<!--content="-->
+<!--"%}-->
 
 ### Roots
 
@@ -138,16 +138,16 @@ A root or zero is a point at which a function is equal to zero. Roots can be
 solved for by setting a function equal to zero and solving for any
 indeterminates.
 
-{% include collapsible.html
-tag="roots-1"
-title="Example: Roots #1"
-content="
-*Solve for \\(x\\) over the set of real numbers:*
-\\[x-1=0\\]
-1. Subtract 1 from both sides
-\\[x=0\\]
-Thus the linear polynomial function has a single real root at 1.
-"%}
+<!--\{\% include collapsible.html-->
+<!--tag="roots-1"-->
+<!--title="Example: Roots #1"-->
+<!--content="-->
+<!--*Solve for \\(x\\) over the set of real numbers:*-->
+<!--\\[x-1=0\\]-->
+<!--1. Subtract 1 from both sides-->
+<!--\\[x=0\\]-->
+<!--Thus the linear polynomial function has a single real root at 1.-->
+<!--"%}-->
 
 Once a function has been factored into the product of prime polynomials and is
 set equal to zero, the [zero-product property][] can be used by setting each
@@ -155,22 +155,22 @@ factor equal to zero.
 
 [zero-product property]: https://www.mathsisfun.com/algebra/zero-product-property.html
 
-{% include collapsible.html
-tag="zero-product-property-1"
-title="Example: Zero-Product Property #1"
-content="
-*Solve for \\(x\\) over the set of real numbers:*
-\\[(x-5)(x-3)=0\\]
+<!--\{\% include collapsible.html-->
+<!--tag="zero-product-property-1"-->
+<!--title="Example: Zero-Product Property #1"-->
+<!--content="-->
+<!--*Solve for \\(x\\) over the set of real numbers:*-->
+<!--\\[(x-5)(x-3)=0\\]-->
 
-1. Zero-product property
-\\[(x-5)=0, (x-3)=0\\]
+<!--1. Zero-product property-->
+<!--\\[(x-5)=0, (x-3)=0\\]-->
 
-2. Solve for \\(x\\)
-\\[x=5, x=3\\]
+<!--2. Solve for \\(x\\)-->
+<!--\\[x=5, x=3\\]-->
 
-Thus the factored quadratic polynomial has two real roots, one at 5 and one at
-3.
-" %}
+<!--Thus the factored quadratic polynomial has two real roots, one at 5 and one at-->
+<!--3.-->
+<!--" %}-->
 
 ### Rational root theorem
 
@@ -197,7 +197,7 @@ possibilities until three roots are found.
 Lastly, because a polynomial is the product of linear polynomial factors, the
 roots discovered can be used to express the polynomial in it's factored form.
 
-{% include collapsible.html
+\{\% include collapsible.html
 tag="polynomial-root-1"
 title="Example: Polynomial Root #1"
 content="
@@ -222,38 +222,38 @@ the roots equals the constant term of the polynomial and the sum of the roots
 equals the coefficient of the middle (power one) term. Knowing this can easily
 reduce the time needed to find the roots.
 
-{% include collapsible.html
-tag="polynomial-root-2"
-title="Example: Polynomial Root #2"
-content="
-*Solve for \\(x\\) over the set of real numbers:*
-\\[x^2=5(x+100)\\]
+<!--\{\% include collapsible.html-->
+<!--tag="polynomial-root-2"-->
+<!--title="Example: Polynomial Root #2"-->
+<!--content="-->
+<!--*Solve for \\(x\\) over the set of real numbers:*-->
+<!--\\[x^2=5(x+100)\\]-->
 
-1. Expand the right side
-\\[x^2=5x+500\\]
+<!--1. Expand the right side-->
+<!--\\[x^2=5x+500\\]-->
 
-2. Move everything to the left
-\\[x^2-5x-500=0\\]
+<!--2. Move everything to the left-->
+<!--\\[x^2-5x-500=0\\]-->
 
-3. Find a factor pair of -500 whose sum equals -5
-\begin{align\*}
--500,1&=-499\\\\\\
--250,2&=-258\\\\\\
--25,20&=-5
-\end{align\*}
+<!--3. Find a factor pair of -500 whose sum equals -5-->
+<!--\begin{align\*}-->
+<!---500,1&=-499\\\\\\-->
+<!---250,2&=-258\\\\\\-->
+<!---25,20&=-5-->
+<!--\end{align\*}-->
 
-4. Factor
-\\[(x-25)(x+20)=0\\]
+<!--4. Factor-->
+<!--\\[(x-25)(x+20)=0\\]-->
 
-5. Zero-Product Property
-\\[(x-25)=0,(x+20)=0\\]
+<!--5. Zero-Product Property-->
+<!--\\[(x-25)=0,(x+20)=0\\]-->
 
-6. Solve
-\\[x=25,x=-20\\]
+<!--6. Solve-->
+<!--\\[x=25,x=-20\\]-->
 
-Thus the polynomial has two real roots, one at the point (25,0) and one at the
-point (-20,0).
-"%}
+<!--Thus the polynomial has two real roots, one at the point (25,0) and one at the-->
+<!--point (-20,0).-->
+<!--"%}-->
 
 ## Quadratic polynomials
 
@@ -329,40 +329,40 @@ However the leading term coefficient \\(a\\) must be 1; if it isn't then it must
 be factored out. Completing the square isn't so useful if the leading
 coefficient cannot be easily divided into the other term coefficients.
 
-{% include collapsible.html
-tag="quadratic-factoring-1"
-title="Example: Quadratic factoring #1"
-content="
-*Factor and determine any and all roots of the quadratic polynomial:*
-\\[ 2x^2 + 4x - 2 = 0 \\]
+<!--\{\% include collapsible.html-->
+<!--tag="quadratic-factoring-1"-->
+<!--title="Example: Quadratic factoring #1"-->
+<!--content="-->
+<!--*Factor and determine any and all roots of the quadratic polynomial:*-->
+<!--\\[ 2x^2 + 4x - 2 = 0 \\]-->
 
-Discriminant:
-\\[(4) - 4(2)(-2) = 20\\]
+<!--Discriminant:-->
+<!--\\[(4) - 4(2)(-2) = 20\\]-->
 
-Because the discriminant is positive the polynomial has two real roots and the
-completely factored form should be that of \ref{factored-quadratic:b}
+<!--Because the discriminant is positive the polynomial has two real roots and the-->
+<!--completely factored form should be that of \ref{factored-quadratic:b}-->
 
-1.  Factor 2 from left
-\\begin{align\*}
-2(x^2+2x-1)&=0\\\\\\
-x^2+2x-1&=0
-\\end{align\*}
+<!--1.  Factor 2 from left-->
+<!--\\begin{align\*}-->
+<!--2(x^2+2x-1)&=0\\\\\\-->
+<!--x^2+2x-1&=0-->
+<!--\\end{align\*}-->
 
-2.  Add 1 to both sides
-\\[ x^2 + 2x = 1 \\]
+<!--2.  Add 1 to both sides-->
+<!--\\[ x^2 + 2x = 1 \\]-->
 
-3.  Complete the square
-\\begin{align\*}
-((2)/2)^2&=(1)\\\\\\
-x^2+2x+(1)&=1+(1)
-\\end{align\*}
+<!--3.  Complete the square-->
+<!--\\begin{align\*}-->
+<!--((2)/2)^2&=(1)\\\\\\-->
+<!--x^2+2x+(1)&=1+(1)-->
+<!--\\end{align\*}-->
 
-4.  Factor left (perfect square)
-\\[ (x + 1)^2 = 2 \\]
+<!--4.  Factor left (perfect square)-->
+<!--\\[ (x + 1)^2 = 2 \\]-->
 
-5.  Solve
-\\[ x = -1 \\pm \\sqrt{2} \\]
-"%}
+<!--5.  Solve-->
+<!--\\[ x = -1 \\pm \\sqrt{2} \\]-->
+<!--"%}-->
 
 ### Quadratic Formula
 

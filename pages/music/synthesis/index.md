@@ -1,9 +1,10 @@
 ---
 layout: default
 title: "Sound and Synthesis"
+toc: true
 ---
 
-## What is hearing?
+# What is hearing?
 
 Hearing is a physiological sensation. It is the perception of sound, of changes
 in air pressure. When changes in air pressure reach us, our ears observe the
@@ -17,7 +18,7 @@ propagations waves.
 <!--[![longitudinal-waves-water](http://www.acs.psu.edu/drussell/Demos/waves/Water-2016.gif)](http://www.acs.psu.edu/drussell/demos.html)-->
 <!--![spherical-pressure-waves](https://upload.wikimedia.org/wikipedia/commons/8/82/Spherical_pressure_waves.gif)-->
 
-## What are waves?
+# What are waves?
 
 A wave is simply some kind of oscillation---a repetitive motion---accompanied by
 a transfer in energy through a medium. There are two main categories of waves:
@@ -29,7 +30,7 @@ vibrations.
 
 <!--![wave]({{ "assets/post-2017-04-19/wave.gif" | relative_url }})-->
 
-## What is sound?
+# What is sound?
 
 In his book *Musimathics, the mathematical foundations of music*, Gareth Loy
 describes mechanical waves as "organized traveling disturbances in a medium,
@@ -47,7 +48,7 @@ water), and direction.
 
 <!--![oboe](https://upload.wikimedia.org/wikipedia/commons/4/4f/Oboe_modern.jpg)-->
 
-## Timbre
+# Timbre
 
 So sounds have many distinguishing properties, frequency being one of them. But
 probably the most distinguishing property to a given sound is timbre. Timbre
@@ -58,7 +59,7 @@ timbre can be seen as the shape of the wave, also known as the waveform.
 
 <!--![waveforms](https://upload.wikimedia.org/wikipedia/commons/7/77/Waveforms.svg)-->
 
-## Waveforms
+# Waveforms
 
 When describing different kinds of sounds, the waveform of a sound can be
 described as the pressure per second (pressure from the sound of the wave). All
@@ -76,7 +77,7 @@ complex sounds---that led to the birth of synthesis.
 
 <!--![waveform-modulation](http://www.wirebiters.com/wp-content/uploads/2014/01/am-modulation.jpg)-->
 
-## What is synthesis?
+# What is synthesis?
 
 > synthesize (sĭnˈthĭ-sīzˌ)
 >
@@ -96,7 +97,7 @@ is known as subtractive synthesis.
 
 <!--![juno](http://cms.rolandus.com/assets/images/products/gallery/juno_stage_angle_gal.jpg)-->
 
-## Synthesizers
+# Synthesizers
 
 A synthesizer, or synth, is a machine that creates sounds by performing these
 additive and subtractive synthesis techniques, but more people know them as
@@ -114,7 +115,7 @@ software, e.g. synthesizer patches for DAWs.
 
 <!--![noise-toaster](http://musicfromouterspace.com/analogsynth_new/NOISETOASTER/images/NOISETOASTER_faceplateforpage_comp.jpg)-->
 
-## Do it yourself synths
+# Do it yourself synths
 
 Just as Apple the company was founded in a garage, so were many analog
 synthesizers producers. One such inventor was Don Buchla, creator of the
@@ -136,13 +137,13 @@ But what about for the average hobbyist today?
 
 <!--![buchla](https://www.sequencer.de/blog/wp-content/uploads/2012/08/Buchla-FirstPatch.jpeg)-->
 
-## Inspiration
+# Inspiration
 
 - [Make Noise](http://www.makenoisemusic.com/)
   - [0-Coast Demo (Krell patch)](https://youtu.be/5FW8QYt6bio?t=18m34s)
 
 - [Nebulophone](https://www.youtube.com/watch?v=2jjp_31kbpY)
 
-## Sources
+# Sources
 
 [^1]: _Musimathics_, Gareth Loy. MIT Press, 2011.

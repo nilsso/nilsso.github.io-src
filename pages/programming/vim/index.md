@@ -1,12 +1,8 @@
 ---
 layout: default
 title: "Vim"
+toc: true
 ---
-
-<!--
-Surround Word with <kbd>&lt and &gt;</kbd>:
-vaWBvi<kbd>&lt;Ea&gt;</kbd>
--->
 
 # Useful commands
 

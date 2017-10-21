@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Linear Algebra"
+toc: true
 ---
 
 {% include mathjax.html %}
-{% include page-toc.html id-after="page-title" %}
 
 <div id="mathjax-preamble" style="display:none;">
 $$

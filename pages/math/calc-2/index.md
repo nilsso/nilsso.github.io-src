@@ -1,12 +1,12 @@
 ---
 layout: default
 title: "Calculus"
+toc: true
 ---
 
 {% include mathjax.html %}
-{% include page-toc.html id-after="page-title" %}
 
-<script>
+<div style="display:none;">
 $$
 \DeclareMathOperator{\arccsc}{arccsc}
 \DeclareMathOperator{\arcsec}{arcsec}
@@ -20,7 +20,7 @@ $$
 \DeclareMathOperator{\arcsech}{arcsech}
 \DeclareMathOperator{\arccoth}{arccoth}
 $$
-</script>
+</div>
 
 # Limits
 
@@ -167,32 +167,18 @@ $$
 
 (Exactly the same as properties of logarithms)
 
-Product  | $\ln uv=\ln u+\ln v$
-Quotient | $\ln\frac{u}{v}=\ln u-\ln v$
-Power    | $\ln u^n=n\ln u$
-         | $\ln 1=0$
-         | $\ln y=x\equiv\log_e y=x\equiv e^x=y$
-         | $\ln e^x=x\quad\text{for every}\quad x$
-         | $e^{\ln x}=x\quad\text{for every}\quad x>0$
-
-#### Derivative formulas
-
-$$
-\begin{align}
-\frac{d}{dx}\ln x&=\frac{1}{x} \\
-\frac{d}{dx}\ln\left|u\right|&=\frac{1}{u}\frac{d}{dx} u\quad\text{if}\quad u\neq 0 \\
-\frac{d}{dx} e^u&=e^u\frac{d}{dx} u
-\end{align}
-$$
-
-#### Integral formulas
-
-$$
-\begin{align}
-\int\frac{1}{u}du&=\ln\left|u\right|+C \\
-\int e^{au} du&=\frac{1}{a}e^{au} +C
-\end{align}
-$$
+Product     | $\ln uv=\ln u+\ln v$
+Quotient    | $\ln\frac{u}{v}=\ln u-\ln v$
+Power       | $\ln u^n=n\ln u$
+            | $\ln 1=0$
+            | $\ln y=x\equiv\log_e y=x\equiv e^x=y$
+            | $\ln e^x=x\quad\text{for every}\quad x$
+            | $e^{\ln x}=x\quad\text{for every}\quad x>0$
+Derivatives | $\frac{d}{dx}\ln x=\frac{1}{x}$
+            | $\frac{d}{dx}\ln\left\|u\right\|=\frac{1}{u}\frac{d}{dx} u;\ u\neq 0$
+            | $\frac{d}{dx} e^u=e^u\frac{d}{dx} u$
+Integrals   | $\int\frac{1}{u}du=\ln\left\|u\right\|+C$
+            | $\int e^{au} du=\frac{1}{a}e^{au} +C$
 
 ---
 
@@ -212,47 +198,19 @@ An integration reduction formula can be used to rewrite an integral involving
 powers of a trigonometric function in terms of multiple integrals that involve
 lower powers Deriving such formulas requires integration by parts.
 
-$$
-\begin{align*}
-\int\sin^n x\ dx &=\int\sin^{n-1}\sin x\ dx \\
-\int\cos^n x\ dx &=\int\cos^{n-1}\cos x\ dx \\
-\int\sec^n(x)dx  &=\frac{1}{n-1}\sec^{n-2}(x)\tan(x)+\frac{k-2}{k-1}\int\sec^{k-2}(x)dx \\
-\int\sec^3(x)dx  &=\frac{1}{2}\sec(x)\tan(x)+\frac{1}{2}\ln\left|\sec(x)+\tan(x)\right|+C
-\end{align*}
-$$
+| $\int\sin^n x\ dx=\int\sin^{n-1}\sin x\ dx$
+| $\int\cos^n x\ dx=\int\cos^{n-1}\cos x\ dx$
+| $\int\sec^n(x)dx=\frac{1}{n-1}\sec^{n-2}(x)\tan(x)+\frac{k-2}{k-1}\int\sec^{k-2}(x)dx$
+| $\int\sec^3(x)dx=\frac{1}{2}\sec(x)\tan(x)+\frac{1}{2}\ln\left\|\sec(x)+\tan(x)\right\|+C$
 
 # Inverse trigonometric functions
 
-#### Derivative formulas
-
-$$
-\begin{align*}
-\frac{d}{dx}\arcsin u &=\frac{1}{\sqrt{1-u^2}}du \\
-\frac{d}{dx}\arctan u &=\frac{1}{1+u^2}du \\
-\frac{d}{dx}\arcsec u &=\frac{1}{|u|\sqrt{u^2-1}}du
-\end{align*}
-$$
-
-And then the derivatives of $\arccos$, $\arctan$, and $\arccsc$ are opposites of
-$\arcsin$, $\arctan$, and $\arcsec$ respectively.
-
-$$
-\begin{align*}
-\frac{d}{dx}\arccos &=-\frac{1}{\sqrt{1-u^2}}du \\
-\frac{d}{dx}\arccot &=-\frac{1}{1+u^2}du \\
-\frac{d}{dx}\arccsc &=-\frac{1}{\left|u\right|\sqrt{u^2-1}}du
-\end{align*}
-$$
-
-#### Integral formulas
-
-$$
-\begin{align*}
-\int\frac{1}{\sqrt{a^2-u^2}}du=\arcsin\frac{u}{a}+C \\
-\int\frac{1}{u^2+a^2}du=\frac{1}{a}\arctan\frac{u}{a}+C \\
-\int\frac{1}{u\sqrt{u^2-a^2}}du=\frac{1}{a}\arcsec\frac{u}{a}+C
-\end{align*}
-$$
+Derivatives | $\frac{d}{dx}\arcsin u=\frac{1}{\sqrt{1-u^2}}du$ | $\frac{d}{dx}\arccos=-\frac{1}{\sqrt{1-u^2}}du$
+            | $\frac{d}{dx}\arctan u=\frac{1}{1+u^2}du$ | $\frac{d}{dx}\arccot=-\frac{1}{1+u^2}du$
+            | $\frac{d}{dx}\arcsec u=\frac{1}{\|u\|\sqrt{u^2-1}}du$ | $\frac{d}{dx}\arccsc=-\frac{1}{\left\|u\right\|\sqrt{u^2-1}}d$
+  Integrals | $\int\frac{1}{\sqrt{a^2-u^2}}du=\arcsin\frac{u}{a}+C$
+            | $\int\frac{1}{u^2+a^2}du=\frac{1}{a}\arctan\frac{u}{a}+C$
+            | $\int\frac{1}{u\sqrt{u^2-a^2}}du=\frac{1}{a}\arcsec\frac{u}{a}+C$
 
 # Hyperbolic functions
 
@@ -260,19 +218,19 @@ Just as trigonometric functions (aka *circular* functions) are based on
 relationships to the form of a circle $x^2+y^2=1$, hyperbolic functions are
 based on relationships to the form of the hyperbola $x^2-y^2=1$.
 
-(\*) Hyperbolic cosine (*cohsh*) | $\cosh x=\frac{e^x+e^{-x}}{2}$
-(\*) Hyperbolic sine (*sinch*)   | $\sinh x=\frac{e^x-e^{-x}}{2}$
-(\*) Hyperbolic tangent          | $\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x-e^{-x}}{e^x+e^{-x}}$
-Hyperbolic cotangent             | $\coth x=\frac{\cosh x}{\sinh x}=\frac{e^x+e^{-x}}{e^x-e^{-x}}$
-Hyperbolic secant                | $\sech x=\frac{1}{\cosh x}=\frac{2}{e^x+e^{-x}}$
-Hyperbolic cosecant              | $\csch x=\frac{1}{\sinh x}=\frac{2}{e^x-e^{-x}}$
+★ Hyperbolic cosine (*cohsh*) | $\cosh x=\frac{e^x+e^{-x}}{2}$
+★ Hyperbolic sine (*sinch*)   | $\sinh x=\frac{e^x-e^{-x}}{2}$
+★ Hyperbolic tangent          | $\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x-e^{-x}}{e^x+e^{-x}}$
+Hyperbolic cotangent          | $\coth x=\frac{\cosh x}{\sinh x}=\frac{e^x+e^{-x}}{e^x-e^{-x}}$
+Hyperbolic secant             | $\sech x=\frac{1}{\cosh x}=\frac{2}{e^x+e^{-x}}$
+Hyperbolic cosecant           | $\csch x=\frac{1}{\sinh x}=\frac{2}{e^x-e^{-x}}$
 
-(\*): Memorize these
+★ : Memorize these
 
 Identities regarding hyperbolic functions parallel identities regarding
 the circular the functions.
 
-(\*) | $\cosh^2 x-\sinh^2 x=1$
+★ | $\cosh^2 x-\sinh^2 x=1$
 | $\cosh(-x)=\cosh x$
 | $\sinh(-x)=-\sinh x$
 | $\tanh(-x)=-\tanh x$
@@ -285,14 +243,14 @@ the circular the functions.
 | $\cosh^2 x=\frac{\cosh 2x+1}{2}$
 | $\sinh^2 x=\frac{\cosh 2x-1}{2}$
 
-(\*): Memorize these
+★ : Memorize these
 
 The derivatives of hyperbolic functions also close to the forms of the
 derivatives of the circular functions, but not identical.
 
-(\*) | $\frac{d}{dx}\sinh x=\cosh x\iff\int\cosh x\ dx=\sinh x+C$
-(\*) | $\frac{d}{dx}\cosh x=\sinh x\iff\int\sinh x\ dx=\cosh x+C$
-(\*) | $\frac{d}{dx}\tanh x=\sech^2 x\iff\int\sech^2 x\ dx=\tanh x+C$
+★ | $\frac{d}{dx}\sinh x=\cosh x\iff\int\cosh x\ dx=\sinh x+C$
+★ | $\frac{d}{dx}\cosh x=\sinh x\iff\int\sinh x\ dx=\cosh x+C$
+★ | $\frac{d}{dx}\tanh x=\sech^2 x\iff\int\sech^2 x\ dx=\tanh x+C$
 | $\frac{d}{dx}\coth x=-\csch^2 x\iff\int\csch^2 x\ dx=-\coth x+C$
 | $\frac{d}{dx}\sech x=-\sech x\tanh x\iff\int\sech x\tanh x\ dx=-\sech x+C$
 | $\frac{d}{dx}\csch x=-\csch x\coth x\iff\int\csch x\coth x\ dx=-\csch x+C$
@@ -301,7 +259,7 @@ derivatives of the circular functions, but not identical.
 | $\int\sech x\ dx=\arctan(\sinh x)+C$
 | $\int\csch x\ dx=\ln\left\|\tanh(x/2)\right\|+C$
 
-(\*): Memorize these
+★ : Memorize these
 
 # Inverse hyperbolic functions
 

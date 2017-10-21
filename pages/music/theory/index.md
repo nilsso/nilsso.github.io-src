@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Music"
+toc: true
 ---
 
 <!-- VexFlow -->
@@ -10,19 +11,19 @@ src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
 <!-- MathJax -->
 {% include mathjax.html %}
 
-## Pitch
+# Pitch
 
 Where frequency is a measure of vibrations per second, pitch is the
 corresponding perceptual experience. A single pitch is really just a named
 frequency, such as middle C being the name for the frequency of 523.251 Hz,
 a value that doesn't so much roll off of the tongue.
 
-### Intervals
+# Intervals
 
 Individual pitches represent distinct frequencies of sound, and the distances
 between these distinct pitches are known as *intervals*.
 
-#### Unisons and octaves
+## Unisons and octaves
 
 When the interval between two frequencies is equal to zero we call it a unison,
 because for the distance between them to be zero they must be equal. Pitches
@@ -56,7 +57,7 @@ x = 1, \quad f_x = (440) \cdot 2^{(1)} = 880 \mathrm{\\ Hz} \\\
 x = -1, \quad f_x = (440) \cdot 2^{(-1)} = 220 \mathrm{\\ Hz} \\\
 \end{align\*}
 
-#### Arbitrary intervals
+## Arbitrary intervals
 
 Any distance between two pitches make an interval, even if those pitches are the
 same (unison) or an octave apart. But for these other intervals, we need to
@@ -73,9 +74,9 @@ f_x = f_R \cdot 2^x, \quad x \in \mathbb{R}
 Where the variable \\(x\\) is now an element of the set of all real numbers
 \\(\mathbb{R}\\), not just integers.
 
-## Resources
+# Resources
 
-### Setting math on the web
+## Setting math on the web
 
 I set mathematical expressions on this page using the JavaScript library,
 [MathJax][mathjax]. Conveniently this library uses [LaTeX][latex] syntax. To
@@ -83,7 +84,7 @@ take a look at the syntax of any of the expressions on this page simply right
 click expression and click "Math Settings > Plain Source" or "Show Math As > TeX
 Commands".
 
-### Setting music on the web
+## Setting music on the web
 
 I set musical expressions on this page using another JavaScript library,
 [VexFlow][vexflow].
@@ -92,9 +93,9 @@ Alternatives:
 
 - [Lydown][lydown], a Ruby gem that needs Lilypond
 
-#### VexFlow
+### VexFlow
 
-##### Input
+#### Input
 
 {% highlight html %}
 <div id="vf-demo"></div>
@@ -123,29 +124,6 @@ system.addStave({
 vf.draw();
 </script>
 {% endhighlight %}
-
-##### Output
-
-<div id="vf-demo"></div>
-<script>
-var width = getComputedStyle(document.querySelector('.wrapper')).width;
-
-var vf = new Vex.Flow.Factory({
-  renderer: {selector: 'vf-demo', width: width, height: 200 }
-});
-
-var score = vf.EasyScore();
-var system = vf.System();
-
-system.addStave({
-  voices: [
-    score.voice(score.notes('C#5/q, B4, A4, G#4', {stem: 'up'})),
-    score.voice(score.notes('C#4/h, C#4', {stem: 'down'}))
-  ]
-}).addClef('treble').addTimeSignature('4/4');
-
-vf.draw();
-</script>
 
 <!-- Links -->
 [mathjax]: https://www.mathjax.org/
