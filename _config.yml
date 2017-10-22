@@ -8,6 +8,13 @@ twitter_username: #FuckTwitter
 github_username: SweedJesus
 github_dotfiles: dotfiles
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
 exclude:
   - node_modules
   - Gemfile
