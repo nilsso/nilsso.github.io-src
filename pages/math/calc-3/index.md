@@ -232,5 +232,5 @@ Here are some study materials I've put together using the
 summer of 2017.
 
 -- | -- | --
-Exam 1 | [Cheatsheet](exam01-cheatsheet.pdf) | [Cumulative review (random)](quiz-generator/exam01-review.pdf)
-Exam 2 | [Cheatsheet](exam02-cheatsheet.pdf) | [Cumulative review (random)](quiz-generator/exam02-review.pdf)
+Exam 1 | [Cheatsheet](exam01-cheatsheet.pdf) | [Cumulative review (random)](exam01-review.pdf)
+Exam 2 | [Cheatsheet](exam02-cheatsheet.pdf) | [Cumulative review (random)](exam02-review.pdf)
