@@ -91,7 +91,7 @@ $$
 
 Here is one significant note in determining a unit vector: the unit vector in
 the direction of a vector will be the same after multiplying the vector by a
-posiive scalar. This can be extremely useful in simplifying the derivative of
+positive scalar. This can be extremely useful in simplifying the derivative of
 the principle unit tangent vector, because so often the original will involve
 a quotient and thus the derivative the quotient rule.
 
@@ -216,11 +216,11 @@ From these we can solve for x, for y and for $\lambda$ and determine posible
 extreme value points of the original function. Some posibilities may invalidate
 the constraint and can therefore be disqualified.
 
-## Integration
+## Double integration
 
 $$
 A=\lim_{\|P\|\to 0} \sum^n_{i=1}\sum^m_{j=1}f(x_i,y_j)\Delta y_j\Delta x_i
-=\int\int f(x,y)dy\ dx
+=\iint f(x,y)dy\ dx
 $$
 
 ---

@@ -13,7 +13,9 @@ Math /
 [Calculus 3](pages/math/calc-3) /
 [Linear Algebra](pages/math/linear-algebra)
 <br/>
-[Programming](pages/programming) /
+Math / [Problem Generator](problem-generator)
+<br/>
+Programming /
 [Git](pages/programming/git) /
 [Vim](pages/programming/vim) /
 [Web](pages/programming/web) /

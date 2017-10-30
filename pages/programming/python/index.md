@@ -23,25 +23,25 @@ The database needs to be migrated.
 
 Instead of the full method for rendering an HTTP response view,
 
-```python
+{% highlight python %}
 from django.http import HttpResponse
 from django.template import loader
 def someView(request):
     template = loader.get_template("MY_APP/index.html")
     return HttpResponse(template.render({ }, request))
-```
+{% endhighlight %}
 
 There exists an API shortcut which performs the same action
 
-```python
+{% highlight python %}
 from django.shortcuts import render
 def someView(request):
     return render(request, "MY_APP/index.html", { })
-```
+{% endhighlight %}
 
 And similarly for 404 requests
 
-```python
+{% highlight python %}
 from django.http import Http404
 def someView(request, param):
     try:
@@ -49,16 +49,16 @@ def someView(request, param):
     except MyModel.DoesNotExist:
         raise Http404("Model object does not exist")
     return render(request, "MY_APP/detail.html", { "obj": obj })
-```
+{% endhighlight %}
 
 There exists an API shortcut
 
-```python
+{% highlight python %}
 from django.shortcuts import get_object_or_404
 def someView(request, param):
     obj = get_object_or_404(MyModel, pk=param)
     return render(request, "MY_APP/detail.html", { "obj": obj })
-```
+{% endhighlight %}
 
 Here's a list of some of these [shortcuts][]
 

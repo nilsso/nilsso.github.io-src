@@ -1,0 +1,72 @@
+html * {
+  font-family: 'Josefin Slab', serif;
+  font-weight: normal;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #102030;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease-out, background 1s ease-in;
+}
+
+a:hover {
+  color: #7090b0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 7em;
+}
+
+h2 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.title {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.background {
+  position: fixed;
+  width: 4000px;
+  height: 4000px;
+  left: -9999px;
+  right: -9999px;
+  top: -9999px;
+  bottom: -9999px;
+  margin: auto;
+  background-image: url("/mc-demo/assets/img/spiral.svg");
+  background-position: center;
+  background-size: cover;
+  -webkit-animation: spin infinite 40s linear;
+  z-index: -1;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
