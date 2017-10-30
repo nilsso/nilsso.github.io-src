@@ -21,23 +21,29 @@ a:hover {
 }
 
 h1 {
-  margin: 0 40px;
+  margin: 0 0 15px 0;
+  padding: 0 40px;
   font-size: 7em;
   text-align: center;
   line-height: 1em;
 }
 
-ul {
-  margin: 0 40px;
-  padding: 0;
+h2 {
+  margin: 0;
+  padding: 0 40px;
   font-size: 3em;
   text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 li {
   display: inline;
-  line-height: 1.2em;
+  white-space: nowrap;
 }
 
 .container {
@@ -50,7 +56,7 @@ li {
   position: fixed;
   width: 100%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
 }
 
 .footer {
@@ -71,8 +77,8 @@ li {
   background-image: url("/mc-demo/assets/img/spiral.svg");
   background-position: center;
   background-size: cover;
-  -webkit-animation: spin infinite 40s linear;
   z-index: -1;
+  -webkit-animation: spin infinite 20s linear;
 }
 
 @-webkit-keyframes spin {
@@ -85,11 +91,16 @@ li {
 }
 
 @media (max-width: 875px) {
+  .background {
+    width: 2000px;
+    height: 2000px;
+  }
+
   h1 {
     font-size: 3em;
   }
 
-  ul {
+  h2 {
     font-size: 2em;
   }
 }
