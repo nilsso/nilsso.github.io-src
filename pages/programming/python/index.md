@@ -81,3 +81,11 @@ based on pattern matching.
 1. In `settings.py`, `ROOT_URLCONF` points to the base web-app URL table
 2. Regex patterns all URL tables determine to either respond with a view or to
    pass the request to other modules.
+
+## Testing
+
+With tests, more is better, and redundancy is okay. Include:
+
+1. a separate `TestClass` for each model or view
+2. a separate test method for each set of conditions to test
+3. test method names that describe their functions
