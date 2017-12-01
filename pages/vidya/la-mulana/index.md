@@ -1,7 +1,10 @@
+---
+---
+
 # Surface
+- Columns: A–L, Rows: 1–5
+
 ![Map](img/surface/map.png)
--   Columns: A–L
--   Rows: 1–5
 
 <table>
     <tr>
@@ -19,7 +22,6 @@
     <th>K</th>
     <th>L</th>
     </tr>
-
     <tr>
     <th>1</th>
     <td></td>
@@ -35,7 +37,6 @@
     <td>![K1](img/surface/room_K1.png)</td>
     <td>![L1](img/surface/room_L1.png)</td>
     </tr>
-
     <tr>
     <th>2</th>
     <td></td>
@@ -51,7 +52,6 @@
     <td>![K2](img/surface/room_K2.png)</td>
     <td>![L2](img/surface/room_L2.png)</td>
     </tr>
-
     <tr>
     <th>3</th>
     <td>![A3](img/surface/room_A3.png)</td>
@@ -67,7 +67,6 @@
     <td>![K3](img/surface/room_K3.png)</td>
     <td>![L3](img/surface/room_L3.png)</td>
     </tr>
-
     <tr>
     <th>4</th>
     <td></td>
@@ -83,7 +82,6 @@
     <td></td>
     <td></td>
     </tr>
-
     <tr>
     <th>5</th>
     <td></td>
