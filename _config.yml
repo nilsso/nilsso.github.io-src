@@ -26,7 +26,7 @@ plugins:
   #-jekyll-octicons
   #-jekyll-feed
 
-markdown: redcarpet
+#markdown: redcarpet
 extensions: [fenced_code_blocks]
 highlighter: rouge
 #kramdown:
