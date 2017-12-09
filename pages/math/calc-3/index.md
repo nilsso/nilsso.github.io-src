@@ -232,7 +232,7 @@ Here are some study materials I've put together using the
 summer of 2017.
 
 ------ | --
-Exam 1 | [Review problems](exam01-review.pdf)
-Exam 2 | [Review problems](exam02-review.pdf)
-Exam 3 | [Review problems](exam03-review.pdf)
-Final  | Review problems: [exams](final-review1.pdf), [exams + practice-examx](final-review2.pdf)
+Exam 1 | [Review sheet](exam01-review.pdf)
+Exam 2 | [Review sheet](exam02-review.pdf)
+Exam 3 | [Review sheet](exam03-review.pdf)
+Final  | Review sheets: [exams](final-review1.pdf) / [exams & practice-exams](final-review2.pdf)
