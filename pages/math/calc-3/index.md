@@ -231,8 +231,9 @@ Here are some study materials I've put together using the
 [quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote over the
 summer of 2017.
 
------- | --
-Exam 1 | [Review sheet](exam01-review.pdf)
-Exam 2 | [Review sheet](exam02-review.pdf)
-Exam 3 | [Review sheet](exam03-review.pdf)
-Final  | Review sheets: [exams](final-review1.pdf) / [exams & practice-exams](final-review2.pdf)
+---------- | --
+Exam 1     | [Review sheet](exam01-review.pdf)
+Exam 2     | [Review sheet](exam02-review.pdf)
+Exam 3     | [Review sheet](exam03-review.pdf)
+Final      | Review sheets: [exams](final-review1.pdf) / [exams & practice-exams](final-review2.pdf)
+Cumulative | [Review sheet](cumulative.pdf)
