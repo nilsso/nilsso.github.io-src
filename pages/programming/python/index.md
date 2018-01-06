@@ -8,11 +8,12 @@ title: "Python Notes"
 
 #### Exponentiation
 
-`a**b` is equivalent to `pow(a, b)` or `a*...*a` (but for some reason seems slower)
+- `a**b` is equivalent to `pow(a, b)` or `a*...*a` (but for some reason seems slower)
 
 #### Integer division
 
-`a // b` is equivalent to `int(a / b)`
+- `a // b` is equivalent to `int(a / b)`.
+- Also, `a //= b` is equivalent to `a = a // b`
 
 # Libraries
 
