@@ -1,0 +1,31 @@
+body {
+	padding-top: 1rem;
+	font-size: 0.875rem;
+}
+
+h3 {
+	font-size: 1.53125rem;
+}
+
+h4 {
+	font-size: 1.3125rem;
+}
+
+.checklist-header .btn {
+  width: 34px;
+  margin-right: 8px;
+}
+
+.checklist {
+  padding-left: 42px;
+}
+
+.checklist ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.checklist input {
+  margin-right: 8px;
+}
+

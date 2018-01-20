@@ -1,0 +1,38 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+		<!--<link rel="stylesheet" href="css/tarkovish.css">-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+    <title>Tarkov Checklists</title>
+  </head>
+  <body>
+    <div class="container">
+			<h3 id="woods_keys" class="checklist-header">Woods Keys</h3>
+      <ul id="woods_keys_col" data-id="woods_keys" class="checklist collapse in">
+        {% capture woods_keys %}{% include_relative woods_keys.md %}{% endcapture %}
+        {{ woods_keys | markdownify }}
+      </ul>
+      <h3 id="customs_keys" class="checklist-header">Customs Keys</h3>
+      <ul id="customs_keys_col" data-id="customs_keys" class="checklist collapse in">
+        {% capture customs_keys %}{% include_relative customs_keys.md %}{% endcapture %}
+        {{ customs_keys | markdownify }}
+      </ul>
+      <h3 id="shoreline_keys" class="checklist-header">Shoreline Keys</h3>
+      <div id="shoreline_keys_col" data-id="shoreline_keys" class="checklist collapse in">
+        {% capture shoreline_keys %}{% include_relative shoreline_keys.md %}{% endcapture %}
+        {{ shoreline_keys | markdownify }}
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
