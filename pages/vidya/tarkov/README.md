@@ -1,8 +1,8 @@
-### Escape from Tarkov Checklists
+# Escape from Tarkov Checklists
 
 Currently only with keys.
 
-#### Using
+## Using
 
 - [Bootstrap](https://v4-alpha.getbootstrap.com/)
 - [Fontawesome](http://fontawesome.io/)
