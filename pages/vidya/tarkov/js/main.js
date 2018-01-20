@@ -55,4 +55,10 @@ function addCheckbox(ele) {
   var sublists = $ele.children('ul');
   content = checkTemplate.format($ele.attr('data-id'), content);
   $ele.html(content).append(sublists);
+  var check = $ele.find('input');
+  check.prop('checked', $.jStorage.get(check.attr('id'), false));
+  check.click(function() {
+    var checkId = $(this).attr('id');
+    $.jStorage.set(checkId, $(this).prop('checked'));
+  });
 }

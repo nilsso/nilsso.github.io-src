@@ -15,23 +15,30 @@ layout: null
   </head>
   <body>
     <div class="container">
+			<h3 id="factory_keys" class="checklist-header">Factory Keys</h3>
+      <ul id="factory_keys_col" data-id="factory_keys" class="checklist collapse in">
+        {% capture factory_keys %}{% include_relative key_lists/factory.md %}{% endcapture %}
+        {{ factory_keys | markdownify }}
+      </ul>
 			<h3 id="woods_keys" class="checklist-header">Woods Keys</h3>
       <ul id="woods_keys_col" data-id="woods_keys" class="checklist collapse in">
-        {% capture woods_keys %}{% include_relative woods_keys.md %}{% endcapture %}
+        {% capture woods_keys %}{% include_relative key_lists/woods.md %}{% endcapture %}
         {{ woods_keys | markdownify }}
       </ul>
       <h3 id="customs_keys" class="checklist-header">Customs Keys</h3>
       <ul id="customs_keys_col" data-id="customs_keys" class="checklist collapse in">
-        {% capture customs_keys %}{% include_relative customs_keys.md %}{% endcapture %}
+        {% capture customs_keys %}{% include_relative key_lists/customs.md %}{% endcapture %}
         {{ customs_keys | markdownify }}
       </ul>
       <h3 id="shoreline_keys" class="checklist-header">Shoreline Keys</h3>
       <div id="shoreline_keys_col" data-id="shoreline_keys" class="checklist collapse in">
-        {% capture shoreline_keys %}{% include_relative shoreline_keys.md %}{% endcapture %}
+        {% capture shoreline_keys %}{% include_relative key_lists/shoreline.md %}{% endcapture %}
         {{ shoreline_keys | markdownify }}
       </div>
+      <p>Source: <a href="https://forums.uwsgaming.com/topic/3871-map-keys-and-you/">United We Stand - Map Keys and You!</a></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
