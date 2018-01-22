@@ -1,5 +1,5 @@
 - [Factory Key][01] This should never leave your gamma. On factory it opens two
-  additional extracts (which?) and allows you to open the locked room in third
+  additional extracts (Gate 0, Cellars) and allows you to open the locked room in third
   floor offices which has a possible weapon spawn, two coats, loose loot and
   occasional high end ammo. Where this key can be found: Customs 3-Story dorm
   guard station; Customs glass warehouse in the blue locker; Customs glass
