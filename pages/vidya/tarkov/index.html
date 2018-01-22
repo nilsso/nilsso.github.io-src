@@ -15,23 +15,23 @@ layout: null
   </head>
   <body>
     <div class="container">
-			<h3 id="factory_keys" class="checklist-header">Factory Keys</h3>
-      <ul id="factory_keys_col" data-id="factory_keys" class="checklist collapse in">
+			<h3 id="factory-keys-header" data-target="factory-keys" class="checklist-header">Factory Keys</h3>
+      <div id="factory-keys" class="checklist collapse in">
         {% capture factory_keys %}{% include_relative key_lists/factory.md %}{% endcapture %}
         {{ factory_keys | markdownify }}
-      </ul>
-			<h3 id="woods_keys" class="checklist-header">Woods Keys</h3>
-      <ul id="woods_keys_col" data-id="woods_keys" class="checklist collapse in">
+      </div>
+			<h3 id="woods-keys-header" data-target="woods-keys" class="checklist-header">Woods Keys</h3>
+      <div id="woods-keys" class="checklist collapse in">
         {% capture woods_keys %}{% include_relative key_lists/woods.md %}{% endcapture %}
         {{ woods_keys | markdownify }}
-      </ul>
-      <h3 id="customs_keys" class="checklist-header">Customs Keys</h3>
-      <ul id="customs_keys_col" data-id="customs_keys" class="checklist collapse in">
+      </div>
+      <h3 id="customs-keys-header" data-target="customs-keys" class="checklist-header">Customs Keys</h3>
+      <div id="customs-keys" class="checklist collapse in">
         {% capture customs_keys %}{% include_relative key_lists/customs.md %}{% endcapture %}
         {{ customs_keys | markdownify }}
-      </ul>
-      <h3 id="shoreline_keys" class="checklist-header">Shoreline Keys</h3>
-      <div id="shoreline_keys_col" data-id="shoreline_keys" class="checklist collapse in">
+      </div>
+      <h3 id="shoreline-keys-header" data-target="shoreline-keys" class="checklist-header">Shoreline Keys</h3>
+      <div id="shoreline-keys" class="checklist collapse in">
         {% capture shoreline_keys %}{% include_relative key_lists/shoreline.md %}{% endcapture %}
         {{ shoreline_keys | markdownify }}
       </div>
