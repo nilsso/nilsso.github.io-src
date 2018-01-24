@@ -67,6 +67,10 @@ function constructCheckbox(ele) {
   var check = $(ele).find('input');
   check.prop('checked', $.jStorage.get(dataId, false));
   check.click(function() {
-    $.jStorage.set(dataId, $(check).prop('checked'));
+    if ($(check).prop('checked')) {
+      $.jStorage.set(dataId, true);
+    } else {
+      $.jStorage.deleteKey(dataId);
+    }
   });
 }
