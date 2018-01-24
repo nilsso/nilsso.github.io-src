@@ -1,6 +1,6 @@
 body {
-	padding-top: 1rem;
 	font-size: 0.875rem;
+  padding-top: 64px;
 }
 
 h3 {
@@ -40,6 +40,6 @@ h4 {
   margin: 4px 0 0 -24px;
 }
 
-#footer, #todo {
-  margin-bottom: 10px;
+#footer {
+  padding-bottom: 1rem;
 }

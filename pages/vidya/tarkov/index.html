@@ -15,6 +15,9 @@ key-lists: [customs, factory, shoreline, woods]
     <title>Tarkov Checklists</title>
   </head>
   <body>
+    <nav class="navbar fixed-top navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Tarkov Key Checklist</span>
+    </nav>
     <div class="container">
       <div class="row">
         <div id="checklists" class="col-8">
@@ -29,40 +32,50 @@ key-lists: [customs, factory, shoreline, woods]
           {% endfor %}
         </div>
         <div class="col-4">
-          <div id="legend" class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h3 class="card-title">Legend</h3>
-              <span class="badge badge-primary">Key</span>
-              Unlocks an area that is important beyond loot.<br>
-              <span class="badge badge-secondary">Key</span>
-              Unlocks an area that contains average loot compared to nearby areas.<br>
-              <span class="badge badge-success">Key</span>
-              Unlocks an area that contains above-average loot compared to nearby areas.<br>
-              <span class="badge badge-info">Key</span>
-              Unlocks an area that is required for a quest.
+          <div style="position: fixed">
+            <div id="legend" class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h3 class="card-title">Legend</h3>
+                <span class="badge badge-primary">Key</span>
+                Unlocks an area that is important beyond loot.<br>
+                <span class="badge badge-secondary">Key</span>
+                Unlocks an area that contains average loot compared to nearby areas.<br>
+                <span class="badge badge-success">Key</span>
+                Unlocks an area that contains above-average loot compared to nearby areas.<br>
+                <span class="badge badge-info">Key</span>
+                Unlocks an area that is required for a quest.
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="footer">
-      Repo: <a href="https://github.com/SweedJesus/sweedjesus.github.io/tree/master/pages/vidya/tarkov">sweedjesus.github.io/pages/vidya/tarkov</a><br>
-      Source: <a href="https://forums.uwsgaming.com/topic/3871-map-keys-and-you/">United We Stand - Map Keys and You!</a><br>
-      Inspired by: <a href="http://zkjellberg.github.io/dark-souls-3-cheat-sheet/">Dark Souls 3 Cheat Sheet</a>
+    </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div id="todo">
+            <span class="badge badge-warning">Todo</span>
+            <ul>
+              <li>Finish catagorizing key badges (
+                <span class="badge badge-primary">important</span> /
+                <span class="badge badge-secondary">average</span> /
+                <span class="badge badge-success">above-average</span> /
+                <span class="badge badge-info">quest</span> )
+              </li>
+              <li>Add links to wiki pages screenshots</li>
+              <li>Verify all key information (I know that some keys have been correctly labeled since patches)</li>
+              <li>Add some local screenshots</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div id="todo">
-        <span class="badge badge-warning">Todo</span>
-        <ul>
-          <li>Finish catagorizing key badges (
-            <span class="badge badge-primary">important</span> /
-            <span class="badge badge-secondary">average</span> /
-            <span class="badge badge-success">above-average</span> /
-            <span class="badge badge-info">quest</span> )
-          </li>
-          <li>Add links to wiki pages screenshots</li>
-          <li>Verify all key information (I know that some keys have been correctly labeled since patches)</li>
-          <li>Add some local screenshots</li>
-        </ul>
-      </div>
+      <ul id="footer" class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link" href="https://github.com/SweeJesus">Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/SweedJesus/sweedjesus.github.io/tree/master/pages/vidya/tarkov">Repo</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://forums.uwsgaming.com/topic/3871-map-keys-and-you/">Source</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://zkjellberg.github.io/dark-souls-3-cheat-sheet/">Inspired by</a></li>
+      </ul>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
