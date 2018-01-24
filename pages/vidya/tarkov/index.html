@@ -1,5 +1,6 @@
 ---
 layout: null
+key-lists: [customs, factory, shoreline, woods]
 ---
 <!doctype html>
 <html lang="en-US">
@@ -9,7 +10,7 @@ layout: null
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-		<!--<link rel="stylesheet" href="css/tarkovish.css">-->
+    <!--<link rel="stylesheet" href="css/tarkovish.css">-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     <title>Tarkov Checklists</title>
   </head>
@@ -17,42 +18,35 @@ layout: null
     <div class="container">
       <div class="row">
         <div id="checklists" class="col-8">
-          <h3 id="factory-keys-header" data-target="factory-keys" class="checklist-header">Factory Keys</h3>
-          <div id="factory-keys" class="checklist collapse in">
-            {% capture factory_keys %}{% include_relative key-lists/factory.md %}{% endcapture %}
-            {{ factory_keys | markdownify }}
+          {% for list in page.key-lists %}
+          <h3 id="{{ list }}-keys-header" data-target="{{ list }}-keys" class="checklist-header">
+            {{ list | capitalize }} Keys
+          </h3>
+          <div id="{{ list }}-keys" class="checklist collapse in">
+            {% capture list-html %}{% include_relative key-lists/{{ list }}.md %}{% endcapture %}
+            {{ list-html | markdownify }}
           </div>
-          <h3 id="woods-keys-header" data-target="woods-keys" class="checklist-header">Woods Keys</h3>
-          <div id="woods-keys" class="checklist collapse in">
-            {% capture woods_keys %}{% include_relative key-lists/woods.md %}{% endcapture %}
-            {{ woods_keys | markdownify }}
-          </div>
-          <h3 id="customs-keys-header" data-target="customs-keys" class="checklist-header">Customs Keys</h3>
-          <div id="customs-keys" class="checklist collapse in">
-            {% capture customs_keys %}{% include_relative key-lists/customs.md %}{% endcapture %}
-            {{ customs_keys | markdownify }}
-          </div>
-          <h3 id="shoreline-keys-header" data-target="shoreline-keys" class="checklist-header">Shoreline Keys</h3>
-          <div id="shoreline-keys" class="checklist collapse in">
-            {% capture shoreline_keys %}{% include_relative key-lists/shoreline.md %}{% endcapture %}
-            {{ shoreline_keys | markdownify }}
-          </div>
+          {% endfor %}
         </div>
         <div class="col-4">
           <div id="legend" class="card" style="width: 18rem;">
             <div class="card-body">
-              <div class="card-title">Legend</div>
-              <span class="badge badge-primary">An important key</span></br>
-              <span class="badge badge-secondary">An average key</span></br>
-              <span class="badge badge-success">An above-average key</span></br>
-              <span class="badge badge-info">A quest related key</span>
+              <h3 class="card-title">Legend</h3>
+              <span class="badge badge-primary">Key</span>
+              Unlocks an area that is important beyond loot.<br>
+              <span class="badge badge-secondary">Key</span>
+              Unlocks an area that contains average loot compared to nearby areas.<br>
+              <span class="badge badge-success">Key</span>
+              Unlocks an area that contains above-average loot compared to nearby areas.<br>
+              <span class="badge badge-info">Key</span>
+              Unlocks an area that is required for a quest.
             </div>
           </div>
         </div>
       </div>
       <p>
-      Repo: <a href="https://github.com/SweedJesus/sweedjesus.github.io/tree/master/pages/vidya/tarkov">sweedjesus.github.io/pages/vidya/tarkov</a></br>
-      Source: <a href="https://forums.uwsgaming.com/topic/3871-map-keys-and-you/">United We Stand - Map Keys and You!</a></br>
+      Repo: <a href="https://github.com/SweedJesus/sweedjesus.github.io/tree/master/pages/vidya/tarkov">sweedjesus.github.io/pages/vidya/tarkov</a><br>
+      Source: <a href="https://forums.uwsgaming.com/topic/3871-map-keys-and-you/">United We Stand - Map Keys and You!</a><br>
       Inspired by: <a href="http://zkjellberg.github.io/dark-souls-3-cheat-sheet/">Dark Souls 3 Cheat Sheet</a>
       </p>
     </div>

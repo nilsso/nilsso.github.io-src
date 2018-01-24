@@ -30,10 +30,12 @@ collapserBtnTemplate =
 
 
 checkTemplate =
+'<div>' +
 '<label>' +
 '<input type="checkbox">' +
-'{0}' +
-'</label>';
+'<span>{0}</span>' +
+'</label>' +
+'</div>';
 
 
 function constructHeader(_, ele) {

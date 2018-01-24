@@ -21,11 +21,22 @@ h4 {
 }
 
 .checklist ul {
-  padding-left: 0;
+  padding-left: 24px;
   list-style-type: none;
 }
 
+.checklist div {
+  margin: 10px 0;
+}
+
+.checklist label {
+  padding-left: 24px;
+  margin: 0;
+  cursor: pointer;
+}
+
 .checklist input {
-  margin-right: 8px;
+  position: absolute;
+  margin: 4px 0 0 -24px;
 }
 
