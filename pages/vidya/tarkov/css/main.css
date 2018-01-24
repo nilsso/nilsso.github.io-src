@@ -17,11 +17,11 @@ h4 {
 }
 
 .checklist {
-  padding-left: 42px;
+  padding-left: 0;
 }
 
 .checklist ul {
-  padding-left: 20px;
+  padding-left: 0;
   list-style-type: none;
 }
 

@@ -19,11 +19,13 @@
   truck. 
 - [Cabin Key][06] This opens the mobile trailer inside of bus
   depot. There's loose loot and rarely some 7.62. A disappointing key. 
-- [Factory Key][07] This should never leave your gamma and opens
-  shortcut. There's a green crate and a filing cabinet within the checkpoint.
-  Very rarely a grenade spawns on the table. This key spawns in the office of
-  3-Storey in Customs, and the glass warehouse in Customs (in the blue locker
-  or near the dead scav).
+- [Factory Key][07] This should never leave your gamma. On factory it opens two
+  additional extracts (Gate 0, Cellars) and allows you to open the locked room in third
+  floor offices which has a possible weapon spawn, two coats, loose loot and
+  occasional high end ammo. Where this key can be found: Customs 3-Story dorm
+  guard station; Customs glass warehouse in the blue locker; Customs glass
+  warehouse on the couch next to the dead scav; Customs checkpoint car trunk,
+  possibly in jacket therein; in scav backpacks.
 - [Checkpoint Key][08] Opens the building at the UN Checkpoint at
   the far end of Customs. There are two ammo crates, a grenade crate, and a
   weapon rack that spawns a weapon more often than others. This key can spawn
