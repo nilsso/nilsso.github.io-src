@@ -15,15 +15,33 @@ key-lists: [customs, factory, shoreline, woods]
     <title>Tarkov Checklists</title>
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Tarkov Key Checklist</span>
+    <nav id="main-navbar" class="navbar bg-light">
+      <span class="navbar-brand">Tarkov Checklists</span>
     </nav>
-    <div class="container">
-      <div class="row">
-        <div id="checklists" class="col-8">
+    <div id="keys" class="container">
+      <div class="header">
+        <div id="legend" class="card" style="width: 100%;">
+          <div class="card-body">
+            <h3 class="card-title">Legend</h3>
+            <span class="badge badge-primary">Key</span>
+            Unlocks an area that is important beyond loot.<br>
+            <span class="badge badge-secondary">Key</span>
+            Unlocks an area that contains average loot compared to nearby areas.<br>
+            <span class="badge badge-success">Key</span>
+            Unlocks an area that contains above-average loot compared to nearby areas.<br>
+            <span class="badge badge-info">Key</span>
+            Unlocks an area that is required for a quest.
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-header">
+          <h3>Keys</h3>
+        </div>
+        <div id="checklists" class="left">
           {% for list in page.key-lists %}
           <h3 id="{{ list }}-keys-header" data-target="{{ list }}-keys" class="checklist-header">
-            {{ list | capitalize }} Keys
+            {{ list | capitalize }}
           </h3>
           <div id="{{ list }}-keys" class="checklist collapse in">
             {% capture list-html %}{% include_relative key-lists/{{ list }}.md %}{% endcapture %}
@@ -31,44 +49,23 @@ key-lists: [customs, factory, shoreline, woods]
           </div>
           {% endfor %}
         </div>
-        <div class="col-4">
-          <div style="position: fixed">
-            <div id="legend" class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h3 class="card-title">Legend</h3>
-                <span class="badge badge-primary">Key</span>
-                Unlocks an area that is important beyond loot.<br>
-                <span class="badge badge-secondary">Key</span>
-                Unlocks an area that contains average loot compared to nearby areas.<br>
-                <span class="badge badge-success">Key</span>
-                Unlocks an area that contains above-average loot compared to nearby areas.<br>
-                <span class="badge badge-info">Key</span>
-                Unlocks an area that is required for a quest.
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <hr>
     <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <div id="todo">
-            <span class="badge badge-warning">Todo</span>
-            <ul>
-              <li>Finish categorizing key badges (
-                <span class="badge badge-primary">important</span> /
-                <span class="badge badge-secondary">average</span> /
-                <span class="badge badge-success">above-average</span> /
-                <span class="badge badge-info">quest</span> )
-              </li>
-              <li>Add links to wiki pages screenshots</li>
-              <li>Verify all key information (I know that some keys have been correctly labeled since patches)</li>
-              <li>Add some local screenshots</li>
-            </ul>
-          </div>
-        </div>
+      <div id="todo" class="content">
+        <span class="badge badge-warning">Todo</span>
+        <ul>
+          <li>Finish categorizing key badges (
+            <span class="badge badge-primary">important</span> /
+            <span class="badge badge-secondary">average</span> /
+            <span class="badge badge-success">above-average</span> /
+            <span class="badge badge-info">quest</span> )
+          </li>
+          <li>Add links to wiki pages screenshots</li>
+          <li>Verify all key information (I know that some keys have been correctly labeled since patches)</li>
+          <li>Add some local screenshots</li>
+        </ul>
       </div>
       <ul id="footer" class="nav justify-content-center">
         <li class="nav-item"><a class="nav-link" href="https://github.com/SweeJesus">Me</a></li>
