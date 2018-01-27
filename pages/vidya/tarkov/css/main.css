@@ -2,6 +2,10 @@ body {
 	font-size: 0.875rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 h3 {
 	font-size: 1.53125rem;
 }
@@ -57,10 +61,6 @@ hr {
 
 .checklist-header {
   margin-bottom: 8px;
-  font-weight: normal;
-}
-
-.checklist h3, .checklist h4 {
   font-weight: normal;
 }
 
