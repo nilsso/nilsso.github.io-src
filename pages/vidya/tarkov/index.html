@@ -44,7 +44,7 @@ key-lists: [customs, factory, shoreline, woods]
         </ul>
         <h4>Key lists:</h4>
         <div id="checklists" class="left">
-          {% include header.html %}
+          {% for list in page.key-lists %}
           <h3 id="{{ list }}-keys-header" data-target="{{ list }}-keys" class="checklist-header">
             {{ list | capitalize }}
           </h3>
