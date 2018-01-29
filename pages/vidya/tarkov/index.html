@@ -15,7 +15,9 @@ key-lists: [customs, factory, shoreline, woods]
     <title>Tarkov Checklists</title>
   </head>
   <body>
-    {% include header.html %}
+    <nav id="main-navbar" class="navbar bg-light">
+      <span class="navbar-brand"><a href="{{ site.url }}">nils</a> / Tarkov Checklists</span>
+    </nav>
     <div id="keys" class="container">
       <div class="header">
         <div id="legend" class="card" style="width: 100%;">
@@ -42,9 +44,7 @@ key-lists: [customs, factory, shoreline, woods]
         </ul>
         <h4>Key lists:</h4>
         <div id="checklists" class="left">
-          <nav id="main-navbar" class="navbar bg-light">
-            <span class="navbar-brand"><a href="{{ site.url }}">nils</a> / Tarkov Checklists</span>
-          </nav>
+          {% include header.html %}
           <h3 id="{{ list }}-keys-header" data-target="{{ list }}-keys" class="checklist-header">
             {{ list | capitalize }}
           </h3>
