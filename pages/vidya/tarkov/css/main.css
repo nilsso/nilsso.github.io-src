@@ -26,11 +26,6 @@ hr {
   margin-bottom: 16px;
 }
 
-.content-header {
-  padding-left: 48px;
-  margin-bottom: 8px;
-}
-
 @media (min-width: 992px) {
   .header {
     position: sticky;
