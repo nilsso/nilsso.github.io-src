@@ -1,7 +1,7 @@
 // Only to be incremented if any of the key lists were changed (item
 // additions/removals) and thus was a change in the number of keys. NOT to be
 // incremented for changing key discriptions (content).
-var version = 0;
+var version = 1;
 
 
 $(function() {
