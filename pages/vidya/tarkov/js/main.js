@@ -11,7 +11,8 @@ $(function() {
   });
 
   // Nuke saved keys if version differs
-  if ($.jStorage.get('version', null) != version) {
+  var storedVersion = $.jStorage.get('version');
+  if (storedVersion != null and parseInt(storedVersion) != version) {
     $.jStorage.flush();
     alert('A change in version caused a reset to saved keys.');
   }
