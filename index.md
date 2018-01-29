@@ -11,7 +11,9 @@ Math /
 [Trigonometry](pages/math/trigonometry) /
 [Calculus 2](pages/math/calc-2) /
 [Calculus 3](pages/math/calc-3) /
-[Linear Algebra](pages/math/linear-algebra)
+[Linear Algebra](pages/math/linear-algebra) /
+[Discrete](pages/math/discrete) /
+[DiffEq](pages/math/diffeq)
 <br/>
 Math / [Problem Generator](problem-generator)
 <br/>
