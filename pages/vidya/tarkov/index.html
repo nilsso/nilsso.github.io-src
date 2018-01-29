@@ -42,7 +42,9 @@ key-lists: [customs, factory, shoreline, woods]
         </ul>
         <h4>Key lists:</h4>
         <div id="checklists" class="left">
-          {% for list in page.key-lists %}
+          <nav id="main-navbar" class="navbar bg-light">
+            <span class="navbar-brand"><a href="{{ site.url }}">nils</a> / Tarkov Checklists</span>
+          </nav>
           <h3 id="{{ list }}-keys-header" data-target="{{ list }}-keys" class="checklist-header">
             {{ list | capitalize }}
           </h3>
