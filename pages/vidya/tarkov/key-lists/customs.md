@@ -13,6 +13,10 @@
 - <a href="#" class="badge badge-info">Customs Key</a> This opens the top
   floor office in the big red building at spawn. There is a safe, three
   lootable PCs, coats, and a duffle bag. Also a quest location.
+- <a href="#" class="badge badge-info">Machinery Key</a> This opens the
+  fuel truck's cabin inside Customs construction area that contains the bronze
+  pocketwatch for a quest but no other loot. This key spawns commonly in room
+  205 in 3-Story (partially blocked doorway) in the jacket.
 - <a href="#" class="badge badge-secondary">Cabinet Key</a> This opens the gas
   station office door. There is a safe,  very rarely a pistol under the desk,
   rubles on the ground, and loose loot on the shelves in the back. This
@@ -40,9 +44,6 @@
   and a medical bag. This key spawns under the desk in the gas station office.
 - <a href="#" class="badge badge-secondary">Car Key</a> This opens the trunk of
   the white car near the dorms. There is a grenade crate. 
-- <a href="#" class="badge badge-secondary">Machinery Key</a> This opens the
-  fuel truck's cabin inside Customs construction area. Used for a quest. This
-  key spawns in room 205 in 3-Storey (partially blocked doorway) in the jacket. 
 - <a href="#" class="badge badge-secondary">Cabin Key (trailer park)</a> This
   opens the cabin near offline spawn. There is a coat. It is a quest location.
   It is given to you at quest start but has been known to spawn in various
