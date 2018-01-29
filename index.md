@@ -8,7 +8,7 @@ Music /
 <br/>
 Math /
 [Algebra](pages/math/algebra) /
-[Trig=](pages/math/trigonometry) /
+[Trig](pages/math/trigonometry) /
 [Calc 2](pages/math/calc-2) /
 [Calc 3](pages/math/calc-3) /
 [Linear](pages/math/linear-algebra) /
