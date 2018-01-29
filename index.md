@@ -8,10 +8,10 @@ Music /
 <br/>
 Math /
 [Algebra](pages/math/algebra) /
-[Trigonometry](pages/math/trigonometry) /
-[Calculus 2](pages/math/calc-2) /
-[Calculus 3](pages/math/calc-3) /
-[Linear Algebra](pages/math/linear-algebra) /
+[Trigonometry](pages/math/trig) /
+[Calc 2](pages/math/calc-2) /
+[Calc 3](pages/math/calc-3) /
+[Linear](pages/math/linear-algebra) /
 [Discrete](pages/math/discrete) /
 [DiffEq](pages/math/diffeq)
 <br/>
