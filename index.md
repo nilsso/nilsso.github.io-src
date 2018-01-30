@@ -22,6 +22,7 @@ Programming /
 [Vim](pages/programming/vim) /
 [Web](pages/programming/web) /
 [C++](pages/programming/cpp) /
+[Java](pages/programming/java) /
 [Python](pages/programming/python) /
 [Haskell](pages/programming/haskell)
 <br/>

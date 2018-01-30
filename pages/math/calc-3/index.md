@@ -1,37 +1,38 @@
 ---
-layout: default
 title: "Calculus 3"
-toc: true
 ---
 
 {% include mathjax.html %}
 
+* toc
+{:toc}
+
 <div id="mathjax-preamble" style="display:none;">
 $$
 \let\oldvec\vec
-\renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\vec}[1]{\mathbf{1}}
 $$
 </div>
 
-## Vectors
+# Vectors
 
 -- | --
 A vector | $$\vec u=\langle u_1,\cdots,u_n\rangle$$
 
-### Properties
+## Properties
 
 -- | --
 Commutative addition | $$\vec u+\vec w\equiv\langle u_1+w_1,\cdots,u_n+w_n\rangle$$
 Scalar multiplication | $$k\vec u=\langle ku_1,\cdots,ku_n\rangle$$
 
-### Identities
+## Identities
 
 -- | --
 Zero vector | $ \vec 0=\langle 0,0\rangle $
 Inverse identity | $ \vec u+(-\vec u)=0 $
 Additive identity | $ \vec u+\vec 0=\vec u $
 
-### Dot product
+## Dot product
 
 The dot product of two vectors is the the scalar multiple of their magnitudes
 and the angle $$\alpha$$ between them. Conceptually, it is the product of their
@@ -41,7 +42,7 @@ $$
 \vec u\cdot\vec w=u_1+w_1+\cdots+u_n+w_n=\lVert\vec u\rVert\lVert\vec w\rVert\cos\alpha
 $$
 
-#### Vector projection
+### Vector projection
 
 A projection vector describes how much one vector is in the same direction as
 another vector. In the form below, $$\theta$$ is the angle between the two
@@ -55,7 +56,7 @@ $$
 
 Consider that the operation is simply a scalar multiplication.
 
-### Cross product
+## Cross product
 
 The cross product (or vector product) of two vectors returns a vector
 orthogonal to both arguments known as the normal vector.
@@ -69,7 +70,7 @@ c=(u_xw_y-u_yw_x)\\
 \end{gather*}
 $$
 
-### Magnitude
+## Magnitude
 
 The magnitude of a vector is the distance between the origin and the point at
 the components of the vector, and equivalent to the hypotenuse of the triangle
@@ -77,7 +78,7 @@ formed by the components.
 
 $$\lVert\vec u\rVert\equiv\sqrt{u_1^2+\cdots+u_n^2}$$
 
-### Unit vectors
+## Unit vectors
 
 A unit vector (or normal vector) is a vector with magnitude equal to 1 and are
 used when we care about direction but not magnitude. The unit vector of a
@@ -95,7 +96,7 @@ positive scalar. This can be extremely useful in simplifying the derivative of
 the principle unit tangent vector, because so often the original will involve
 a quotient and thus the derivative the quotient rule.
 
-### Vector planes
+## Vector planes
 
 $$
 \begin{align*}
@@ -106,7 +107,7 @@ $$
 \end{align*}
 $$
 
-## Vector calculus
+# Vector calculus
 
 -- | --
 Position | $$\vec d(t)=\vec r(t)=\langle x(t),y(t),z(t)\rangle$$
@@ -114,7 +115,7 @@ Velocity | $$\vec v(t)=\vec r'(t)=\langle x'(t),y'(t),z'(t)\rangle$$
 Acceleration | $$\vec a(t)=\vec r''(t)=\langle x''(t),y''(t),z''(t)\rangle$$
 Arc length | $$L=\int_a^b\lVert\vec v\rVert dt$$
 
-### Motion
+## Motion
 
 The unit tangent is a vector in the same direction as any vector given by the
 velocity vector for a value of *t*, but with magnitude equal to one.
@@ -124,7 +125,7 @@ Unit tangent | $$\vec T(t)=\frac{1}{\lVert\vec v\rVert}\vec v$$
 Unit normal | $$\vec N(t)=\frac{1}{\lVert\vec T'(t)\rVert}\vec T'(t)$$
 Acceleration | $$\vec a(t)=a_{\vec T}\vec T+a_{\vec N}\vec N$$
 
-## Partial Derivatives
+# Partial Derivatives
 
 Given a function dependent on multiple variables, in taking the partial
 derivative of that function with respect to one of the variables we can treat
@@ -163,7 +164,7 @@ $$
 \frac{\delta z}{\delta y}\frac{\delta y}{\delta u}
 $$
 
-### Gradient
+## Gradient
 
 The gradient of a function \(f(x,y)\):
 
@@ -171,7 +172,7 @@ $$
 \nabla f(x,y)=\langle f_x(x,y),f_y(x,y)\rangle
 $$
 
-### Directional Derivative and Incline
+## Directional Derivative and Incline
 
 The directional derivative at point $P(a,b)$ of function $f$ (that's
 differentiable at $P$) and unit vector $\vec u$:
@@ -180,9 +181,9 @@ $$
 D_u(a,b)=\nabla f(a,b)\cdot\vec u
 $$
 
-### Extrema
+## Extrema
 
-#### Of a function
+### Of a function
 
 Just as in calculus 1,
 
@@ -198,7 +199,7 @@ f_{xx}f_{yy}-(f_{xy})^2
 \end{cases}
 $$
 
-#### Of a function and a constraint
+### Of a function and a constraint
 
 Given a function $f(x,y)$ and constraint $g(x,y)$ we can derive the following
 system of equations:
@@ -216,7 +217,7 @@ From these we can solve for x, for y and for $\lambda$ and determine posible
 extreme value points of the original function. Some posibilities may invalidate
 the constraint and can therefore be disqualified.
 
-## Double integration
+# Double integration
 
 $$
 A=\lim_{\|P\|\to 0} \sum^n_{i=1}\sum^m_{j=1}f(x_i,y_j)\Delta y_j\Delta x_i
@@ -225,7 +226,7 @@ $$
 
 ---
 
-## Course resources
+# Course resources
 
 Here are some study materials I've put together using the
 [quiz-generator](github.com://SweedJesus/quiz-generator) script I wrote over the

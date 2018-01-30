@@ -8,6 +8,8 @@ twitter_username: #FuckTwitter
 github_username: SweedJesus
 github_dotfiles: dotfiles
 
+markdown: kramdown
+
 defaults:
   -
     scope:
