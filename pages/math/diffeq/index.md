@@ -3,7 +3,7 @@ title: Differential Equations
 ---
 
 {% include mathjax.html %}
-*toc
+* toc
 {:toc}
 
 # Intro
