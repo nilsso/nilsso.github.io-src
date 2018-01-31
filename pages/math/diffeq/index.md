@@ -1,9 +1,10 @@
 ---
 title: Differential Equations
-toc: true
 ---
 
 {% include mathjax.html %}
+*toc
+{:toc}
 
 # Intro
 
