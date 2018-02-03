@@ -1,10 +1,10 @@
 ---
-layout: default
-title: "Algebra"
-toc: true
+title: Algebra
 ---
 
 {% include mathjax.html %}
+* toc
+{:toc}
 
 # Exponents and Logarithms
 

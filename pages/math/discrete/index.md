@@ -3,11 +3,8 @@ title: Discrete Mathematics
 ---
 
 {% include mathjax.html %}
-
-# Intro
-
-- Syllabus: <https://change.later>
-- Textbook: <https://change.later>
+* toc
+{:toc}
 
 # "Language" of math
 

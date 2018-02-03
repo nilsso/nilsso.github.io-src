@@ -9,8 +9,7 @@ Music /
 Math /
 [Algebra](pages/math/algebra) /
 [Trig](pages/math/trigonometry) /
-[Calc 2](pages/math/calc-2) /
-[Calc 3](pages/math/calc-3) /
+[Calc](pages/math/calc) /
 [Linear](pages/math/linear-algebra) /
 [Discrete](pages/math/discrete) /
 [DiffEq](pages/math/diffeq)
@@ -29,8 +28,6 @@ Programming /
 Vidya /
 [AddOns](pages/vidya/wow-addons) /
 [Tarkov](pages/vidya/tarkov)
-
----
 
 # About Me
 

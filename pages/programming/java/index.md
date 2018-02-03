@@ -119,3 +119,5 @@ Some material on next test
     - `extends` (can only have one) and `implements` (can have many) clauses
     - Understand usage of `instanceof` for decision structures
     - Casting generic type to subclass type to access subclass properties and methods
+
+Interfaces can extend multiple classes, where concrete classes can only extend one class.
