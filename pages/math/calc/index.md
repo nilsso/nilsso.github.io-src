@@ -24,6 +24,14 @@ $$
 $$
 </div>
 
+These are my notes from my times in calculus classes  and in review . Most of
+this content I wrote as classes went on, so depth and rigor might by lacking
+and there are probably plenty of errors. I've also put together some review
+sets and example problems that are probably most easily found by just
+navigating the repository at
+[pages/math/calc](https://github.com/sweedjesus/sweedjesus.github.io/pages/math/calc);
+I did them either straight in LaTeX or in my quiz-generator DSL (so LaTeX).
+
 {% include_relative calc-1.md %}
 {% include_relative calc-2.md %}
 {% include_relative calc-3.md %}
