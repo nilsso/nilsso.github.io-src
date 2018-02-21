@@ -39,6 +39,10 @@ metal, post metal, folk metal), classical (as in all of the eras), electronic
 music (trance, electro house, etc.). I also love computer games. Always have
 always will.
 
+    If you really want to try and understand things,
+    and you want to get the bottom of how things work,
+    you have to ask really stupid and simple questions.
+
 <!--
 On Steam I'm [SweedJesus][steam], and on the Vanilla private server [Elysium
 (Anathema)][elysium] my main is Miraculin, 60 priest in [Titans of War][tow] (a
