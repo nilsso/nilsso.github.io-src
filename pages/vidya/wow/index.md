@@ -45,7 +45,7 @@ version.
 [ab2-git]: https://github.com/{{site.github_username}}/AttackBar2
 [ab2-demo]: #
 
-### Dark Souls Death Screen 1.12 ([github][dsds]) ([demo][dsds-demo])
+### Dark Souls Death Screen ([github][dsds]) ([demo][dsds-demo])
 
 Written at a request, displays the graphic and plays the sound of the ubiquitous
 YOU DIED message from Dark Souls on death. The trouble was that the 1.12 client
@@ -57,7 +57,7 @@ several functions to define animations.
 [dsds]: https://github.com/{{site.github_username}}/DSDS
 [dsds-demo]: https://raw.githubusercontent.com/{{site.github_username}}/DSDS/master/dsds.webm
 
-### Color Picker Plus ([github][ccp-git])
+### Color Picker Plus ([github][cpp-git])
 
 A port of color to work with the 1.12 client. Provides RGBA channel values,
 hex-codes, and a copy and paste buffer.
