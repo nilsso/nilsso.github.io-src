@@ -2,7 +2,7 @@
 title: "Lists"
 ---
 
-Here's a few lists of a few artists that I'd say I can recommend
+Here's a few lists of a few artists that I'd say I can recommend.
 
 ## Metal
 
