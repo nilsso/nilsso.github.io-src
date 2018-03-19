@@ -29,6 +29,8 @@ Vidya /
 [WoW](pages/vidya/wow/#addons) /
 [Tarkov](pages/vidya/tarkov)
 
+<hr>
+
 # About Me
 
 I'm a math student, programmer, singer, and game enthusiast.
