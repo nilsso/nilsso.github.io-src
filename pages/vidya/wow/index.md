@@ -2,17 +2,19 @@
 title: "World of Warcraft"
 ---
 
-# Interface AddOns
-
-AddOns for World of Warcraft will always have a special place in my heart as I
-taught myself how to program by writing a few. These days I don't play much WoW,
+These days I don't play much WoW,
 but when I do I only play on private legacy servers like
 [Nostalrius][nostalrius] (RIP) and [Elysium][elysium]. Private servers run older
 versions of the game, as you would have played years ago when those versions
 were considered "live" and "retail". The demand for these kinds of servers
 appears to me to be growing. Nostalrius and Elysium are "Vanilla" servers; that
 is they run the very first, original, expansion of the game (specifically for
-client version 1.12). Here are some of the AddOns I have written for or ported
+client version 1.12).
+
+# Interface AddOns
+
+AddOns for World of Warcraft will always have a special place in my heart as I
+taught myself how to program by writing a few. Here are some of the AddOns I have written for or ported
 to Vanilla World of Warcraft.
 
 [nostalrius]: https://en.nostalrius.org/
