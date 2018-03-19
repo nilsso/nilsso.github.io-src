@@ -31,13 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   text-align: center;
-  border-top: 1px solid #e5e5e5;
-  padding-top: 2rem;
-
-  &:first-of-type {
-    border-top: none;
-    padding-top: 0;
-  }
 }
 
 h1, h2  {
