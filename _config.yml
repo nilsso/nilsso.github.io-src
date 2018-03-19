@@ -1,11 +1,11 @@
-title: nilso
+title: nilsso
 author: Nils Olsson
 email: nilso@enosis.net
 description: My personal site
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "" # site subpath, e.g. /blog
+#url: "" # site base hostname & protocol, e.g. http://example.com
 twitter_username: #FuckTwitter
-github_username: SweedJesus
+github_username: nilsso
 github_dotfiles: dotfiles
 
 markdown: kramdown
