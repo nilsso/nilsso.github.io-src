@@ -28,6 +28,11 @@ functions which can be used in macros.
 
 ### sjLinkSpoof ([github][sjls-git]) ([demo][sjls-demo])
 
+Links in World of Warcraft are just specially formatted strings. You click on one it
+might open a small frame with information about an item, or it might open a URL window
+(if you have a chat addon). I wanted a tool to be able to easily create fake links,
+so I wrote this. Just don't spam global or trade, unless you want to piss-off GMs.
+
 [sjls-git]: https://github.com/{{site.github_username}}/sjLinkSpoof
 [sjls-demo]: https://raw.githubusercontent.com/{{site.github_username}}/sjLinkSpoof/master/sjls-demo.gif
 
