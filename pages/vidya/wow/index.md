@@ -2,7 +2,7 @@
 title: "World of Warcraft"
 ---
 
-## Interface AddOns
+# Interface AddOns
 
 AddOns for World of Warcraft will always have a special place in my heart as I
 taught myself how to program by writing a few. These days I don't play much WoW,
