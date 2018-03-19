@@ -1,7 +1,8 @@
 ---
-layout: default
-title: "AddOns"
+title: "World of Warcraft"
 ---
+
+# Interface AddOns
 
 AddOns for World of Warcraft will always have a special place in my heart as I
 taught myself how to program by writing a few. These days I don't play much WoW,
@@ -17,13 +18,19 @@ to Vanilla World of Warcraft.
 [nostalrius]: https://en.nostalrius.org/
 [elysium]: https://elysium-project.org/
 
-### sjMacro ([github](https://github.com/SweedJesus/sjMacro)) {#sjMacro}
+## sjMacro ([github][sjmacro-git])
 
 An addon that provides mouse-over casting to 1.12, something that wasn't added
 until burning crusade. Seeks to be minimal, and only provides global Lua
 functions which can be used in macros.
 
-### Dark Souls Death Screen 1.12 ([github][dsds]) ([demo][dsds-demo]) {#dsds}
+[sjmacro-git]: https://github.com/{{site.github_username}}/sjMacro
+
+## AttackBar2 ([github][ab2-git])
+
+[ab2-git]: https://github.com/{{site.github_username}}/AttackBar2)
+
+## Dark Souls Death Screen 1.12 ([github][dsds]) ([demo][dsds-demo])
 
 Written at a request, displays the graphic and plays the sound of the ubiquitous
 YOU DIED message from Dark Souls on death. The trouble was that the 1.12 client
@@ -32,11 +39,12 @@ has none of the animation framework used in the retail addon
 which the idea for this port came. So I used a timer library for tweening and
 several functions to define animations.
 
-[dsds]: https://github.com/SweedJesus/DSDS
-[dsds-demo]: https://raw.githubusercontent.com/SweedJesus/DSDS/master/dsds.webm)
+[dsds]: https://github.com/{{site.github_username}}/DSDS
+[dsds-demo]: #
 
-### Color Picker Plus ([github](https://github.com/SweedJesus/ColorPickerPlus_4Vanilla)) {#cpp}
+## Color Picker Plus ([github][ccp-git])
 
 A port of color to work with the 1.12 client. Provides RGBA channel values,
 hex-codes, and a copy and paste buffer.
 
+[cpp-git]: https://github.com/{{site.github_username}}/ColorPickerPlus_4Vanilla
