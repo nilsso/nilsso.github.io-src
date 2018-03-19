@@ -26,13 +26,19 @@ functions which can be used in macros.
 
 [sjmacro-git]: https://github.com/{{site.github_username}}/sjMacro
 
-### AttackBar2 ([github][ab2-git])
+### sjLinkSpoof ([github][sjls-git]) ([demo][sjls-demo])
+
+[sjls-git]: https://github.com/{{site.github_username}}/sjLinkSpoof
+[sjls-demo]: https://raw.githubusercontent.com/{{site.github_username}}/sjLinkSpoof/master/sjls-demo.gif
+
+### AttackBar2 ([github][ab2-git]) ([demo][ab2-demo])
 
 I wrote this because I couldn't find a satisfactory weapon-swing tracker. I'd seen
 them on people's streams (for Vanilla that is), but couldn't find a truly compatable
 version.
 
 [ab2-git]: https://github.com/{{site.github_username}}/AttackBar2)
+[ab2-demo]: #
 
 ### Dark Souls Death Screen 1.12 ([github][dsds]) ([demo][dsds-demo])
 
@@ -44,7 +50,7 @@ which the idea for this port came. So I used a timer library for tweening and
 several functions to define animations.
 
 [dsds]: https://github.com/{{site.github_username}}/DSDS
-[dsds-demo]: #
+[dsds-demo]: https://raw.githubusercontent.com/{{site.github_username}}/DSDS/master/dsds.webm
 
 ### Color Picker Plus ([github][ccp-git])
 
