@@ -1,8 +1,8 @@
 ---
-layout: default
 ---
 
 Music /
+[Lists](pages/music/lists) /
 [Theory](pages/music/theory) /
 [Synthesis](pages/music/synthesis)
 <br/>
@@ -31,38 +31,34 @@ Vidya /
 
 # About Me
 
-I'm a professional student, a programmer, a singer, and a video-game enthusiast.
+I'm a math student, programmer, singer, and game enthusiast.
 
-I love music. I have studdied classical voice, piano, and composition, and I
-have an associates degree in music theory. Genres I love are metal (like black
-metal, post metal, folk metal), classical (as in all of the eras), electronic
-music (trance, electro house, etc.). I also love computer games. Always have
-always will.
+I love music. I've studdied classical voice, piano, and composition, I have
+an associates degree in music theory, and I sing regularly in a few choirs.
+A few of the genres I listen to the most are
+[metal](pages/music/lists/#metal),
+[post-rock](pages/music/lists/#post-rock),
+Americana,
+[electronic](pages/music/lists/#electronic) and
+[classical](pages/music/lists/#classical).
 
-    If you really want to try and understand things,
-    and you want to get the bottom of how things work,
-    you have to ask really stupid and simple questions.
+I also love computer games. Always have always will.
 
 <!--
 On Steam I'm [SweedJesus][steam], and on the Vanilla private server [Elysium
 (Anathema)][elysium] my main is Miraculin, 60 priest in [Titans of War][tow] (a
 guild which has since moved to play on other servers).
--->
 
 [elysium]: https://elysium-project.org
 [tow]: http://titansofwar.org
 [steam]: https://steamcommunity.com/id/SweedJesus
+-->
 
 # About this site
 
-I'm using [Jekyll][jekyll] to build it.
-
-Originally I used the [Minimal][minimal] theme by [GitHub Pages][github-pages],
-and then I heavily modified it, but now I use layouts and style-sheets that I've
-written from scratch.
-
-I'm also using the JavaScript libraries [AnchorJS][anchorjs],
-[MathJax][mathjax], and [VexFlow][vexflow] throughout the content.
+Built using [Jekyll][jekyll]. Originally using the [Minimal][minimal] theme
+by [GitHub Pages][github-pages], but now using my own simple layouts and style sheets.
+Also sometimes using [AnchorJS][anchorjs], [MathJax][mathjax], and [VexFlow][vexflow].
 
 [jekyll]: https://jekyllrb.com
 [github-pages]: https://pages.github.com
