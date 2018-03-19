@@ -28,6 +28,10 @@ functions which can be used in macros.
 
 ### AttackBar2 ([github][ab2-git])
 
+I wrote this because I couldn't find a satisfactory weapon-swing tracker. I'd seen
+them on people's streams (for Vanilla that is), but couldn't find a truly compatable
+version.
+
 [ab2-git]: https://github.com/{{site.github_username}}/AttackBar2)
 
 ### Dark Souls Death Screen 1.12 ([github][dsds]) ([demo][dsds-demo])
