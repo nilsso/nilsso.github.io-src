@@ -108,16 +108,3 @@ And now just invoke the gradlew bash script:
 [gradle-home]: https://gradle.org
 [git-home]: https://git-scm.com
 [vim-home]: https://vim.org
-
-# Class notes (Spring 2018)
-
-#### 2018/1/29
-
-Some material on next test
-
-1. On polymorphism
-    - `extends` (can only have one) and `implements` (can have many) clauses
-    - Understand usage of `instanceof` for decision structures
-    - Casting generic type to subclass type to access subclass properties and methods
-
-Interfaces can extend multiple classes, where concrete classes can only extend one class.
