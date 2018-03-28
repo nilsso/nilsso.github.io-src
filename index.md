@@ -26,7 +26,7 @@ Programming /
 [Haskell](pages/programming/haskell)
 <br/>
 Vidya /
-[WoW](pages/vidya/wow/#addons) /
+[WoW](pages/vidya/wow) /
 [Tarkov](pages/vidya/tarkov)
 
 <hr>
