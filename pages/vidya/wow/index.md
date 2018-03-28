@@ -65,3 +65,17 @@ A port of color to work with the 1.12 client. Provides RGBA channel values,
 hex-codes, and a copy and paste buffer.
 
 [cpp-git]: https://github.com/{{site.github_username}}/ColorPickerPlus_4Vanilla
+
+## Old projects
+
+### sjUF ([github][sjuf-git])
+
+An attempted solution to raid frames. The most popular at the time of writing this is still [Luna](https://github.com/Aviana/LunaUnitFrames), but my favorite was [sRaidFrames](http://addons.us.to/addon/sraidframes-improved). Both have features that the other don't and that's what drove me to want to write my own. Additionally I rewrote the HealComm because the legacy version doesn't send a few useful things. I wouldn't say any of my efforts were production-ready though.
+
+[sjuf-git]: https://github.com/nilsso/sjUF
+
+### sjUI ([github][sjui-git])
+
+A (nearly) complete overhaul of the default UI. I personally used it for a few months but decided to ditch it as well as most addons (asside from the least intrusive and the bare essentials).
+
+[sjui-git]: https://github.com/nilsso/sjUI
