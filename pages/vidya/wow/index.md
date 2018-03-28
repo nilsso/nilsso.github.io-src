@@ -38,13 +38,17 @@ so I wrote this. Just don't spam global or trade, unless you want to piss-off GM
 [sjls-git]: https://github.com/{{site.github_username}}/sjLinkSpoof
 [sjls-demo]: https://raw.githubusercontent.com/{{site.github_username}}/sjLinkSpoof/master/sjls-demo.gif
 
-### AttackBar2 ([github][ab2-git]) ([demo][ab2-demo])
+### Swing ([github][swing-git]) ([demo][swing-demo])
 
 I wrote this because I couldn't find a satisfactory weapon-swing tracker. I'd seen
 them on people's streams (for Vanilla that is), but couldn't find a truly compatable
-version.
+version. If dual-weilding it does an adequate job at calculating which hand was swung
+(but this does not work with non-player targets as the functionality to determine target
+off-hand speed isn't in this version of the game). Also included is a joke meter which
+turns into an energy ticker when playing rogue/cat druid (I might split this out to
+its own dedicated addon in the future).
 
-[ab2-git]: https://github.com/{{site.github_username}}/AttackBar2
+[ab2-git]: https://github.com/{{site.github_username}}/Swing
 [ab2-demo]: #
 
 ### Dark Souls Death Screen ([github][dsds]) ([demo][dsds-demo])
