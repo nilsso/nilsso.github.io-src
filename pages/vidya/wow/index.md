@@ -48,8 +48,8 @@ off-hand speed isn't in this version of the game). Also included is a joke meter
 turns into an energy ticker when playing rogue/cat druid (I might split this out to
 its own dedicated addon in the future).
 
-[ab2-git]: https://github.com/{{site.github_username}}/Swing
-[ab2-demo]: #
+[swing-git]: https://github.com/{{site.github_username}}/Swing
+[swing-demo]: #
 
 ### Dark Souls Death Screen ([github][dsds]) ([demo][dsds-demo])
 
