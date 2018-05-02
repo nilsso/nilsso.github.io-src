@@ -4,9 +4,8 @@ title: 'Java Notes'
 * TOC
 {:toc}
 
-All of these notes I wrote on my Macbook, for Macbook (OSX). Most assume
-some proficiency with [bash and the commandline][tutorial] ([iTerm2][iterm2] is
-the recommended OSX terminal emulator) and assume that [brew][brew] and [brew
+All of these notes I wrote on my Macbook, for Macbook (OSX). I assume some
+proficiency with bash and the commandline and that [brew][brew] and [brew
 cask][brew-cask] are installed.
 
 [tutorial]: https://www.learnenough.com/command-line-tutorial
@@ -16,65 +15,14 @@ cask][brew-cask] are installed.
 
 # Tools
 
-One kind of tool that I like using for any programming is a REPL, and Java is
-no exception. The one I've chosen is aptly named javarepl, however it seems
-it does not work with the latest versions of Java. Therefore an older version
-needs to be installed (I found Java 8 worked). To manage separate version
-another tool is used.
+## jShell
 
-## jenv ([home][jenv-home])
+In my [old notes](old) I wrote about having different versions of Java
+installed simultaneously and switching between them. I only needed this ability
+to be able to use the `javarepl` tool. However Java 9 and Java 10 now come with
+a newer tool called `jShell`, so just use that.
 
-Managing separate installations of Java can be accomplished by using jenv, a
-tool similar to Python's virtualenv or Ruby's rbenv.
-### Installing JDK versions
-
-```bash
-# Add the caskroom versions repository and install versions
-brew tap caskroom/versions
-brew cask search java
-brew cask install <java-version>
-
-# And then getting where JDKs are installed
-/usr/libexec/java_home -V
-```
-
-### Setting up jenv
-
-```bash
-# Install
-brew install jenv
-
-# Then add the paths of the different JDKs to jenv (remember how these are found above)
-jenv add <java-version/Contents/Home>
-
-# Once they are all added list them and switch to the desired version
-jenv versions
-jenv global <java-version>
-
-# And then lastly execute something with the version (javarepl only
-# seems to work with java8, which is what led me to learn this tool in
-# the first place).
-jenv exec java -version
-jenv exec javarepl
-```
-
-[jenv-home]: http://www.jenv.be/
-
-## javarepl ([home][javarepl-home])
-
-Only seems to work with Java version 8, so following the section above for
-managing multiple installations, make sure java8 is installed through
-[homebrew-caskroom-versions][hcv]. With version 8 added through jenv and
-set to the global version, just start javarepl through jevn
-
-```bash
-jenv eval javarepl
-```
-
-[javarepl-home]: http://www.javarepl.com/term.html
-[hcv]: https://github.com/caskroom/homebrew-versions
-
-## Gradle ([home][gradle-home])
+## [Gradle][gradle-home]
 
 Gradle is a modern build tool that works especially well with Java
 applications. The major benefit to me is being able to work on a
@@ -108,3 +56,9 @@ And now just invoke the gradlew bash script:
 [gradle-home]: https://gradle.org
 [git-home]: https://git-scm.com
 [vim-home]: https://vim.org
+
+One kind of tool that I like using for any programming is a REPL, and Java is
+no exception. The one I've chosen is aptly named javarepl, however it seems
+it does not work with the latest versions of Java. Therefore an older version
+needs to be installed (I found Java 8 worked). To manage separate version
+another tool is used.
