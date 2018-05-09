@@ -1,0 +1,184 @@
+
+\documentclass[10pt, letterpaper]{article}
+
+% -----------------------------------------------------------------------------
+% Packages
+% -----------------------------------------------------------------------------
+
+% Fonts
+\usepackage{fontspec}
+%\setmainfont[SmallCapsFont = Questa SmallCaps]{Questa} % Main font
+%\setmainfont{Questa Sans}
+
+% Referencing
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{censor}
+\usepackage{titlesec}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+\titleformat{\subsection}{\scshape\raggedright}{}{0em}{}
+\titlespacing{\subsection}{0pt}{3pt}{3pt}
+\usepackage[parfill]{parskip}
+\usepackage{tabu}
+\pagestyle{empty}
+
+% -----------------------------------------------------------------------------
+% Document
+% -----------------------------------------------------------------------------
+
+\begin{document}
+
+\StopCensoring{}
+
+\textbf{\LARGE N\censor{ils} O\censor{lsson}}
+\medskip
+
+\begin{tabu}{l r}
+  \begin{tabu}{r l}
+    \textsc{Phone}    & \censor{(619) 292-1338} \\
+    \textsc{Email}    & \censor{\href{mailto:nilso@enosis.net}{nilso@enosis.net}} \\
+    \textsc{Address}  & \censor{2720 Gregory St, San Diego, CA 92104} \\
+  \end{tabu} &
+  \begin{tabu}{r l}
+    \textsc{Website}  & \censor{\url{https://nilsso.github.io}} \\
+    \textsc{Github}   & \censor{\url{https://github.com/nilsso}} \\
+    \textsc{Linkedin} & \censor{\url{https://linkedin.com/nilsso}}
+  \end{tabu}
+\end{tabu}
+
+\section{Objective}
+((INSERT TAILORED OBJECTIVE MESSAGE HERE))
+%To foster my software development and design sills within a professional,
+%experienced, and cooperative team environment.
+\section{Education}
+\begin{multicols}{2}
+  \begin{minipage}{0.5\textwidth}
+    \subsection{San Diego Mesa College (2010--2018)}
+    \begin{footnotesize}
+      Degrees earned:
+      \begin{itemize}
+        \item
+          Associate of Arts: Music Studies
+
+        \item
+          Associate of Arts: Mathematics
+      \end{itemize}
+    \end{footnotesize}
+    \medskip
+
+    \subsection{San Diego State University (2018--Present)}
+    \begin{footnotesize}
+      Degrees in progress (expected 2020):
+      \begin{itemize}
+        \item
+          B.S. Applied Mathematics:\\
+          \phantom{B.s. }Emphasis in Computational Science
+      \end{itemize}
+    \end{footnotesize}
+  \end{minipage}
+  \columnbreak%
+
+  \begin{minipage}{0.5\textwidth}
+    \subsection{Senior Tutor (2016--2018)}
+    \begin{footnotesize}
+      \begin{itemize}
+        \item
+          Senior music and computer science tutor at Mesa college
+        \item
+          Covered music theory, ear training, piano, voice, C/C++,
+          Java, C\#, Microsoft VB, Excel and Access
+      \end{itemize}
+    \end{footnotesize}
+    \medskip
+
+    \subsection{San Diego City Robotics club (2013--2014)}
+    \begin{footnotesize}
+      \begin{itemize}
+        \item
+          Served as software team leader
+        \item
+          Participated in
+          \href{http://www.robonation.org/competition/robosub}{RoboSub
+          competition}, 2014 season
+      \end{itemize}
+    \end{footnotesize}
+  \end{minipage}
+\end{multicols}
+
+\section{Computer skills}
+\begin{multicols}{2}
+  \begin{minipage}{0.5\textwidth}
+    \subsection{Languages}
+    \begin{footnotesize}
+      \begin{itemize}
+        \item
+          C/C++, Java, Python, Lua, SQL and \LaTeX
+      \end{itemize}
+    \end{footnotesize}
+    \medskip
+
+    \subsection{Tools}
+    \begin{footnotesize}
+      \begin{itemize}
+        \item
+          Command line, Vim, Git, CMake, Gradle
+        \item
+          Major IDEs (Visual Studio, Eclipse, Netbeans, IntelliJ, etc.)
+      \end{itemize}
+    \end{footnotesize}
+  \end{minipage}
+  \columnbreak%
+
+  \begin{minipage}{0.5\textwidth}
+    \subsection{Other Technologies}
+    \begin{footnotesize}
+      \begin{itemize}
+        \item
+          APIs and Frameworks: Qt, OpenCV, SDL, NumPy
+        \item
+          Databases: MySQL, PostgresSQL, MariaDB
+        \item
+          Design patterns: MVC, singleton, command, OOP
+        \item
+          DevOps: AWS, Docker, Heroku
+        \item
+          Operating system: Linux, macOS and Windows
+      \end{itemize}
+    \end{footnotesize}
+  \end{minipage}
+\end{multicols}
+
+\section{Projects}
+\begin{footnotesize}
+  \begin{itemize}
+    \item
+      \textsc{\href{https://nilsso.github.io}{Website}:}
+      Houses my notes on a wide variety of subjects, including mathematics, music and programming
+
+    \item
+      \textsc{\href{https://github.com/nilsso/ACalculator}{Calcuator project}:}
+      Final project for Data Structures in C++ class at Mesa
+      College. Exemplifies several design patterns: commands, singletons, chain
+      of responsibility
+  \end{itemize}
+\end{footnotesize}
+
+\section{Other skills}
+\begin{footnotesize}
+  \begin{itemize}
+    \item
+      \textsc{Self starter:}
+      Learned programming in 2010 via the game World of Warcraft
+
+    \item
+      \textsc{Musically inclined:}
+      Spent several semesters singing in the Mesa College vocal ensemble; have
+      gone on tours and performed solo in New York, Connecticut, Sacramento,
+      Puebla Mexico, Poland and Czech Republic. Currently singing
+      semi-professionally for a San Diego church
+  \end{itemize}
+\end{footnotesize}
+
+\end{document}
