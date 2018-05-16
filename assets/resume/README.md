@@ -1,1 +1,4 @@
-
+---
+---
+- [Source file](resume.tex)
+- [Compiled PDF](resume.pdf)
