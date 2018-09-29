@@ -1,6 +1,7 @@
 ---
 ---
 
+<span class="nav">
 Music /
 [Lists](pages/music/lists) /
 [Theory](pages/music/theory) /
@@ -28,6 +29,7 @@ Programming /
 Vidya /
 [WoW](pages/vidya/wow) /
 [Tarkov](pages/vidya/tarkov)
+</span>
 
 <hr>
 

@@ -17,12 +17,17 @@ $font-size-BIG:    200%;
 html {
   color: $color-a;
   font-size: $font-size-normal;
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
 }
 
 body {
   width: 860px;
   margin: 2rem auto 6rem auto;
+}
+
+nav, .nav, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,6 +57,14 @@ h2 {
 
 h3 {
   font-size: $font-size-big;
+}
+
+ol, ul {
+  padding-left: 2em;
+}
+
+li {
+  padding-left: 1em;
 }
 
 a {
@@ -150,6 +163,10 @@ tr:last-child {
   th, td {
     border-bottom: none;
   }
+}
+
+.axiom-name {
+  float: right;
 }
 
 img {

@@ -7,7 +7,7 @@ $$
 \def\Z{\mathbb{Z}}
 $$
 </div>
-<!-- -------------------------------------------------------------------------->
+<!--
 # Arithmetic in $\Z$
 
 (To be filled out)
@@ -16,9 +16,10 @@ $$
 
 ## Theorem
 
-<!-- -------------------------------------------------------------------------->
 ---
+-->
 
+<!--
 # Congruence in $\Z$ and Modular Arithmetic
 
 (To be filled out)
@@ -27,56 +28,135 @@ $$
 
 ## Theorem
 
-<!-- -------------------------------------------------------------------------->
 ---
+-->
 
 # Rings
 
-## Definitions
+## Ring axioms
 
-### Units
+### Rings
+A ring is a nonempty set $R$ equipped with two operations (usually written as
+addition and multiplication) that satisfy the following axioms. For all
+$a,b,c\in R$:
+<ol start="1">
+<li>$a+b\in R$
+<span class="axiom-name">(Closure under addition)</span></li>
+<li>$a+(b+c)=(a+b)+c$
+<span class="axiom-name">(Associative addition)</span></li>
+<li>$a+b=b+a$
+<span class="axiom-name">(Commutative addition)</span></li>
+<li>There is an element $0_R\in R$ such that $a+0_R=a=0_R+a$
+<span class="axiom-name">(Additive identity/zero element)</span></li>
+<li>The equation $a+x=0_R$ has a solution in $R$
+<span class="axiom-name">(Additive inverse)</span></li>
+<li>$ab\in R$
+<span class="axiom-name">(Closure under multiplication)</span></li>
+<li>$a(bc)=(ab)c$
+<span class="axiom-name">(Associative multiplication)</span></li>
+<li>$a(b+c)=ab+bc$ and $(a+b)c=ac+bc$
+<span class="axiom-name">(Distributive multiplication)</span></li>
+</ol>
 
-An element $a$ in a ring $R$ with identity is called a *unit* if there exists
+### Commutative rings
+A commutative ring is a ring $R$ that satisfies:
+<ol start="9">
+<li>$ab=ba$ for all $a,b\in R$.
+<span style="float:right">(Commutative multiplication)</span></li>
+</ol>
+
+### Ring with identitys
+A ring with identity is a ring $R$ that contains an element $1_R$
+satisfying:
+<ol start="10">
+<li>$a 1_R=a=1_R a$ for all $a\in R$.
+<span style="float:right">(Multiplicative identity)</span></li>
+</ol>
+
+### Integral domains
+An integral domain is a commutative ring $R$ with identity $1_R\neq 0_R$
+that satisfies:
+<ol start="11">
+<li>Whenever $a,b\in R$ and $ab=0_R$, then $a=0_R$ or $b=0_R$.</li>
+</ol>
+
+### Fields
+A field is a commutative ring $R$ with identity $1_R\neq0_R$ that satisfies:
+<ol start="12">
+<li>For each $a\neq 0_R$ in $R$, the equation $ax=1_R$ has a solution in
+$R$.</li>
+</ol>
+
+### Cartesian product of rings
+<!--Theorem 3.1-->
+Let $R$ and $S$ be rings. Define addition and multiplication on the Cartesian
+product $R\times S$ by
+
+$$
+(r,s)+(r',s')=(r+r',s+s')\text{ and }
+(r,s)(r',s')=(rr',ss')
+$$
+
+Then $R\times S$ is a ring. If $R$ and $S$ are both commutative, then so is
+$R\times S$. If both $R$ and $S$ have an identity (additive and
+multiplicative?), then so does $R\times S$.
+
+### Subrings
+<!--Theorem 3.2-->
+Suppose that $R$ is a ring and that $S$ is a subset of $R$ such that
+<ol type="i">
+<li>$S$ is closed under addition: if $a,b\in S$, then $a+b\in S$,</li>
+<li>$S$ is closed under multiplication: if $a,b\in S$, then $ab\in S$,</li>
+<li>$0_R\in S$,</li>
+<li>if $a\in S$, then the solution of the equation $a+x=0_R$ is in $S$.</li>
+</ol>
+Then $S$ is a subring of $R$.
+
+## Units and zero divisors
+
+An element $a$ in a ring $R$ with identity is called a unit if there exists
 $u\in R$ such that $au=1_R=ua$. In this case the element $u$ is called the
-(*multiplicative*) *inverse* of $a$ and is denoted $a^{-1}$.
+(multiplicative) inverse of $a$ and is denoted $a^{-1}$.
 
-### Zero divisors
-
-An element $a$ in a ring $R$ is a *zero divisor* provided that
-
+An element $a$ in a ring $R$ is a zero divisor provided that:
 1. $a\neq 0_R$.
 2. There exists a nonzero element $c$ in $R$ such that $ac=0_R$ or $ca=0_R$
 
-## Theorems
+## Ring properties
 
 <!--Theorem 3.4-->
-> If $a+b=a+c$ in a ring $R$, then $b=c$.
+### Cancelation in addition
+If $a+b=a+c$ in a ring $R$, then $b=c$.
 
 <!--Theorem 3.5-->
-> For any elements $a$ and $b$ of a ring $R$,
-> 
-> 1. $a\cdot 0_R=0_R=0_R\cdot a$. In particular, $0_R\cdot 0_R=0_R$.
-> 2. $a(-b)=-ab$ and $(-a)b=-ab$.
-> 3. $-(-a)=a$.
-> 4. $-(a+b)=(-a)+(-b)$.
-> 5. $-(a-b)=-a+b$.
-> 6. $(-a)(-b)=ab$. 
-> 7. If $R$ has an identity, then $(-1_R)a=-a$.
+### Zero product, distributivity
+For any elements $a$ and $b$ of a ring $R$:
+1. $a\cdot 0_R=0_R=0_R\cdot a$. In particular, $0_R\cdot 0_R=0_R$.
+2. $a(-b)=-ab$ and $(-a)b=-ab$.
+3. $-(-a)=a$.
+4. $-(a+b)=(-a)+(-b)$.
+5. $-(a-b)=-a+b$.
+6. $(-a)(-b)=ab$.
+7. If $R$ has an identity, then $(-1_R)a=-a$.
 
 <!--Theorem 3.6-->
-> Let $S$ be a nonempty subset of a ring $R$ such that
-> 
-> 1. $S$ is closed under subtraction (if $a,b\in S$, then $a-b\in S$);
-> 2. $S$ is closed under multiplication (if $a,b\in S$, then $ab\in S$).
-> 
-> Then $S$ is a subring of $R$.
+### Subrings
+Let $S$ be a nonempty subset of a ring $R$ such that
+
+1. $S$ is closed under subtraction (if $a,b\in S$, then $a-b\in S$);
+2. $S$ is closed under multiplication (if $a,b\in S$, then $ab\in S$).
+
+Then $S$ is asubring of $R$.
 
 <!--Theorem 3.7-->
-> Cancellation is valid in any integral domain $R$: If $a\neq 0_R$ and $ab=ac$ in
-> $R$, then $b=c$.
+### Cancelation in multiplication
+Cancellation is valid in any integral domain $R$: If $a\neq 0_R$ and $ab=ac$ in
+$R$, then $b=c$.
 
 <!--Theorem 3.8-->
-> Every field $F$ is an integral domain.
+### Fields as integral domains
+Every field $F$ is an integral domain.
 
 <!--Theorem 3.9-->
-> Every finite integral domain $R$ is a field.
+### Finite integral domains as fields
+Every finite integral domain $R$ is a field.
