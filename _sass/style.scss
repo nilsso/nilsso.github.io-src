@@ -111,7 +111,7 @@ blockquote {
   font-style: normal;
 }
 
-code, pre {
+code, pre, kbd {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   font-size: 0.9em;
 }
@@ -120,6 +120,7 @@ kbd {
   color: white;
   background: $color-a;
   padding: 2px 4px;
+  margin: 0 2px;
   border-radius: 2px;
 }
 
@@ -140,9 +141,7 @@ div > .highlighter-rouge {
 }
 
 table {
-  border-collapse: collapse;
-  //width: 100%;
-  //table-layout: fixed;
+  margin: 0 auto;
 }
 
 dt {
@@ -165,7 +164,7 @@ tr:last-child {
   }
 }
 
-.axiom-name {
+.float-right {
   float: right;
 }
 
@@ -194,63 +193,22 @@ footer {
   }
 }
 
-@media print, screen and (max-width: 960px) {
-  header, article, footer {
-    float: none;
-    position: static;
-    width: auto;
-  }
-
-  header {
-    padding-right: 320px;
-  }
-
-  header a small {
-    display: inline;
-  }
-
-  header ul {
-    position: absolute;
-    right: 50px;
-    top: 52px;
-  }
+.anchorjs-link {
+  position: absolute;
 }
 
-@media print, screen and (max-width: 875px) {
+@media (max-width: 960px) {
   body {
     width: auto;
     padding: 0 15px;
-    //word-wrap: break-word;
   }
 
-  pre, code {
-    word-wrap: normal;
+  nav, h1, h2, h3, h4, h5, h6 {
+    text-align: center;
   }
 
-  header {
-    padding: 0;
-  }
-
-  header ul, header p.view {
-    position: static;
+  .float-right {
+    float: none;
   }
 }
 
-@media print, screen and (max-width: 480px) {
-  body {
-  }
-
-  header ul {
-    width: 99%;
-  }
-
-  header li, header ul li + li + li {
-    width: 33%;
-  }
-}
-
-@media print {
-  body {
-    color: #444;
-  }
-}

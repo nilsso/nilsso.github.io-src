@@ -41,28 +41,28 @@ addition and multiplication) that satisfy the following axioms. For all
 $a,b,c\in R$:
 <ol start="1">
 <li>$a+b\in R$
-<span class="axiom-name">(Closure under addition)</span></li>
+<div class="float-right">(Closure under addition)</div></li>
 <li>$a+(b+c)=(a+b)+c$
-<span class="axiom-name">(Associative addition)</span></li>
+<div class="float-right">(Associative addition)</div></li>
 <li>$a+b=b+a$
-<span class="axiom-name">(Commutative addition)</span></li>
+<div class="float-right">(Commutative addition)</div></li>
 <li>There is an element $0_R\in R$ such that $a+0_R=a=0_R+a$
-<span class="axiom-name">(Additive identity/zero element)</span></li>
+<div class="float-right">(Additive identity/zero element)</div></li>
 <li>The equation $a+x=0_R$ has a solution in $R$
-<span class="axiom-name">(Additive inverse)</span></li>
+<div class="float-right">(Additive inverse)</div></li>
 <li>$ab\in R$
-<span class="axiom-name">(Closure under multiplication)</span></li>
+<div class="float-right">(Closure under multiplication)</div></li>
 <li>$a(bc)=(ab)c$
-<span class="axiom-name">(Associative multiplication)</span></li>
+<div class="float-right">(Associative multiplication)</div></li>
 <li>$a(b+c)=ab+bc$ and $(a+b)c=ac+bc$
-<span class="axiom-name">(Distributive multiplication)</span></li>
+<div class="float-right">(Distributive multiplication)</div></li>
 </ol>
 
 ### Commutative rings
 A commutative ring is a ring $R$ that satisfies:
 <ol start="9">
 <li>$ab=ba$ for all $a,b\in R$.
-<span style="float:right">(Commutative multiplication)</span></li>
+<div class="float-right">(Commutative multiplication)</div></li>
 </ol>
 
 ### Ring with identitys
@@ -70,7 +70,7 @@ A ring with identity is a ring $R$ that contains an element $1_R$
 satisfying:
 <ol start="10">
 <li>$a 1_R=a=1_R a$ for all $a\in R$.
-<span style="float:right">(Multiplicative identity)</span></li>
+<div class="float-right">(Multiplicative identity)</div></li>
 </ol>
 
 ### Integral domains
@@ -90,12 +90,10 @@ $R$.</li>
 ### Cartesian product of rings
 <!--Theorem 3.1-->
 Let $R$ and $S$ be rings. Define addition and multiplication on the Cartesian
-product $R\times S$ by
+product $R\times S$ by:
 
-$$
-(r,s)+(r',s')=(r+r',s+s')\text{ and }
-(r,s)(r',s')=(rr',ss')
-$$
+$(r,s)+(r',s')=(r+r',s+s')$ and $(r,s)(r',s')=(rr',ss')$
+<!--$$(r,s)+(r',s')=(r+r',s+s')\text{ and }(r,s)(r',s')=(rr',ss')$$-->
 
 Then $R\times S$ is a ring. If $R$ and $S$ are both commutative, then so is
 $R\times S$. If both $R$ and $S$ have an identity (additive and
