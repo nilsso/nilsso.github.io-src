@@ -23,7 +23,7 @@ html {
 
 body {
   width: 860px;
-  margin: 2rem auto 6rem auto;
+  margin: 2rem auto 50vh auto;
 }
 
 nav, .nav, h1, h2, h3, h4, h5, h6 {
@@ -141,6 +141,7 @@ div > .highlighter-rouge {
 }
 
 table {
+  border-collapse: collapse;
   margin: 0 auto;
 }
 

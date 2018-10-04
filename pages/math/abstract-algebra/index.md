@@ -35,7 +35,6 @@ $$
 
 ## Ring axioms
 
-### Rings
 A ring is a nonempty set $R$ equipped with two operations (usually written as
 addition and multiplication) that satisfy the following axioms. For all
 $a,b,c\in R$:
@@ -58,14 +57,14 @@ $a,b,c\in R$:
 <div class="float-right">(Distributive multiplication)</div></li>
 </ol>
 
-### Commutative rings
+### Commutative ring
 A commutative ring is a ring $R$ that satisfies:
 <ol start="9">
 <li>$ab=ba$ for all $a,b\in R$.
 <div class="float-right">(Commutative multiplication)</div></li>
 </ol>
 
-### Ring with identitys
+### Ring with identity
 A ring with identity is a ring $R$ that contains an element $1_R$
 satisfying:
 <ol start="10">
@@ -73,7 +72,7 @@ satisfying:
 <div class="float-right">(Multiplicative identity)</div></li>
 </ol>
 
-### Integral domains
+### Integral domain
 An integral domain is a commutative ring $R$ with identity $1_R\neq 0_R$
 that satisfies:
 <ol start="11">
@@ -144,7 +143,7 @@ Let $S$ be a nonempty subset of a ring $R$ such that
 1. $S$ is closed under subtraction (if $a,b\in S$, then $a-b\in S$);
 2. $S$ is closed under multiplication (if $a,b\in S$, then $ab\in S$).
 
-Then $S$ is asubring of $R$.
+Then $S$ is a subring of $R$.
 
 <!--Theorem 3.7-->
 ### Cancelation in multiplication
@@ -158,3 +157,70 @@ Every field $F$ is an integral domain.
 <!--Theorem 3.9-->
 ### Finite integral domains as fields
 Every finite integral domain $R$ is a field.
+
+---
+
+# Isomorphisms & Homomorphisms
+
+To summarize terms:
+
+*Injective* | All domain values mapped
+*Non-injective* | Not all domain values mapped
+*Surjective* | All co-domain values represented
+*Non-surjective* | Not all co-domain values represented
+*Bijective* | Both injective and surjective
+
+## Isomorphisms
+
+Suppose $R$ and $S$ are rings and $\phi$ is a function that maps $R$ to $S$
+($\phi:R\rightarrow S$ ). $\phi$ is an isomorphism if for all $a,b\in R$:
+
+1. $\phi$ is injective,
+1. $\phi$ is surjective,
+1. $\phi(a+b)=\phi(a)+\phi(b)$ and $\phi(a\cdot b)=\phi(a)\cdot\phi(b)$ for all
+   $a,b\in R$.
+
+Another way of stating bijection would be:
+
+<ol>
+<li>
+Distinct elements of $R$ must get distinct new labels
+<p><center>
+If $r\neq r'$ in $R$, then $\phi(r)\neq\phi(r')$ in $S$
+</center></p>
+</li>
+<li>
+Every element of $S$ must be the label of some element in $R$
+<p><center>
+For each $s\in S$, there is an $r\in R$ such that $\phi(r)=s$
+</center></p>
+</li>
+</ol>
+
+Intuitively for a function to be bijective an inverse isomorphic function must
+also exist.
+
+## Homomorphisms
+
+However many functions exists which satisfy the third condition but are not
+bijective. These can be called homomorphisms. Thus every isomorphism is really a
+homomorphism with bijection.
+
+<!--Theorem 3.10-->
+## Properties of homomorphisms
+
+Letting $\phi:R\rightarrow S$ be a homomorphism of rings, then
+
+<ol>
+<li>$\phi(0_R)=0_S$,</li>
+<li>$\phi(-1)=-\phi(a)$ for every $a\in R$,</li>
+<li>$\phi(a-b)=\phi(a)-\phi(b)$ for all $a,b\in R$.</li>
+</ol>
+
+If $R$ is a ring with identity and $\phi$ is surjective, then
+
+<ol start="4">
+<li>$S$ is a ring with identity $1_S=\phi(1_R)$,</li>
+<li>Whenever $u$ is a unit in $R$, then $\phi(u)$ is a unit in $S$ and
+$\phi(u)^{-1}=\phi(u^{-1})$.</li>
+</ol>

@@ -13,7 +13,8 @@ Math /
 [Calc](pages/math/calc) /
 [Linear](pages/math/linear-algebra) /
 [Discrete](pages/math/discrete) /
-[DiffEq](pages/math/diffeq)
+[DiffEq](pages/math/diffeq) /
+[AbsAlg](pages/math/abstract-algebra)
 <br/>
 Math / [Problem Generator](problem-generator)
 <br/>
