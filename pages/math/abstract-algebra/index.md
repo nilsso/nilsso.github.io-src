@@ -213,7 +213,7 @@ Letting $\phi:R\rightarrow S$ be a homomorphism of rings, then
 
 <ol>
 <li>$\phi(0_R)=0_S$,</li>
-<li>$\phi(-1)=-\phi(a)$ for every $a\in R$,</li>
+<li>$\phi(-a)=-\phi(a)$ for every $a\in R$,</li>
 <li>$\phi(a-b)=\phi(a)-\phi(b)$ for all $a,b\in R$.</li>
 </ol>
 
