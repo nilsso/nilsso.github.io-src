@@ -64,8 +64,8 @@ A commutative ring is a ring $R$ that satisfies:
 <div class="float-right">(Commutative multiplication)</div></li>
 </ol>
 
-### Ring with identity
-A ring with identity is a ring $R$ that contains an element $1_R$
+### Ring with unity/identity
+A ring with unity/identity is a ring $R$ that contains an element $1_R$
 satisfying:
 <ol start="10">
 <li>$a 1_R=a=1_R a$ for all $a\in R$.
