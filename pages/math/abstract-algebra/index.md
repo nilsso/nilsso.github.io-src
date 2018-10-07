@@ -69,7 +69,7 @@ A ring with unity/identity is a ring $R$ that contains an element $1_R$
 satisfying:
 <ol start="10">
 <li>$a 1_R=a=1_R a$ for all $a\in R$.
-<div class="float-right">(Multiplicative identity)</div></li>
+<div class="float-right">(Multiplicative identity/identity element)</div></li>
 </ol>
 
 ### Integral domain
