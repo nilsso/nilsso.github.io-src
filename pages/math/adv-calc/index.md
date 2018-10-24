@@ -1,5 +1,12 @@
 ---
 ---
+{% include mathjax.html %}
+<div id="mathjax-preamble" style="display:none;">
+$$
+\def\Z{\mathbb{Z}}
+$$
+</div>
+
 # Advanced Calculus
 
 ## Continuity of functions <!-- 5 -->
