@@ -4,6 +4,7 @@
 <div id="mathjax-preamble" style="display:none;">
 $$
 \def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
 $$
 </div>
 
