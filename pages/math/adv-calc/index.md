@@ -69,7 +69,7 @@ x_0-\delta<x<x_0 \Rightarrow
 Note that for a limit to exist it must exist from both the left and from the right:
 
 $$
-\sum_{x\to x_0}f(x)=L \Leftrightarrow
+\lim_{x\to x_0}f(x)=L \Leftrightarrow
 \left(\lim_{x\to x_0+}f(x)=L\right)\wedge \left(\lim_{x\to x_0-}f(x)=L\right)
 $$
 
