@@ -3,14 +3,13 @@
 {% include mathjax.html %}
 <div id="mathjax-preamble" style="display:none;">
 $$
-\newcommand{\test}[1]{#1}
-\newcommand{\seq}[1]{{\left\{#1\right\}}}
+\newcommand{\seq}[1]{\left\{#1\right}}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\R}{\mathbb R}
 $$
 </div>
 
-# Advanced Calculus $\test{wow}$
+# Advanced Calculus $\seq{wow}$
 
 ## Limits of functions <!-- 4 -->
 
