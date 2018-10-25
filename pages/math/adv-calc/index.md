@@ -11,11 +11,13 @@ $$
 
 # Advanced Calculus
 
-<!-- 4 -->
+<!-- Ch 4 -->
 ## Limits of functions
 
 <!-- Def 4.1 -->
 ### Finite limits
+
+#### Definition of finite limits
 
 Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if:
 
@@ -81,7 +83,12 @@ $$
 \left(\lim_{x\to x_0+}f(x)=L\right)\wedge \left(\lim_{x\to x_0-}f(x)=L\right)
 $$
 
-<!-- Ch. 5 -->
+<!-- Th 4.1.1 -->
+#### Sequential characterization of limits
+
+Given a function $f:D\to \R$ and a point $x_0$, eventually not in $D$, then $\lim_{x\to x_0}f(x)=L$ if and only if any sequence $\seq{x_n}$ where $\forall n\in\N$, $x_n\in D$ and where $\lim_{n\to\infty}x_n=x_0$ we have $lim_{n\to\infty}f(x_n)=L$.
+
+<!-- Ch 5 -->
 ## Continuity of functions
 
 <!-- Def 5.3 -->
