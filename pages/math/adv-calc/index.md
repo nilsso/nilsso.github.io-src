@@ -11,24 +11,73 @@ $$
 
 # Advanced Calculus
 
-## Limits of functions <!-- 4 -->
+<!-- 4 -->
+## Limits of functions
 
-### Finite limits <!-- 4.1 -->
+<!-- Def 4.1 -->
+### Finite limits
 
-Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that **the limit of the function $f$ at $x_0$ is $L$** if and only if
+Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if:
 
-$$
+\begin{gather*}
 \forall\epsilon,
 \exists\delta>0,
 \forall x\in D,
 x\neq x_0,
 |x-x_0|<\delta \Rightarrow
-|f(x)-L|<\epsilon
+|f(x)-L|<\epsilon \\
+\Leftrightarrow \lim_{x\to x_0}f(x)=L
+\end{gather*}
+
+<!-- Def 4.2 -->
+Or alternatively by the substitution $h=x-x_0$:
+
+\begin{gather*}
+\forall\epsilon,
+\exists\delta>0,
+\forall h\in D,
+h\neq 0,
+|h|<\delta \Rightarrow
+|f(x_0+h)-L|<\epsilon \\
+\Leftrightarrow \lim_{x\to x_0}f(x)=L
+\end{gather*}
+
+We also have the definition of finite limits from the right:
+
+\begin{gather*}
+\forall\epsilon,
+\exists\delta>0,
+\forall x\in D,
+x\neq x_0,
+x_0<x<x_0+\delta \Rightarrow
+|f(x)-L|<\epsilon \\
+\Leftrightarrow \lim_{x\to x_0+}f(x)=L
+\end{gather*}
+
+And also from the left:
+
+\begin{gather*}
+\forall\epsilon,
+\exists\delta>0,
+\forall x\in D,
+x\neq x_0,
+x_0-\delta<x<x_0 \Rightarrow
+|f(x)-L|<\epsilon \\
+\Leftrightarrow \lim_{x\to x_0-}f(x)=L
+\end{gather*}
+
+Note that for a limit to exist it must exist from both the left and from the right:
+
+$$
+\sum_{x\to x_0}f(x)=L \Leftrightarrow
+\left(\lim_{x\to x_0+}f(x)=L\right)\and \left(\lim_{x\to x_0-}f(x)=L\right)
 $$
 
-## Continuity of functions <!-- 5 -->
+<!-- Ch. 5 -->
+## Continuity of functions
 
-### Uniform continuity <!-- 5.3 -->
+<!-- Def 5.3 -->
+### Uniform continuity
 
 A function $f$ is *uniformly continuous on an interval $D\subset\R$* if and only if:
 
