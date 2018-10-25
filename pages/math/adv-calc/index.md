@@ -11,6 +11,12 @@ $$
 
 # Advanced Calculus
 
+## Limits of functions <!-- 4 -->
+
+### Finite limits <!-- 4.1 -->
+
+Given a function $f:D\to R\subset\R$, a point $x_0$ (eventually not in $D$) and $L\in\R$ (finite), we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if
+
 ## Continuity of functions <!-- 5 -->
 
 ### Uniform continuity <!-- 5.3 -->
