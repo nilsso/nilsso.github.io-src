@@ -4,8 +4,8 @@
 <div id="mathjax-preamble" style="display:none;">
 $$
 \newcommand{\seq}[1]{{\left\{#1\right\}}}
-\def\Z{\mathbb{Z}}
-\def\R{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
 $$
 </div>
 
