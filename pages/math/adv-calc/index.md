@@ -9,15 +9,13 @@ $$
 $$
 </div>
 
-# Advanced Calculus
-
 <!-- Ch 4 -->
-## Limits of functions
+# Limits of functions
 
 <!-- Def 4.1 -->
-### Finite limits
+## Finite limits
 
-#### Definition of finite limits
+### Definition of finite limits
 
 Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if:
 
@@ -84,15 +82,15 @@ $$
 $$
 
 <!-- Th 4.1.1 -->
-#### Sequential characterization of limits
+### Sequential characterization of limits
 
 Given a function $f:D\to \R$ and a point $x_0$, eventually not in $D$, then $\lim_{x\to x_0}f(x)=L$ if and only if any sequence $\seq{x_n}$ where $\forall n\in\N$, $x_n\in D$ and where $\lim_{n\to\infty}x_n=x_0$ we have $lim_{n\to\infty}f(x_n)=L$.
 
 <!-- Ch 5 -->
-## Continuity of functions
+# Continuity of functions
 
 <!-- Def 5.3 -->
-### Uniform continuity
+## Uniform continuity
 
 A function $f$ is *uniformly continuous on an interval $D\subset\R$* if and only if:
 
@@ -104,7 +102,7 @@ $$
 |f(x_2)-f(x_1)|<\epsilon
 $$
 
-#### Sequential chatacterization
+### Sequential chatacterization
 
 A function $f:D\to \R$ is uniformly continuous on $D$ if and only if:
 
