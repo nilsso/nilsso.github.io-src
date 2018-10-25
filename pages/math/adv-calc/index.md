@@ -15,7 +15,16 @@ $$
 
 ### Finite limits <!-- 4.1 -->
 
-Given a function $f:D\to R\subset\R$, a point $x_0$ (eventually not in $D$) and $L\in\R$ (finite), we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if
+Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that **the limit of the function $f$ at $x_0$ is $L$** if and only if
+
+$$
+\forall\epsilon,
+\exists\delta>0,
+\forall x\in D,
+x\neq x_0,
+|x-x_0|<\delta \Rightarrow
+|f(x)-L|<\epsilon
+$$
 
 ## Continuity of functions <!-- 5 -->
 
