@@ -1,4 +1,5 @@
 ---
+title: Advanced Calculus
 ---
 {% include mathjax.html %}
 <div id="mathjax-preamble" style="display:none;">
