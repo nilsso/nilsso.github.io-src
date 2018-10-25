@@ -3,9 +3,10 @@
 {% include mathjax.html %}
 <div id="mathjax-preamble" style="display:none;">
 $$
+\newcommand{\test}{test}
 \newcommand{\seq}[1]{{\left\{#1\right\}}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
 $$
 </div>
 
