@@ -70,7 +70,7 @@ Note that for a limit to exist it must exist from both the left and from the rig
 
 $$
 \sum_{x\to x_0}f(x)=L \Leftrightarrow
-\left(\lim_{x\to x_0+}f(x)=L\right)\and \left(\lim_{x\to x_0-}f(x)=L\right)
+\left(\lim_{x\to x_0+}f(x)=L\right)\wedge \left(\lim_{x\to x_0-}f(x)=L\right)
 $$
 
 <!-- Ch. 5 -->
