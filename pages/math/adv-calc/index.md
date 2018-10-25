@@ -19,7 +19,7 @@ $$
 
 Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if:
 
-\begin{gather*}
+\begin{gather}
 \forall\epsilon,
 \exists\delta>0,
 \forall x\in D,
@@ -27,12 +27,12 @@ x\neq x_0,
 |x-x_0|<\delta \Rightarrow
 |f(x)-L|<\epsilon \\
 \Leftrightarrow \lim_{x\to x_0}f(x)=L
-\end{gather*}
+\end{gather}
 
 <!-- Def 4.2 -->
 Or alternatively by the substitution $h=x-x_0$:
 
-\begin{gather*}
+\begin{gather}
 \forall\epsilon,
 \exists\delta>0,
 \forall h\in D,
@@ -40,11 +40,11 @@ h\neq 0,
 |h|<\delta \Rightarrow
 |f(x_0+h)-L|<\epsilon \\
 \Leftrightarrow \lim_{x\to x_0}f(x)=L
-\end{gather*}
+\end{gather}
 
 We also have the definition of finite limits from the right:
 
-\begin{gather*}
+\begin{gather}
 \forall\epsilon,
 \exists\delta>0,
 \forall x\in D,
@@ -52,11 +52,11 @@ x\neq x_0,
 x_0<x<x_0+\delta \Rightarrow
 |f(x)-L|<\epsilon \\
 \Leftrightarrow \lim_{x\to x_0+}f(x)=L
-\end{gather*}
+\end{gather}
 
 And also from the left:
 
-\begin{gather*}
+\begin{gather}
 \forall\epsilon,
 \exists\delta>0,
 \forall x\in D,
@@ -64,7 +64,7 @@ x\neq x_0,
 x_0-\delta<x<x_0 \Rightarrow
 |f(x)-L|<\epsilon \\
 \Leftrightarrow \lim_{x\to x_0-}f(x)=L
-\end{gather*}
+\end{gather}
 
 Note that for a limit to exist it must exist from both the left and from the right:
 
