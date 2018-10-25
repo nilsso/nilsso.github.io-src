@@ -25,7 +25,7 @@ Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and 
 \forall x\in D,
 x\neq x_0,
 |x-x_0|<\delta \Rightarrow
-|f(x)-L|<\epsilon \\
+|f(x)-L|<\epsilon \\\\
 \Leftrightarrow \lim_{x\to x_0}f(x)=L
 \end{gather}
 
