@@ -4,6 +4,7 @@
 <div id="mathjax-preamble" style="display:none;">
 $$
 \newcommand{\seq}[1]{\left\{#1\right\}}
+\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\R}{\mathbb R}
 $$
