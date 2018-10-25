@@ -29,8 +29,8 @@ $$
 \forall x\in D,
 x\neq x_0,
 |x-x_0|<\delta \Rightarrow
-|f(x)-L|<\epsilon \\
-\Leftrightarrow \lim_{x\to x_0}f(x)=L
+|f(x)-L|<\epsilon \Leftrightarrow \\
+\lim_{x\to x_0}f(x)=L
 \end{gathered}
 $$
 
@@ -44,8 +44,8 @@ $$
 \forall h\in D,
 h\neq 0,
 |h|<\delta \Rightarrow
-|f(x_0+h)-L|<\epsilon \\
-\Leftrightarrow \lim_{x\to x_0}f(x)=L
+|f(x_0+h)-L|<\epsilon \Leftrightarrow \\
+\lim_{x\to x_0}f(x)=L
 \end{gathered}
 $$
 
@@ -58,8 +58,8 @@ $$
 \forall x\in D,
 x\neq x_0,
 x_0<x<x_0+\delta \Rightarrow
-|f(x)-L|<\epsilon \\
-\Leftrightarrow \lim_{x\to x_0+}f(x)=L
+|f(x)-L|<\epsilon \Leftrightarrow \\
+\lim_{x\to x_0+}f(x)=L
 \end{gathered}
 $$
 
@@ -72,8 +72,8 @@ $$
 \forall x\in D,
 x\neq x_0,
 x_0-\delta<x<x_0 \Rightarrow
-|f(x)-L|<\epsilon \\
-\Leftrightarrow \lim_{x\to x_0-}f(x)=L
+|f(x)-L|<\epsilon \Leftrightarrow \\
+\lim_{x\to x_0-}f(x)=L
 \end{gathered}
 $$
 
