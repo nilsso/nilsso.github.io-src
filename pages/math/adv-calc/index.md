@@ -166,6 +166,11 @@ $$
 \end{gathered}
 $$
 
+<!-- Th 4.3.1 -->
+<!-- Th 4.3.2 -->
+
+---
+
 <!-- Ch 5 -->
 # Continuity of functions
 
