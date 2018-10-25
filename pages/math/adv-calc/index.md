@@ -56,7 +56,8 @@ x_0<x<x_0+\delta \Rightarrow
 
 And also from the left:
 
-\begin{gather}
+$$
+\begin{gathered}
 \forall\epsilon,
 \exists\delta>0,
 \forall x\in D,
@@ -64,7 +65,8 @@ x\neq x_0,
 x_0-\delta<x<x_0 \Rightarrow
 |f(x)-L|<\epsilon \\
 \Leftrightarrow \lim_{x\to x_0-}f(x)=L
-\end{gather}
+\end{gathered}
+$$
 
 Note that for a limit to exist it must exist from both the left and from the right:
 
