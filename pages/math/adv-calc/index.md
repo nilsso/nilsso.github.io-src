@@ -11,6 +11,49 @@ $$
 $$
 </div>
 
+<!-- Ch 3 -->
+# Sequences and their limits
+
+<!-- Ch 3.4 -->
+## Cauchy sequences
+
+<!-- Def 3.4.1 -->
+A sequence $\seq{a_n}_{n=1}^\infty$ is a **Cauchy sequence** if
+
+$$
+\forall\epsilon>0,
+\exists N\in\N,
+\forall n,m\geq N,
+|a_n-a_m|<\epsilon
+$$
+
+Or alternatively by the substitution $m=n+k$
+
+$$
+\forall\epsilon>0,
+\exists N\in\N,
+\forall n\geq N, \forall k\in\n,
+|a_{n+k}-a_n|<\epsilon
+$$
+
+<!-- Prop 3.4.1 -->
+We also have that sequences that converge are necessarily Cauchy sequences (at least of real number sequences).
+
+<!-- Ch 3.5 -->
+## Countability
+
+TODO!
+
+<!-- Ch 3.6 -->
+## Density
+
+TODO!
+
+<!-- Ch 3.7 -->
+## Least upper bound principle
+
+TODO!
+
 <!-- Ch 4 -->
 # Limits of functions
 
