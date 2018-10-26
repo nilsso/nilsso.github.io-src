@@ -12,7 +12,24 @@ $$
 </div>
 
 <!-- Ch 3 -->
+
+<!-- Ch 3.1 -->
 # Sequences and their limits
+
+{% include tooltip.html text="Definition 3.1.1" content="
+A sequence is a function whose domain is a subset of integers o the form
+$\seq{N_0,N_0+1,N_0+2,\cdots}$ where $N_0\in\N$. If we refer to this functionas $f$, then $f(n)$ is usually denoted $a_n$ for $n=N_0,N_0+1,N_0+2,\cdots$. The term $a_n$ is called the nth term of the sequence.
+" %}
+
+<!-- Ch 3.2 -->
+## Limits
+
+{% include tooltip.html text="Definition 3.2.1" content="
+The limit of the sequence $\seq{a_n}$ is $L$ if
+$$ \forall\epsilon>0,\exists N\in\N,\forall n\geq N,|a_n-L|<\epsilon $$
+Denoted
+$$ \lim_{n\to\infty}a_n=L $$
+" %}
 
 <!-- Ch 3.4 -->
 ## Cauchy sequences
