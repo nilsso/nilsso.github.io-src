@@ -31,10 +31,12 @@ A subsequence of a sequence $\seq{a_n}_{n=1}^\infty$ is formed by selecting the 
 ## Limits
 
 {% include tooltip.html text="Definition 3.2.1<br/>Proposition 3.2.1" content="
-The limit of the sequence $\seq{a_n}$ is a unique value $L$ if
+The limit of the sequence $\seq{a_n}$ (denoted $\lim_{n\to\infty}a_n=L$) is a unique value $L$ which exists if
 $$ \forall\epsilon>0,\exists N\in\N,\forall n\geq N,|a_n-L|<\epsilon $$
-Denoted
-$$ \lim_{n\to\infty}a_n=L $$
+" %}
+
+{% include tooltip.html text="Proposition 3.2.2" content="
+And if a sequence $\seq{a_n}$ converges to a limit $L$ then so do all subsequences $\seq{a_{n_k}}$.
 " %}
 
 <!-- Ch 3.4 -->
