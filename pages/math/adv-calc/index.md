@@ -84,16 +84,16 @@ We say the limit of the sequence $\seq{a_n}$ is:
 ### Properties of infinite limits
 
 <!-- Prop 3.9.1 -->
-> $$ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $$
+$$ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $$
 
 <!-- Prop 3.9.2 -->
-> Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_n\to\infty}a_n=0$, then:
-> $$ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $$
+Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_{n\to\infty}a_n=0$, then:
+$$ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $$
 
 <!-- Prop 3.9.3 -->
 <div class="tt">
-> Asumme that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and $\lim_{n\to\infty}b_n=+\infty$ then
-> $$ \lim_{n\to\infty}a_n b_n=+\infty $$
+Assume that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and $\lim_{n\to\infty}b_n=+\infty$ then
+$$ \lim_{n\to\infty}a_n b_n=+\infty $$
 <span class="ttt">Proposition 3.9.3</span>
 </div>
 
