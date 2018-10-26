@@ -85,19 +85,19 @@ We say the limit of the sequence $\seq{a_n}$ is:
 
 <!-- Prop 3.9.1 -->
 {% include tooltip.html text="Proposition 3.9.1" content="
-$$ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $$
+> $$ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $$
 " %}
 
 <!-- Prop 3.9.2 -->
 {% include tooltip.html text="Proposition 3.9.2" content="
-Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_{n\to\infty}a_n=0$, then:
-$$ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $$
+> Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_{n\to\infty}a_n=0$, then:
+> $$ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $$
 " %}
 
 <!-- Prop 3.9.3 -->
 {% include tooltip.html text="Proposition 3.9.3" content="
-Assume that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and $\lim_{n\to\infty}b_n=+\infty$ then
-$$ \lim_{n\to\infty}a_n b_n=+\infty $$
+> Assume that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and $\lim_{n\to\infty}b_n=+\infty$ then
+> $$ \lim_{n\to\infty}a_n b_n=+\infty $$
 " %}
 
 <!-- Ch 4 -->
