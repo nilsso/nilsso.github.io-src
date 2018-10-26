@@ -17,7 +17,7 @@ $$
 # Sequences and their limits
 
 {% include tooltip.html text="Definition 3.1.1" content="
-(TEST) A **sequence** is a function whose domain is a subset of integers o the form
+A **sequence** is a function whose domain is a subset of integers o the form
 $\seq{N_0,N_0+1,N_0+2,\cdots}$ where $N_0\in\N$. If we refer to this functionas $f$, then $f(n)$ is usually denoted $a_n$ for 
 $n=N_0,N_0+1,N_0+2,\cdots$. The term $a_n$ is called the nth term of the sequence. We also may notate $a_{N_0},a_{N_0+1},\ldots$ as
 $\seq{a_n}_{n=N_0}^\infty$ or simply $\seq{a_n}$ if the value of $N_0$ is obvious.
@@ -26,7 +26,7 @@ $\seq{a_n}_{n=N_0}^\infty$ or simply $\seq{a_n}$ if the value of $N_0$ is obviou
 ### Subsequences
 
 {% include tooltip.html text="Definition 3.2.2" content="
-A **subsequence** of a sequence $\seq{a_n}_{n=1}^\infty$ is formed by selecting the terms $a_n$ that correspond to the values of $n$ taken as a strictly increasing sequence. If $n_1<n_2<\ldots<n_k<n_{k+1}<\ldots$ is a strictly increasing sequence of integers, the corresponding sequence $\seq{a_{n_k}}_{k=1}^\infty$ is a subsequence of $\seq{a_n}_{n=1}^\infty$.
+A **subsequence** of a sequence $\seq{a_n}\_{n=1}^\infty$ is formed by selecting the terms $a_n$ that correspond to the values of $n$ taken as a strictly increasing sequence. If $n_1<n_2<\ldots<n_k<n_{k+1}<\ldots$ is a strictly increasing sequence of integers, the corresponding sequence $\seq{a_{n_k}}_{k=1}^\infty$ is a subsequence of $\seq{a_n}_{n=1}^\infty$.
 " %}
 
 <!-- Ch 3.2 -->
