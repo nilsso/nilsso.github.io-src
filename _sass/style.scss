@@ -132,12 +132,12 @@ pre {
   overflow-x: auto;
 }
 
-.tt { // tooltip
+.tooltip {
   position: relative;
   display: inline-block;
 }
 
-.ttt { // tooltip text
+.tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: $color-c;
