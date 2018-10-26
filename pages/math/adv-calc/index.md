@@ -69,8 +69,8 @@ And in any of these cases we say that the sequence is **monotone** (i.e. monoton
 <!-- Th 3.8.1 -->
 ### Monotone convergence principle
 
-- A monotone increasing sequence $\seq{a_n}$ of real numbers that is bounded above has a limit $L$ and $\forall n\inN$, $a_n\leq L$.
-- A monotone decreasing sequence $\seq{a_n}$ of real numbers that is bounded below has a limit $l$ and $\forall n\inN$, $a_n\geq l$.
+- A monotone increasing sequence $\seq{a_n}$ of real numbers that is bounded above has a limit $L$ and $\forall n\in\N$, $a_n\leq L$.
+- A monotone decreasing sequence $\seq{a_n}$ of real numbers that is bounded below has a limit $l$ and $\forall n\in\N$, $a_n\geq l$.
 
 <!-- Ch 3.9 -->
 ## Infinite limits
