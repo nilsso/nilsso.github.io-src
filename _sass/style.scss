@@ -137,7 +137,7 @@ pre {
   display: inline-block;
 }
 
-.tooltiptext {
+.tooltip-text {
   visibility: hidden;
   width: 120px;
   background-color: $color-c;
@@ -151,7 +151,7 @@ pre {
   z-index: 1;
 }
 
-.tt:hover .ttt {
+.tooltip:hover .tooltip-text {
   visibility: visible;
 }
 
