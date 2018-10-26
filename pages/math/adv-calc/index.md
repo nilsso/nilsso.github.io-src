@@ -32,7 +32,7 @@ Or alternatively by the substitution $m=n+k$
 $$
 \forall\epsilon>0,
 \exists N\in\N,
-\forall n\geq N, \forall k\in\n,
+\forall n\geq N, \forall k\in\N,
 |a_{n+k}-a_n|<\epsilon
 $$
 
@@ -54,6 +54,49 @@ TODO!
 
 TODO!
 
+<!-- Ch 3.8 -->
+## Monotone sequences
+
+<!-- Def 3.8.1 -->
+A sequence $\seq{a_n}$ is said to be
+- **non-decreasing** or **increasing** if $\forall n\in\N$, $a_n\leq a_{n+1}$,
+- **strictly increasing** if $\forall n\in\N$, $a_n<a_{n+1}$,
+- **non-increasing** or **decreasing** if $\forall n\in\N$, $a_n\geq a_{n+1}$,
+- **strictly decreasing** if $\forall n\in\N$, $a_n>a_{n+1}$,
+
+And in any of these cases we say that the sequence is **monotone** (i.e. monotone increasing, monotone decreasing, etc).
+
+<!-- Th 3.8.1 -->
+### Monotone convergence principle
+
+- A monotone increasing sequence $\seq{a_n}$ of real numbers that is bounded above has a limit $L$ and $\forall n\inN$, $a_n\leq L$.
+- A monotone decreasing sequence $\seq{a_n}$ of real numbers that is bounded below has a limit $l$ and $\forall n\inN$, $a_n\geq l$.
+
+<!-- Ch 3.9 -->
+## Infinite limits
+
+<!-- Def 3.9.1 -->
+We say the limit of the sequence $\seq{a_n}$ is:
+
+- $+\infty$ (denoted as $\lim_{n\to\infty}a_n=+\infty$) if $\forall M>0,\exists N\in\N,\forall n\in\N,n\geq N,a_n> M$,
+- $-\infty$ (denoted as $\lim_{n\to\infty}a_n=-\infty$) if $\forall M>0,\exists N\in\N,\forall n\in\N,n\geq N,a_n< -M$.
+
+### Properties of infinite limits
+
+<!-- Prop 3.9.1 -->
+> $$ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $$
+
+<!-- Prop 3.9.2 -->
+> Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_n\to\infty}a_n=0$, then:
+> $$ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $$
+
+<!-- Prop 3.9.3 -->
+<div class="tt">
+> Asumme that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and $\lim_{n\to\infty}b_n=+\infty$ then
+> $$ \lim_{n\to\infty}a_n b_n=+\infty $$
+<span class="ttt">Proposition 3.9.3</span>
+</div>
+
 <!-- Ch 4 -->
 # Limits of functions
 
@@ -64,7 +107,7 @@ TODO!
 
 ### Definition of finite limits
 
-Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that *the limit of the function $f$ at $x_0$ is $L$* if and only if:
+Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that **the limit of the function $f$ at $x_0$ is $L$** if and only if:
 
 $$
 \begin{gathered}
@@ -221,7 +264,7 @@ $$
 <!-- Def 5.3 -->
 ## Uniform continuity
 
-A function $f$ is *uniformly continuous on an interval $D\subset\R$* if and only if:
+A function $f$ is **uniformly continuous on an interval $D\subset\R$** if and only if:
 
 $$
 \forall\epsilon>0,
