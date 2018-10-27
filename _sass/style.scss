@@ -20,11 +20,13 @@ html {
   font-size: $font-size-normal;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 body {
   width: 860px;
   margin: 2rem auto 50vh auto;
+  overflow-x: hidden;
 }
 
 nav, .nav, h1, h2, h3, h4, h5, h6 {
@@ -147,9 +149,11 @@ pre {
   padding: 5px 10px;
   border-radius: 6px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 105%; 
+  left: 0;
+  bottom: 105%;
+  //top: 50%;
+  //transform: translateY(-50%);
+  //right: 105%; 
   z-index: 1;
 }
 
@@ -223,14 +227,33 @@ footer {
   position: absolute;
 }
 
+.MathJax_SVG_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
 @media (max-width: 960px) {
+  html {
+    padding: 0 15px;
+  }
+
   body {
     width: auto;
-    padding: 0 15px;
   }
 
   nav, h1, h2, h3, h4, h5, h6 {
     text-align: center;
+  }
+
+  ul, ol {
+    padding-left: 0;
+    white-space: nowrap;
+  }
+
+  li {
+    padding-left: 0;
+    list-style-position: inside;
+    overflow-x: scroll;
   }
 
   .float-right {

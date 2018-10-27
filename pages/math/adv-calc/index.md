@@ -101,6 +101,14 @@ $$
 \lim_{n\to\infty}a_n\leq \lim_{n\to\infty}b_n
 $$
 " %}
+
+{% include tooltip.html text="Corollary 3.3.8" content="
+<li>
+Assume that $\forall n\in\N,a_n<M$ and $\lim_{n\to\infty}a_n$ exists then:
+$$
+\lim_{n\to\infty}a_n\leq M
+$$
+" %}
 </ul>
 
 ### Bounded sequences
