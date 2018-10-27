@@ -135,32 +135,6 @@ pre {
   overflow-x: auto;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip-text {
-  visibility: hidden;
-  white-space: nowrap;
-  background-color: $color-c;
-  color: white;
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 6px;
-  position: absolute;
-  left: 0;
-  bottom: 105%;
-  //top: 50%;
-  //transform: translateY(-50%);
-  //right: 105%; 
-  z-index: 1;
-}
-
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-}
-
 figure {
   margin: 1rem 3rem;
 }
@@ -227,9 +201,43 @@ footer {
   position: absolute;
 }
 
+.message {
+  color: $color-d;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+
+  h1 {
+    color: inherit;
+    margin: 0;
+  }
+}
+
 .MathJax_SVG_Display {
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  white-space: nowrap;
+  background-color: $color-c;
+  color: white;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 110%;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
 }
 
 @media (max-width: 960px) {

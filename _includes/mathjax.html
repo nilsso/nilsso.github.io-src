@@ -27,7 +27,7 @@ article {
 <script>
 $(function() {
   article = $("article");
-  article.before("<div style='position:absolute;left:50%;transform:translateX(-50%);'><h1 style='color:#bfbfbf;margin:0;'>rendering math...</h1></div>");
+  article.before("<div class='message'><h1>rendering math...</h1></div>");
   MathJax.Hub.Queue(["Typeset", MathJax.Hub], function() {
     article.prev().fadeOut(324, function() {
       article.css({
