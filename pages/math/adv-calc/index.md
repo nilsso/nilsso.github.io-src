@@ -18,28 +18,104 @@ $$
 
 {% include tooltip.html text="Definition 3.1.1" content="
 A **sequence** is a function whose domain is a subset of integers o the form
-$\seq{N_0,N_0+1,N_0+2,\cdots}$ where $N_0\in\N$. If we refer to this functionas $f$, then $f(n)$ is usually denoted $a_n$ for 
-$n=N_0,N_0+1,N_0+2,\cdots$. The term $a_n$ is called the nth term of the sequence. We also may notate $a_{N_0},a_{N_0+1},\ldots$ as
-$\seq{a_n}_{n=N_0}^\infty$ or simply $\seq{a_n}$ if the value of $N_0$ is obvious.
+$\seq{N_0,N_0+1,N_0+2,\cdots}$ where $N_0\in\N$. If we refer to this functionas
+$f$, then $f(n)$ is usually denoted $a_n$ for $n=N_0,N_0+1,N_0+2,\cdots$. The
+term $a_n$ is called the nth term of the sequence. We also may notate
+$a_{N_0},a_{N_0+1},\ldots$ as $\seq{a_n}_{n=N_0}^\infty$ or simply $\seq{a_n}$
+if the value of $N_0$ is obvious.
 " %}
 
 ### Subsequences
 
 {% include tooltip.html text="Definition 3.2.2" content="
-A **subsequence** of a sequence $\seq{a_n}\_{n=1}^\infty$ is formed by selecting the terms $a_n$ that correspond to the values of $n$ taken as a strictly increasing sequence. If $n_1<n_2<\ldots<n_k<n_{k+1}<\ldots$ is a strictly increasing sequence of integers, the corresponding sequence $\seq{a_{n_k}}\_{k=1}^\infty$ is a subsequence of $\seq{a_n}_{n=1}^\infty$.
+A **subsequence** of a sequence $\seq{a_n}\_{n=1}^\infty$ is formed by selecting
+the terms $a_n$ that correspond to the values of $n$ taken as a strictly
+increasing sequence. If $n_1<n_2<\ldots<n_k<n_{k+1}<\ldots$ is a strictly
+increasing sequence of integers, the corresponding sequence
+$\seq{a_{n_k}}\_{k=1}^\infty$ is a subsequence of $\seq{a_n}_{n=1}^\infty$.
 " %}
 
 <!-- Ch 3.2 -->
 ## Limits
 
 {% include tooltip.html text="Definition 3.2.1<br/>Proposition 3.2.1" content="
-The limit of the sequence $\seq{a_n}$ (denoted $\lim_{n\to\infty}a_n=L$) is a unique value $L$ which exists if
+The limit of the sequence $\seq{a_n}$ (denoted $\lim_{n\to\infty}a_n=L$) is a
+unique value $L$ which exists if:
+
 $$ \forall\epsilon>0,\exists N\in\N,\forall n\geq N,|a_n-L|<\epsilon $$
 " %}
 
 {% include tooltip.html text="Proposition 3.2.2" content="
-And if a sequence $\seq{a_n}$ converges to a limit $L$ then so do all subsequences $\seq{a_{n_k}}$.
+And if a sequence $\seq{a_n}$ converges to a limit $L$ then so do all
+subsequences $\seq{a_{n_k}}$.
 " %}
+
+<!-- Ch 3.3 -->
+### Properties of sequence limits
+
+<ul>
+{% include tooltip.html text="Proposition 3.3.1" content="
+<li>The limit of a constant sequence $c$ is $c$.</li>
+" %}
+
+{% include tooltip.html text="Proposition 3.3.2" content="
+<li>
+Assume that $c$ is a constant and $\lim_{n\to\infty}a_n$ exists then:
+$$
+\lim_{n\to\infty}(ca_n)=c\lim_{n\to\infty}a_n
+$$
+</li>" %}
+
+{% include tooltip.html text="Proposition 3.3.3" content="
+<li>
+(Sum rule) Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences, then
+$\lim_{n\to\infty}(a_n+b_n)$ exists and:
+$$
+\lim_{n\to\infty}(a_n+b_n)=\lim_{n\to\infty}a_n+\lim_{n\to\infty}b_n
+$$
+</li>" %}
+
+{% include tooltip.html text="Proposition 3.3.5" content="
+<li>
+(Product rule) Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences, then
+$$
+\lim_{n\to\infty}(a_n b_n)
+= \left(\lim_{n\to\infty}a_n\right)\left(\lim_{n\to\infty}b_n\right)
+$$
+</li>" %}
+
+{% include tooltip.html text="Proposition 3.3.6" content="
+<li>
+(Quotient rule) Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences, then
+$$
+\lim_{n\to\infty}\frac{a_n}{b_n}
+= \frac{\lim_{n\to\infty}a_n}{\lim_{n\to\infty}b_n}
+$$
+" %}
+
+{% include tooltip.html text="Proposition 3.3.7" content="
+<li>
+Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences.
+If $\forall n\in\N,a_n<b_n$ then
+$$
+\lim_{n\to\infty}a_n\leq \lim_{n\to\infty}b_n
+$$
+" %}
+</ul>
+
+### Bounded sequences
+
+{% include tooltip.html text="Definition 3.3.1" content="
+A sequence $\seq{a_n}$ is said to be **bounded** if
+$\exists M\in\R,M\geq 0,\forall n\in\N,|a_n|\leq M$.
+" %}
+
+<ul>
+{% include tooltip.html text="Proposition 3.3.4" content="
+<li>
+A convergent sequence is bounded.
+</li>" %}
+</ul>
 
 <!-- Ch 3.4 -->
 ## Cauchy sequences
@@ -64,7 +140,8 @@ $$
 $$
 
 <!-- Prop 3.4.1 -->
-We also have that sequences that converge are necessarily Cauchy sequences (at least of real number sequences).
+We also have that sequences that converge are necessarily Cauchy sequences (at
+least of real number sequences).
 
 <!-- Ch 3.5 -->
 ## Countability
@@ -130,7 +207,7 @@ $ \lim_{n\to\infty}a_n b_n=+\infty $</li>
 </ul>
 
 <!-- Ch 4 -->
-# Limits of functions
+# Limits of real value functions
 
 <!-- Ch 4.1 -->
 

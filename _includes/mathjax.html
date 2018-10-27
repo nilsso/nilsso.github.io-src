@@ -18,4 +18,24 @@ MathJax.Hub.Config({
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG">
 </script>
-
+<style>
+article {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 324ms;
+}
+</style>
+<script>
+$(function() {
+  article = $("article");
+  article.before("<div style='position:absolute;left:50%;transform:translateX(-50%);'><h1 style='color:#bfbfbf;margin:0;'>rendering math...</h1></div>");
+  MathJax.Hub.Queue(["Typeset", MathJax.Hub], function() {
+    article.prev().fadeOut(324, function() {
+      article.css({
+        "visibility": "visible",
+        "opacity": "1"
+      });
+    });
+  });
+});
+</script>
