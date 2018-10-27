@@ -5,15 +5,17 @@ title: Advanced Calculus
 <div id="mathjax-preamble" style="display:none;">
 $$
 \newcommand{\seq}[1]{\left\{#1\right\}}
+\newcommand{\Limsup}{\overline\lim}
+\newcommand{\Liminf}{\underline\lim}
 \newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\R}{\mathbb R}
 $$
 </div>
 
-<!-- Ch 3 -->
+<!-- Ch 3 .................................................................. -->
 
-<!-- Ch 3.1 -->
+<!-- Ch 3.1 ................................................................ -->
 # Sequences and their limits
 
 {% include tooltip.html text="Definition 3.1.1" content="
@@ -35,7 +37,7 @@ increasing sequence of integers, the corresponding sequence
 $\seq{a_{n_k}}\_{k=1}^\infty$ is a subsequence of $\seq{a_n}_{n=1}^\infty$.
 " %}
 
-<!-- Ch 3.2 -->
+<!-- Ch 3.2 ................................................................ -->
 ## Limits
 
 {% include tooltip.html text="Definition 3.2.1<br/>Proposition 3.2.1" content="
@@ -50,7 +52,7 @@ And if a sequence $\seq{a_n}$ converges to a limit $L$ then so do all
 subsequences $\seq{a_{n_k}}$.
 " %}
 
-<!-- Ch 3.3 -->
+<!-- Ch 3.3 ................................................................ -->
 ### Properties of sequence limits
 
 <ul>
@@ -125,10 +127,10 @@ A convergent sequence is bounded.
 </li>" %}
 </ul>
 
-<!-- Ch 3.4 -->
+<!-- Ch 3.4 ................................................................ -->
 ## Cauchy sequences
 
-<!-- Def 3.4.1 -->
+{% include tooltip.html text="Definition 3.4.1" content="
 A sequence $\seq{a_n}_{n=1}^\infty$ is a **Cauchy sequence** if
 
 $$
@@ -146,78 +148,233 @@ $$
 \forall n\geq N, \forall k\in\N,
 |a_{n+k}-a_n|<\epsilon
 $$
+" %}
 
-<!-- Prop 3.4.1 -->
-We also have that sequences that converge are necessarily Cauchy sequences (at
-least of real number sequences).
+{% include tooltip.html text="Proposition 3.4.1<br/>Axiom 1" content="
+We have then that sequences that converge are necessarily Cauchy sequences (at
+least of real number sequences) and converge to a real number.
+" %}
 
-<!-- Ch 3.5 -->
-## Countability
+<!-- Ch 3.5 ................................................................ -->
+<!-- ## Countability-->
 
-TODO!
+<!-- Ch 3.6 ................................................................ -->
+<!-- ## Density-->
 
-<!-- Ch 3.6 -->
-## Density
-
-TODO!
-
-<!-- Ch 3.7 -->
+<!-- Ch 3.7 ................................................................ -->
 ## Least upper bound principle
 
-TODO!
+Let $S\subset\R$, then:
 
-<!-- Ch 3.8 -->
+{% include tooltip.html text="Definition 3.7.1<br/>Notation 3.1" content="
+- The number $L$ is called the **least upper bound** of $S$ if $L$ is the
+smallest number such that $\forall a\in S,a\leq L$. It is also called the
+**supremum** and denoted $\sup S$.
+- The number $l$ is called the **greatest lower bound** of $S$ if $l$ is the
+greatest number such that $\forall a\in S,a\geq L$. It is also called the
+**infimum** and is denoted $\inf S$.
+" %}
+
+Additionally we have that:
+
+{% include tooltip.html text="Theorem 3.7.2" content="
+- If $S$ is bounded above then $\sup S$ exists,
+- If $S$ is bounded below then $\inf S$ exists.
+" %}
+
+All together we call this the least upper bound principle.
+
+<!-- Ch 3.8 ---------------------------------------------------------------- -->
 ## Monotone sequences
 
-<!-- Def 3.8.1 -->
 A sequence $\seq{a_n}$ is said to be
+
+{% include tooltip.html text="Definition 3.8.1" content="
 - **non-decreasing** or **increasing** if $\forall n\in\N$, $a_n\leq a_{n+1}$,
 - **strictly increasing** if $\forall n\in\N$, $a_n<a_{n+1}$,
 - **non-increasing** or **decreasing** if $\forall n\in\N$, $a_n\geq a_{n+1}$,
 - **strictly decreasing** if $\forall n\in\N$, $a_n>a_{n+1}$,
 
-And in any of these cases we say that the sequence is **monotone** (i.e. monotone increasing, monotone decreasing, etc).
+And in any of these cases we say that the sequence is **monotone** (i.e.
+monotone increasing, monotone decreasing, etc).
+" %}
 
-<!-- Th 3.8.1 -->
 ### Monotone convergence principle
 
-- A monotone increasing sequence $\seq{a_n}$ of real numbers that is bounded above has a limit $L$ and $\forall n\in\N$, $a_n\leq L$.
-- A monotone decreasing sequence $\seq{a_n}$ of real numbers that is bounded below has a limit $l$ and $\forall n\in\N$, $a_n\geq l$.
+{% include tooltip.html text="Theorem 3.8.1" content="
+- A monotone increasing sequence $\seq{a_n}$ of real numbers that is bounded
+above has a limit $L$ and $\forall n\in\N$, $a_n\leq L$.
+- A monotone decreasing sequence $\seq{a_n}$ of real numbers that is bounded
+below has a limit $l$ and $\forall n\in\N$, $a_n\geq l$.
+" %}
 
-<!-- Ch 3.9 -->
+<!-- Ch 3.9 ................................................................ -->
 ## Infinite limits
 
-<!-- Def 3.9.1 -->
 We say the limit of the sequence $\seq{a_n}$ is:
 
-- $+\infty$ (denoted as $\lim_{n\to\infty}a_n=+\infty$) if $\forall M>0,\exists N\in\N,\forall n\in\N,n\geq N,a_n> M$,
-- $-\infty$ (denoted as $\lim_{n\to\infty}a_n=-\infty$) if $\forall M>0,\exists N\in\N,\forall n\in\N,n\geq N,a_n< -M$.
+{% include tooltip.html text="Definition 3.9.1" content="
+- $+\infty$ (denoted as $\lim_{n\to\infty}a_n=+\infty$) if $\forall M>0,\exists
+N\in\N,\forall n\in\N,n\geq N,a_n> M$,
+- $-\infty$ (denoted as $\lim_{n\to\infty}a_n=-\infty$) if $\forall M>0,\exists
+N\in\N,\forall n\in\N,n\geq N,a_n< -M$.
+" %}
 
 ### Properties of infinite limits
 
 <ul>
-<!-- Prop 3.9.1 -->
 {% include tooltip.html text="Proposition 3.9.1" content="
-<li>We have $ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $</li>
-" %}
+<li>
+$ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $
+</li> " %}
 
-<!-- Prop 3.9.2 -->
 {% include tooltip.html text="Proposition 3.9.2" content="
-<li>Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_{n\to\infty}a_n=0$, then:
-$ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $</li>
-" %}
+<li>
+Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_{n\to\infty}a_n=0$,
+then: $ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $
+</li> " %}
 
-<!-- Prop 3.9.3 -->
 {% include tooltip.html text="Proposition 3.9.3" content="
-<li>Assume that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and $\lim_{n\to\infty}b_n=+\infty$ then
-$ \lim_{n\to\infty}a_n b_n=+\infty $</li>
-" %}
+<li>
+Assume that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and
+$\lim_{n\to\infty}b_n=+\infty$ then $\lim_{n\to\infty}a_n b_n=+\infty$
+</li> " %}
+
+{% include tooltip.html text="Proposition 3.9.4" content="
+<li>
+Assume that $\lim_{n\to\infty}a_n=L$ or $\lim_{n\to\infty}a_n=+\infty$, then
+$\lim_{n\to\infty}(a_n+b_n)=+\infty$
+</li>" %}
 </ul>
 
-<!-- Ch 4 -->
+Note that for the sum and product rules above that by fixing some limits as
+negative or as $-\infty$ we can get $\lim_{n\to\infty}a_n b_n=-\infty$ and
+$\lim_{n\to\infty}(a_n+b_n)=-\infty$.
+
+<!-- Ch 3.10 ............................................................... -->
+## Cluster points
+
+{% include tooltip.html text="Definition 3.10.1<br/>Proposition 3.10.2" content="
+A point $s$ is said to be a **cluster point** of the sequence $\seq{a_n}$ if
+$\forall\epsilon>0$ there exists infinitely many terms of $\seq{a_n}$ in the
+interval $(s-\epsilon,s+\epsilon)$. This is equivalent to the statement:
+
+$$
+\forall\epsilon>0,\forall N\in\N,\exists n>N,|a_n-s|<\epsilon
+$$
+" %}
+
+{% include tooltip.html text="Proposition 3.10.2" content="
+We also have that $s$ is a cluster point of the sequence
+$\seq{a_n}\_{n=1}^\infty$ if and only if there exists a subsequence
+$\seq{a_{n_j}}_{j=1}^\infty$ that converges to $s$.
+" %}
+
+### Bolzano-Weierstrass theorem for sequences
+
+{% include tooltip.html text="Theorem 3.10.3" content="
+Every bounded sequence of real numbers has a convergent subsequence and
+therefore has a cluster point.
+" %}
+
+### Upper and lower limits of sequences
+
+{% include tooltip.html text="Definition 3.11.1<br/>Notation 3.11.1" content="
+Assume that a sequence $\seq{a_n}$ has a cluster point and denote $S$ the set of
+cluster points, then:
+
+- If $\seq{a_n}$ is bounded above, we define the **upper limit** of $\seq{a_n}$
+as the $\sup S$,
+- If $\seq{a_n}$ is bounded below, we define the **lower limit** of $\seq{a_n}$
+as the $\inf S$
+
+The upper limit is referred to as the **limit superior** of $\seq{a_n}$ and is
+denoted $\Limsup a_n$ or $\limsup a_n$.
+
+The lower limit is referred to as the **limit inferior** of $\seq{a_n}$ and is
+denoted $\Liminf a_n$ or $\liminf a_n$.
+" %}
+
+#### Corollaries, propositions and properties:
+
+{% include tooltip.html text="Proposition 3.11.1<br/>Proposition 3.11.2" content="
+We also have that for $\seq{a_n}$ with cluster points:
+
+- If it is bounded above then
+
+  $$
+  \forall\epsilon>0,\exists N\in\N,\forall n\in\N,n\geq N,
+  a_n<\Limsup a_n+\epsilon
+  $$
+
+  And there exists infinitely many $n$ such that $a_n>\Limsup a_n-\epsilon$.
+
+- If it is bounded below then
+
+  $$
+  \forall\epsilon>0,\exists N\in\N,\forall n\in\N,n\geq N,
+  a_n>\Liminf a_n-\epsilon
+  $$
+
+  And there exists infinitely many $n$ such that $a_n<\Liminf a_n+\epsilon$.
+
+Additionally we could show that a point $s$ is an upper or lower limit by
+supposing the converse of either statement and showing there exist infinitely
+many elements $a_n$ above or below $s$.
+" %}
+
+{% include tooltip.html text="Proposition 3.11.3" content="
+If the $\Limsup$ and $\Liminf$ of a sequence $\seq{a_n}$ exist, then they are
+equal to one another if and only if they also equal the limit of $a_n$ which
+exists:
+
+$$
+\Limsup a_n=\Liminf a_n=\lim_{n\to\infty}a_n
+$$
+" %}
+
+{% include tooltip.html text="Definition 3.11.2" content="
+If the sequence $\seq{a_n}$ is not bounded above we set $\Limsup a_n=+\infty$.
+
+If the sequence $\seq{a_n}$ is not bounded below we set $\Liminf a_n=-\infty$.
+" %}
+
+{% include tooltip.html text="Definition 3.11.3" content="
+If the sequence $\seq{a_n}$ is:
+
+- Bounded below, does not have an upper bound and does not have any cluster
+points, we set $\Liminf a_n=+\infty$.
+- Bounded above, does not have any lower bound and does not have any cluster
+points, we set $\Limsup a_n=-\infty$.
+" %}
+
+{% include tooltip.html text="Proposition 3.11.4" content="
+We also have that:
+
+- $\Limsup a_n=-\infty \Leftrightarrow \lim_{n\to\infty}a_n=-\infty$
+- $\Liminf a_n=+\infty \Leftrightarrow \lim_{n\to\infty}a_n=+\infty$
+" %}
+
+{% include tooltip.html text="Proposition 3.11.5" content="
+Lastly, assume that $\forall n\in\N,a_n\geq 0,b_n\geq 0$ and
+$\lim_{n\to\infty}b_n>0$, then:
+
+$$
+\Limsup(a_n b_n)
+= \begin{cases}
+(\Limsup a_n)(\lim_{n\to\infty}b_n) & \Limsup a_n\neq+\infty \\
++\infty & \Limsup a_n=+\infty
+\end{cases}
+$$
+" %}
+
+
+---
+
+<!-- Ch 4 .................................................................. -->
 # Limits of real value functions
 
-<!-- Ch 4.1 -->
+<!-- Ch 4.1 ................................................................ -->
 
 <!-- Def 4.1 -->
 ## Finite limits

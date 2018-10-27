@@ -20,13 +20,11 @@ html {
   font-size: $font-size-normal;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 body {
   width: 860px;
   margin: 2rem auto 50vh auto;
-  overflow-x: hidden;
 }
 
 nav, .nav, h1, h2, h3, h4, h5, h6 {
@@ -232,7 +230,7 @@ footer {
   padding: 5px 10px;
   border-radius: 6px;
   position: absolute;
-  bottom: 110%;
+  bottom: 100%;
   z-index: 1;
 }
 
