@@ -341,9 +341,9 @@ If the sequence $\seq{a_n}$ is:
 " %}
 {% include tooltip.html text="Definition 3.11.3" content="
 <li>Bounded above, does not have any lower bound and does not have any cluster
-points, we set $\Limsup a_n=-\infty$.</li>
+points, we set $\Limsup a_n=-\infty$,</li>
 <li>Bounded below, does not have an upper bound and does not have any cluster
-points, we set $\Liminf a_n=+\infty$,</li>
+points, we set $\Liminf a_n=+\infty$.</li>
 " %}
 </ul>
 
