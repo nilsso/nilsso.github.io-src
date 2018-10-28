@@ -333,20 +333,19 @@ $$
 $$
 " %}
 
-{% include tooltip.html text="Definition 3.11.2" content="
-If the sequence $\seq{a_n}$ is not bounded above we set $\Limsup a_n=+\infty$.
-
-If the sequence $\seq{a_n}$ is not bounded below we set $\Liminf a_n=-\infty$.
-" %}
-
-{% include tooltip.html text="Definition 3.11.3" content="
 If the sequence $\seq{a_n}$ is:
-
-- Bounded below, does not have an upper bound and does not have any cluster
-points, we set $\Liminf a_n=+\infty$.
-- Bounded above, does not have any lower bound and does not have any cluster
-points, we set $\Limsup a_n=-\infty$.
+<ul>
+{% include tooltip.html text="Definition 3.11.2" content="
+<li>Not bounded above we set $\Limsup a_n=+\infty$,</li>
+<li>Not bounded below we set $\Liminf a_n=-\infty$,</li>
 " %}
+{% include tooltip.html text="Definition 3.11.3" content="
+<li>Bounded above, does not have any lower bound and does not have any cluster
+points, we set $\Limsup a_n=-\infty$.</li>
+<li>Bounded below, does not have an upper bound and does not have any cluster
+points, we set $\Liminf a_n=+\infty$,</li>
+" %}
+</ul>
 
 {% include tooltip.html text="Proposition 3.11.4" content="
 We also have that:
