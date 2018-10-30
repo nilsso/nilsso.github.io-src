@@ -224,3 +224,47 @@ If $R$ is a ring with identity and $\phi$ is surjective, then
 <li>Whenever $u$ is a unit in $R$, then $\phi(u)$ is a unit in $S$ and
 $\phi(u)^{-1}=\phi(u^{-1})$.</li>
 </ol>
+
+---
+
+<!-- ....................................................................... -->
+# Polynomial rings
+
+Fix $F[x]$ a field for this section.
+
+{% include tooltip.html text="Definition ?" content="
+$a(x),b(x)\in F[x]$ are **associates** if $a(x)=cb(x)$
+for some non-zero $c\in F[X]$, such that:
+
+$$
+a(x)=cb(x) \Leftrightarrow c^{-1}a(x)=b(x)
+$$
+" %}
+
+{% include tooltip.html text="Definition ?" content="
+$a(x)\in F[x]$ is **irreducible** if $\deg(a(x))>0$ (positive) and if whenever
+$a(x)=b(x)c(x)$ then $b(x)$ or $c(x)$ is a unit.
+" %}
+
+
+{% include tooltip.html text="Theorem 4.12" content="
+The following are equivalent:
+
+1. $a(x)\in F[x]$ is irreducible,
+1. Whenever $a(x)\mid b(x)c(x)$ either $a(x)\mid b(x)$ or $a\mid c(x)$,
+1. We cannot write $a(x)=b(x)c(x)$ where $b(x)$ and $c(x)$ both have positive
+   degree.
+" %}
+
+### Uniqueness of factorization
+
+{% include tooltip.html text="Theorem 4.14" content="
+Every non-constant $a(x)\in F[x]$ can be written in the form:
+
+$$
+a(x)=p_1(x)p_2(x)\cdots p_n(x)
+$$
+
+Where $\forall i\in\N$, $p_i(x)$ is an irreducible polynomial.
+Moreover, this expression is unique up-to reordering and unit multiples.
+" %}
