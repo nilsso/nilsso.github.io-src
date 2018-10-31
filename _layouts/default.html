@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
-{% include head.html %}
+<head>
+  {% include head-general.html %}
+  {% include head-styles.html %}
+</head>
 <body>
   {% include header.html %}
   <hr>
@@ -10,7 +13,9 @@
     </div>
   </article>
   <hr>
-  {% include footer.html %}
+  <footer>
+    {% include footer.html %}
+  </footer>
 </body>
 </html>
 

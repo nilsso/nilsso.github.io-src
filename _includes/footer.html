@@ -1,3 +1,10 @@
-<footer>
-{% include anchor.js.html %}
-</footer>
+{% if page.anchor %}
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/anchor.min.js"></script>
+<script type="text/javascript">
+  anchors.add('#content h1, #content h2, #content h3');
+</script>
+{% endif %}
+{% if page.asciinema %}
+<script src="/assets/js/asciinema-player.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.min.js"></script>-->
+{% endif %}
