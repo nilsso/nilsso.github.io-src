@@ -239,32 +239,32 @@ footer {
 }
 
 @media (max-width: 960px) {
-  html {
-    font-size: 60%;
-    padding: 0 15px;
-  }
+	html {
+		font-size: 60%;
+		padding: 0 15px;
+	}
 
-  body {
-    width: auto;
-  }
+	body {
+		width: auto;
+	}
 
-  nav, h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-  }
+	nav, h1, h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
 
-  ul, ol {
-    padding-left: 0;
-    white-space: nowrap;
-  }
+	ul, ol {
+		padding-left: 0;
+		white-space: nowrap;
+	}
 
-  li {
-    padding-left: 0;
-    list-style-position: inside;
-    overflow-x: scroll;
-  }
+	li {
+		padding-left: 0;
+		list-style-position: inside;
+		overflow-x: scroll;
+	}
 
-  .float-right {
-    float: none;
-  }
+	.float-right {
+		float: none;
+	}
 }
 
