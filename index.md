@@ -40,8 +40,6 @@ Vidya /
 
 # About Me
 
-<asciinema-player src="/test.cast"></asciinema-player>
-
 I'm a math student, programmer, singer, and game enthusiast.
 
 I love music. I've studdied classical voice, piano, and composition, I have
