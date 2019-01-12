@@ -5,30 +5,29 @@ title: "Lists"
 A few genres/subgenres, and maybe some artists/composers, that I like.
 
 ## Classical
+
 ### Baroque
-- Bach
-- Handel
+Bach, Handel
+
 ### Classical
-- Beethoven
+Beethoven
+
 ### Romantic
-- Wagner
+Wagner
+
 ### Impressionist
-- Debussy
-- Ravel
-- Satie
+Debussy, Ravel, Satie
+
 ## Metal
+
 ### Post-metal
+
 ### Sludge/Doom
-- Thou
-- The Body
-- Huntsmen
+Thou, The Body, Huntsmen
+
 ### Black
-- Ultha
-- Convocation
-- Dimmu Borgir
+Ultha, Convocation, Dimmu Borgir
+
 ### Post-rock
-- Godspeed You! Black Emperor
-- Grails
-- Russian Circles
-- Swans
+Godspeed You! Black Emperor, Grails, Russian Circles, Swans
 
