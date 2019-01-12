@@ -2,30 +2,33 @@
 title: "Lists"
 ---
 
-Here's a few lists of a few artists that I'd say I can recommend.
-
-## Metal
-
-### Sludge metal
-
-[Thou](#),
-[The Body](#)
-
-### Post-rock
-
-[Godspeed You! Black Emperor](#),
-[Grails](#),
-[Russian Circles](#),
-[Swans](#)
+A few genres/subgenres, and maybe some artists/composers, that I like.
 
 ## Classical
-
 ### Baroque
-
-[Bach](#),
-[Handel](#)
-
+- Bach
+- Handel
+### Classical
+- Beethoven
+### Romantic
+- Wagner
 ### Impressionist
+- Debussy
+- Ravel
+- Satie
+## Metal
+### Post-metal
+### Sludge/Doom
+- Thou
+- The Body
+- Huntsmen
+### Black
+- Ultha
+- Convocation
+- Dimmu Borgir
+### Post-rock
+- Godspeed You! Black Emperor
+- Grails
+- Russian Circles
+- Swans
 
-[Debussy](#),
-[Ravel](#)

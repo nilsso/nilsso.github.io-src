@@ -375,12 +375,9 @@ $$
 # Limits of real value functions
 
 <!-- Ch 4.1 ................................................................ -->
-
-<!-- Def 4.1 -->
 ## Finite limits
 
-### Definition of finite limits
-
+{% include tooltip.html text="Definition 4.1.1" content="
 Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that **the limit of the function $f$ at $x_0$ is $L$** if and only if:
 
 $$
@@ -394,8 +391,9 @@ x\neq x_0,
 \lim_{x\to x_0}f(x)=L
 \end{gathered}
 $$
+" %}
 
-<!-- Def 4.2 -->
+{% include tooltip.html text="Def 4.1.2" content="
 Or alternatively by the substitution $h=x-x_0$:
 
 $$
@@ -409,7 +407,9 @@ h\neq 0,
 \lim_{x\to x_0}f(x)=L
 \end{gathered}
 $$
+" %}
 
+{% include tooltip.html text="Definition 4.1.3" content="
 We also have the definition of finite limits from the right:
 
 $$
@@ -437,6 +437,7 @@ x_0-\delta<x<x_0 \Rightarrow
 \lim_{x\to x_0-}f(x)=L
 \end{gathered}
 $$
+" %}
 
 Note that for a limit to exist it must exist from both the left and from the right:
 
@@ -445,19 +446,89 @@ $$
 \left(\lim_{x\to x_0+}f(x)=L\right)\wedge \left(\lim_{x\to x_0-}f(x)=L\right)
 $$
 
-<!-- Th 4.1.1 -->
 ### Sequential characterization of limits
 
-Given a function $f:D\to \R$ and a point $x_0$, eventually not in $D$, then $\lim_{x\to x_0}f(x)=L$ if and only if any sequence $\seq{x_n}$ where $\forall n\in\N$, $x_n\in D$ and where $\lim_{n\to\infty}x_n=x_0$ we have $\lim_{n\to\infty}f(x_n)=L$.
+{% include tooltip.html text="Theorem 4.1.1" content="
+Given a function $f:D\to \R$ and a point $x_0$, eventually not in $D$, then
+$\lim_{x\to x_0}f(x)=L$ if and only if any sequence $\seq{x_n}$ where $\forall
+n\in\N$, $x_n\in D$ and where $\lim_{n\to\infty}x_n=x_0$ we have
+$\lim_{n\to\infty}f(x_n)=L$.
+" %}
 
-<!-- Th 4.1.2 -->
-<!-- Th 4.1.3 -->
+{% include tooltip.html text="Theorem 4.1.2" content="
+Assume that $f:[a,b]\to\R$ is an increasing or decreasing function. Then:
 
-<!-- Ch 4.2 -->
+<center>
+$\displaystyle\forall c\in(a,b),\lim_{x\to c-}f(x)$
+and
+$\displaystyle\lim_{x\to c+}f(x)$
+exist.
+</center>
+
+In addition, if $f$ is increasing we have:
+
+$$
+\lim_{x\to c-}f(x)\leq f(c)\leq\lim_{x\to c+}f(x)
+$$
+
+If $f$ is decreasing, we have:
+
+$$
+\lim_{x\to c-}f(x)\geq f(c)\geq\lim_{x\to c+}f(x)
+$$
+
+(The limits $\lim_{x\to a+}f(x)$ and $\lim_{x\to b-}f(x)$ exist as well.)
+" %}
+
+Note that assumptions about continuity are not required here.
+
+### Cauchy condition for the limit of a function
+
+{% include tooltip.html text="Theorem 4.1.3" content="
+<ol>
+<li>
+Assume that $f(x)$ is defined for $x\in(c,c+\delta_0)$, $\forall\delta_0\in\R$.
+If:
+
+$$
+  \forall\epsilon>0,
+  \exists\delta>0,
+  \delta\leq\delta_0,
+  \forall u,v\in\R,
+  (c<u<c+\delta)\wedge(c<v<c+\delta) \Rightarrow
+    |f(u)-f(v)|<\delta
+$$
+
+Then the limit $\lim_{x\to c+}f(x)$ exists.
+</li>
+
+<li>
+Assume that $f(x)$ is defined for $x\in(c-\delta_0,c)$, $\forall\delta_0\in\R$.
+If:
+
+$$
+  \forall\epsilon>0,
+  \exists\delta>0,
+  \delta\leq\delta_0,
+  \forall u,v\in\R,
+  (c-\delta<u<c)\wedge(c-\delta<v<c) \Rightarrow
+  |f(u)-f(v)|<\epsilon
+$$
+
+Then the limit $\lim_{x\to c-}f(x)$ exists.
+</li>
+</ol>
+
+Note that although this tells us that limit exists, it doesn't tell us anything
+about what said limits could be.
+" %}
+
+<!-- Ch 4.2 ................................................................ -->
 ## Infinite limits
 
-<!-- Def 4.2.1 -->
-Let a function $f:D\to R\subset\R$, we have for limits going to positive infinity:
+{% include tooltip.html text="Definition 4.2.1" content="
+Let a function $f:D\to R\subset\R$, we have for limits going to positive
+infinity:
 
 $$
 \lim_{x\to x_0} = +\infty\Leftrightarrow
@@ -471,16 +542,64 @@ $$
 \forall M>0,\exists\delta>0,\forall x\in D,x\neq x_0,|x-x_0|<\delta\Rightarrow f(x)<-M
 $$
 
-Similar to finite limits, we can have infinite limits approach $x_0$ from either the right or from the left.
+Similar to finite limits, we can have infinite limits approach $x_0$ from either
+the right or from the left.
+" %}
 
-<!-- Prop 4.2.1 -->
-<!-- Prop 4.2.2 -->
-<!-- Prop 4.2.3 -->
+### Properties of infinite limits
 
-<!-- Ch 4.3 -->
+{% include tooltip.html text="Proposition 4.2.1" content="
+Assume that $\forall x\in(a,b)$, $f(x)>0$, let $x_0\in(a,b)$ such that
+$\lim_{x\to x_0}f(x)=0.$ Then:
+
+$$
+\lim_{x\to x_0}\frac{1}{f(x)}=+\infty
+$$
+
+Assume that $\forall x\in(a,b)$, $f(x)<0$, let $x_0\in(a,b)$ such that
+$\lim_{x\to x_0}f(x)=0.$ Then:
+
+$$
+\lim_{x\to x_0}\frac{1}{f(x)}=-\infty
+$$
+" %}
+
+{% include tooltip.html text="Proposition 4.2.2" content="
+Assume that $\lim_{x\to x_0}f(x)=L>0$ (finite) or $\lim_{x\to x_0}f(x)=+\infty$
+and $\lim_{x\to x_0}g(x)=+\infty$. Then:
+
+$$
+\lim_{x\to x_0}f(x)g(x)=+\infty
+$$
+" %}
+
+{% include tooltip.html text="Proposition 4.2.3" content="
+Assume that $\lim_{x\to x_0}f(x)=L$ (finite) or $\lim_{x\to x_0}f(x)=+\infty$
+and $\lim_{x\to x_0}g(x)=+\infty$. Then:
+
+$$
+\lim_{x\to x_0}(f(x)+g(x))=+\infty
+$$
+" %}
+
+Note that in the sum property that the sign of $L$ is irrelevant, but in the
+product property when $L$ is finite the limit of the product is only $+\infty$
+if $L>0$. Also observe that these signages act as parameters to the limit of the
+product, that is:
+
+1. If $L>0$ and $\lim_{x\to x_0}g(x)=+\infty$, then
+$\lim_{x\to x_0}f(x)g(x)=+\infty$.
+1. If $L<0$ and $\lim_{x\to x_0}g(x)=+\infty$, then
+$\lim_{x\to x_0}f(x)g(x)=-\infty$.
+1. If $L>0$ and $\lim_{x\to x_0}g(x)=-\infty$, then
+$\lim_{x\to x_0}f(x)g(x)=-\infty$.
+1. If $L<0$ and $\lim_{x\to x_0}g(x)=-\infty$, then
+$\lim_{x\to x_0}f(x)g(x)=+\infty$.
+
+<!-- Ch 4.3 ................................................................ -->
 ## Limits at infinity
 
-<!-- Def 4.3.1 -->
+{% include tooltip.html text="Definition 4.3.1" content="
 Of finite limits at infinity:
 
 $$
@@ -496,7 +615,9 @@ $$
 \forall\epsilon>0,\exists X>0,\forall x<-X \Rightarrow |f(x)-L|<\epsilon
 \end{gathered}
 $$
+" %}
 
+{% include tooltip.html text="Definition 4.3.2" content="
 And of infinite limits at infinity:
 
 $$
@@ -526,9 +647,33 @@ $$
 \forall M>0, \exists X>0, \forall x<-X \Rightarrow f(x)<-M
 \end{gathered}
 $$
+" %}
 
-<!-- Th 4.3.1 -->
-<!-- Th 4.3.2 -->
+Similar to the monotone convergence principle of sequences, we have:
+
+{% include tooltip.html text="Theorem 4.3.1" content="
+Assume that $f$ is monotone increasing on $[a,+\infty$).
+
+If $\exists M>0$, $\forall x\geq a$, $f(x)<M$ then $\lim_{x\to+\infty}f(x)$
+exists and is finite.
+
+If such $M$ does not exist then $\lim_{x\to+\infty}f(x)=+\infty$.
+" %}
+
+### Cauchy condition for limits at infinity
+
+{% include tooltip.html text="Theorem 4.3.2" content="
+Let a function $f:[a,+\infty)\to\R$ then $\lim_{x\to+\infty}f(x)$ exists and is
+finite if and only if:
+
+$$
+  \forall\epsilon>0,
+  \exists X>0,
+  \forall b,c\in[a,+\infty),
+  c>b\geq X \Rightarrow |f(c)-f(b)|<\epsilon
+$$
+" %}
+
 
 ---
 
@@ -555,3 +700,161 @@ A function $f:D\to \R$ is uniformly continuous on $D$ if and only if:
 $$
 \forall\seq{u_n}
 $$
+
+---
+
+<!-- Ch 6 .................................................................. -->
+# Derivatives
+
+<!-- Ch 6.1 ................................................................ -->
+{% include tooltip.html text="Proposition 6.1.1" content="
+Let a function $f(x)$ defined over an open domain $D$. Let $x_0\in D$. The
+**derivative** of $f$ at $x_0$, and denoted $f'(x_0)$, is defined by
+
+$$
+f'(x_0)=\lim_{h\to 0}\frac{f(x_)+h)-f(x_0)}{h}
+$$
+
+Providing that the limit exists.
+" %}
+
+{% include tooltip.html text="Definition 6.1.2" content="
+If the derivative of $f$ at a point $x_0$ exists then $f$ is said to be
+differentiable at $x_0$.
+" %}
+
+{% include tooltip.html text="Proposition 6.1.1" content="
+Assume that $f$ is differentiable at $x_0$. Then $f$ is continuous at $x_0$.
+" %}
+Note that a function being continuous does not mean it is differentiable.
+The classic example is the absolute value function.
+
+{% include tooltip.html text="Definition 6.1.2" content="
+Let a function $f(x):D\to R\subset\R$. The associated **derivative function**
+$f'(x):D'\to R'\subset\R$ is defined as
+
+$$
+\forall x\in D',f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+$$
+
+Where $D'\subseteq D$ is the set of points where the limit exists.
+" %}
+
+<!-- Ch 6.1 ................................................................ -->
+## Leibniz notation
+
+In the definition of the derivative where the variable $h$ is said to be
+approaching 0, $h$ represents variation around $x$.
+In the same way $f(x+h)-f(x)$ represents variation of $f$ when the variation on
+$x$ is applied.
+
+A commonly used symbol for denoting variation is $\Delta$ (Delta).
+
+{% include tooltip.html text="Notation 6.1" content="
+We re-notate the derivative as:
+
+$$
+f'(x)
+= \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+= \lim_{\Delta x\to 0}\frac{\Delta f}{\Delta x}
+= \frac{df(x)}{dx}
+$$
+
+And when we want to designate the derivative at a specific point $x_0$, we can
+use the following notation:
+
+$$
+\left.\frac{df(x)}{dx}\right|_{x=x_0}
+$$
+" %}
+
+<!-- Ch 6.3 ................................................................ -->
+## Properties of derivatives
+
+Assume functions $f(x)$ and $g(x)$ differentiable at $x$, and $c$ is a constant
+value in $\R$. We have the following properties of derivatives of functions:
+
+<ul>
+{% include tooltip.html text="Proposition 6.3.3" content="
+<li>
+$(cf)'(x)=cf'(x)$
+<div class='float-right'>(Multiplication by a constant)</div>
+</li>
+" %}
+
+{% include tooltip.html text="Proposition 6.3.1" content="
+<li>
+$f(x)=c$, then $f'(x)=0$.
+<div class='float-right'>(Constant rule)</div>
+</li>
+" %}
+
+{% include tooltip.html text="Proposition 6.3.2" content="
+<li>
+$\forall x\in\R$ (eventually $\forall x\in\R/\{0\}$), then
+$\forall n\in\Z,(x^n)'=nx^{n-1}$
+<div class='float-right'>(Power rule)</div>
+</li>
+" %}
+
+{% include tooltip.html text="" content="
+<li>
+$g(x)\ne 0$, then
+${\left(\frac{f}{g}\right)}'(x)=\frac{f'(g(x)-f(x)g'(x)}{g^2(x)}$
+<div class='float-right'>(Quotient rule)</div>
+</li>
+" %}
+</ul>
+
+
+<!-- Ch 6.5 ................................................................ -->
+## Higher order derivatives
+
+{% include tooltip.html text="Definition 6.5.1" content="
+The second-order derivative of $f$ is defined and denoted by
+
+$$
+f''(x)=(f'(x))' \Leftrightarrow
+\frac{d^2f(x)}{dx^2}=\frac{d}{dx}\left(\frac{df(x)}{dx}\right)
+$$
+" %}
+
+<!-- Ch 6.6 ................................................................ -->
+## Differentials of functions
+
+$f(x+\Delta x)-f(x)$ represents the increment of $f$ when we increment $x$ by
+$\Delta x$ (just as $\Delta x$ represents the increment of $x$).
+
+{% include tooltip.html text="Definition 6.6.1" content="
+This quantity is called the **differential** of $f$
+at the basepoint $x$ and with increment $\Delta x$.
+It is denoted and defined by:
+
+$$
+df(x,\Delta x)=f'(x)\Delta x
+$$
+
+If $|\Delta x|$ is small then we have:
+
+$$
+f(x+\Delta x)-f(x)\approx df(x,\Delta x)
+$$
+" %}
+
+With this we can restate the theorem on linear approximations with this change
+of notation.
+
+{% include tooltip.html text="Theorem 6.6.1" content="
+Assume $f$ is differentiable at $x$. Then
+
+$$
+f(x+\Delta x)-f(x)=df(x,\Delta x)+\Delta xQ_x(\Delta x)
+$$
+
+Where $\lim_{\Delta x\to 0}Q_x(\Delta x)=0$.
+" %}
+
+
+
+
+

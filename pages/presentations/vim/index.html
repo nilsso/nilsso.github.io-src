@@ -4,7 +4,8 @@ title: Vim
 asciinema: True
 ---
 
-# Vim
+![vim-logo](https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg)
+<!-- { .element: class="no-style" } -->
 
 --
 
@@ -43,6 +44,12 @@ Different modes for doing different things
 
 # Writing a file
 
+- Open a terminal session
+- <kbd>vim test.md</kbd>
+- `i`, `# This is markdown`
+- `esc`
+- `:wq`
+
 ---
 
 # Plugins!
@@ -57,5 +64,21 @@ Different modes for doing different things
 
 `tpope/vim-surround.vim`
 
-<asciinema-player src="recordings/plug-surround.cast" autoplay loop theme="solarized-dark"></asciinema-player>
-
+<div style="position:relative;">
+  <span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+    <asciinema-player src="recordings/plug-surround.cast" autoplay loop theme="solarized-dark"></asciinema-player>
+  </span>
+  <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+    Examples:
+    <table class="borderless">
+      <tr>
+        <td><small>`ysap<div>`</small></td>
+        <td><small>Surround *a paragraph* with the tag `<div>`</small></td>
+      </tr>
+      <tr>
+        <td><small>`ggVG<html>`</small></td>
+        <td><small>Visually select all, surround with tag `<html>`</small></td>
+      </tr>
+    </table>
+  </span>
+</div>

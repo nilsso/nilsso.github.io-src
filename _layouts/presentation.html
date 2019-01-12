@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ reveal }}/css/reveal.css">
     <link rel="stylesheet" href="{{ reveal }}/css/theme/black.css" id="theme">
     {% include head-general.html %}
+    <link rel="stylesheet" href="/assets/css/presentation.css">
   </head>
 <style>
 .center {
@@ -32,6 +33,7 @@
     <script src="{{ reveal }}/js/reveal.js"></script>
     <script>
       Reveal.initialize({
+        history: true,
         dependencies: [
           { src: "{{ reveal }}lib/js/classList.js",
             condition: function() { return !document.body.classList; }},
