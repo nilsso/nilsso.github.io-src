@@ -23,7 +23,7 @@ Math /
 Math / [Problem Generator](problem-generator)
 <br/>
 Programming /
-[LaTeX](pages/programming/latex) /
+[LaTeX](pages/programming/latex/) /
 [Python](pages/programming/python) /
 [Git](pages/programming/git) /
 [Vim](pages/programming/vim) /
