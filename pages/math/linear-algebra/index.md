@@ -5,135 +5,410 @@ toc: true
 ---
 
 {% include mathjax.html %}
-
 <div id="mathjax-preamble" style="display:none;">
-$$
-\let\oldvec\vec
-\renewcommand{\vec}[1]{\mathbf{#1}}
-$$
 </div>
 
-## Matrices
+# Linear systems
 
-A matrix is a rectangular array of real numbers where the exact location of
-elements is crucial. A matrix has dimensions has *m* rows and *n* columns
-written as $m\times n$. The location of element is given by its "i"th
-row and "j"th column positions and is the "ij"th element.
-
-$$
-A=\left(\begin{matrix}
-a_{11} & a_{21} & \cdots & a_{i1} \\
-a_{12} & a_{22} & \cdots & a_{i2} \\
-\vdots & \vdots & \ddots & \vdots \\
-a_{1j} & a_{2j} & \cdots & a_{ij}
-\end{matrix}\right) = (a_{ij})\in \mathbb{R}^{m\times n}
-$$
-
-## Basic operations
-
-### Matrix addition
-
-Given two matrices, $$A=(a_{ij})\in\mathbb{R}^{m\times n}$$
+A *linear equation* is simply an equation involving variables/indeterminates
+with powers one (or zero). $x=4$ is linear while $x^2=4$ is not (quadratic).
+Linear equations take the form
 
 $$
-\begin{gather*}
-A+B = (a_{ij}+b_{ij})
-\end{gather*}
+a_1 x_1+a_2 x_2+\cdots+a_n x_n = d
 $$
+
+Linear equations have a set of solutions with values for the variables which
+solve the equation consistently. For $x=4$, the only solution for the
+variable x is 4 such that $4=4$. This is consistent with the definition of the
+equation.
+
+A *linear system* is when we consider several equations to be related. A linear
+system has the form (where rows/equations are labeled $p_1,\ldots,p_j$)
+
+$$
+\begin{aligned}
+p_1&: & a_{1,1}x_1+a_{1,2}x_2+\cdots+a_{1,n}x_n &= d_1 \\
+\vdots \\
+p_i&: & a_{i,1}x_1+a_{i,2}x_2+\cdots+a_{i,n}x_n &= d_i \\
+\vdots \\
+p_j&: & a_{j,1}x_1+a_{j,2}x_2+\cdots+a_{j,n}x_n &= d_j
+\end{aligned}
+$$
+
+Solutions to a linear system are values which solve all the equations at the
+same time. For example the linear system
+
+$$
+\begin{aligned}
+x &= 1 \\
+x + y &= 3
+\end{aligned}
+$$
+
+Has a solution when $x=1$ and $y=2$, denoted as the tuple $(1,2)$. 
+This is verifiable by plugging the first equation into the second and solving
+for y. This method often works well enough but *elementary operations* allow us
+to more easily solve systems.
+
+# Elementary operations
+
+We can manipulate linear systems to make them appear simpler and potentially
+lead to the solutions of the system. We call these manipulations elementary
+operations, row operations, or Gaussian, and we have *addition*, *scalar
+multiplication* and *swapping*. For the operations, consider the example system
+
+$$
+\begin{aligned}
+p_1&: & x &= 1 \\ p_2&: & x + y &= 3 \end{aligned}
+$$ 
 
 ### Scalar multiplication
 
+In the scalar multiplication operation we are allowed to multiple every term in
+a single row by some number (a scalar) and replace what was there.
+For the example we start my multiplying row 1 by -1
+
 $$
-\begin{gather*}
-A=(a_{ij})\in\mathbb{R}^{m\times n} \\
-k\cdot A = (k\cdot a_{ij})
-\end{gather*}
+\xrightarrow{(-1)p_1}~:
+\begin{aligned} -x &= -1 \\ x + y &= 3 \end{aligned}
+$$
+
+### Addition
+
+In the addition operation we are allowed to add the terms of one equation to
+the terms of another and replace what was there with the new sum. For the
+example system replace row 2 by addition rows 1 and 2 together
+
+$$
+\xrightarrow{p_1+p_2}~:
+\begin{aligned} -x &= -1 \\ (-x)+x+y &= (-1)+3 \end{aligned}
+\Rightarrow
+\begin{aligned} -x &= -1 \\ y &= 2 \end{aligned}
+$$
+
+We would then want to again multiply row 1 by -1 to get a solution in terms of x
+and y
+
+$$
+\xrightarrow{(-1)p_1}~:
+\begin{aligned} x &= 1 \\ y &= 2 \end{aligned}
+$$
+
+But starting from the beginning, we could have done both operations at once:
+multiplying row 1 by -1 before adding it to row 2 (consider this subtracting one
+row from another)
+
+$$
+\xrightarrow{(-1)p_1+p_2}~:
+\begin{aligned} x &= 1 \\ y &= 2 \end{aligned}
+$$
+
+### Swap
+
+In the swap operation we are allowed to exchange any two rows with one another.
+In this previous example it isn't useful, but when systems contain rows with out
+of order leading terms, we want to swap them into a sort of descending order.
+For example
+
+$$
+\begin{array}{ 4*r }
+  & y & + & z = d \\
+x &   & + & z = e \\
+  &   &   & z = f
+\end{array}
+\Rightarrow~
+\xrightarrow{p_1\leftrightarrow p_2}~:
+\begin{array}{ 4*r }
+x &   & + & z = e \\
+  & y & + & z = d \\
+  &   &   & z = f
+\end{array}
+$$
+
+Swapping rows 1 and 2 tidy up the system, and is important for future methods.
+
+# Matrices
+
+A matrix is a rectangular array of elements.
+A matrix has dimensions *m* rows and *n* columns written as $m\times n$.
+The location of an element is given by its i<sup>th</sup> row
+and j<sup>th</sup> column positions, and is the j<sup>th</sup> element. 
+These exact location of elements are crucial. 
+The form of a matrix is such
+
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1j} \\
+a_{21} & a_{22} & \cdots & a_{2j} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{i1} & a_{i2} & \cdots & a_{ij}
+\end{pmatrix}
+= [a_{ij}]\in \R^{m\times n}
+$$
+
+For example
+
+$$
+\begin{pmatrix}
+0 & 6 & 1 \\
+2 & 4 & 3
+\end{pmatrix}
+= \begin{pmatrix}
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23}
+\end{pmatrix}
+\Rightarrow
+\begin{array}{3*c}
+b_{11}=0 & b_{12}=6 & b_{13}=1 \\
+b_{21}=2 & b_{22}=4 & b_{23}=3
+\end{array}
+$$
+
+A matrix with with values only in one dimension is called a vector. If it's only
+a column then it's a *column vector*, and a *row vector* if it's only a row.
+Vectors are denoted with an arrow over the symbol.
+
+$$
+\vec u = \begin{pmatrix} a \\ b \\ c \end{pmatrix}
+\quad
+\vec v = \begin{pmatrix} a & b & c \end{pmatrix}
+$$
+
+## Matrix operations
+
+Similar to equations in linear systems, we can apply operations to matrices, in
+particular *addition*, *scalar multiplication* and *matrix multiplication*.
+
+### Scalar multiplication
+
+In scalar multiplication a new matrix is produced by multiplying a number to
+every term in a matrix.
+Given a matrix $A=[a_{ij}]\in\R^{m\times n}$ and a scalar $k$
+
+$$
+k\cdot A = [k\cdot a_{ij}]\in\R^{m\times n}
+$$
+
+### Matrix addition
+
+In matrix addition a new matrix is produced by adding the terms of two
+matrices together corresponding to location.
+Given matrices $A=[a_{ij}]\in\R^{m\times n}$ and $B=[b_{ij}]\in\R^{m\times n}$
+
+$$
+A+B = [a_{ij}+b_{ij}]\in\R^{m\times n}
 $$
 
 ### Matrix multiplication
 
-For two matrices, named left and right, to be multiplied together there must be
-*n* columns in left and *n* rows in right. The number of rows in left and
-columns in right are arbitrary but will change the dimensions of the resulting
-matrix.
-
-<!--
-#### 2x2 matrices
+Matrix multiplication is a binary operation between two matrices, *left* and
+*right*, which produces a new matrix. The conditions is if left has *n* columns,
+then right must have *n* rows. That is, left has dimensions $m\times n$ and
+right has dimensions $n\times p$.
 
 $$
-\begin{bmatrix}
-  a_{1} & a_{2} \\
-  a_{3} & a_{4} \\
-\end{bmatrix}
-\begin{bmatrix}
-  b_{1} & b_{2} \\
-  b_{3} & b_{4} \\
-\end{bmatrix} =
-\begin{bmatrix}
-  (a_{1}b_{1}+a_{2}b_{3}) &
-  (a_{1}b_{2}+a_{2}b_{4})
-  \\
-  (a_{3}b_{1}+a_{4}b_{3}) &
-  (a_{3}b_{2}+a_{4}b_{4})
-\end{bmatrix}
+A\times B
+= \begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+\begin{pmatrix}
+  b_{11} & \cdots & b_{1p} \\
+  b_{21} & \cdots & b_{2p} \\
+  \vdots & \ddots & \vdots \\
+  b_{n1} & \cdots & b_{np}
+\end{pmatrix}
 $$
 
-#### 3x3 matrices
+The number of rows in left and the number of columns in right are arbitrary but
+will change the dimensions of the resulting matrix. The result will have only as
+many rows as left and only as many columns as right. 
+The operation is highly algorithmic and follows the same pattern. 
+Multiplying two $2\times 2$ matrices is a good example
 
 $$
-\begin{bmatrix}
-  a_{1}&a_{2}&a_{3} \\
-  a_{4}&a_{5}&a_{6} \\
-  a_{7}&a_{8}&a_{9}
-\end{bmatrix}
-\begin{bmatrix}
-  b_{1}&b_{2}&b_{3} \\
-  b_{4}&b_{5}&b_{6} \\
-  b_{7}&b_{8}&b_{9}
-\end{bmatrix} =
-\begin{bmatrix}
-  (a_{1}b_{1}+a_{2}b_{4}+a_{3}b_{7}) & (a_{1}b_{2}+a_{2}b_{5}+a_{3}b_{8}) & (a_{1}b_{3}+a_{2}b_{6}+a_{3}b_{9}) \\
-  (a_{4}b_{1}+a_{5}b_{4}+a_{6}b_{7}) & (a_{4}b_{2}+a_{5}b_{5}+a_{6}b_{8}) & (a_{4}b_{3}+a_{5}b_{6}+a_{6}b_{9}) \\
-  (a_{4}b_{1}+a_{5}b_{4}+a_{6}b_{7}) & (a_{4}b_{2}+a_{5}b_{5}+a_{6}b_{8}) & (a_{4}b_{3}+a_{5}b_{6}+a_{6}b_{9})
-\end{bmatrix}
+\begin{pmatrix}
+  \color{red}{a_1} & \color{red}{a_2} \\
+  \color{green}{a_3} & \color{green}{a_4}
+\end{pmatrix}
+\begin{pmatrix}
+  \color{blue}{b_1} & \color{orange}{b_2} \\
+  \color{blue}{b_3} & \color{orange}{b_4}
+\end{pmatrix} =
+\begin{pmatrix}
+  \color{red}{a_1}\color{blue}{b_1}+\color{red}{a_2}\color{blue}{b_3} &
+  \color{red}{a_1}\color{orange}{b_2}+\color{red}{a_2}\color{orange}{b_4} \\
+  \color{green}{a_3}\color{blue}{b_1}+\color{green}{a_4}\color{blue}{b_3} &
+  \color{green}{a_3}\color{orange}{b_2}+\color{green}{a_4}\color{orange}{b_4}
+\end{pmatrix}
 $$
--->
 
-## Systems of Linear Equations
+Considering the arbitrary dimensions, if left had only 1 row then so would the
+result, and if right had only 1 column then so would the result.
 
-### Gaussian Elimination
+$$
+\begin{pmatrix}
+  \color{red}{a_1} & \color{red}{a_2}
+\end{pmatrix}
+\begin{pmatrix}
+  \color{blue}{b_1} & \color{orange}{b_2} \\
+  \color{blue}{b_3} & \color{orange}{b_4}
+\end{pmatrix} =
+\begin{pmatrix}
+  \color{red}{a_1}\color{blue}{b_1}+\color{red}{a_2}\color{blue}{b_3} &
+  \color{red}{a_1}\color{orange}{b_2}+\color{red}{a_2}\color{orange}{b_4}
+\end{pmatrix}
+\\
+\begin{pmatrix}
+  \color{red}{a_1} & \color{red}{a_2} \\
+  \color{green}{a_3} & \color{green}{a_4}
+\end{pmatrix}
+\begin{pmatrix}
+  \color{blue}{b_1} \\
+  \color{blue}{b_2}
+\end{pmatrix} =
+\begin{pmatrix}
+  \color{red}{a_1}\color{blue}{b_1}+\color{red}{a_2}\color{blue}{b_2} \\
+  \color{green}{a_3}\color{blue}{b_1}+\color{green}{a_4}\color{blue}{b_2}
+\end{pmatrix}
+$$
 
-### Gauss-Jordan Elimination
+## Matrix abbreviation of linear systems
 
-### Elementary Matrices and Operations
+Applying elementary operations to equations in linear systems is be notationally
+tedious. To make life better if we treat each indeterminate as a column position
+in a matrix and each equation as a row position we can represent the system as
+a matrix with values corresponding to the coefficients of the indeterminates.
+Whatever falls on the right side of the equation will be placed into an extra
+column on the right of the matrix, separated from the indeterminate columns by a
+line. This is called an *augmented matrix*.
+
+$$
+  \begin{array}{ *7r }
+     x & + &  y &   &    & = & 0 \\
+    2x & - &  y & + & 3z & = & 3 \\
+     x & - & 2y & - &  z & = & 3
+  \end{array}
+  \Leftrightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    2 & -1 & 3 & 3 \\
+    1 & -2 & -1 & 3
+  \end{array}\right)
+$$
+
+Operating on system becomes notationally simpler.
+
+$$
+\begin{aligned}
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    2 & -1 & 3 & 3 \\
+    1 & -2 & -1 & 3
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    -2p_1+p_2 \\
+    -p_1+p_3
+  \end{array}
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & -3 & 3 & 3 \\
+    0 & -3 & -1 & 3
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    -p_2+p_3 \\
+    \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & -3 & 3 & 3 \\
+    0 & 0 & -4 & 0
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    -\frac{1}{3}p_2 \\
+    -\frac{1}{4}p_3 \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & 1 & -1 & -1 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    p_3+p_2 \\
+    \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & 1 & 0 & -1 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)
+  \begin{array}{r}
+    -p_2+p_1 \\
+    \\
+    \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & -1 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)
+\end{aligned}
+$$
+
+And we can express the solution to a linear system as a vector
+
+$$
+\vec s = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
+$$
+
+# Linear Systems (cont.)
+
+## Gaussian Elimination
+
+## Gauss-Jordan Elimination
+
+## Elementary Matrices and Operations
 
 An elementary matrix is defined as a variation of the identity matrix but with a
 single element changed. Because any matrix can be expressed as the result of a
 series of matrix operations, then any non-elementary matrix can be expressed as
-the product of a series of elementary matrix.
+the product of a series of elementary matrix. In other words the operations we
+applied on linear systems previously in syntax like $p_1+p_3$ (store $p_3$) can
+be expressed as matrix operations involving elementary matrices.
 
 ## Vectors
 
-A vector can be described as an ordered set of coordinates in $$n$$ dimensions,
+A vector can be described as an ordered set of coordinates in $n$ dimensions,
 but also as a direction to move in space and the amount which to move. Both are
 valid. Notationally, a vector can have an arrow above the symbol
-($$\oldvec{u}$$) or can be bold ($$\vec{u}$$), but both express the same
+($\vec{u}$) or can be bold ($\mathbf u$), but both express the same
 meaning in that the symbol u is a vector. What is not inherently encoded is the
 dimension the vector is in, that that depends on context.
 
 -- | --
-A vector | $$\vec u=\langle u_1,u_2,\cdots,u_n\rangle\in\mathbb R^n$$
-Closure of addition | $$\vec u+\vec v=\langle (u_1+w_1),\cdots,(u_n+w_n)\rangle\in\mathbb R^n$$
-Closure of scalar multiplication | $$\alpha\vec u=\langle \alpha u_1,\cdots,\alpha u_n\rangle\in\mathbb R^n$$
-Zero element | $$\vec 0=\langle 0_1,\cdots,0_n\rangle\in\mathbb R^n$$
-Associativity of additon | $$\vec u+(\vec v+\vec w)=(\vec u+\vec v)+\vec w$$
-Commutativity of addition | $$\vec u+\vec v=\vec v+\vec u$$
-Identity element of addition | $$\vec v+\vec 0=\vec v$$
-Inverse elements of addition | $$\vec v+(-\vec v)=0$$
-Identity element of multiplication | $$ 0\cdot\vec u=\vec 0$$
-| $$1\cdot\vec v=\vec v$$
-Distributivity of scalar multiplication | $$\alpha(\vec v+\vec u)=\alpha\vec u+\alpha\vec v$$
-| $$(\alpha+\beta)\vec u=\alpha\vec u+\beta\vec u$$
+A vector | $\vec u=\langle u_1,u_2,\cdots,u_n\rangle\in\mathbb R^n$
+Closure of addition | $\vec u+\vec v=\langle (u_1+w_1),\cdots,(u_n+w_n)\rangle\in\mathbb R^n$
+Closure of scalar multiplication | $\alpha\vec u=\langle \alpha u_1,\cdots,\alpha u_n\rangle\in\mathbb R^n$
+Zero element | $\vec 0=\langle 0_1,\cdots,0_n\rangle\in\mathbb R^n$
+Associativity of additon | $\vec u+(\vec v+\vec w)=(\vec u+\vec v)+\vec w$
+Commutativity of addition | $\vec u+\vec v=\vec v+\vec u$
+Identity element of addition | $\vec v+\vec 0=\vec v$
+Inverse elements of addition | $\vec v+(-\vec v)=0$
+Identity element of multiplication | $ 0\cdot\vec u=\vec 0$
+| $1\cdot\vec v=\vec v$
+Distributivity of scalar multiplication | $\alpha(\vec v+\vec u)=\alpha\vec u+\alpha\vec v$
+| $(\alpha+\beta)\vec u=\alpha\vec u+\beta\vec u$
 
 ## Vector spaces
 
@@ -144,8 +419,8 @@ is also a member of the vector space. A vector space must have these two
 properties to be considered a vector space.
 
 -- | --
-Closure of addition | $$\vec u+\vec v\in V$$
-Closure of scalar multiplication | $$\alpha\vec v\in V$$
+Closure of addition | $\vec u+\vec v\in V$
+Closure of scalar multiplication | $\alpha\vec v\in V$
 
 ### Basis, span and dependence
 
@@ -159,7 +434,7 @@ span the full space in *n*-dimensions. In the case of the two vectors defining
 the span within a plane, the basis of that span are the two original vectors.
 The basis set of three unit vectors in the direction of the x-axis, the y-axis
 and z-axies respectively is called the *standard* basis, and notated as
-$$\hat\imath$$, $$\hat\jmath$$ and $$\hat k$$ (i-hat, j-hat, k-hat).
+$\hat\imath$, $\hat\jmath$ and $\hat k$ (i-hat, j-hat, k-hat).
 
 $$
 \begin{gather}
@@ -186,20 +461,20 @@ removing one of the parallel vectors.
 ## Transformations
 
 Given T, a linear transformation of vector v from vector space V into W,
-the *kernel* is a subset of V where $$T(\vec v)=0$$. Since $$\text{kern}(t)$$ is
+the *kernel* is a subset of V where $T(\vec v)=0$. Since $\text{kern}(t)$ is
 a subspace of V, then it must have the following properties of closure:
 
 - $T(\alpha\vec v)=0=\alpha T(\vec v)$
 - $T(\vec v+\vec w)=T(\vec v)+T(\vec w)$
 
-Range of T is the set of all vectors in W of the form $$T(\vec v)$$, thus
-$$\text{range}(T)$$ is a subspace of $$W$$.
+Range of T is the set of all vectors in W of the form $T(\vec v)$, thus
+$\text{range}(T)$ is a subspace of $W$.
 
 <!--
 
 If $\vec w\in\text{range}(T)$ then $\vec w=T(\vec v)$ for some $\vec v$ in $V$.
 
-$$\alpha\vec w=\alpha(T(\vec v))=T(\alpha\vec v)\Rightarrow\alpha\vec w \in\text{range}(T)$$
+$\alpha\vec w=\alpha(T(\vec v))=T(\alpha\vec v)\Rightarrow\alpha\vec w \in\text{range}(T)$
 
 If $\vec w_1,\vec w_2\in\text{range}(T)$ then $\vec w_1=T(\vec v_1),\vec
 w_2=T(\vec v_2)$
