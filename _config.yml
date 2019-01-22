@@ -9,6 +9,7 @@ github_username: nilsso
 github_dotfiles: dotfiles
 
 markdown: kramdown
+highlighter: rouge
 
 defaults:
   -
