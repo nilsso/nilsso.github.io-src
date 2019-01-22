@@ -1,12 +1,15 @@
 ---
-layout: default
 title: "Linear Algebra"
-toc: true
+math: True
 ---
 
-{% include mathjax.html %}
 <div id="mathjax-preamble" style="display:none;">
 </div>
+
+* toc
+{:toc}
+
+---
 
 # Linear systems
 

@@ -4,37 +4,37 @@ asciinema: True
 
 <span class="nav">
 Music /
-[Lists](pages/music/lists) /
-[Theory](pages/music/theory) /
-[Synthesis](pages/music/synthesis)
+[Lists](pages/music/lists/) /
+[Theory](pages/music/theory/) /
+[Synthesis](pages/music/synthesis/)
 <br/>
 Math /
-[Algebra](pages/math/algebra) /
-[Trig](pages/math/trigonometry) /
-[Calc](pages/math/calc) /
-[Linear](pages/math/linear-algebra) /
-[Discrete](pages/math/discrete) /
-[DiffEq](pages/math/diffeq)
+[Algebra](pages/math/algebra/) /
+[Trig](pages/math/trigonometry/) /
+[Calc](pages/math/calc/) /
+[Linear](pages/math/linear-algebra/) /
+[Discrete](pages/math/discrete/) /
+[DiffEq](pages/math/diffeq/)
 <br/>
 Math /
-[AbsAlg](pages/math/abstract-algebra) /
+[AbsAlg](pages/math/abstract-algebra/) /
 [AdvCalc](pages/math/adv-calc/)
 <br/>
-Math / [Problem Generator](problem-generator)
+Math / [Problem Generator](problem-generator/)
 <br/>
 Programming /
 [LaTeX](pages/programming/latex/) /
-[Python](pages/programming/python) /
-[Git](pages/programming/git) /
-[Vim](pages/programming/vim) /
-[Web](pages/programming/web) /
-[C++](pages/programming/cpp) /
-[Java](pages/programming/java) /
-[Haskell](pages/programming/haskell)
+[Python](pages/programming/python/) /
+[Git](pages/programming/git/) /
+[Vim](pages/programming/vim/) /
+[Web](pages/programming/web/) /
+[C++](pages/programming/cpp/) /
+[Java](pages/programming/java/) /
+[Haskell](pages/programming/haskell/)
 <br/>
 Vidya /
-[WoW](pages/vidya/wow) /
-[Tarkov](pages/vidya/tarkov)
+[WoW](pages/vidya/wow/) /
+[Tarkov](pages/vidya/tarkov/)
 </span>
 
 <hr>
@@ -46,11 +46,11 @@ I'm a math student, programmer, singer, and game enthusiast.
 I love music. I've studdied classical voice, piano, and composition, I have
 an associates degree in music theory, and I sing regularly in a few choirs.
 A few of the genres I listen to the most are
-[metal](pages/music/lists/#metal),
-[post-rock](pages/music/lists/#post-rock),
+[metal](pages/music/lists/#metal/),
+[post-rock](pages/music/lists/#post-rock/),
 Americana,
-[electronic](pages/music/lists/#electronic) and
-[classical](pages/music/lists/#classical).
+[electronic](pages/music/lists/#electronic/) and
+[classical](pages/music/lists/#classical/).
 
 I also love computer games. Always have always will.
 

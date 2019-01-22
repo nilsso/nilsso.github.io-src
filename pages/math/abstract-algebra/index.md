@@ -1,13 +1,8 @@
 ---
 title: Abstract Algebra
+math: True
 <!--anchor: True-->
 ---
-{% include mathjax.html %}
-<div id="mathjax-preamble" style="display:none;">
-$$
-\def\Z{\mathbb{Z}}
-$$
-</div>
 <!--
 # Arithmetic in $\Z$
 

@@ -1,7 +1,5 @@
 ---
-layout: default
 title: "C++ Notes"
-toc: true
 ---
 
 ## Naming things

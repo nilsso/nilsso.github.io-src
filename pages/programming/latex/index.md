@@ -1,8 +1,7 @@
 ---
 title: "LaTeX Notes"
+math: True
 ---
-
-{% include mathjax.html %}
 
 I wrote this because many classmates and friends had little or no
 experience with $\rm\LaTeX$ before the MATH-340 class. It can seem tedious, and
@@ -146,7 +145,7 @@ AMS-Math packages
   ones.
 
 There's a lot of lists
-(<https://rpi.edu/dept/arc/training/latex/$\rm\LaTeX$_symbols.pdf>) of these
+(<https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf>) of these
 characters and documentation
 (<https://www.ams.org/publications/authors/tex/amslatex>). Here's a few
 common symbols

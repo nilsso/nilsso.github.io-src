@@ -1,10 +1,8 @@
 ---
 layout: default
 title: "Haskell notes"
-toc: true
+math: True
 ---
-
-{% include mathjax.html %}
 
 # Lambda calculus
 

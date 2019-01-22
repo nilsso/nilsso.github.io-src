@@ -1,10 +1,13 @@
 ---
 layout: default
 title: "Trigonometry"
-toc: true
+math: True
 ---
 
-{% include mathjax.html %}
+* toc
+{:toc}
+
+---
 
 # Unit circle
 

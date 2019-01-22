@@ -3,6 +3,9 @@
 <head>
   {% include head-general.html %}
   {% include head-styles.html %}
+  {% if page.math %}
+  {% include mathjax.html %}
+  {% endif %}
 </head>
 <body>
   {% include header.html %}

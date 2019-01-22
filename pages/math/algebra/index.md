@@ -1,8 +1,8 @@
 ---
 title: Algebra
+math: True
 ---
 
-{% include mathjax.html %}
 * toc
 {:toc}
 

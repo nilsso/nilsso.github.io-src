@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Git"
-toc: true
 ---
 
 # Things I used to not know

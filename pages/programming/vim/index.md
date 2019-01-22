@@ -1,7 +1,5 @@
 ---
-layout: default
 title: "Vim"
-toc: true
 ---
 
 # Useful commands

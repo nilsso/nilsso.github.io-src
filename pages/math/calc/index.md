@@ -1,8 +1,8 @@
 ---
 title: Calculus
+math: True
 ---
 
-{% include mathjax.html %}
 * toc
 {:toc}
 

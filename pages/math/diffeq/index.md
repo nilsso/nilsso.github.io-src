@@ -1,8 +1,8 @@
 ---
 title: Differential Equations
+math: True
 ---
 
-{% include mathjax.html %}
 * toc
 {:toc}
 
