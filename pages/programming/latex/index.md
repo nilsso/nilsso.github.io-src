@@ -1,6 +1,7 @@
 ---
 title: "LaTeX Notes"
 math: True
+anchor: True
 ---
 
 I wrote this because many classmates and friends had little or no
@@ -22,7 +23,7 @@ relevant.
 
 ---
 
-# Math
+# $\rm\LaTeX$ Math
 
 ## Writing math
 
@@ -161,7 +162,69 @@ Arrow (i.e. condition) | `\Rightarrow` | $\Rightarrow$
 Sum | `\sum` | $\displaystyle \sum$
 Product | `\prod` | $\displaystyle \prod$
 
-# Environments
+---
+
+# $\rm\LaTeX$ Stuff
+
+## Macros, `\def` and `\newcommand`
+
+The `\def` command creates a alias to some $\rm\LaTeX$ snippet while the
+`\newcommand` command allows you to define a function which can accept
+arguments. I wont bother with `\newcommand` though. To define a macro, 
+`\def` is followed by the new macro name and then by a group containing the
+snippet.
+
+```tex
+\def\smirk{😏}
+\def\fear{😨}
+
+\huge{\sqrt{\smirk^2}=\fear}
+```
+
+$$
+\def\smirk{😏}
+\def\fear{😨}
+
+\huge{\sqrt{\smirk^2}=\fear}
+$$
+
+Yeah even stupid crap like emoji's work.
+
+It's common to be entering the repetitive and long commands in $\rm\LaTeX$ that
+become less of a chore to enter when made into a macro. For instance when typing
+up calculus I'd often define a macro to reduce a little bit of tedium. So that
+
+{% raw %}
+```tex
+\frac{d}{dx} y(x)
+= \frac{d}{dx}\left(\frac{x^2}{1+x}\right)
+= \frac{(1+x)\frac{d}{dx}(x^2)-x^2\frac{d}{dx}(1+x)}{{(1+x)}^2}
+```
+{% endraw %}
+
+Becomes
+
+{% raw %}
+```tex
+\def\ddx{\frac{d}{dx}}
+\ddx y(x)
+= \ddx\left(\frac{x^2}{1+x}\right)
+= \frac{(1+x)\ddx(x^2)-x^2\ddx(1+x)}{{(1+x)}^2}
+```
+{% endraw %}
+
+But which both still produce the same thing
+
+{% raw %}
+$$
+\def\ddx{\frac{d}{dx}}
+\ddx y(x)
+= \ddx\left(\frac{x^2}{1+x}\right)
+= \frac{(1+x)\ddx(x^2)-x^2\ddx(1+x)}{{(1+x)}^2}
+$$
+{% endraw %} 
+
+## Environments
 
 In $\rm\LaTeX$ environments provide styles over all the text which they
 contain. For example the `center` environment can be used to center text
@@ -176,22 +239,25 @@ or a table
 In fact the code snippet there is itself an environment (the `minted`
 environment) as well is the entire document. Tables are a common use of
 environments; the table of symbols above was produced by the following,
-using the `tabu` environment from the package of the same name
+using the `tabu` environment from the package of the same name. The first line
+defines a shortcut to the `\mintinline` command called `\mil`, which ends up
+being a lot less typing
 
 ```tex
+\def\mil\mintinline
 \begin{tabu}{llc}
   \toprule
   Description & Math command & Output \\
   \midrule
-  Circular functions & `\sin` `\\cos` & $\sin$, $\cos$ \\
-  Pi & `\pi` & $\pi$ \\
-  Infinity & `\infty` & $\infty$ \\
-  Multiplication dot & `\cdot` & $\cdot$ \\
-  Multiplication cross & `\times` & $\times$ \\
-  Arrow (i.e.\ limits) & `\to` & $\to$ \\
-  Arrow (i.e.\ condition) & `\Rightarrow` & $\Rightarrow$ \\
-  Sum & `\sum` & $\displaystyle \sum$ \\
-  Product & `\prod` & $\displaystyle \prod$ \\
+  Circular functions & \mil{tex}{\sin} \mil{tex}{\\cos} & $\sin$, $\cos$ \\
+  Pi & \mil{tex}{\pi} & $\pi$ \\
+  Infinity & \mil{tex}{\infty} & $\infty$ \\
+  Multiplication dot & \mil{tex}{\cdot} & $\cdot$ \\
+  Multiplication cross & \mil{tex}{\times} & $\times$ \\
+  Arrow (i.e.\ limits) & \mil{tex}{\to} & $\to$ \\
+  Arrow (i.e.\ condition) & \mil{tex}{\Rightarrow} & $\Rightarrow$ \\
+  Sum & \mil{tex}{\sum} & $\displaystyle \sum$ \\
+  Product & \mil{tex}{\prod} & $\displaystyle \prod$ \\
   \bottomrule
 \end{tabu}
 ```
@@ -204,12 +270,12 @@ several lines, but align allows you to... align. For example
 
 $$
 \begin{aligned}
-  P'(p)
-  &= \frac{d}{dp}\left(\frac{1+p}{2}\left(\frac{p}{1-p+p^{2}}\right)^{21}\right) \\
-  &= \frac{1}{2}\left(
-    \frac{d}{dp}(1+p)\left(\frac{p}{1-p+p^2}\right)^{21}+
-    (1+p)\frac{d}{dp}\left(\frac{p}{1-p+p^2}\right)^{21}
-  \right)
+2 &= 10-4\cdot 2 \\
+  &= 10-2(24-10\cdot 2) \\
+  &= (34-24)-2(24-2(34-24)) \\
+  &= 34-24-2\cdot 24+4(34-24) \\
+  &= 34-24-2\cdot 24+4\cdot 34-4\cdot 24 \\
+  &= 5\cdot 34-7\cdot 24
 \end{aligned}
 $$
 
@@ -219,12 +285,12 @@ breaking lines with a double backslash `\\`
 
 ```tex
 \begin{align*}
-  P'(p)
-  &= \frac{d}{dp}\left(\frac{1+p}{2}\left(\frac{p}{1-p+p^{2}}\right)^{21}\right) \\
-  &= \frac{1}{2}\left(
-    \frac{d}{dp}(1+p)\left(\frac{p}{1-p+p^2}\right)^{21}+
-    (1+p)\frac{d}{dp}\left(\frac{p}{1-p+p^2}\right)^{21}
-  \right)
+2 &= 10-4\cdot 2 \\
+  &= 10-2(24-10\cdot 2) \\
+  &= (34-24)-2(24-2(34-24)) \\
+  &= 34-24-2\cdot 24+4(34-24) \\
+  &= 34-24-2\cdot 24+4\cdot 34-4\cdot 24 \\
+  &= 5\cdot 34-7\cdot 24
 \end{align*}
 ```
 
