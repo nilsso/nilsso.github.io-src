@@ -170,7 +170,7 @@ Product | `\prod` | $\displaystyle \prod$
 
 The `\def` command creates a alias to some $\rm\LaTeX$ snippet while the
 `\newcommand` command allows you to define a function which can accept
-arguments. I wont bother with `\newcommand` though. To define a macro, 
+arguments. I wont bother with `\newcommand` though. To define a macro,
 `\def` is followed by the new macro name and then by a group containing the
 snippet.
 
@@ -190,7 +190,7 @@ $$
 
 Yeah even stupid crap like emoji's work.
 
-It's common to be entering the repetitive and long commands in $\rm\LaTeX$ that
+It's common to be entering repetitive and long commands in $\rm\LaTeX$ that
 become less of a chore to enter when made into a macro. For instance when typing
 up calculus I'd often define a macro to reduce a little bit of tedium. So that
 
@@ -222,7 +222,7 @@ $$
 = \ddx\left(\frac{x^2}{1+x}\right)
 = \frac{(1+x)\ddx(x^2)-x^2\ddx(1+x)}{{(1+x)}^2}
 $$
-{% endraw %} 
+{% endraw %}
 
 ## Environments
 
