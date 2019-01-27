@@ -18,7 +18,8 @@ Math /
 <br/>
 Math /
 [AbsAlg](pages/math/abstract-algebra/) /
-[AdvCalc](pages/math/adv-calc/)
+[AdvCalc1](pages/math/adv-calc-1/) /
+[AdvCalc2](pages/math/adv-calc-2/)
 <br/>
 Math / [Problem Generator](problem-generator/)
 <br/>

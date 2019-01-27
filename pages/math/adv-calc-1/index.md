@@ -1,5 +1,5 @@
 ---
-title: Advanced Calculus
+title: Advanced Calculus—1
 anchor: True
 math: True
 ---
