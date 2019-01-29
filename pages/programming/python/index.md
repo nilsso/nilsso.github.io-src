@@ -26,6 +26,40 @@ and time.
 
 # First, some programming terms...
 
+**Function** A function is often like a black box to which we give some
+information, and which then does something useful in return.
+Functions in Python are recognizable due to the pair of parenthesis that follow
+the name.
+
+```python
+foo()
+bar("a")
+```
+
+The parenthesis denote the *parameter list*. Parameters (or arguments)
+are how we provide a functions information, and are related to variables
+(further on). Though functions don't always have parameters, like the
+`foo` example above which appears to not take any arguments. On the other hand
+`bar` accepted a single argument (a string).
+
+A very common function is the `print` function, which accepts
+values which it in turn outputs to the user (via an output stream).
+
+```python
+print("Hello world!")
+```
+
+```
+Hello world!
+```
+
+We can consider many function to be black boxes because we expect them to do
+something useful but don't necessarily care how they do it. More importantly
+though is functions allow us to add functionality without adding lines of code.
+A very important pattern to recognize is when code starts to repeat, it's
+probably time to replace it with a function instead. But we'll go over how to
+make functions much later, it's just important to recognize how a function.
+
 **Declaration** A declaration is a statement which defines what kind of thing a
 "label" is; is it a variable, or a function, or something else? What is its
 type, or what does it return? Does it have access or scope limitations?
@@ -61,7 +95,9 @@ Hello
 World!
 ```
 
-Works because both `a1` and `b1` exist in the global scope. So accessing them from inside of the function `foo` is valid, even when `foo` was defined before  the variable `b1` was. However
+Works because both `a1` and `b1` exist in the global scope. So accessing them
+from inside of the function `foo` is valid, even when `foo` was defined before
+the variable `b1` was. However
 
 
 ```python
@@ -88,7 +124,10 @@ NameError: name 'a2' is not defined
 
 Fails because `a2` and `b2` only exist within the scope of the function.
 
-**Definition** A definition happens to be a declaration where the label is given a definitive implementation beyond its declaration. This isn't relevant to Python though, because there's no way to separate the declaration of functions from the definition of functions, but for C++ is critical. Consider
+**Definition** A definition happens to be a declaration where the label is given
+a definitive implementation beyond its declaration. This isn't relevant to
+Python though, because there's no way to separate the declaration of functions
+from the definition of functions, but for C++ is critical. Consider
 
 ```cpp
 int foo(); // a function declaration (but not definition)
@@ -99,9 +138,12 @@ bar(); // works
 foo(); // Error: Undefined symbol foo
 ```
 
-**Initialization** When a variable's state become "defined", i.e. the first time a variable holds an actual value, and not a null-value (null meaning undefined).
+**Initialization** When a variable's state become "defined", i.e. the first time
+a variable holds an actual value, and not a null-value (null meaning undefined).
 
-**Assignment** When a variable is made to hold a different value. This can be the same thing as the initialization, which would be referred to as *initialization assignment*.
+**Assignment** When a variable is made to hold a different value. This can be
+the same thing as the initialization, which would be referred to as
+*initialization assignment*.
 
 
 ```python
@@ -113,9 +155,24 @@ a = 20 # regular assignment (because a already exists)
 
 # Values and types
 
-A value is simply some information. The integer 7 is a value, an integer value. In a language like C++ we might consider it to be a specific kind of integer value, perhaps an unsigned integer, and maybe it has a size specification as well: is it 8-bit wide (a character or `char`), 16, 32, 64, or bigger? But once the computer understands that the value is a number it acknowledges that it can do things to that value, like use it in mathematical statements. If a value is a "string" (a sequence of characters) then the computer will acknowledge that it can join it with another string or perhaps get a single character at a specific index.
+A value is simply some information. The integer 7 is a value, an integer value.
+In a language like C++ we might consider it to be a specific kind of integer
+value, perhaps an unsigned integer, and maybe it has a size specification as
+well: is it 8-bit wide (a character or `char`), 16, 32, 64, or bigger? But once
+the computer understands that the value is a number it acknowledges that it can
+do things to that value, like use it in mathematical statements. If a value is a
+"string" (a sequence of characters) then the computer will acknowledge that it
+can join it with another string or perhaps get a single character at a specific
+index.
 
-Type information is not required in Python in the same way it is in C++ or Java. But this doesn't make understanding and paying attention to types any less important in Python. I would argue that understanding types is actually more critical to being an effective Python programmer than it is for C++ for Java because in Java and C++ types are necessary and obvious. In Python types can change making it much more difficult and necessary to keep track of types throughout the lifespan of values. When values fail to interact in the way we want, unexpected types are a likely culprit.
+Type information is not required in Python in the same way it is in C++ or Java.
+But this doesn't make understanding and paying attention to types any less
+important in Python. I would argue that understanding types is actually more
+critical to being an effective Python programmer than it is for C++ for Java
+because in Java and C++ types are necessary and obvious. In Python types can
+change making it much more difficult and necessary to keep track of types
+throughout the lifespan of values. When values fail to interact in the way we
+want, unexpected types are a likely culprit.
 
 
 ```python

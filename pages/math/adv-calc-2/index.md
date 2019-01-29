@@ -137,3 +137,52 @@ $$
   difference between the upper and lower sums converge to zero
 "%}
 
+We can also show that a function is not Riemann integrable by showing the
+complement. That is
+
+$$
+\exists\varepsilon>0,\forall\delta>0,\exists P,
+(\norm{P}<\delta)\wedge(U(f,P)-L(f,P)\ge\varepsilon)
+$$
+
+{% include tooltip.html text="Proposition 1.2.2" content="
+  Let a bounded and Riemann integrable function $f:[a,b]\to\R$, then
+
+  $$
+  \underline{\int_a^b}f(x)dx=\overline{\int_a^b}f(x)dx=\int_a^b f(x)dx
+  $$
+
+  And the quantity $\int_a^b f(x)dx$ is called the **Riemann integral** of $f$
+  over $[a,b]$.
+"%}
+
+{% include tooltip.html text="Definition 1.2.3" content="
+  Let a bounded function $f:[a,b]\to\R$ and a partition $P$ of $[a,b]$.
+  Denote $\forall k=1,2,\ldots,n$ for $c_k\in[x_{k-1},x_k]$.
+  The **Riemann sum** of $f$ over $P$ and with the set of points
+  $\seq{c_k}_{k=1}^n$ is given by
+
+  $$
+  R_n(f,\seq{c_k}_{k=1}^n)=\sum_{k=1}^n f(c_k)\Delta x_k
+  $$
+
+  Which we denote $R_n$ (if there is no ambiguity).
+"%}
+
+{% include tooltip.html text="Theorem 1.2.3" content="
+  Assume $f$ is Riemann integrable over $[a,b]$ then
+
+  $$
+  \forall\varepsilon>0,\exists\delta>0,\forall P,\norm P<\delta \Rightarrow
+  \left|R_n(f,\seq{c_k}_{k=1}^n)-\int_a^b f(x)dx\right|<\varepsilon
+  $$
+
+  For any arbitrary set of points $\seq{c_k}$ associated with $P$.
+  Note that this statement is equivalent to
+
+  $$
+  \int_a^b f(x)dx=\lim_{n\to\infty}R_n
+  $$
+"%}
+
+
