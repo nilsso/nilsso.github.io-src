@@ -19,7 +19,7 @@ $$
 ---
 
 <!--
-{% include tooltip.html text="" content="
+{% include theorem.html text="" content="
 "%}
 -->
 
@@ -37,7 +37,11 @@ $$
 <!-- Ch 1.1 ................................................................ -->
 ## Partitions
 
-{% include tooltip.html text="Definition 1.1.1" content="
+Consider an interval over the x-axis $[a,b]$.
+Different partitions of that interval are different ways to divide it into
+smaller sub-intervals.
+
+{% include theorem.html text="Definition 1.1.1" content="
   A **partition** $P$ of the interval $[a,b]$ is the set of points
   $\seq{x_k}_{k=0}^n$ (not necessarily equidistant) such that
 
@@ -55,7 +59,7 @@ $$
   So the first subinterval is $\abs{P_1} = \Delta x_1 = x_1-x_0$
 "%}
 
-{% include tooltip.html text="Definition 1.1.2" content="
+{% include theorem.html text="Definition 1.1.2" content="
   The **norm of a partition** $P=\seq{x_k}_{k=0}^n$ denoted $\norm P$ is defined
 
   $$
@@ -63,7 +67,7 @@ $$
   $$
 "%}
 
-{% include tooltip.html text="Definition 1.1.3" content="
+{% include theorem.html text="Definition 1.1.3" content="
   The **upper sum** and **lower sum** for the function $f:[a,b]\to\R$ corresponding to
   partition $P=\seq{s_k}_{k=0}^n$ are respectively given by
 
@@ -76,7 +80,7 @@ $$
   $$
 "%}
 
-{% include tooltip.html text="Definition 1.1.4" content="
+{% include theorem.html text="Definition 1.1.4" content="
   Let two partitions $P_A$ and $P_B$ (not subintervals of a partition
   but two different partitions, each with its own subintervals) of $[a,b]$. The
   partition $P_B$ is said to be a **refinement** of $P_A$ (we also
@@ -84,17 +88,17 @@ $$
   $P_A$ by adding a finite number of points.
 "%}
 
-{% include tooltip.html text="Lemma 1.1.1" content="
+{% include theorem.html text="Lemma 1.1.1" content="
   Let a function $f:[a,b]\to\R$ and two partitions $P_A$ and $P_B$ of
   $[a,b]$. If $P_B$ is finer than $P_A$ then
 
   $$
-  U(f,P_B)\le U(f,P_A)\text{, and } 
+  U(f,P_B)\le U(f,P_A)\text{, and }
   L(f,P_B)\ge L(f,P_A)
   $$
 "%}
 
-{% include tooltip.html text="Corollary 1.1.2" content="
+{% include theorem.html text="Corollary 1.1.2" content="
   If $P_A$ and $P_B$ are two arbitrary partitions (one is not necessarily finer
   than the other) of $[a,b]$ then
 
@@ -106,7 +110,7 @@ $$
 <!-- Ch 1.2 ................................................................ -->
 ## Riemann integrals
 
-{% include tooltip.html text="Definition 1.2.1" content="
+{% include theorem.html text="Definition 1.2.1" content="
   Let $f:[a,b]\to\R$ be a bounded function. Where $P$ is a partition of the
   interval $[a,b]$, the upper and lower integrals of $f$ on $[a,b]$ are
   respectively defined by
@@ -114,14 +118,14 @@ $$
   $$
   \overline{\int_a^b}f(x)dx
   = \inf_P U(f,P)
-  = \inf\seq{U(f,P)}\text{ and }
+  = \inf\seq{U(f,P)}\text{, and }
   \underline{\int_a^b}f(x)dx
   = \sup_P L(f,P)
   = \sup\seq{L(f,P)}
   $$
 "%}
 
-{% include tooltip.html text="Definition 1.2.2" content="
+{% include theorem.html text="Definition 1.2.2" content="
   A bounded function $f:[a,b]\to\R$ is said to be **Riemann integrable** on
   $[a,b]$ if
 
@@ -145,7 +149,7 @@ $$
 (\norm{P}<\delta)\wedge(U(f,P)-L(f,P)\ge\varepsilon)
 $$
 
-{% include tooltip.html text="Proposition 1.2.2" content="
+{% include theorem.html text="Proposition 1.2.2" content="
   Let a bounded and Riemann integrable function $f:[a,b]\to\R$, then
 
   $$
@@ -156,7 +160,7 @@ $$
   over $[a,b]$.
 "%}
 
-{% include tooltip.html text="Definition 1.2.3" content="
+{% include theorem.html text="Definition 1.2.3" content="
   Let a bounded function $f:[a,b]\to\R$ and a partition $P$ of $[a,b]$.
   Denote $\forall k=1,2,\ldots,n$ for $c_k\in[x_{k-1},x_k]$.
   The **Riemann sum** of $f$ over $P$ and with the set of points
@@ -169,7 +173,7 @@ $$
   Which we denote $R_n$ (if there is no ambiguity).
 "%}
 
-{% include tooltip.html text="Theorem 1.2.3" content="
+{% include theorem.html text="Theorem 1.2.3" content="
   Assume $f$ is Riemann integrable over $[a,b]$ then
 
   $$
@@ -183,6 +187,74 @@ $$
   $$
   \int_a^b f(x)dx=\lim_{n\to\infty}R_n
   $$
+"%}
+
+And the converse theorem:
+
+{% include theorem.html text="Theorem 1.2.4" content="
+  Let a bounded function $f:[a,b]\to\R$.
+  Assume that $\exists I\in\R$ (finite) such that
+
+  $$
+  \forall\varepsilon>0,\exists\delta>0,\forall P,
+  \norm P<\delta,\abs{R_n-I}<\varepsilon
+  $$
+
+  Then $f$ is Riemann integrable on $[a,b]$ and
+
+  $$
+  I=\int_a^b f(x)dx
+  $$
+"%}
+
+Recalling uniform continuity...
+
+{% include theorem.html text="Theorem 1.2.4" content="
+  If a function $f$ is continuous on a closed and bounded interval $[a,b]$ then
+  $f$ is uniformly continuous on $[a,b]$.
+"%}
+
+What's the difference between continuity and uniform continuity again?
+
+Doesn't matter where in an interval you look, a function is uniformly
+continuous if it is continuous anywhere for some delta. In other words delta is
+independent of the point you choose.
+
+**Continuity:**
+
+$$
+\forall x_0\in[a,b],\forall\varepsilon>0,
+\exists\delta(\varepsilon,x_0)>0,\forall x\in[a,b],
+\abs{x-x_0}<\delta
+\Rightarrow
+\abs{f(x)-f(x_0)}<\varepsilon
+$$
+
+**Uniform continuity:**
+
+$$
+\begin{aligned}
+  &\forall\varepsilon>0,
+  \exists\delta(\varepsilon)>0,
+  \forall x_0\in[a,b],
+  \forall x\in[a,b],
+  \abs{x-x_0}<\delta
+  \Rightarrow
+  \abs{f(x)-f(x_0)}<\varepsilon \\
+  \Leftrightarrow
+  &\forall\varepsilon>0,
+  \exists\delta(\varepsilon)>0,
+  \forall x_1\in[a,b],
+  \forall x_2\in[a,b],
+  \abs{x_1-x_2}<\delta
+  \Rightarrow
+  \abs{f(x)-f(x_0)}<\varepsilon 
+\end{aligned}
+$$
+
+{% include theorem.html text="Theorem 1.2.6" content="
+  If a function $f$ is continuous on $[a,b]$ then $f$ is Riemann integrable on
+  $[a,b]$.
 "%}
 
 

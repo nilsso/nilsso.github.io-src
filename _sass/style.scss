@@ -63,11 +63,11 @@ h3 {
 }
 
 ol, ul {
-  padding-left: 2em;
+  padding-left: 2rem;
 }
 
 li {
-  padding-left: 1em;
+  padding-left: 1rem;
 }
 
 a {
@@ -81,7 +81,7 @@ a:hover, a:focus {
 
 a small {
   color: #777;
-  margin-top: -0.3em;
+  margin-top: -0.3rem;
   display: block;
 }
 
@@ -116,7 +116,7 @@ blockquote {
 
 code, pre, kbd {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 kbd {
@@ -127,20 +127,29 @@ kbd {
   border-radius: 2px;
 }
 
-pre {
-  padding: 8px 15px;
+figure {
+  margin: 1rem 0rem;
+  padding: 0.5rem 1rem;
   background: #f8f8f8;
   border-radius: 5px;
   border: 1px solid #e5e5e5;
   overflow-x: auto;
-}
 
-figure {
-  margin: 1rem 3rem;
+  * {
+    margin: 0;
+  }
+
+  h3, hr, div {
+    margin: 0.5rem 0;
+  }
 }
 
 div > .highlighter-rouge {
   @extend figure;
+}
+
+pre {
+  margin: 0;
 }
 
 table {

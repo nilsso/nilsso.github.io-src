@@ -1,5 +1,6 @@
 ---
 title: "Python Notes"
+anchor: True
 ---
 
 I wrote this because many classmates and friends had little to no experience
@@ -32,33 +33,37 @@ Functions in Python are recognizable due to the pair of parenthesis that follow
 the name.
 
 ```python
-foo()
-bar("a")
+sqrt(9)
+```
+```
+> 3
 ```
 
-The parenthesis denote the *parameter list*. Parameters (or arguments)
-are how we provide a functions information, and are related to variables
-(further on). Though functions don't always have parameters, like the
-`foo` example above which appears to not take any arguments. On the other hand
-`bar` accepted a single argument (a string).
+The parenthesis denote the *parameter list*. Parameters (or arguments) are how
+we provide a functions information, although functions don't always require
+parameters.
+
+```python
+exit() # exiting a python environment
+```
 
 A very common function is the `print` function, which accepts
-values which it in turn outputs to the user (via an output stream).
+values that it in turn *prints* to the user.
 
 ```python
 print("Hello world!")
 ```
 
 ```
-Hello world!
+> Hello world!
 ```
 
 We can consider many function to be black boxes because we expect them to do
 something useful but don't necessarily care how they do it. More importantly
 though is functions allow us to add functionality without adding lines of code.
 A very important pattern to recognize is when code starts to repeat, it's
-probably time to replace it with a function instead. But we'll go over how to
-make functions much later, it's just important to recognize how a function.
+probably time to replace it with a function instead. It's just important to
+recognize how a function looks. Writing functions [will be later](#functions).
 
 **Declaration** A declaration is a statement which defines what kind of thing a
 "label" is; is it a variable, or a function, or something else? What is its
@@ -91,8 +96,8 @@ b1 = "World!"
 foo()
 ```
 ```
-Hello
-World!
+> Hello
+> World!
 ```
 
 Works because both `a1` and `b1` exist in the global scope. So accessing them
@@ -108,21 +113,18 @@ print(b2)
 ```
 
 ```
----------------------------------------------------------------------------
-
-NameError                                 Traceback (most recent call last)
-
-<ipython-input-3-ddb071cc9d1f> in <module>()
-2     a2, b2 = "Hello", "World!"
-3
-----> 4 print(a2)
-5 print(b2)
-
-NameError: name 'a2' is not defined
+> ---------------------------------------------------------------------------
+> NameError                                 Traceback (most recent call last)
+> <ipython-input-3-ddb071cc9d1f> in <module>()
+> 2     a2, b2 = "Hello", "World!"
+> 3
+> ----> 4 print(a2)
+> 5 print(b2)
+>
+> NameError: name 'a2' is not defined
 ```
 
-
-Fails because `a2` and `b2` only exist within the scope of the function.
+Fails because `a2` (and `b2`) is not defined outside the scope of the function.
 
 **Definition** A definition happens to be a declaration where the label is given
 a definitive implementation beyond its declaration. This isn't relevant to
@@ -182,9 +184,9 @@ print("Hello", type("Hello"))
 ```
 
 ```
-(1, <type 'int'>)
-(4.2, <type 'float'>)
-('Hello', <type 'str'>)
+> (1, <type 'int'>)
+> (4.2, <type 'float'>)
+> ('Hello', <type 'str'>)
 ```
 
 ---
@@ -205,7 +207,7 @@ print(a)
 ```
 
 ```
-7
+> 7
 ```
 
 In C++ and Java we can't change the type of a variable
@@ -227,8 +229,8 @@ print(a)
 ```
 
 ```
-7
-Hello
+> 7
+> Hello
 ```
 
 ---
@@ -249,10 +251,10 @@ print(b)
 ```
 
 ```
-swap
-me
-me
-swap
+> swap
+> me
+> me
+> swap
 ```
 
 
@@ -309,17 +311,17 @@ print(bool(None))
 ```
 
 ```
-True
-True
-True
-True
-False
-False
-False
-False
+> True
+> True
+> True
+> True
+> False
+> False
+> False
+> False
 ```
 
-## `if` `elif` and `else`
+## `if`, `elif` and `else`
 
 Your standard decision structure keywords. The most important syntactic
 different between Python and most other languages is that whitespace is
@@ -335,7 +337,7 @@ else:
 ```
 
 ```
-This will print (1)
+> This will print (1)
 ```
 
 ```python
@@ -346,7 +348,7 @@ else:
 ```
 
 ```
-This will print (2)
+> This will print (2)
 ```
 
 ```python
@@ -359,7 +361,7 @@ else:
 ```
 
 ```
-This will print (2)
+> This will print (2)
 ```
 
 ---
@@ -380,7 +382,7 @@ while flag:
 ```
 
 ```
-This will loop and print only once
+> This will loop and print only once
 ```
 
 Unlike some languages there is no `do-until` type of loop in Python, with its
@@ -411,11 +413,11 @@ for i in range(len(arr)):
 ```
 
 ```
-0
-1
-2
-3
-4
+> 0
+> 1
+> 2
+> 3
+> 4
 ```
 
 Conveniently the syntax remains consistent over the variety of objects you could
@@ -435,16 +437,16 @@ for i, v in enumerate(arr):
 ```
 
 ```
-a
-b
-c
-d
-e
-index=0 value=a
-index=1 value=b
-index=2 value=c
-index=3 value=d
-index=4 value=e
+> a
+> b
+> c
+> d
+> e
+> index=0 value=a
+> index=1 value=b
+> index=2 value=c
+> index=3 value=d
+> index=4 value=e
 ```
 
 ---
@@ -464,12 +466,12 @@ for v in arr:
 ```
 
 ```
-value: 1      type: <type 'int'>
-value: 2      type: <type 'int'>
-value: three  type: <type 'str'>
-value: four   type: <type 'str'>
-value: 5.0    type: <type 'float'>
-value: 6.01   type: <type 'float'>
+> value: 1      type: <type 'int'>
+> value: 2      type: <type 'int'>
+> value: three  type: <type 'str'>
+> value: four   type: <type 'str'>
+> value: 5.0    type: <type 'float'>
+> value: 6.01   type: <type 'float'>
 ```
 
 ## List comprehensions
@@ -492,8 +494,8 @@ print(arr)
 ```
 
 ```
-[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
-[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+> [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+> [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 ```
 
 Basically any kind of for loop you can devise you can also use to populate a
@@ -528,15 +530,15 @@ for y in range(5):
     for x in range(5):
         arr[y][x] = 1+x+y*5
 
-pprint(arr)
+pprint(arr) # pretty print (imported)
 ```
 
 ```
-[[1, 2, 3, 4, 5],
-[6, 7, 8, 9, 10],
-[11, 12, 13, 14, 15],
-[16, 17, 18, 19, 20],
-[21, 22, 23, 24, 25]]
+> [[1, 2, 3, 4, 5],
+> [6, 7, 8, 9, 10],
+> [11, 12, 13, 14, 15],
+> [16, 17, 18, 19, 20],
+> [21, 22, 23, 24, 25]]
 ```
 
 But the initialization of the size on the first 3 lines is really unnecessary; I
@@ -552,11 +554,11 @@ pprint(arr)
 ```
 
 ```
-[[1, 2, 3, 4, 5],
-[6, 7, 8, 9, 10],
-[11, 12, 13, 14, 15],
-[16, 17, 18, 19, 20],
-[21, 22, 23, 24, 25]]
+> [[1, 2, 3, 4, 5],
+> [6, 7, 8, 9, 10],
+> [11, 12, 13, 14, 15],
+> [16, 17, 18, 19, 20],
+> [21, 22, 23, 24, 25]]
 ```
 
 List comprehensions syntactically are essentially just for loops inside of
@@ -607,9 +609,9 @@ print(foo(-10))
 ```
 
 ```
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-None
-None
+> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+> None
+> None
 ```
 
 This isn't uncommon in most other languages, where None often behaves like a
@@ -635,7 +637,7 @@ print(list(fib_gen(10)))
 ```
 
 ```
-[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 ```
 
 Hopefully this demonstrates the capabilities of Python to do a whole lot of
