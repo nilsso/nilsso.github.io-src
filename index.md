@@ -16,11 +16,11 @@ Math /
 [Discrete](pages/math/discrete/) /
 [DiffEq](pages/math/diffeq/)
 <br/>
-Math /
-[AbsAlg](pages/math/abstract-algebra/) /
-[SemiComb](pages/math/semi-comb/) /
-[AdvCalc1](pages/math/adv-calc-1/) /
-[AdvCalc2](pages/math/adv-calc-2/)
+<!--Math /-->
+<!--[AbsAlg](pages/math/abstract-algebra/) /-->
+<!--[SemiComb](pages/math/semi-comb/) /-->
+<!--[AdvCalc1](pages/math/adv-calc-1/) /-->
+<!--[AdvCalc2](pages/math/adv-calc-2/)-->
 <br/>
 Math / [Problem Generator](problem-generator/)
 <br/>

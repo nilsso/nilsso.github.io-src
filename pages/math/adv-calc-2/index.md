@@ -248,7 +248,7 @@ $$
   \forall x_2\in[a,b],
   \abs{x_1-x_2}<\delta
   \Rightarrow
-  \abs{f(x)-f(x_0)}<\varepsilon 
+  \abs{f(x)-f(x_0)}<\varepsilon
 \end{aligned}
 $$
 
@@ -256,5 +256,4 @@ $$
   If a function $f$ is continuous on $[a,b]$ then $f$ is Riemann integrable on
   $[a,b]$.
 "%}
-
 
