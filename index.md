@@ -43,18 +43,26 @@ Vidya /
 
 # About Me
 
-I'm a math student, programmer, singer, and game enthusiast.
+I'm a music student, math student, programmer, singer, and game enthusiast.
 
-I love music. I've studdied classical voice, piano, and composition, I have
-an associates degree in music theory, and I sing regularly in a few choirs.
-A few of the genres I listen to the most are
-[metal](pages/music/lists/#metal/),
-[post-rock](pages/music/lists/#post-rock/),
-Americana,
-[electronic](pages/music/lists/#electronic/) and
-[classical](pages/music/lists/#classical/).
+I love music in a lot of genres. I've studdied classical voice, piano, and
+composition, have an Associate of Arts Music Studies degree, and sing regularly.
+I also love computers and math. I've worked on a lot of programming projects,
+have my other associates level degree is in Mathematics and Pre-Engineering
+Studies (Computer Science), and am a staunch Vim enthusiast.
+<!--
+   -A few of the genres I listen to the most are
+   -[metal](pages/music/lists/#metal/),
+   -[post-rock](pages/music/lists/#post-rock/),
+   -Americana,
+   -[electronic](pages/music/lists/#electronic/) and
+   -[classical](pages/music/lists/#classical/).
+   -->
 
-I also love computer games. Always have always will.
+Currently I'm an undergraduate student at San Diego State University, double
+majoring in the Bachelor of Arts in Music and Bachelor of Science in Applied
+Mathematics---Computational Science programs. I sing in the SDSU Chamber Singers
+ensemble as a bass.
 
 <!--
 On Steam I'm [SweedJesus][steam], and on the Vanilla private server [Elysium
