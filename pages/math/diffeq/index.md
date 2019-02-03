@@ -6,9 +6,9 @@ math: True
 * toc
 {:toc}
 
-# Intro
+<!--# Intro-->
 
-A differential equation is...
+<!--A differential equation is...-->
 
 ## Review
 
