@@ -9,7 +9,8 @@ $color-b: #6bb0e1; // Blue (light)
 $color-c: #277fbe; // Blue (dark)
 $color-d: #bfbfbf; // Gray (light)
 
-$font-size-normal: 1.0em;
+//$font-size-normal: 0.9em;
+$font-size-normal: 14px;
 $font-size-small:  80%;
 $font-size-big:    120%;
 $font-size-Big:    160%;
@@ -18,8 +19,10 @@ $font-size-BIG:    200%;
 html {
   color: $color-a;
   font-size: $font-size-normal;
-  font-family: 'Roboto', sans-serif;
+  //font-family: 'Roboto', sans-serif;
   //font-family: 'Roboto Slab', serif; 
+  //font-family: 'Merriweather', serif; 
+  font-family: 'Noto Serif', serif;
   line-height: 1.5;
 }
 
@@ -30,7 +33,9 @@ body {
 
 nav, .nav, h1, h2, h3, h4, h5, h6 {
   //font-family: 'Roboto', sans-serif;
-  font-family: 'Roboto Slab', serif; 
+  //font-family: 'Roboto Slab', serif;
+  //font-family: 'Merriweather', serif; 
+  font-family: 'Noto Serif', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -128,19 +133,19 @@ kbd {
 }
 
 figure {
-  margin: 1rem 0rem;
-  padding: 0.5rem 1rem;
+  margin: 1rem 2rem;
+  padding: 0rem 1rem;
   background: #f8f8f8;
   border-radius: 5px;
   border: 1px solid #e5e5e5;
   overflow-x: auto;
 
-  * {
-    margin: 0;
-  }
+  //* {
+    //margin: 0;
+  //}
 
-  h3, hr, div {
-    margin: 0.5rem 0;
+  h1, h2, h3, hr, div {
+    margin: 1rem 0;
   }
 }
 
@@ -250,31 +255,31 @@ footer {
 }
 
 @media (max-width: 960px) {
-	html {
-		font-size: 60%;
-		padding: 0 15px;
-	}
+  html {
+    font-size: 60%;
+    padding: 0 15px;
+  }
 
-	body {
-		width: auto;
-	}
+  body {
+    width: auto;
+  }
 
-	nav, h1, h2, h3, h4, h5, h6 {
-		text-align: center;
-	}
+  nav, h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
 
-	ul, ol {
-		padding-left: 0;
-		white-space: nowrap;
-	}
+  ul, ol {
+    padding-left: 0;
+    white-space: nowrap;
+  }
 
-	li {
-		list-style-position: inside;
-		overflow-x: scroll;
-	}
+  li {
+    list-style-position: inside;
+    overflow-x: scroll;
+  }
 
-	.float-right {
-		float: none;
-	}
+  .float-right {
+    float: none;
+  }
 }
 
