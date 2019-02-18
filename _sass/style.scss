@@ -134,17 +134,17 @@ kbd {
 
 figure {
   margin: 1rem 2rem;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
   background: #f8f8f8;
   border-radius: 5px;
   border: 1px solid #e5e5e5;
   overflow-x: auto;
 
-  //* {
-    //margin: 0;
-  //}
+  hr {
+    margin: 1rem -1rem;
+  }
 
-  h1, h2, h3, hr, div {
+  h1, h2, h3, div {
     margin: 1rem 0;
   }
 }

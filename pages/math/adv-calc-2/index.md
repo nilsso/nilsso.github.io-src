@@ -23,6 +23,13 @@ $$
 "%}
 -->
 
+{% include theorem.html text="" content="
+$$
+\sum_{k=0}^n r^k = \frac{1-r^{k+1}}{1-r}
+$$
+"%}
+
+
 By default, consider functions that are bounded on closed and bounded intervals
 
 $$
@@ -256,4 +263,23 @@ $$
   If a function $f$ is continuous on $[a,b]$ then $f$ is Riemann integrable on
   $[a,b]$.
 "%}
+
+---
+
+# Series of numbers
+
+## Convergence criteria
+
+<!-- Theorem 2.2.1 -->
+{% include theorem.html text="Theorem" content="
+$$
+\sum_{k=n_0}^\infty a_k\text{ converges }\Rightarrow\lim_{n\to\infty}a_n=0
+$$
+"%}
+
+Also consider the contraposition
+
+$$
+\lim_{n\to\infty}a_n\ne 0\Rightarrow\sum_{k=n_0}^\infty a_k\text{ diverges}
+$$
 

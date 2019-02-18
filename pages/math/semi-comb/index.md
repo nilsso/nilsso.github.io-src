@@ -195,7 +195,7 @@ example:
 Given $S=\genset{7,8,12}$, $\sgAp(S)=\sgAp(S;7)=\set{0, 8, 16, 24, 32, 12, 20}$,
 $\sgF(S)=\max(\sgAp(S))-\sgm(S)=32-7=25$.
 
-## Factorizations
+# Factorizations
 
 {% include theorem.html text="Definition: Factorization" content="
 Let $S=\langle n_1,\ldots,n_k\rangle$ and $n\in S$.
@@ -219,7 +219,7 @@ For example:
 - $Z_{\genset{3,5,7}}(15)=\set{(5,0,0),(0,3,0),(1,1,1)}$
 - $Z_{\genset{4,6,11}}(40)=\set{(10,0,0),(7,2,0),(4,4,0),(1,6,0),(3,1,2),(0,3,2)}$
 
-## Pseudo-frobenius numbers, symmetry & irreducibility
+# Pseudo-Frobenius numbers, symmetry & irreducibility
 
 {% include theorem.html text="Definition: Pseudo-frobenius numbers" content="
 Given a numerical semigroup $S$, a gap $m$ is called a pseudo-frobenius number
@@ -245,7 +245,7 @@ Or for $\sgF(S)$ even, the following are equivalent:
 
 1. $\sgg(S)=\frac{\sgF(S)+2}{2}$
 1. $\sgPF(S)=\set{\sgF(S),\frac{\sgF(S)}{2}}$
-1. $S$ is maximal among numerical semigroups with same $sgF(S)$
+1. $S$ is maximal among numerical semigroups with same $\sgF(S)$
 
 And if any hold then $S$ is called pseudo-symmetric.
 

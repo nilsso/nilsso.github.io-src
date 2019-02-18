@@ -4,6 +4,12 @@ math: True
 ---
 
 <div id="mathjax-preamble" style="display:none;">
+$$
+\newcommand{\set}[1]{ \{#1\} }
+\DeclareMathOperator{\span}{\text{span}}
+\DeclareMathOperator{\L}{\mathcal{L}}
+\DeclareMathOperator{\P}{\mathcal{P}}
+$$
 </div>
 
 * toc
@@ -49,7 +55,7 @@ x + y &= 3
 \end{aligned}
 $$
 
-Has a solution when $x=1$ and $y=2$, denoted as the tuple $(1,2)$. 
+Has a solution when $x=1$ and $y=2$, denoted as the tuple $(1,2)$.
 This is verifiable by plugging the first equation into the second and solving
 for y. This method often works well enough but *elementary operations* allow us
 to more easily solve systems.
@@ -64,7 +70,7 @@ multiplication* and *swapping*. For the operations, consider the example system
 $$
 \begin{aligned}
 p_1&: & x &= 1 \\ p_2&: & x + y &= 3 \end{aligned}
-$$ 
+$$
 
 ### Scalar multiplication
 
@@ -136,8 +142,8 @@ Swapping rows 1 and 2 tidy up the system, and is important for future methods.
 A matrix is a rectangular array of elements.
 A matrix has dimensions *m* rows and *n* columns written as $m\times n$.
 The location of an element is given by its i<sup>th</sup> row
-and j<sup>th</sup> column positions, and is the j<sup>th</sup> element. 
-These exact location of elements are crucial. 
+and j<sup>th</sup> column positions, and is the j<sup>th</sup> element.
+These exact location of elements are crucial.
 The form of a matrix is such
 
 $$
@@ -227,8 +233,8 @@ $$
 
 The number of rows in left and the number of columns in right are arbitrary but
 will change the dimensions of the resulting matrix. The result will have only as
-many rows as left and only as many columns as right. 
-The operation is highly algorithmic and follows the same pattern. 
+many rows as left and only as many columns as right.
+The operation is highly algorithmic and follows the same pattern.
 Multiplying two $2\times 2$ matrices is a good example
 
 $$
@@ -461,6 +467,30 @@ on which both the parallel vectors lie can be produced by multiplying either of
 the vectors by some scalar, we could reduce the set and have no loss of span by
 removing one of the parallel vectors.
 
+A list $v_1,\ldots,v_n$ of vectors in vectorspace $V$ is a basis for $V$
+if and only if for all $v$ can be written uniquely in the form
+
+$$
+v=\sum_{l=1}^n a_l v_l,~ a_1,\ldots,a_n\in\F
+$$
+
+Every spanning list in a vector space can be reduced to a basis of the vector
+space.
+
+{% include theorem.html text="Method: Spanning list contains a basis" content="
+Suppose $v_1,\ldots,v_n$ spans vectorspace $V$. We want to remove linearly
+  dependent vectors from $v_1,\ldots,v_n$ so that the remaining set form a basis
+  for $V$:
+
+1. Start with $B=\set{v_1,\ldots,v_n}$
+1. If $v_1=0$ delete it from $B$
+1. If $v_j\in\span(v_1,\ldots,v_{j-1})$ delete $v_j$ from $B$
+
+And repeat until $j=n$. The final $B$ list still spans $V$ and contains only
+linear independent vectors, leaving us with a basis.
+"%}
+
+
 ## Transformations
 
 Given T, a linear transformation of vector v from vector space V into W,
@@ -541,4 +571,57 @@ In any change of the base the actually vector remains the same, but is now
 described by using different coefficients for the different base.
 
 ![change-of-basis](img-change-of-basis.svg){:width="512px"}
+
+---
+
+# Linear Maps
+
+$\L$
+
+<!--- The zero map -->
+- Identity $I\in\L(V,V)$ defined by
+
+$$
+Iv\equiv I(v)=v
+$$
+
+- Differentiation $D\in\L(\P(\F),\P(\F))$ defined by
+
+$$
+$$
+
+- Integration $T\in\L(\P(\R),\R)$ defined by
+
+$$
+T_p\equiv\T(p)=\int_0^1 p(x)~dx
+$$
+
+- Backward shift $T\in\L(\F^\infty,\F^\infty)$ (even though the indexes are
+shifted forward) defined by
+
+$$
+T(z_1,z_2,\ldots)=T(z_2,z_3,\ldots)
+$$
+
+## Examples
+
+### $\R^3\to\R^2$
+
+Define $T\in\L(\R^3,\R^2)$ as
+
+$$
+T(x,y,z)=(x-y+z,\pi x+e^\pi y+z)
+$$
+
+### $\F^n\to\F^m$
+
+Here $T\in\L(\F^n,\F^m)$ is defined as
+
+$$
+T(x_1,\ldots,x_n)
+= (A_{1,1}x_1+\cdots+A_{1,n}x_n,\ldots,A_{m,1}x_1+\cdots+A_{m,n}x_n)
+$$ 
+
+For scalars $A_{i,j}$ and $x_i$.
+Every linear map $\F^n\to\F^m$ can be written in this form.
 

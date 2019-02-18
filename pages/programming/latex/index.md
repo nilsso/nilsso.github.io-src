@@ -145,11 +145,12 @@ AMS-Math packages
 - `amssymb` adds even more symbols, especially relational/logical
   ones.
 
-There's a lot of lists
-(<https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf>) of these
-characters and documentation
-(<https://www.ams.org/publications/authors/tex/amslatex>). Here's a few
-common symbols
+There's a lot of [lists of the symbols][symbol-list] out there (along with the
+[documentation][amsdocs]) but here's a list of my own of a few of the
+seemingly most common symbols
+
+[symbol-list]: https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf
+[amsdocs]: https://www.ams.org/publications/authors/tex/amslatex
 
 Description | Math command | Output
 Circular functions | `\sin` `\cos` | $\sin$, $\cos$
@@ -187,8 +188,6 @@ $$
 
 \huge{\sqrt{\smirk^2}=\fear}
 $$
-
-Yeah even stupid crap like emoji's work.
 
 It's common to be entering repetitive and long commands in $\rm\LaTeX$ that
 become less of a chore to enter when made into a macro. For instance when typing
@@ -262,7 +261,7 @@ being a lot less typing
 \end{tabu}
 ```
 
-## Math environments
+### Math environments
 
 The most common math environments besides `$$...$$` has to be the
 `align` and `gather` environments. Both allow math to be broken into
@@ -295,4 +294,61 @@ breaking lines with a double backslash `\\`
 ```
 
 The star in `align*` just removes equation numbers.
+
+## Packages
+
+### Highlighted code with `minted`
+
+Minted is probably the best package for adding syntax highlighted verbatim
+code to $\rm\LaTeX$ documents right now but it depends on the Python
+[Pygments][pygments] package, a popular syntax highlighter used all over the
+place (especially for static website generators like Jekyll, which made this
+very page). So after installing Pygements with
+
+```bash
+pip install pygments
+```
+
+Which provides the `pygmentize` command (if your `pip` package installation
+directory is correctly added to you `PATH` environment variable), we can now
+use `minted` (and I'm assuming `minted` is installed already since most big
+$\rm\LaTeX$ distributions seem to come with it). In a test tex-file, include in
+the preamble the following
+
+```tex
+\usepackage{minted}
+```
+
+Then in the body include
+
+```tex
+\begin{minted}{python}
+def fib(n, a=0, b=1):
+    for i in range(n):
+        b, a = a, a+b
+        yield b
+\end{minted}
+```
+
+But to compile you must include the `-shell-escape` flag, as in
+
+```bash
+pdflatex -shell-escape test.tex
+```
+
+Then if all goes well the output PDF should have
+
+![minted example](minted.png){:width='300px'}
+
+Delve into the documentation at [minted][minted] to see how to change styles and
+what not, but because why not, try installing the
+[Solarized][pygments-solarized] style via `pip3 install pygments-solarized-style`,
+include in the test file preamble `\usemintedstyle{solarizedlight}` and compile.
+The output PDF should have
+
+![minted solarized example](minted-solarized.png){:width='300px'}
+
+[pygments]: https://pypi.org/project/Pygments/
+[minted]: https://ctan.org/pkg/minted
+[pygments-solarized]: https://pypi.org/project/pygments-solarized-style/#history
 
