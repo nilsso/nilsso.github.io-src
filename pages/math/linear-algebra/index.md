@@ -574,6 +574,55 @@ described by using different coefficients for the different base.
 
 ---
 
+# Bases
+
+{% include theorem.html text="Definition: Bases" content="
+A *basis* of $V$ is a list of linearly independent vectors in $V$ that
+spans $V$.
+"%}
+
+---
+
+# Polynomial space
+
+{% include theorem.html text="Definition: Finite-dimensional vector space" content="
+A vector space is called *finite-dimensional* if some list of vectors in it span
+the space (And recall that any list has finite length).
+"%}
+
+{% include theorem.html text="Definition: Polynomials" content="
+A function $p:\F\to\F$ is called a *polynomial* with coefficients in $\F$
+if there exist $a_0,\ldots,a_m\in\F$ such that
+
+$$
+p(z)=a_0+a_1 z+a_2 z^2+\cdots+a_m z^m
+$$
+For all $z\in\F$.
+
+And $\P(\F)$ is the set of all polynomials (of all degrees)
+with coefficients in $\F$.
+"%}
+
+{% include theorem.html text="Definition: Polynomial degree" content="
+A polynomial $p\in\P(\F)$ is said to have degree $m$ if there exist scalars
+$a_0,a_1,\ldots,a_m\in\F$ with $a_m\ne 0$ such that
+
+$$
+p(z)=a_0+a_1 z+a_2 z^2+\cdots+a_m z^m
+$$
+
+For all $z\in\F$. If $p$ has degree $m$ we write $\deg p=m$.
+
+The polynomial that is identically 0 is said to have degree $-\infty$.
+"%}
+
+{% include theorem.html text="Definition: $\P_m(\F)$" content="
+For $m$ a nonnegative integer, $\P_m(\F)$ denote the set of all polynomials
+with coefficients in $\F$ and degree at most $m$.
+"%}
+
+---
+
 # Linear Maps
 
 $\L$
@@ -593,7 +642,7 @@ $$
 - Integration $T\in\L(\P(\R),\R)$ defined by
 
 $$
-T_p\equiv\T(p)=\int_0^1 p(x)~dx
+T_p\equiv T(p)=\int_0^1 p(x)~dx
 $$
 
 - Backward shift $T\in\L(\F^\infty,\F^\infty)$ (even though the indexes are

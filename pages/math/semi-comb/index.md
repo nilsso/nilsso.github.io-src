@@ -2,7 +2,13 @@
 title: Semigroups and Combinatorics
 anchor: True
 math: True
+three: assets/js/three/examples/js
 ---
+<script src='{{ site.url }}/assets/js/three/build/three.js'></script>
+<script src='{{ site.url }}/assets/js/three/examples/js/QuickHull.js'></script>
+<script src='{{ site.url }}/assets/js/three/examples/js/geometries/ConvexGeometry.js'></script>
+<script src='polytopes/polytope.js'></script>
+
 <div id="mathjax-preamble" style="display:none;">
 $$
 \newcommand{\set}[1]{ \{#1\} }
@@ -15,8 +21,11 @@ $$
 \DeclareMathOperator{\sgg}{\mathsf g}
 \DeclareMathOperator{\sgF}{\mathsf F}
 \DeclareMathOperator{\sgAp}{\text{Ap}}
-\DeclareMathOperator{\sgPF}{\text{PF}}
-\DeclareMathOperator{\sgt}{\mathsf t}
+\DeclareMathOperator{\calPF}{\text{PF}}
+\DeclareMathOperator{\sgt}{\mathsf{t}}
+\DeclareMathOperator{\conv}{\text{conv}}
+\DeclareMathOperator{\span}{\text{span}}
+\DeclareMathOperator{\calP}{\mathcal{P}}
 $$
 </div>
 
@@ -223,10 +232,10 @@ For example:
 
 {% include theorem.html text="Definition: Pseudo-frobenius numbers" content="
 Given a numerical semigroup $S$, a gap $m$ is called a pseudo-frobenius number
-if $m+n\in S$ for every $n$ in $S$, and $\sgPF(S)$ is the set of such numbers.
+if $m+n\in S$ for every $n$ in $S$, and $\calPF(S)$ is the set of such numbers.
 
 $$
-\sgPF(S)=\set{m\notin S:m+n\in S,n\in S}
+\calPF(S)=\set{m\notin S:m+n\in S,n\in S}
 $$
 "%}
 
@@ -244,11 +253,88 @@ And if any hold then $S$ is called symmetric.
 Or for $\sgF(S)$ even, the following are equivalent:
 
 1. $\sgg(S)=\frac{\sgF(S)+2}{2}$
-1. $\sgPF(S)=\set{\sgF(S),\frac{\sgF(S)}{2}}$
+1. $\calPF(S)=\set{\sgF(S),\frac{\sgF(S)}{2}}$
 1. $S$ is maximal among numerical semigroups with same $\sgF(S)$
 
 And if any hold then $S$ is called pseudo-symmetric.
 
 We say that $S$ is irreducible if it is symmetric or pseudo-symmetric.
 "%}
+
+---
+
+# Polytopes
+
+{% include theorem.html text="Definition: Convex polytopes" content="
+A d-polytope $\calP$ is a convex hull in $\R^d$ space which can be described in
+both the following ways:
+
+1. As the convex hull of finitely many points in $\R^d$ space.
+1. As the bounded intersection of finite many half-spaces in $\R^d$ space.
+
+And we call these the *vertex* and *hyperplane* descriptions of $\calP$.
+"%}
+
+For example, a triangle formed by the points $(0,0)$, $(0,1)$ and $(1,1)$ is a
+polytope in $\R^2$ space.
+
+<!--One way we can describe polytopes is as a collection of vertices.-->
+
+{% include theorem.html text="Definition: Vertex description" content="
+The vertex description of a polytope is a finite set of points defining its
+convex hull, and is notated
+
+$$
+  \calP=\conv\{\vec v_1,\ldots,\vec v_d:\vec v_j\in\R^d\}
+$$
+"%}
+
+{% include theorem.html text="Definition: Hyperplane description" content="
+The hyperplane description of a polytope is as the bounded intersections of
+finitely many half-spaces and hyperplanes.
+"%}
+
+A hyperplane is a subspace whose dimension is one less than the $\R^d$ ambient
+space (the space in which it lives). In $\R^3$ three-dimensional space, a
+hyperplane is a two-dimensional $\R^2$ plane.
+
+![half spaces](halfspaces.png){:width='300px'}
+
+Half-spaces correspond to the two $\R^d$ volumes which result from a hyperplane
+dividing the ambient space. In $\R^2$ a hyperplane is a line and the spaces on
+either side are half-spaces.
+Then by having a finite many half-spaces interacting we can construct a convex
+region, thus constructing a polytope.
+
+![hyperplane description](hyperplane-description.png){:width='300px'}
+
+### Simplex
+
+With vertex description
+
+$$
+\calP=\conv\{(0,0),\vec e_1,\ldots,\vec e_d\}\subseteq\R^d
+$$
+
+{% include_relative polytopes/simplex.html %}
+
+### Cube
+
+With vertex description
+
+$$
+\calP=\conv\{(a_1,\ldots,a_d):a_1\in\R\}\subseteq\R^d
+$$
+
+{% include_relative polytopes/cube.html %}
+
+### Octohedron
+
+With vertex description
+
+$$
+\calP=\conv\{\pm\vec e_1,\ldots,\pm\vec e_d\}\subseteq\R^d
+$$
+
+{% include_relative polytopes/octohedron.html %}
 

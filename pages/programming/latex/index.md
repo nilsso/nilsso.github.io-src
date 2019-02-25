@@ -352,3 +352,11 @@ The output PDF should have
 [minted]: https://ctan.org/pkg/minted
 [pygments-solarized]: https://pypi.org/project/pygments-solarized-style/#history
 
+<!--
+   -## Music
+   -
+   -Outlined in [this article][music-with-latex] it's very possible to
+   -
+   -[music-with-latex]: https://martin-thoma.com/how-to-write-music-with-latex/
+   -->
+
