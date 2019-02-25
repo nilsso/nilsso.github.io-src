@@ -323,7 +323,7 @@ $$
 With vertex description
 
 $$
-\calP=\conv\{(a_1,\ldots,a_d):a_1\in\R\}\subseteq\R^d
+\calP=\conv\{(a_1,\ldots,a_d):a_1\in\{0,1\}\}\subseteq\R^d
 $$
 
 {% include_relative polytopes/cube.html %}
