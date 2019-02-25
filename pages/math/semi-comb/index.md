@@ -7,6 +7,7 @@ three: assets/js/three/examples/js
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
 <script src='{{ site.url }}/assets/js/three/examples/js/QuickHull.js'></script>
 <script src='{{ site.url }}/assets/js/three/examples/js/geometries/ConvexGeometry.js'></script>
+<script src='{{ site.url }}/assets/js/three/examples/js/controls/OrbitControls.js'></script>
 <script src='polytopes/polytope.js'></script>
 
 <div id="mathjax-preamble" style="display:none;">

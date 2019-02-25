@@ -25,6 +25,11 @@ function polytope( container, vertices, fov, axes ) {
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 
+    // Controls
+    var controls = new THREE.OrbitControls( camera, renderer.domElement );
+    controls.enableKeys = false;
+    controls.enableZoom = false;
+
     // Ambient light
     scene.add(new THREE.AmbientLight( 0x222222 ));
 
