@@ -3,6 +3,7 @@ title: Semigroups and Combinatorics
 anchor: True
 math: True
 three: assets/js/three/examples/js
+axis: True
 ---
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
 <script src='{{ site.url }}/assets/js/three/examples/js/QuickHull.js'></script>

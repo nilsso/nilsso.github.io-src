@@ -1,5 +1,13 @@
+function getRandomColor() {
+  var length = 6;
+  var chars = '0123456789ABCDEF';
+  var hex = '0x';
+  while(length--) hex += chars[(Math.random() * 16) | 0];
+  return hex;
+}
+
 function polytope( container, vertices, fov, axes ) {
-  var group, camera, scene, light, renderer, w, h;
+  var group, camera, scene, light, renderer, mesh, w, h;
 
   init();
   animate();
@@ -65,7 +73,7 @@ function polytope( container, vertices, fov, axes ) {
     } );
 
     // Composed mesh
-    var mesh = new THREE.Mesh( meshGeometry, meshMaterial );
+    mesh = new THREE.Mesh( meshGeometry, meshMaterial );
     mesh.material.side = THREE.BackSide; // back faces
     mesh.renderOrder = 0;
     group.add( mesh );
@@ -89,6 +97,7 @@ function polytope( container, vertices, fov, axes ) {
   function animate() {
     requestAnimationFrame( animate );
     group.rotation.y += 0.005;
+    //mesh.material.color.setHex(getRandomColor());
     render();
   }
 
