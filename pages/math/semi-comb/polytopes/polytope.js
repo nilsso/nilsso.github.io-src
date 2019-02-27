@@ -6,8 +6,47 @@ function getRandomColor() {
   return hex;
 }
 
+/**
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   Number  h       The hue
+ * @param   Number  s       The saturation
+ * @param   Number  l       The lightness
+ * @return  Array           The RGB representation
+ */
+function hslToRgb(h, s, l) {
+  var r, g, b;
+
+  function hue2rgb(p, q, t) {
+    if (t < 0) t += 1;
+    if (t > 1) t -= 1;
+    if (t < 1/6) return p + (q - p) * 6 * t;
+    if (t < 1/2) return q;
+    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+    return p;
+  }
+
+  if (s == 0) {
+    r = g = b = l; // achromatic
+  } else {
+
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    var p = 2 * l - q;
+
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+  }
+
+  return [ r * 255, g * 255, b * 255 ];
+}
+
 function polytope( container, vertices, fov, axes ) {
   var group, camera, scene, light, renderer, mesh, w, h;
+  var hue = 0, hueDelta = 0.01;
 
   init();
   animate();
@@ -28,9 +67,10 @@ function polytope( container, vertices, fov, axes ) {
     scene.background = new THREE.Color( 0xffffff );
 
     // Camera
-    camera = new THREE.PerspectiveCamera( fov, w / h, 1, 10 );
-    camera.position.set( 2, 3, 4 );
-    camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+    var a = 3;
+    camera = new THREE.PerspectiveCamera( fov, w / h, 1, a*100 );
+    camera.position.set( a*3, a*3, a*3 );
+    //camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 
     // Controls
@@ -54,14 +94,15 @@ function polytope( container, vertices, fov, axes ) {
       group.add( new THREE.AxesHelper( 20 ) );
     }
 
-    // Shape vertices
+    // Textures
+    var loader = new THREE.TextureLoader();
+    var texture = loader.load('polytopes/disc.png');
 
     // Geometry
     var geometry = new THREE.Geometry();
     geometry.setFromPoints( vertices );
 
     // Mesh geometry
-    var a = 1;
     geometry.scale( a, a, a );
     meshGeometry = new THREE.ConvexGeometry( geometry.vertices );
 
@@ -72,7 +113,15 @@ function polytope( container, vertices, fov, axes ) {
       transparent: true
     } );
 
-    // Composed mesh
+    // Vertex material
+    var vertexMaterial = new THREE.PointsMaterial( {
+      color: 0x0080ff,
+      map: texture,
+      size: 1,
+      alphaTest: 0.5
+    } );
+
+    // Add meshes
     mesh = new THREE.Mesh( meshGeometry, meshMaterial );
     mesh.material.side = THREE.BackSide; // back faces
     mesh.renderOrder = 0;
@@ -82,6 +131,10 @@ function polytope( container, vertices, fov, axes ) {
     mesh.material.side = THREE.FrontSide; // front faces
     mesh.renderOrder = 1;
     group.add( mesh );
+
+    // Add vertices
+    var points = new THREE.Points(geometry, vertexMaterial);
+    group.add(points);
 
     window.addEventListener('resize', onWindowResize, false);
   }
@@ -97,7 +150,10 @@ function polytope( container, vertices, fov, axes ) {
   function animate() {
     requestAnimationFrame( animate );
     group.rotation.y += 0.005;
-    //mesh.material.color.setHex(getRandomColor());
+    //color = '0x' + hslToRgb( hue, 1, 0.5 ).map(
+      //x => Math.floor( x ).toString( 16 ).padStart( 2, '0' )).join( '' );
+    //mesh.material.color.setHex(color);
+    //hue = ( hue + hueDelta ) % 1;
     render();
   }
 

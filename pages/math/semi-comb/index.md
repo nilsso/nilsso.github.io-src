@@ -6,9 +6,9 @@ three: assets/js/three/examples/js
 axis: True
 ---
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
-<script src='{{ site.url }}/assets/js/three/examples/js/QuickHull.js'></script>
-<script src='{{ site.url }}/assets/js/three/examples/js/geometries/ConvexGeometry.js'></script>
-<script src='{{ site.url }}/assets/js/three/examples/js/controls/OrbitControls.js'></script>
+<script src='{{ site.url }}/assets/js/three/modules/QuickHull.js'></script>
+<script src='{{ site.url }}/assets/js/three/modules/geometries/ConvexGeometry.js'></script>
+<script src='{{ site.url }}/assets/js/three/modules/controls/OrbitControls.js'></script>
 <script src='polytopes/polytope.js'></script>
 
 <div id="mathjax-preamble" style="display:none;">
@@ -315,7 +315,7 @@ region, thus constructing a polytope.
 With vertex description
 
 $$
-\calP=\conv\{(0,0),\vec e_1,\ldots,\vec e_d\}\subseteq\R^d
+\calP=S_d=\conv\{(0,0),\vec e_1,\ldots,\vec e_d\}\subseteq\R^d
 $$
 
 {% include_relative polytopes/simplex.html %}
@@ -325,17 +325,24 @@ $$
 With vertex description
 
 $$
-\calP=\conv\{(a_1,\ldots,a_d):a_1\in\{0,1\}\}\subseteq\R^d
+\calP
+= C_d
+= \conv\{(a_1,\ldots,a_d):a_1\in\{-1,1\}\}\subseteq\R^d
+= \conv\{{\{-1,1\}}^d\}
 $$
+
+Where ${\{-1,1\}}^d$ is the $\R^d$ cartesian product
 
 {% include_relative polytopes/cube.html %}
 
 ### Octohedron
 
+(Or cross-polytope)
+
 With vertex description
 
 $$
-\calP=\conv\{\pm\vec e_1,\ldots,\pm\vec e_d\}\subseteq\R^d
+\calP=O_d=\conv\{\pm\vec e_1,\ldots,\pm\vec e_d\}\subseteq\R^d
 $$
 
 {% include_relative polytopes/octohedron.html %}

@@ -7,8 +7,8 @@ math: True
 $$
 \newcommand{\set}[1]{ \{#1\} }
 \DeclareMathOperator{\span}{\text{span}}
-\DeclareMathOperator{\L}{\mathcal{L}}
-\DeclareMathOperator{\P}{\mathcal{P}}
+\DeclareMathOperator{\calL}{\mathcal{L}}
+\DeclareMathOperator{\calP}{\mathcal{P}}
 $$
 </div>
 
@@ -419,19 +419,99 @@ Identity element of multiplication | $ 0\cdot\vec u=\vec 0$
 Distributivity of scalar multiplication | $\alpha(\vec v+\vec u)=\alpha\vec u+\alpha\vec v$
 | $(\alpha+\beta)\vec u=\alpha\vec u+\beta\vec u$
 
-## Vector spaces
+# Vector spaces
 
-A *vector space* is a collection of vector elements  which can be added together
-or be multiplied by scalars. Of the properties of a vector space, closure
-properties guarantee that addition or scalar multiplication return a value that
-is also a member of the vector space. A vector space must have these two
-properties to be considered a vector space.
+A *vector space* $(V,+,\lambda*)$ is a collection of vector elements  which can
+be added together or be multiplied by scalars. Of the properties of a vector
+space, closure properties guarantee that addition or scalar multiplication
+return a value that is also a member of the vector space. A vector space must
+have these two properties to be considered a vector space.
 
 -- | --
+Additive commutativity |
 Closure of addition | $\vec u+\vec v\in V$
 Closure of scalar multiplication | $\alpha\vec v\in V$
 
-### Basis, span and dependence
+However, what we don't have inherently in a vector space is multiplication
+between elements.
+Instead the dot-product may or may-not be defined (and cross-product).
+
+<!--
+   -$$
+   -\begin{gathered}
+   -  x\cdot y\in\R \\
+   -  x\times y\in\R^n \\
+   -  xy^T\in\R^{n\times n}
+   -\end{gathered}
+   -$$
+   -->
+
+If we define such an element based multiplication it would necessitate
+the following
+
+$$
+  \begin{bmatrix}a\\b\end{bmatrix} \Leftrightarrow p(x)=a+bx \\
+  \begin{bmatrix}c\\d\end{bmatrix} \Leftrightarrow q(x)=c+dx \\
+  %
+  \begin{bmatrix}a\\b\end{bmatrix}
+  \begin{bmatrix}c\\d\end{bmatrix}
+  = \begin{bmatrix}ac\\bc\end{bmatrix} \Leftrightarrow
+  p(x)q(x)=(ac)+(bd)x
+$$
+
+Clearly it does not make sense for $p(x)q(x)=(a+bx)(c+dx)=(ac)+(bd)x$.
+
+## Products of Vector Spaces
+
+Suppose $V_1,\ldots,V_m$ are all vector spaces over a field $\F$.
+
+1. The *product* $V_1\times\cdots\times V_m$ is defined by
+$$
+V_1\times\cdots\times V_m
+= \{(v_1,\ldots,v_m):(v_1\in V_1),\ldots,(v_m\in V_m)\}
+$$
+1. Addition on $V_1\times\cdots\times V_m$ is defined by
+$$
+(u_1,\ldots,u_m)+(v_1,\ldots,v_m)=(u_1+v_1,\ldots,u_m+v_m)
+$$
+1. Scalar multiplication on $V_1\times\cdots\times V_m$ is defined by
+$$
+\lambda(v_1,\ldots,v_m)=(\lambda v_1,\ldots,\lambda v_m)
+$$
+
+Based on these definitions we can prove that the product of vector spaces is
+a vector space.
+
+{% include theorem.html text="Theorem: Product of vector spaces is a vector space" content="
+Suppose $V_1,\ldots,V_m$ are vector spaces over $\F$.
+Then $V_1\times\cdots\times V_m$ is a vector space over $\F$.
+"%}
+
+### Examples
+
+- A basis for $\calP_2(\F)$ is given by $\{1,z,z^2\}$
+- A basis for $\F$ is given by $\{(1,0,0),(0,1,0),(0,0,1)\}$
+- Elements in $\calP_2(\F)\times\F^3$ are of the form $p(z)\in\calP_2(\F),v\in\F^3)$
+- We can build a basis:
+
+$$
+\left\{
+\begin{matrix}
+(1,(0,0,0)) & (z,(0,0,0)), & (z^2,(0,0,0)) \\
+(0,(1,0,0)) & (0,(0,1,0)), & (0,(0,0,1))
+\end{matrix}
+\right\}
+$$
+
+{% include theorem.html text="Theorem: Dimension of a product is the sum of dimensions" content="
+Suppose $V_1,\ldots,V_m$ are finite-dimensional vector spaces.
+Then $V_1\timesV_m$
+
+...
+"%}
+
+
+## Basis, span and dependence
 
 A *span* is the set of all possible vectors from a linear combination of
 vectors. Two non-parallel vectors have the span of all vectors within the plane
@@ -490,8 +570,11 @@ And repeat until $j=n$. The final $B$ list still spans $V$ and contains only
 linear independent vectors, leaving us with a basis.
 "%}
 
+## Inner product spaces
 
-## Transformations
+TODO!
+
+# Transformations
 
 Given T, a linear transformation of vector v from vector space V into W,
 the *kernel* is a subset of V where $T(\vec v)=0$. Since $\text{kern}(t)$ is
@@ -552,7 +635,7 @@ Then the matrix A (of T) also must have an inverse A^{-1}.
 
 -->
 
-### Change in basis
+## Change in basis
 
 Given a vector $\vec v$ defined by it's coordinates $\langle v_1,v_2\rangle$
 within the standard basis $S=\langle u_1,u_2\rangle=\langle e_i,e_j\rangle$,
@@ -625,27 +708,27 @@ with coefficients in $\F$ and degree at most $m$.
 
 # Linear Maps
 
-$\L$
+$\calL$
 
 <!--- The zero map -->
-- Identity $I\in\L(V,V)$ defined by
+- Identity $I\in\calL(V,V)$ defined by
 
 $$
 Iv\equiv I(v)=v
 $$
 
-- Differentiation $D\in\L(\P(\F),\P(\F))$ defined by
+- Differentiation $D\in\calL(\P(\F),\P(\F))$ defined by
 
 $$
 $$
 
-- Integration $T\in\L(\P(\R),\R)$ defined by
+- Integration $T\in\calL(\P(\R),\R)$ defined by
 
 $$
 T_p\equiv T(p)=\int_0^1 p(x)~dx
 $$
 
-- Backward shift $T\in\L(\F^\infty,\F^\infty)$ (even though the indexes are
+- Backward shift $T\in\calL(\F^\infty,\F^\infty)$ (even though the indexes are
 shifted forward) defined by
 
 $$
@@ -656,7 +739,7 @@ $$
 
 ### $\R^3\to\R^2$
 
-Define $T\in\L(\R^3,\R^2)$ as
+Define $T\in\calL(\R^3,\R^2)$ as
 
 $$
 T(x,y,z)=(x-y+z,\pi x+e^\pi y+z)
@@ -664,13 +747,14 @@ $$
 
 ### $\F^n\to\F^m$
 
-Here $T\in\L(\F^n,\F^m)$ is defined as
+Here $T\in\calL(\F^n,\F^m)$ is defined as
 
 $$
 T(x_1,\ldots,x_n)
 = (A_{1,1}x_1+\cdots+A_{1,n}x_n,\ldots,A_{m,1}x_1+\cdots+A_{m,n}x_n)
-$$ 
+$$
 
 For scalars $A_{i,j}$ and $x_i$.
 Every linear map $\F^n\to\F^m$ can be written in this form.
+
 
