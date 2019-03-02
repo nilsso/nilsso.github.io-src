@@ -27,14 +27,15 @@ def halfspace(a, b, c, d, point):
     return (a, b, c, d, lt)
 
 def halfspacestring(a, b, c, d, lt):
+    if not lt:
+        a, b, c, d = -np.array([a, b, c, d])
     xs, ys, zs = '-' if a<0 else '', '-' if b<0 else '+', '-' if c<0 else '+'
     v = (
             '-' if a<0 else '',  str(np.abs(a)) if np.abs(a)>1 else '',
             '-' if b<0 else '+', str(np.abs(b)) if np.abs(b)>1 else '',
-            '-' if c<0 else '+', str(np.abs(c)) if np.abs(c)>1 else '',
-            '<=' if lt else '>=', d
+            '-' if c<0 else '+', str(np.abs(c)) if np.abs(c)>1 else '', d
             )
-    return '%s%sx %s %sy %s %sz %s %s' % v
+    return '%s%sx %s %sy %s %sz <= %s' % v
 
 for label, facet, point in zip(labels, facets, [c,c,b,b,a,a]):
     ab, bc = hyperplanevectors(facet)
