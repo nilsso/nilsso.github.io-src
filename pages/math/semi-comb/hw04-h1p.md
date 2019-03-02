@@ -13,7 +13,7 @@ width: 100vw;
 height: 100vh;
 }
 </style>
-<div id='three-hw04' class='polytope'></div>
+<div id='h1p' class='polytope'></div>
 <script>
   var simplex = [
     new THREE.Vector3( 1,0,0 ),
@@ -22,5 +22,5 @@ height: 100vh;
     new THREE.Vector3( 0,0,1 ),
     new THREE.Vector3( 0,0,-1 )
   ];
-  polytope( document.getElementById( 'three-hw04' ), simplex, 35, {{ page.axis }});
+  polytope( document.getElementById( 'h1p' ), simplex, 35, {{ page.axis }});
 </script>
