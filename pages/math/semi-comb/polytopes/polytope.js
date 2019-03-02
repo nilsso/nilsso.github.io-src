@@ -44,7 +44,7 @@ function hslToRgb(h, s, l) {
   return [ r * 255, g * 255, b * 255 ];
 }
 
-function polytope( container, vertices, fov, axes, rainbow ) {
+function polytope( container, vertices, fov, axes, spin, rainbow ) {
   var group, camera, scene, light, renderer, mesh, w, h;
   var hue = 0, hueDelta = 0.01;
 
@@ -89,7 +89,7 @@ function polytope( container, vertices, fov, axes, rainbow ) {
     group = new THREE.Group();
     scene.add(group);
 
-    // Axis
+    // Axes
     if (axes) {
       group.add( new THREE.AxesHelper( 20 ) );
     }
@@ -149,7 +149,9 @@ function polytope( container, vertices, fov, axes, rainbow ) {
 
   function animate() {
     requestAnimationFrame( animate );
-    group.rotation.y += 0.005;
+    if (spin) {
+      group.rotation.y += 0.005;
+    }
     if (rainbow) {
       color = '0x' + hslToRgb( hue, 1, 0.5 ).map(
         x => Math.floor( x ).toString( 16 ).padStart( 2, '0' )).join( '' );

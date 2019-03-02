@@ -1,6 +1,8 @@
 ---
 layout: none
-rainbow: true
+axes: true
+spin: false
+rainbow: false
 ---
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
 <script src='{{ site.url }}/assets/js/three/modules/QuickHull.js'></script>
@@ -22,5 +24,8 @@ height: 100vh;
     new THREE.Vector3( 0,0,1 ),
     new THREE.Vector3( 0,0,-1 )
   ];
-  polytope( document.getElementById( 'h1p' ), simplex, 35, {{ page.axis }});
+  //polytope( document.getElementById( 'h1p' ), simplex, 35,
+  //    {{ page.axis }}, {{ page.spin }}, {{ page.rainbow }});
+  polytope( document.getElementById( 'h1p' ), simplex, 35,
+      {{ page.axes }}, {{ page.spin }}, {{ page.rainbow }} );
 </script>
