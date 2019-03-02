@@ -328,7 +328,7 @@ $$
 \calP
 = C_d
 = \conv\{(a_1,\ldots,a_d):a_1\in\{-1,1\}\}\subseteq\R^d
-= \conv\{{\{-1,1\}}^d\}
+= \conv\{ {\{-1,1\}}^d\}
 $$
 
 Where ${\{-1,1\}}^d$ is the $\R^d$ cartesian product

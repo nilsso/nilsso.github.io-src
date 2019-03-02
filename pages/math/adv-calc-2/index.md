@@ -283,3 +283,27 @@ $$
 \lim_{n\to\infty}a_n\ne 0\Rightarrow\sum_{k=n_0}^\infty a_k\text{ diverges}
 $$
 
+---
+
+{% include theorem.html text="Defintion: Alternating series" content="
+A series of the form
+$$
+\sum_{n=1}^\infty(-1)^{n-1}a_n=a_1-a_2+\cdots\text{ or }
+\sum_{n=1}^\infty(-1)^n a_n=-a_1=a_2-\cdots\text{ or }
+$$
+Where $\forall n\in\N$, $a_n\ge 0$ is called an alternating series.
+"%}
+
+{% include theorem.html text="Theorem" content="
+Assume $\forall n\in\N$, $a_n\ge 0$ and $a_n\ge a_{n+1}$ (sequence decreasing).
+
+If $\lim_{n\to\infty}a_n=0$ then $\sum_{n=1}^\infty a_n$ converges conditinally.
+
+If we denote $S=\sum_{n=1}^\infty(-a)^{n-1}a_n$ and
+$S_n=\sum_{k=1}^n(-1)^{k-1}a_k$ its n-th partial sum, we have:
+
+- $\forall k\in\N$, $S_{2k}\le S\le S_{2k+1}$, and
+  $S_{2k+2}\le S\le S_{2k+1}$, and
+  $\forall n\in\N$, $\abs{S-S_n}\le a_{n+1}$.
+"%}
+
