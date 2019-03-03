@@ -18,11 +18,12 @@ height: 100vh;
 <div id='h1pd' class='polytope'></div>
 <script>
   var simplex = [
-    new THREE.Vector3( 1,0,0 ),
-    new THREE.Vector3( 0,1,0 ),
-    new THREE.Vector3( -1,-1,0 ),
-    new THREE.Vector3( 0,0,1 ),
-    new THREE.Vector3( 0,0,-1 )
+    new THREE.Vector3(1,1,1),
+    new THREE.Vector3(1,1,-1),
+    new THREE.Vector3(1,-2,1),
+    new THREE.Vector3(1,-2,-1),
+    new THREE.Vector3(-2,1,1),
+    new THREE.Vector3(-2,1,-1)
   ];
   polytope( document.getElementById( 'h1pd' ), simplex, 35,
       {{ page.axis }}, {{ page.spin }}, {{ page.rainbow }});
