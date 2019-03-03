@@ -11,8 +11,8 @@ rainbow: false
 <script src='polytopes/polytope.js'></script>
 <style>
 .polytope {
-width: 100vw;
-height: 100vh;
+width: 100%;
+height: 100%;
 }
 </style>
 <div id='h1pd' class='polytope'></div>
