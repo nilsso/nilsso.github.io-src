@@ -25,6 +25,6 @@ height: 100vh;
     new THREE.Vector3(-2,1,1),
     new THREE.Vector3(-2,1,-1)
   ];
-  polytope( document.getElementById( 'h1pd' ), simplex, 35,
+  polytope( document.getElementById( 'h1pd' ), simplex, 45,
       {{ page.axes }}, {{ page.spin }}, {{ page.rainbow }} );
 </script>
