@@ -15,15 +15,14 @@ width: 100%;
 height: 100%;
 }
 </style>
-<div id='h1p' class='polytope'></div>
+<div id='thing' class='polytope'></div>
 <script>
   var simplex = [
-    new THREE.Vector3( 1,0,0 ),
-    new THREE.Vector3( 0,1,0 ),
-    new THREE.Vector3( -1,-1,0 ),
-    new THREE.Vector3( 0,0,1 ),
-    new THREE.Vector3( 0,0,-1 )
+    new THREE.Vector3(-1,-1,-1),
+    new THREE.Vector3(1,0,0),
+    new THREE.Vector3(0,1,0),
+    new THREE.Vector3(0,0,1),
   ];
-  polytope( document.getElementById( 'h1p' ), simplex, 35,
+  polytope( document.getElementById( 'thing' ), simplex, 35,
       {{ page.axes }}, {{ page.spin }}, {{ page.rainbow }} );
 </script>
