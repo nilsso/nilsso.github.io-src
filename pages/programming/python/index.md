@@ -25,6 +25,40 @@ and time.
 
 ---
 
+# Setup
+
+Setting up Python and Jupyter can be tricky depending on your operating system
+and yourfamiliarity with software packages in general. Although the prospect of
+switching to a Linux system may sound a bit daunting, in reality it can be
+significantly easier than trying to get things set up on Windows
+(but MacOS feels the same as Linux). So consider running a Linux distribution
+like Antegros under a virtual machine on Windows.
+
+## Linux
+
+### Arch (Antegros)
+
+```bash
+pacman -S python2 python2-pip
+```
+
+Now we have python and the python package manager (equivalent to pacman)
+installed.
+
+```bash
+pip install pygments
+```
+
+Now its important to note that pacman *will want* to controll the installation
+of a lot of python packages, in particular will be the pygments package we just
+install via `pip`.
+
+```bash
+pacman -S --assume-install python-pygments jupyter-notebook
+```
+
+---
+
 # First, some programming terms...
 
 **Function** A function is often like a black box to which we give some
