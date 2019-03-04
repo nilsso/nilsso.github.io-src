@@ -68,9 +68,11 @@ function polytope( container, vertices, fov, axes, spin, rainbow ) {
 
     // Camera
     var a = 3;
+    //var W = 20, H = 10;
+    //camera = new THREE.OrthographicCamera(W/-2,W/2,H/2,H/-2,1,100);
     camera = new THREE.PerspectiveCamera( fov, w / h, 1, a*100 );
-    camera.position.set( a*3, a*3, a*3 );
-    //camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+    camera.position.set( a*a, a*a, a*a );
+    camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 
     // Controls
