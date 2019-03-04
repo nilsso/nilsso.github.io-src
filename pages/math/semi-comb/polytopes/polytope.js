@@ -44,7 +44,7 @@ function hslToRgb(h, s, l) {
   return [ r * 255, g * 255, b * 255 ];
 }
 
-function polytope( container, vertices, fov, axes, spin, rainbow ) {
+function polytope( container, vertices, s, axes, spin, rainbow ) {
   var group, camera, scene, light, renderer, mesh, w, h;
   var hue = 0, hueDelta = 0.01;
 
@@ -70,8 +70,8 @@ function polytope( container, vertices, fov, axes, spin, rainbow ) {
     var a = 3;
     //var W = 20, H = 10;
     //camera = new THREE.OrthographicCamera(W/-2,W/2,H/2,H/-2,1,100);
-    camera = new THREE.PerspectiveCamera( fov, w / h, 1, a*100 );
-    camera.position.set( a*a, a*a, a*a );
+    camera = new THREE.PerspectiveCamera( 45, w / h, 1, a*100 );
+    camera.position.set( a*s, a*s, a*s );
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 

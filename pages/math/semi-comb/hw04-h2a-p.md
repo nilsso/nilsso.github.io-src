@@ -1,7 +1,7 @@
 ---
 layout: none
 axes: true
-spin: false
+spin: true
 rainbow: false
 ---
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
@@ -22,12 +22,7 @@ height: 100%;
     new THREE.Vector3(1,0,0),
     new THREE.Vector3(0,1,0),
     new THREE.Vector3(0,0,1)
-
-    //new THREE.Vector3(1,1,1),
-    //new THREE.Vector3(-1,1,1),
-    //new THREE.Vector3(1,-1,1),
-    //new THREE.Vector3(1,1,-1)
   ];
-  polytope( document.getElementById( 'polytope' ), simplex, 45,
+  polytope( document.getElementById( 'polytope' ), simplex, 3,
       {{ page.axes }}, {{ page.spin }}, {{ page.rainbow }} );
 </script>

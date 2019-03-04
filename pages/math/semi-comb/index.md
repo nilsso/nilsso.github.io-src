@@ -2,8 +2,9 @@
 title: Semigroups and Combinatorics
 anchor: True
 math: True
-three: assets/js/three/examples/js
-axis: True
+axes: true
+spin: true
+rainbow: false
 ---
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
 <script src='{{ site.url }}/assets/js/three/modules/QuickHull.js'></script>
