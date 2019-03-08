@@ -119,6 +119,7 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     vertexMaterial = new THREE.PointsMaterial( {
       color: 0x0080ff,
       map: texture,
+      alphaTest: 0.5,
       size: 5,
       sizeAttenuation: false
     } );
