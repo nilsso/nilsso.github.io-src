@@ -116,11 +116,9 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     } );
 
     // Vertex material
-    var vertexMaterial = new THREE.PointsMaterial( {
+    var vertexMaterial = new THREE.SpriteMaterial( {
       color: 0x0080ff,
       map: texture,
-      size: 1,
-      alphaTest: 0.5,
       sizeAttenuation: false
     } );
 
