@@ -120,7 +120,8 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
       color: 0x0080ff,
       map: texture,
       size: 1,
-      alphaTest: 0.5
+      alphaTest: 0.5,
+      sizeAttenuation: false
     } );
 
     // Add meshes
