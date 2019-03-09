@@ -72,11 +72,9 @@ function CubeGeometry(a, b) {
 // contains an existing Geometry object.
 // @param mesh The contained object
 function EnclosingCuboidGeometry(mesh) {
-  var m = mesh.vertices[0].clone();
-  var M = mesh.vertices[0].clone();
-  mesh.vertices.slice(1).forEach( v => m.min(v) );
-  mesh.vertices.slice(1).forEach( v => M.max(v) );
-  return CubeGeometry(m, M);
+  var a = mesh.vertices[0].clone(), b = mesh.vertices[0].clone();
+  mesh.vertices.slice(1).forEach( v => { a.min(v); b.max(v); } );
+  return CubeGeometry(a, b);
 }
 
 function polytope( container, vertices, s, axes, spin, rainbow ) {
