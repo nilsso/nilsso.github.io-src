@@ -44,6 +44,41 @@ function hslToRgb(h, s, l) {
   return [ r * 255, g * 255, b * 255 ];
 }
 
+// Cartesian product and helper functions
+// https://stackoverflow.com/questions/12303989/\
+//   cartesian-product-of-multiple-arrays-in-javascript
+const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
+const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
+
+// Zip function
+const zip = (a, b) => a.map( (e, i) => [ e, b[i] ] );
+
+// CuboidGeometry can be used to generate a cuboidal convex hull for a pair of 
+// diagonally opposite 3D points.
+// @param a First 3D point
+// @param b Second 3D point
+// @return Cuboidal Geometry object
+function CubeGeometry(a, b) {
+  var [ x, y, z ] = zip( a.toArray(), b.toArray() );
+  var vertices = cartesian(x, y, z).map(function([ x, y, z ] = p) {
+    return new THREE.Vector3(x, y, z);
+  });
+  var geometry = new THREE.Geometry();
+  geometry.setFromPoints( vertices );
+  return new THREE.ConvexGeometry( geometry.vertices );
+}
+
+// EnclosingCuboidGeometry can be used to generate a cuboidal convex hull which
+// contains an existing Geometry object.
+// @param mesh The contained object
+function EnclosingCuboidGeometry(mesh) {
+  var m = mesh.vertices[0].clone();
+  var M = mesh.vertices[0].clone();
+  mesh.vertices.slice(1).forEach( v => m.min(v) );
+  mesh.vertices.slice(1).forEach( v => M.max(v) );
+  return CubeGeometry(m, M);
+}
+
 function polytope( container, vertices, s, axes, spin, rainbow ) {
   var group, camera, scene, light, renderer, mesh, w, h;
   var hue = 0, hueDelta = 0.01;
@@ -67,11 +102,10 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     scene.background = new THREE.Color( 0xffffff );
 
     // Camera
-    var a = 3;
     //var W = 20, H = 10;
     //camera = new THREE.OrthographicCamera(W/-2,W/2,H/2,H/-2,1,100);
-    camera = new THREE.PerspectiveCamera( 45, w / h, 1, a*100 );
-    camera.position.set( a*s, a*s, a*s );
+    camera = new THREE.PerspectiveCamera( 45, w / h, 1, 100 );
+    camera.position.set( s, s, s );
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 
@@ -107,7 +141,6 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     //var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
 
     // Mesh geometry
-    geometry.scale( a, a, a );
     meshGeometry = new THREE.ConvexGeometry( geometry.vertices );
 
     // Mesh material
