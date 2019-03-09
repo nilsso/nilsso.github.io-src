@@ -104,6 +104,8 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     var geometry = new THREE.Geometry();
     geometry.setFromPoints( vertices );
 
+    //var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
+
     // Mesh geometry
     geometry.scale( a, a, a );
     meshGeometry = new THREE.ConvexGeometry( geometry.vertices );
