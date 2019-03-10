@@ -17,6 +17,7 @@ layout: none
       <h1>Dilation: <label id="dilationLabel" for="dilation"></label></h1>
       <input type="range" id="dilation" name="dilation" min="1" max="10" value="1">
       <button id="rebuild">Rebuild</button>
+      <button id="rando">Random!</button>
     </div>
     <div id="right-controls">
       <div>
@@ -37,8 +38,8 @@ layout: none
         <label for="verticesDefining">Defining</label>
       </div>
       <div>
-        <input type="radio" id="verticesEhrhart" name="renderVertices">
-        <label for="verticesEhrhart">Ehrhart</label>
+        <input type="radio" id="verticesLattice" name="renderVertices">
+        <label for="verticesLattice">Lattice</label>
       </div>
       <textarea id="data" rows="4" title="Bounding latice points&#013;Interior latice points" readonly></textarea>
     </div>

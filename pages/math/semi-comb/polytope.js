@@ -1,5 +1,5 @@
 var selShape, txtEdit, txtData, rngDilation, lblDilation;
-var btnRebuild, chkSpin, chkAxis, radNone, radDef, radEhrhart;
+var btnRebuild, btnRando, chkSpin, chkAxis, radNone, radDef, radLattice;
 var renderer, scene, camera, controls, group, meshMat;
 var pointMatA, pointMatB;
 var axis, meshA, meshB, geo;
@@ -13,7 +13,8 @@ var shapes = {
   simplex: '0 0 0\n1 0 0\n0 1 0\n0 0 1',
   cube: '0 0 0\n1 0 0\n0 1 0\n1 1 0\n0 0 1\n1 0 1\n0 1 1\n1 1 1',
   cube2: '-1 -1 -1\n 1 -1 -1\n-1  1 -1\n 1  1 -1\n-1 -1  1\n 1 -1  1\n-1  1  1\n 1  1  1',
-  octohedron: '-1  0  0\n 1  0  0\n 0 -1  0\n 0  1  0\n 0  0 -1\n 0  0  1'
+  octohedron: '-1  0  0\n 1  0  0\n 0 -1  0\n 0  1  0\n 0  0 -1\n 0  0  1',
+  ['HW6 H1']: '0 0 0\n0 0 1\n0 1 0\n0 1 1\n1 0 0\n1 1 0'
 };
 
 // Cartesian product and helper functions
@@ -32,10 +33,21 @@ function* range(start, end) {
   }
 }
 
-// EhrhartMeshes can be used to return a set of three.js Points object of
+// Random integer in range
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function randomPoints() {
+  return rando;
+}
+
+// LatticeMeshes can be used to return a set of three.js Points object of
 // the enclosing lattice points and interior lattice points of an existing
 // mesh object.
-function EhrhartMeshes(mesh) {
+function LatticeMeshes(mesh) {
   // Construct hyperplanes
   mesh.computeFaceNormals();
   var hyperplanes = mesh.faces.map(function(face) {
@@ -90,7 +102,7 @@ function updatePointsVisibility() {
   if (radDef.prop('checked')) {
     pointsDef.visible = true;
   }
-  if (radEhrhart.prop('checked')) {
+  if (radLattice.prop('checked')) {
     pointsBound.visible = true;
     pointsInner.visible = true;
   }
@@ -119,7 +131,7 @@ function polytopeRebuild() {
   vertsDef.scale(dilation, dilation, dilation);
   geo = new THREE.ConvexGeometry(vertsDef.vertices);
 
-  var [bound, inner] = [...EhrhartMeshes(geo)];
+  var [bound, inner] = [...LatticeMeshes(geo)];
   vertsBound = new THREE.Geometry();
   vertsBound.setFromPoints(bound);
 
@@ -168,7 +180,7 @@ function polytopeInit() {
   document.body.appendChild(renderer.domElement);
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff);
+  scene.background = new THREE.Color(0x333333);
 
   camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
   camera.position.set(15, 20, 30);
@@ -234,11 +246,12 @@ $(function() {
   rngDilation = $('#dilation');
   lblDilation = $('#dilationLabel');
   btnRebuild = $('#rebuild');
+  btnRando = $('#rando');
   chkAxis = $('#axis');
   chkSpin = $('#spin');
   radNone = $('#verticesNone');
   radDef = $('#verticesDefining');
-  radEhrhart = $('#verticesEhrhart');
+  radLattice = $('#verticesLattice');
 
   // Add default shape options
   $.each(shapes, function(k, v) {
@@ -253,9 +266,21 @@ $(function() {
 
   rngDilation.on('input', function() {
     lblDilation.text($(this).val());
+    polytopeRebuild();
   });
 
   btnRebuild.click(polytopeRebuild);
+
+  btnRando.click(function() {
+    var r = [...range(0, 3*getRandomInt(4, 16)-1)].map(function(i) {
+      var n = math.random()*2 - 1;
+      if (math.round(math.random()))
+        n = math.round(math.random()*2 - 1);
+      return String(n);
+    });
+    txtEdit.val(math.reshape(r, [r.length/3, 3]).map(r => r.join(' ')).join('\n'));
+    polytopeRebuild();
+  });
 
   chkAxis.change(function() {
     axis.visible = $(this).prop('checked');
@@ -267,7 +292,7 @@ $(function() {
 
   radNone.change(updatePointsVisibility);
   radDef.change(updatePointsVisibility);
-  radEhrhart.change(updatePointsVisibility);
+  radLattice.change(updatePointsVisibility);
 
   // Initialize
   polytopeInit();
