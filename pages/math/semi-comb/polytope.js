@@ -52,7 +52,7 @@ function HyperplaneDescription(mesh) {
     var b = n.dot(p);
     /// Experimental: Turn unit normal into integer component normal
     if (b) {
-      var f = math.ceil(b)/b;
+      var f = math.abs(1/b);
       //n.multiplyScalar(f);
       n.x = math.round(f*n.x);
       n.y = math.round(f*n.y);
