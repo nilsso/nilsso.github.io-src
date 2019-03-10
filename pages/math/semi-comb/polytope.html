@@ -11,12 +11,15 @@ layout: none
   </head>
   <body>
     <div id="left-controls">
-      <select id="shape"></select>
+      <select id="shape">
+        {% include_relative polytope-shapes.html %}
+      </select>
       <h1>Vertices</h1>
-      <textarea id="vertices" rows="4"></textarea>
+      <textarea id="vertices" rows="4" cols="10"></textarea>
       <h1>Dilation: <label id="dilationLabel" for="dilation"></label></h1>
       <input type="range" id="dilation" name="dilation" min="1" max="10" value="1">
       <button id="rebuild">Rebuild</button>
+      <button id="dual">Dual</button>
       <button id="rando">Random!</button>
     </div>
     <div id="right-controls">

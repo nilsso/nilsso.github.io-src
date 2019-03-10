@@ -4,11 +4,11 @@
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   font-size: 10pt;
   color: white;
-  overflow: hidden;
 }
 
 body {
   width: 100%;
+  overflow: hidden;
 }
 
 body * {

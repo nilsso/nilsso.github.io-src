@@ -1,5 +1,6 @@
 var selShape, txtEdit, txtData, rngDilation, lblDilation;
-var btnRebuild, btnRando, chkSpin, chkAxis, radNone, radDef, radLattice;
+var btnRebuild, btnRando, btnDual;
+var chkSpin, chkAxis, radNone, radDef, radLattice;
 var renderer, scene, camera, controls, group, meshMat;
 var pointMatA, pointMatB;
 var axis, meshA, meshB, geo;
@@ -10,11 +11,6 @@ var dilation;
 var spin, spinSpeed = 0.005;
 
 var shapes = {
-  simplex: '0 0 0\n1 0 0\n0 1 0\n0 0 1',
-  cube: '0 0 0\n1 0 0\n0 1 0\n1 1 0\n0 0 1\n1 0 1\n0 1 1\n1 1 1',
-  cube2: '-1 -1 -1\n 1 -1 -1\n-1  1 -1\n 1  1 -1\n-1 -1  1\n 1 -1  1\n-1  1  1\n 1  1  1',
-  octohedron: '-1  0  0\n 1  0  0\n 0 -1  0\n 0  1  0\n 0  0 -1\n 0  0  1',
-  ['HW6 H1']: '0 0 0\n0 0 1\n0 1 0\n0 1 1\n1 0 0\n1 1 0'
 };
 
 // Cartesian product and helper functions
@@ -44,17 +40,25 @@ function randomPoints() {
   return rando;
 }
 
-// LatticeMeshes can be used to return a set of three.js Points object of
-// the enclosing lattice points and interior lattice points of an existing
-// mesh object.
-function LatticeMeshes(mesh) {
-  // Construct hyperplanes
+// HyperplaneDescription can be used to return an array of the A matrix and b
+// column matrix (both type Array) of the hyperplane description for an existing
+// mesh.
+function HyperplaneDescription(mesh) {
   mesh.computeFaceNormals();
   var hyperplanes = mesh.faces.map(function(face) {
     // Ax=b (hyperplane description)
     var n = face.normal;
     var p = mesh.vertices[face.a];
     var b = n.dot(p);
+    /// Experimental: Turn unit normal into integer component normal
+    //if (b) {
+      //var f = math.ceil(b)/b;
+      //n.multiplyScalar(f);
+      //n.x = math.round(f*n.x);
+      //n.y = math.round(f*n.y);
+      //n.z = math.round(f*n.z);
+      //b = f*b;
+    //}
     var faceVertexIndices = [ face.a, face.b, face.c ];
     // Find vertex not on the hyperplane
     var disjointVertex;
@@ -72,9 +76,34 @@ function LatticeMeshes(mesh) {
     }
     return [ n.toArray(), b ];
   });
+  var Aarr = hyperplanes.map(h => h[0]);
+  var barr = hyperplanes.map(h => h[1]);
+  // Eliminate duplicate rows
+  // (since every square face has two triangular hyperplanes)
+  for (var i = 0; i < Aarr.length-1; ++i) {
+    for (var j = i+1; j < Aarr.length; ++j) {
+      if (math.equal(Aarr[i], Aarr[j]).every(t => t)) {
+        Aarr.pop(j);
+        barr.pop(j);
+      }
+    }
+  }
+  //for (i = 0; i < Aarr.length; ++i) {
+      //if (barr[i] == 0)
+        //return a;
+      //return a/barr[i];
+    //}));
+  //}
+  var A = Aarr;
+  var b = barr;
+  return [A, b];
+}
 
-  var A = math.matrix(hyperplanes.map(h => h[0]));
-  var b = math.matrix(hyperplanes.map(h => h[1]));
+// LatticeMeshes can be used to return a set of three.js Points object of
+// the enclosing lattice points and interior lattice points of an existing
+// mesh object.
+function LatticeMeshes(mesh) {
+  var [A, b] = HyperplaneDescription(mesh);
 
   var boundingVertices = [];
   var interiorVertices = [];
@@ -86,9 +115,9 @@ function LatticeMeshes(mesh) {
   var y = [...range( vMin.y, vMax.y )];
   var z = [...range( vMin.z, vMax.z )];
   cartesian( x, y, z ).forEach(function(p) {
-    var Ax = math.multiply(A, math.matrix(p));
-    if (math.smallerEq(Ax, b).toArray().every(v => v)) {
-      if (math.smaller(Ax, b).toArray().every(v => v))
+    var Ax = math.multiply(A, p);
+    if (math.smallerEq(Ax, b).every(v => v)) {
+      if (math.smaller(Ax, b).every(v => v))
         interiorVertices.push(new THREE.Vector3(...p));
       else
         boundingVertices.push(new THREE.Vector3(...p));
@@ -160,13 +189,12 @@ function polytopeRebuild() {
   points.forEach(p => group.add(p));
   updatePointsVisibility();
 
-  var v = geo.vertices[0].clone();
-  geo.vertices.forEach(u => v.max(u));
-  var rad = v.length()*3.33;
+  var rad = geo.vertices.reduce((a, b) => math.max(a, b.length()), 0)*3.33;
   camera.fov = rad;
   camera.updateProjectionMatrix();
 
   txtData.text(
+    ' #V: '+geo.vertices.length+'\n'+
     'BLP: '+bound.length+'\n'+
     'ILP: '+inner.length);
 }
@@ -180,7 +208,7 @@ function polytopeInit() {
   document.body.appendChild(renderer.domElement);
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x333333);
+  scene.background = new THREE.Color(0x000000);
 
   camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
   camera.position.set(15, 20, 30);
@@ -246,6 +274,7 @@ $(function() {
   rngDilation = $('#dilation');
   lblDilation = $('#dilationLabel');
   btnRebuild = $('#rebuild');
+  btnDual = $('#dual');
   btnRando = $('#rando');
   chkAxis = $('#axis');
   chkSpin = $('#spin');
@@ -270,6 +299,12 @@ $(function() {
   });
 
   btnRebuild.click(polytopeRebuild);
+
+  btnDual.click(function() {
+    var [A, b] = HyperplaneDescription(geo);
+    txtEdit.val(A.map(r => r.join(' ')).join('\n'));
+    polytopeRebuild();
+  });
 
   btnRando.click(function() {
     var r = [...range(0, 3*getRandomInt(4, 16)-1)].map(function(i) {
