@@ -188,7 +188,7 @@ function polytopeInit() {
 
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableKeys = false;
-  controls.enableZoom = false;
+  //controls.enableZoom = false;
 
   scene.add(new THREE.AmbientLight(0x222222));
   camera.add(new THREE.PointLight(0xffffff, 1));
@@ -211,7 +211,7 @@ function polytopeInit() {
     color: 0x0080ff,
     map: texture,
     alphaTest: 0.5,
-    size: 2
+    size: 1,
   });
   pointMatB = pointMatA.clone();
   pointMatB.color = new THREE.Color(0xff8000);
