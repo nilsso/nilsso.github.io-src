@@ -319,7 +319,7 @@ $$
 \calP=S_d=\conv\{(0,0),\vec e_1,\ldots,\vec e_d\}\subseteq\R^d
 $$
 
-{% include_relative polytopes/simplex.html %}
+{% include_relative includes/simplex.html %}
 
 ### Cube
 
@@ -334,7 +334,7 @@ $$
 
 Where ${\{-1,1\}}^d$ is the $\R^d$ cartesian product
 
-{% include_relative polytopes/cube.html %}
+{% include_relative includes/cube.html %}
 
 ### Octohedron
 
@@ -346,5 +346,5 @@ $$
 \calP=O_d=\conv\{\pm\vec e_1,\ldots,\pm\vec e_d\}\subseteq\R^d
 $$
 
-{% include_relative polytopes/octohedron.html %}
+{% include_relative includes/octohedron.html %}
 

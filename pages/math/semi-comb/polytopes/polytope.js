@@ -87,6 +87,9 @@ function EnclosingCuboidGeometry(mesh) {
   return CubeGeometry(a, b);
 }
 
+// EhrhartMeshes can be used to return a set of three.js Points object of
+// the enclosing lattice points and interior lattice points of an existing
+// mesh object.
 function EhrhartMeshes(mesh) {
   // Construct hyperplanes
   mesh.computeFaceNormals();
@@ -143,8 +146,13 @@ function EhrhartMeshes(mesh) {
   return [boundingVertexMesh, interiorVertexMesh];
 }
 
-function polytope( container, vertices, s,
-  axes, spin, rainbow, interiorPoints, dilation ) {
+function polytope(
+  container, vertices, distance,
+  axes=false,
+  spin=false,
+  rainbow=false,
+  interiorPoints=false,
+  dilation=1 ) {
   var group, camera, scene, light, renderer, mesh, w, h;
   var hue = 0, hueDelta = 0.01;
 
@@ -171,7 +179,7 @@ function polytope( container, vertices, s,
     //var W = 20, H = 10;
     //camera = new THREE.OrthographicCamera(W/-2,W/2,H/2,H/-2,1,100);
     camera = new THREE.PerspectiveCamera( 45, w / h, 1, 100 );
-    camera.position.set( s*a, s*a, s*a );
+    camera.position.set( distance*a, distance*a, distance*a );
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 
