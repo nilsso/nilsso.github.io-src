@@ -53,7 +53,17 @@ const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
 // Zip function
 const zip = (a, b) => a.map( (e, i) => [ e, b[i] ] );
 
-// CuboidGeometry can be used to generate a cuboidal convex hull for a pair of 
+// Range function
+function* range(start, end) {
+    for (let i = start; i <= end; i++) {
+        yield i;
+    }
+}
+
+//var points = new THREE.Points(geometry, pointMaterial);
+//group.add(points);
+
+// CuboidGeometry can be used to generate a cuboidal convex hull for a pair of
 // diagonally opposite 3D points.
 // @param a First 3D point
 // @param b Second 3D point
@@ -77,7 +87,64 @@ function EnclosingCuboidGeometry(mesh) {
   return CubeGeometry(a, b);
 }
 
-function polytope( container, vertices, s, axes, spin, rainbow ) {
+function EhrhartMeshes(mesh) {
+  // Construct hyperplanes
+  mesh.computeFaceNormals();
+  hyperplanes = mesh.faces.map(function(face) {
+    // Ax=b (hyperplane description)
+    var n = face.normal
+    var p = mesh.vertices[face.a];
+    var b = n.dot(p);
+    var faceVertexIndices = [ face.a, face.b, face.c ];
+    // Find vertex not on the hyperplane
+    var disjointVertex;
+    for (var i = 0; i < mesh.vertices.length; ++i) {
+      if (!faceVertexIndices.includes(i)) {
+        disjointVertex = mesh.vertices[i];
+        break;
+      }
+    }
+    // Negate hyperplane description if disjoint vertex
+    // falls on right side of inequality
+    if (n.dot(disjointVertex) > b) {
+      n.negate();
+      b *= -1;
+    }
+    return [ n.toArray(), b ];
+  });
+
+  var A = math.matrix(hyperplanes.map(h => h[0]));
+  var b = math.matrix(hyperplanes.map(h => h[1]));
+
+  var boundingVertices = [];
+  var interiorVertices = [];
+
+  // Get enclosing cuboid diagonal points
+  mesh.computeBoundingBox();
+  var [ vMin, vMax ] = [ mesh.boundingBox.min, mesh.boundingBox.max ];
+  var x = [...range( vMin.x, vMax.x )];
+  var y = [...range( vMin.y, vMax.y )];
+  var z = [...range( vMin.z, vMax.z )];
+  cartesian( x, y, z ).forEach(function(p) {
+    var Ax = math.multiply(A, math.matrix(p));
+    if (math.smallerEq(Ax, b).toArray().every(v => v)) {
+      if (math.smaller(Ax, b).toArray().every(v => v))
+        interiorVertices.push(new THREE.Vector3(...p));
+      else
+        boundingVertices.push(new THREE.Vector3(...p));
+    }
+  });
+  //console.log(interiorVertices.length);
+  //console.log(boundingVertices.length);
+  var boundingVertexMesh = new THREE.Geometry();
+  var interiorVertexMesh = new THREE.Geometry();
+  boundingVertexMesh.setFromPoints(boundingVertices);
+  interiorVertexMesh.setFromPoints(interiorVertices);
+  return [boundingVertexMesh, interiorVertexMesh];
+}
+
+function polytope( container, vertices, s,
+  axes, spin, rainbow, interiorPoints, dilations ) {
   var group, camera, scene, light, renderer, mesh, w, h;
   var hue = 0, hueDelta = 0.01;
 
@@ -99,11 +166,12 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     scene = new THREE.Scene();
     scene.background = new THREE.Color( 0xffffff );
 
+    var a = 2;
     // Camera
     //var W = 20, H = 10;
     //camera = new THREE.OrthographicCamera(W/-2,W/2,H/2,H/-2,1,100);
     camera = new THREE.PerspectiveCamera( 45, w / h, 1, 100 );
-    camera.position.set( s, s, s );
+    camera.position.set( s*a, s*a, s*a );
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene.add( camera );
 
@@ -132,15 +200,6 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     var loader = new THREE.TextureLoader();
     var texture = loader.load('polytopes/disc.png');
 
-    // Geometry
-    var geometry = new THREE.Geometry();
-    geometry.setFromPoints( vertices );
-
-    //var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
-
-    // Mesh geometry
-    meshGeometry = new THREE.ConvexGeometry( geometry.vertices );
-
     // Mesh material
     var meshMaterial = new THREE.MeshLambertMaterial( {
       color: 0xffffff,
@@ -149,13 +208,26 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     } );
 
     // Vertex material
-    var vertexMaterial = new THREE.PointsMaterial( {
+    var pointMaterial = new THREE.PointsMaterial( {
       color: 0x0080ff,
       map: texture,
       alphaTest: 0.5,
       size: 10,
       sizeAttenuation: false
     } );
+
+    var interiorPointMaterial = pointMaterial.clone();
+    interiorPointMaterial.color = new THREE.Color( 0xff8000 );
+
+    // Geometry
+    var geometry = new THREE.Geometry();
+    geometry.setFromPoints( vertices );
+    geometry.scale( a, a, a );
+
+    //var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
+
+    // Mesh geometry
+    meshGeometry = new THREE.ConvexGeometry( geometry.vertices );
 
     // Add meshes
     mesh = new THREE.Mesh( meshGeometry, meshMaterial );
@@ -168,9 +240,14 @@ function polytope( container, vertices, s, axes, spin, rainbow ) {
     mesh.renderOrder = 1;
     group.add( mesh );
 
-    // Add vertices
-    var points = new THREE.Points(geometry, vertexMaterial);
-    group.add(points);
+    // Vertices
+    if ( !interiorPoints ) {
+      group.add(new THREE.Points(geometry, pointMaterial));
+    } else {
+      [bounding, interior] = EhrhartMeshes(meshGeometry);
+      group.add(new THREE.Points(bounding, pointMaterial));
+      group.add(new THREE.Points(interior, interiorPointMaterial));
+    }
 
     window.addEventListener('resize', onWindowResize, false);
   }
