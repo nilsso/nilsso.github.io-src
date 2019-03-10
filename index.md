@@ -22,7 +22,9 @@ Math /
 [AdvCalc1](pages/math/adv-calc-1/) /
 [AdvCalc2](pages/math/adv-calc-2/)
 <br/>
-Math / [Generator Project](problem-generator/)
+Math /
+[Generator Project](problem-generator/) /
+[Polytope](pages/math/semi-comb/polytope)
 <br/>
 Programming /
 [LaTeX](pages/programming/latex/) /
