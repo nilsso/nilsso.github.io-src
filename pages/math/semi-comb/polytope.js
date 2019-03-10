@@ -51,14 +51,14 @@ function HyperplaneDescription(mesh) {
     var p = mesh.vertices[face.a];
     var b = n.dot(p);
     /// Experimental: Turn unit normal into integer component normal
-    //if (b) {
-      //var f = math.ceil(b)/b;
+    if (b) {
+      var f = math.ceil(b)/b;
       //n.multiplyScalar(f);
-      //n.x = math.round(f*n.x);
-      //n.y = math.round(f*n.y);
-      //n.z = math.round(f*n.z);
-      //b = f*b;
-    //}
+      n.x = math.round(f*n.x);
+      n.y = math.round(f*n.y);
+      n.z = math.round(f*n.z);
+      b = f*b;
+    }
     var faceVertexIndices = [ face.a, face.b, face.c ];
     // Find vertex not on the hyperplane
     var disjointVertex;
