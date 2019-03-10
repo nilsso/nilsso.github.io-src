@@ -36,18 +36,26 @@ canvas {
   display: flex;
 }
 
-#left-controls, #right-controls {
+#left-controls, #right-controls, #nav {
   position: fixed;
   margin: 0;
-  top: 10px;
 }
 
 #left-controls {
+  top: 10px;
   left: 10px;
 }
 
 #right-controls {
+  top: 10px;
   right: 10px;
+}
+
+#nav {
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
 }
 
 #vertices {
