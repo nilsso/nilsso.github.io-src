@@ -3,11 +3,14 @@ layout: none
 axes: true
 spin: true
 rainbow: true
+interPoints: true
+dilation: 3
 ---
 <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
 <script src='{{ site.url }}/assets/js/three/modules/QuickHull.js'></script>
 <script src='{{ site.url }}/assets/js/three/modules/geometries/ConvexGeometry.js'></script>
 <script src='{{ site.url }}/assets/js/three/modules/controls/OrbitControls.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.js"></script>
 <script src='polytopes/polytope.js'></script>
 <style>
 .polytope {
@@ -32,5 +35,6 @@ height: 100%;
         randomCoord(), randomCoord(), randomCoord()));
   }
   polytope( document.getElementById( 'h1p' ), rando, 3,
-      {{ page.axes }}, {{ page.spin }}, {{ page.rainbow }} );
+      {{ page.axes }}, {{ page.spin }}, {{ page.rainbow }},
+      {{ page.interPoints }}, {{ page.dilation }});
 </script>
