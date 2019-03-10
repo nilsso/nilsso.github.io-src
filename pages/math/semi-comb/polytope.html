@@ -1,0 +1,46 @@
+---
+layout: none
+---
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <title>Polytopes!</title>
+    <link rel="stylesheet" href="polytope.css"/>
+  </head>
+  <body>
+    <div id="controls">
+      <select id="shape"></select>
+      <h1>Vertices</h1>
+      <textarea id="vertices" rows="4"></textarea>
+      <button id="apply">Apply</button>
+      <div>
+        <input type="checkbox" id="axis">
+        <label for="axis">Axis</label>
+      </div>
+      <div>
+        <input type="checkbox" id="spin">
+        <label for="spin">Spin</label>
+      </div>
+      <div>
+        <input type="radio" id="verticesNone" name="renderVertices" checked>
+        <label for="verticesNone">None</label>
+      </div>
+      <div>
+        <input type="radio" id="verticesDefining" name="renderVertices">
+        <label for="verticesDefining">Defining</label>
+      </div>
+      <div>
+        <input type="radio" id="verticesEhrhart" name="renderVertices">
+        <label for="verticesEhrhart">Ehrhart</label>
+      </div>
+    </div>
+    <div id='polytope'></div>
+  </body>
+  <script src='{{ site.url }}/assets/js/three/build/three.js'></script>
+  <script src='{{ site.url }}/assets/js/three/modules/QuickHull.js'></script>
+  <script src='{{ site.url }}/assets/js/three/modules/geometries/ConvexGeometry.js'></script>
+  <script src='{{ site.url }}/assets/js/three/modules/controls/OrbitControls.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.js"></script>
+  <script src="polytope.js"></script>
+</html>

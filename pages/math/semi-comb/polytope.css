@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  font-size: 10pt;
+}
+
+body * {
+  margin: 2px 0;
+}
+
+#controls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+}
+
+#shape {
+  width: 100%;
+}
+
+#vertices {
+  padding: 0 2px;
+}
+
+#apply {
+  display: inherit;
+  width: 100%;
+}
+
+#polytope {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
