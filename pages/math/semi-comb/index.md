@@ -37,6 +37,16 @@ $$
 
 ---
 
+<div style="width:100%;">
+<p style="width:100%;text-align:center;font-size:16pt;">
+  <a href="./polytope.html">
+    Polytope Renderer!
+  </a>
+</p>
+</div>
+
+---
+
 # Numerical Semigroups
 
 {% include theorem.html text="Definition: Numerical Semigroup" content="

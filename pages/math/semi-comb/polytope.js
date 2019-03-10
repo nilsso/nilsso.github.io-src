@@ -12,8 +12,8 @@ var spin, spinSpeed = 0.005;
 var shapes = {
   simplex: '0 0 0\n1 0 0\n0 1 0\n0 0 1',
   cube: '0 0 0\n1 0 0\n0 1 0\n1 1 0\n0 0 1\n1 0 1\n0 1 1\n1 1 1',
-  cube2: '-1 -1 -1\n1 -1 -1\n-1 1 -1\n1 1 -1\n-1 -1 1\n1 -1 1\n-1 1 1\n1 1 1',
-  octohedron: '1 0 0\n-1 0 0\n0 1 0\n0 -1 0\n0 0 1\n0 0 -1'
+  cube2: '-1 -1 -1\n 1 -1 -1\n-1  1 -1\n 1  1 -1\n-1 -1  1\n 1 -1  1\n-1  1  1\n 1  1  1',
+  octohedron: '-1  0  0\n 1  0  0\n 0 -1  0\n 0  1  0\n 0  0 -1\n 0  0  1'
 };
 
 // Cartesian product and helper functions
