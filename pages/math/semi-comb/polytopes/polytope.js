@@ -144,7 +144,7 @@ function EhrhartMeshes(mesh) {
 }
 
 function polytope( container, vertices, s,
-  axes, spin, rainbow, interiorPoints, dilations ) {
+  axes, spin, rainbow, interiorPoints, dilation ) {
   var group, camera, scene, light, renderer, mesh, w, h;
   var hue = 0, hueDelta = 0.01;
 
@@ -166,7 +166,7 @@ function polytope( container, vertices, s,
     scene = new THREE.Scene();
     scene.background = new THREE.Color( 0xffffff );
 
-    var a = 2;
+    var a = dilation;
     // Camera
     //var W = 20, H = 10;
     //camera = new THREE.OrthographicCamera(W/-2,W/2,H/2,H/-2,1,100);
