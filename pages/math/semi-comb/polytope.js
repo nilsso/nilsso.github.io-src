@@ -1,11 +1,13 @@
 var selShape, txtEdit, txtData, rngDilation, lblDilation;
 var btnRebuild, btnRando, btnDual;
-var chkSpin, chkAxis, chkDual, chkExpNorm;
+var chkSpin, chkAxis, chkDual, chkWire, chkExpNorm;
 var radNone, radDef, radLattice;
 var renderer, scene, camera, controls, group;
 var meshMatA, meshMatB, pointMatA, pointMatB;
+var lineMatA, lineMatB;
 var axis, geoMeshA, geoMeshB, dualMeshA, dualMeshB;
-var geo, dualGeo, vertsDef, dualVertsDef, vertsBound, vertsInner;
+var geo, geoLine, dualGeo, dualGeoLine;
+var vertsDef, dualVertsDef, vertsBound, vertsInner;
 var pointsDef, pointsBound, pointsInner, points;
 
 var dilation;
@@ -116,9 +118,16 @@ function LatticeMeshes(A, b, vMin, vMax) {
 }
 
 function updateVisiblity() {
-  // Dual polytope
-  dualMeshA.visible = chkDual.prop('checked');
-  dualMeshB.visible = chkDual.prop('checked');
+  var wire = chkWire.prop('checked');
+  var dual = chkDual.prop('checked');
+
+  geoMeshA.visible = !wire;
+  geoMeshB.visible = !wire;
+  geoLineMesh.visible = wire;
+
+  dualMeshA.visible =  dual && !wire;
+  dualMeshB.visible = dual && !wire;
+  dualLineMesh.visible = dual && wire;
 
   // Lattice points
   points.forEach(p => p.visible=false);
@@ -146,7 +155,9 @@ function polytopeRebuild() {
   }
   if (geo) {
     geo.dispose();
+    geoLine.dispose();
     dualGeo.dispose();
+    dualGeoLine.dispose();
     vertsDef.dispose();
     dualVertsDef.dispose();
     vertsBound.dispose();
@@ -162,6 +173,7 @@ function polytopeRebuild() {
       p => new THREE.Vector3(...p)));
   vertsDef.scale(dilation, dilation, dilation);
   geo = new THREE.ConvexGeometry(vertsDef.vertices);
+  geoLine = new THREE.EdgesGeometry(geo);
 
   var [A, b] = HyperplaneDescription(geo, false);
 
@@ -186,6 +198,7 @@ function polytopeRebuild() {
   dualVertsDef.setFromPoints(A.map(p => new THREE.Vector3(...p)));
   dualVertsDef.scale(dilation, dilation, dilation);
   dualGeo = new THREE.ConvexGeometry(dualVertsDef.vertices);
+  dualGeoLine = new THREE.EdgesGeometry(dualGeo);
 
   for (var i = group.children.length - 1; i >= 1; i--) {
     group.remove(group.children[i]);
@@ -210,6 +223,11 @@ function polytopeRebuild() {
   dualMeshB.material.side = THREE.FrontSide; // front faces
   dualMeshB.renderOrder = 1;
   group.add(dualMeshB);
+
+  geoLineMesh = new THREE.LineSegments(geoLine, lineMatA);
+  dualLineMesh = new THREE.LineSegments(dualGeoLine, lineMatB);
+  group.add(geoLineMesh);
+  group.add(dualLineMesh);
 
   points.forEach(p => group.add(p));
   updateVisiblity();
@@ -264,6 +282,9 @@ function polytopeInit() {
     transparent: true
   });
 
+  lineMatA = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 1 });
+  lineMatB = new THREE.LineBasicMaterial({ color: 0x7777ff, linewidth: 1 });
+
   var loader = new THREE.TextureLoader();
   var texture = loader.load('disc.png');
   pointMatA = new THREE.PointsMaterial({
@@ -310,6 +331,7 @@ $(function() {
   chkAxis = $('#axis');
   chkSpin = $('#spin');
   chkDual = $('#dual');
+  chkWire = $('#wire');
   chkExpNorm = $('#experimentalNormals');
   radNone = $('#verticesNone');
   radDef = $('#verticesDefining');
@@ -353,8 +375,9 @@ $(function() {
     spin = $(this).prop('checked');
   });
 
-  chkExpNorm.change(polytopeRebuild);
+  chkWire.change(polytopeRebuild);
 
+  chkExpNorm.change(updateVisiblity);
   chkDual.change(updateVisiblity);
   radNone.change(updateVisiblity);
   radDef.change(updateVisiblity);
