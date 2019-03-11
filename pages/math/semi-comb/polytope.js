@@ -41,7 +41,8 @@ function randomPoints() {
 // HyperplaneDescription can be used to return an array of the A matrix and b
 // column matrix (both type Array) of the hyperplane description for an existing
 // mesh.
-function HyperplaneDescription(mesh) {
+// @param expNorm Use experimental normals
+function HyperplaneDescription(mesh, expNorm) {
   mesh.computeFaceNormals();
   var hyperplanes = mesh.faces.map(function(face) {
     // Ax=b (hyperplane description)
@@ -49,8 +50,8 @@ function HyperplaneDescription(mesh) {
     var p = mesh.vertices[face.a];
     var b = n.dot(p);
     /// Experimental: Turn unit normal into integer component normal
-    if (chkExpNorm.prop('checked') && b) {
-      var f = math.abs(1/b);
+    if (expNorm && b) {
+      var f = math.abs(math.round(b)/b);
       //n.multiplyScalar(f);
       n.x = math.round(f*n.x);
       n.y = math.round(f*n.y);
@@ -162,12 +163,7 @@ function polytopeRebuild() {
   vertsDef.scale(dilation, dilation, dilation);
   geo = new THREE.ConvexGeometry(vertsDef.vertices);
 
-  // Dual polytope
-  var [A, b] = HyperplaneDescription(geo);
-  dualVertsDef = new THREE.Geometry();
-  dualVertsDef.setFromPoints(A.map(p => new THREE.Vector3(...p)));
-  dualVertsDef.scale(dilation, dilation, dilation);
-  dualGeo = new THREE.ConvexGeometry(dualVertsDef.vertices);
+  var [A, b] = HyperplaneDescription(geo, false);
 
   // Lattice points
   geo.computeBoundingBox();
@@ -182,6 +178,14 @@ function polytopeRebuild() {
   pointsBound = new THREE.Points(vertsBound, pointMatA);
   pointsInner = new THREE.Points(vertsInner, pointMatB);
   points = [pointsDef, pointsBound, pointsInner];
+
+  [A, b] = HyperplaneDescription(geo, chkExpNorm.prop('checked'));
+
+  // Dual polytope
+  dualVertsDef = new THREE.Geometry();
+  dualVertsDef.setFromPoints(A.map(p => new THREE.Vector3(...p)));
+  dualVertsDef.scale(dilation, dilation, dilation);
+  dualGeo = new THREE.ConvexGeometry(dualVertsDef.vertices);
 
   for (var i = group.children.length - 1; i >= 1; i--) {
     group.remove(group.children[i]);
@@ -325,7 +329,7 @@ $(function() {
   btnRebuild.click(polytopeRebuild);
 
   btnDual.click(function() {
-    var [A, b] = HyperplaneDescription(geo);
+    var [A, b] = HyperplaneDescription(geo, chkExpNorm.prop('checked'));
     txtEdit.val(A.map(r => r.join(' ')).join('\n'));
     polytopeRebuild();
   });
