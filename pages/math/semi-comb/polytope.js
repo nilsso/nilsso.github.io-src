@@ -81,14 +81,14 @@ function HyperplaneDescription(mesh, expNorm) {
   var b = hyperplanes.map(h => h[1]);
   // Eliminate duplicate rows
   // (since every square face has two triangular hyperplanes)
-  for (var i = 0; i < A.length-1; ++i) {
-    for (var j = i+1; j < A.length; ++j) {
-      if (math.equal(A[i], A[j]).every(t => t)) {
-        A.pop(j);
-        b.pop(j);
-      }
-    }
-  }
+  //for (var i = 0; i < A.length-1; ++i) {
+    //for (var j = i+1; j < A.length; ++j) {
+      //if (math.equal(A[i], A[j]).every(t => t)) {
+        //A.pop(j);
+        //b.pop(j);
+      //}
+    //}
+  //}
   return [A, b];
 }
 
@@ -98,6 +98,8 @@ function HyperplaneDescription(mesh, expNorm) {
 // of vectors defining the minimum and maximum points of a cuboid in which to
 // check lattice points.
 function LatticeMeshes(A, b, vMin, vMax) {
+  A = math.matrix(A);
+  b = math.matrix(b);
   var boundingVertices = [];
   var interiorVertices = [];
 
@@ -105,10 +107,10 @@ function LatticeMeshes(A, b, vMin, vMax) {
   var x = [...range( vMin.x, vMax.x )];
   var y = [...range( vMin.y, vMax.y )];
   var z = [...range( vMin.z, vMax.z )];
-  cartesian( x, y, z ).forEach(function(p) {
-    var Ax = math.multiply(A, p);
-    if (math.smallerEq(Ax, b).every(v => v)) {
-      if (math.smaller(Ax, b).every(v => v))
+  cartesian(x, y, z).forEach(function(p) {
+    var Ax = math.multiply(A, math.matrix(p));
+    if (math.smallerEq(Ax, b).toArray().every(v => v)) {
+      if (math.smaller(Ax, b).toArray().every(v => v))
         interiorVertices.push(new THREE.Vector3(...p));
       else
         boundingVertices.push(new THREE.Vector3(...p));
