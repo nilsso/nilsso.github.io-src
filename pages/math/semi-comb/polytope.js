@@ -11,7 +11,7 @@ var vertsDef, dualVertsDef, vertsBound, vertsInner;
 var pointsDef, pointsBound, pointsInner, points;
 
 var dilation;
-var spin, spinSpeed = 0.005;
+var spin, spinSpeed = 0.001;
 
 // Cartesian product and helper functions
 // https://stackoverflow.com/questions/12303989/\
