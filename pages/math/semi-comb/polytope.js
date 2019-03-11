@@ -1,17 +1,15 @@
 var selShape, txtEdit, txtData, rngDilation, lblDilation;
 var btnRebuild, btnRando, btnDual;
-var chkSpin, chkAxis, radNone, radDef, radLattice;
-var renderer, scene, camera, controls, group, meshMat;
-var pointMatA, pointMatB;
-var axis, meshA, meshB, geo;
-var vertsDef, vertsBound, vertsInner;
+var chkSpin, chkAxis, chkDual, chkExpNorm;
+var radNone, radDef, radLattice;
+var renderer, scene, camera, controls, group;
+var meshMatA, meshMatB, pointMatA, pointMatB;
+var axis, geoMeshA, geoMeshB, dualMeshA, dualMeshB;
+var geo, dualGeo, vertsDef, dualVertsDef, vertsBound, vertsInner;
 var pointsDef, pointsBound, pointsInner, points;
 
 var dilation;
 var spin, spinSpeed = 0.005;
-
-var shapes = {
-};
 
 // Cartesian product and helper functions
 // https://stackoverflow.com/questions/12303989/\
@@ -51,7 +49,7 @@ function HyperplaneDescription(mesh) {
     var p = mesh.vertices[face.a];
     var b = n.dot(p);
     /// Experimental: Turn unit normal into integer component normal
-    if (b) {
+    if (chkExpNorm.prop('checked') && b) {
       var f = math.abs(1/b);
       //n.multiplyScalar(f);
       n.x = math.round(f*n.x);
@@ -76,41 +74,31 @@ function HyperplaneDescription(mesh) {
     }
     return [ n.toArray(), b ];
   });
-  var Aarr = hyperplanes.map(h => h[0]);
-  var barr = hyperplanes.map(h => h[1]);
+  var A = hyperplanes.map(h => h[0]);
+  var b = hyperplanes.map(h => h[1]);
   // Eliminate duplicate rows
   // (since every square face has two triangular hyperplanes)
-  for (var i = 0; i < Aarr.length-1; ++i) {
-    for (var j = i+1; j < Aarr.length; ++j) {
-      if (math.equal(Aarr[i], Aarr[j]).every(t => t)) {
-        Aarr.pop(j);
-        barr.pop(j);
+  for (var i = 0; i < A.length-1; ++i) {
+    for (var j = i+1; j < A.length; ++j) {
+      if (math.equal(A[i], A[j]).every(t => t)) {
+        A.pop(j);
+        b.pop(j);
       }
     }
   }
-  //for (i = 0; i < Aarr.length; ++i) {
-      //if (barr[i] == 0)
-        //return a;
-      //return a/barr[i];
-    //}));
-  //}
-  var A = Aarr;
-  var b = barr;
   return [A, b];
 }
 
 // LatticeMeshes can be used to return a set of three.js Points object of
-// the enclosing lattice points and interior lattice points of an existing
-// mesh object.
-function LatticeMeshes(mesh) {
-  var [A, b] = HyperplaneDescription(mesh);
-
+// the enclosing lattice points and interior lattice points from the A matrix
+// and b column matrix of the hyperplane description of a polytope and a pair
+// of vectors defining the minimum and maximum points of a cuboid in which to
+// check lattice points.
+function LatticeMeshes(A, b, vMin, vMax) {
   var boundingVertices = [];
   var interiorVertices = [];
 
   // Get enclosing cuboid diagonal points
-  mesh.computeBoundingBox();
-  var [ vMin, vMax ] = [ mesh.boundingBox.min, mesh.boundingBox.max ];
   var x = [...range( vMin.x, vMax.x )];
   var y = [...range( vMin.y, vMax.y )];
   var z = [...range( vMin.z, vMax.z )];
@@ -126,7 +114,12 @@ function LatticeMeshes(mesh) {
   return [boundingVertices, interiorVertices];
 }
 
-function updatePointsVisibility() {
+function updateVisiblity() {
+  // Dual polytope
+  dualMeshA.visible = chkDual.prop('checked');
+  dualMeshB.visible = chkDual.prop('checked');
+
+  // Lattice points
   points.forEach(p => p.visible=false);
   if (radDef.prop('checked')) {
     pointsDef.visible = true;
@@ -146,24 +139,42 @@ function polytopeRebuild() {
     alert('Invalid vertex list');
     return;
   }
+  if (coords.length < 12) {
+    alert('Algorithm requires at least 4 points');
+    return;
+  }
   if (geo) {
     geo.dispose();
+    dualGeo.dispose();
     vertsDef.dispose();
+    dualVertsDef.dispose();
     vertsBound.dispose();
     vertsInner.dispose();
   }
+
+  var dilation = Number(rngDilation.val());
+
+  // Polytope
   vertsDef = new THREE.Geometry();
   vertsDef.setFromPoints(
     math.reshape(coords.map(Number), [coords.length/3, 3]).map(
       p => new THREE.Vector3(...p)));
-  var dilation = Number(rngDilation.val());
   vertsDef.scale(dilation, dilation, dilation);
   geo = new THREE.ConvexGeometry(vertsDef.vertices);
 
-  var [bound, inner] = [...LatticeMeshes(geo)];
+  // Dual polytope
+  var [A, b] = HyperplaneDescription(geo);
+  dualVertsDef = new THREE.Geometry();
+  dualVertsDef.setFromPoints(A.map(p => new THREE.Vector3(...p)));
+  dualVertsDef.scale(dilation, dilation, dilation);
+  dualGeo = new THREE.ConvexGeometry(dualVertsDef.vertices);
+
+  // Lattice points
+  geo.computeBoundingBox();
+  var [ vMin, vMax ] = [ geo.boundingBox.min, geo.boundingBox.max ];
+  var [bound, inner] = [...LatticeMeshes(A, b, vMin, vMax)];
   vertsBound = new THREE.Geometry();
   vertsBound.setFromPoints(bound);
-
   vertsInner = new THREE.Geometry();
   vertsInner.setFromPoints(inner);
 
@@ -176,18 +187,28 @@ function polytopeRebuild() {
     group.remove(group.children[i]);
   }
 
-  meshA = new THREE.Mesh(geo, meshMat);
-  meshA.material.side = THREE.BackSide; // back faces
-  meshA.renderOrder = 0;
-  group.add(meshA);
+  geoMeshA = new THREE.Mesh(geo, meshMatA);
+  geoMeshA.material.side = THREE.BackSide; // back faces
+  geoMeshA.renderOrder = 0;
+  group.add(geoMeshA);
 
-  meshB = new THREE.Mesh(geo, meshMat.clone());
-  meshB.material.side = THREE.FrontSide; // front faces
-  meshB.renderOrder = 1;
-  group.add(meshB);
+  geoMeshB = new THREE.Mesh(geo, meshMatA.clone());
+  geoMeshB.material.side = THREE.FrontSide; // front faces
+  geoMeshB.renderOrder = 1;
+  group.add(geoMeshB);
+
+  dualMeshA = new THREE.Mesh(dualGeo, meshMatB);
+  dualMeshA.material.side = THREE.BackSide; // back faces
+  dualMeshA.renderOrder = 0;
+  group.add(dualMeshA);
+
+  dualMeshB = new THREE.Mesh(dualGeo, meshMatB.clone());
+  dualMeshB.material.side = THREE.FrontSide; // front faces
+  dualMeshB.renderOrder = 1;
+  group.add(dualMeshB);
 
   points.forEach(p => group.add(p));
-  updatePointsVisibility();
+  updateVisiblity();
 
   var rad = geo.vertices.reduce((a, b) => math.max(a, b.length()), 0)*3.33;
   camera.fov = rad;
@@ -227,9 +248,15 @@ function polytopeInit() {
   axis = new THREE.AxesHelper(20);
   group.add(axis);
 
-  meshMat = new THREE.MeshLambertMaterial({
+  meshMatA = new THREE.MeshLambertMaterial({
     color: 0xffffff,
     opacity: 0.5,
+    transparent: true
+  });
+
+  meshMatB = new THREE.MeshLambertMaterial({
+    color: 0x7777ff,
+    opacity: 0.25,
     transparent: true
   });
 
@@ -274,18 +301,15 @@ $(function() {
   rngDilation = $('#dilation');
   lblDilation = $('#dilationLabel');
   btnRebuild = $('#rebuild');
-  btnDual = $('#dual');
+  btnDual = $('#makeDual');
   btnRando = $('#rando');
   chkAxis = $('#axis');
   chkSpin = $('#spin');
+  chkDual = $('#dual');
+  chkExpNorm = $('#experimentalNormals');
   radNone = $('#verticesNone');
   radDef = $('#verticesDefining');
   radLattice = $('#verticesLattice');
-
-  // Add default shape options
-  $.each(shapes, function(k, v) {
-    selShape.append(new Option(k, v));
-  });
 
   // Handlers
   selShape.change(function() {
@@ -325,9 +349,12 @@ $(function() {
     spin = $(this).prop('checked');
   });
 
-  radNone.change(updatePointsVisibility);
-  radDef.change(updatePointsVisibility);
-  radLattice.change(updatePointsVisibility);
+  chkExpNorm.change(polytopeRebuild);
+
+  chkDual.change(updateVisiblity);
+  radNone.change(updateVisiblity);
+  radDef.change(updateVisiblity);
+  radLattice.change(updateVisiblity);
 
   // Initialize
   polytopeInit();
