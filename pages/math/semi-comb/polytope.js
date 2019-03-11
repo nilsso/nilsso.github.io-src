@@ -376,8 +376,8 @@ $(function() {
   });
 
   chkWire.change(polytopeRebuild);
+  chkExpNorm.change(polytopeRebuild);
 
-  chkExpNorm.change(updateVisiblity);
   chkDual.change(updateVisiblity);
   radNone.change(updateVisiblity);
   radDef.change(updateVisiblity);
