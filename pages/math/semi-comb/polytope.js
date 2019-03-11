@@ -340,6 +340,11 @@ $(function() {
   radLattice = $('#verticesLattice');
 
   // Handlers
+  $('#controls').click(function() {
+    $('#left-controls').toggle();
+    $('#right-controls').toggle();
+  })
+
   selShape.change(function() {
     txtEdit.val($(this).val());
     polytopeRebuild();

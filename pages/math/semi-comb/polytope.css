@@ -68,3 +68,7 @@ canvas {
   resize: none;
 }
 
+#controls {
+  float: right;
+}
+
