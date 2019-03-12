@@ -259,7 +259,8 @@ function rebuildPolytope() {
   txtData.text(
     ' #V: '+geo.vertices.length+'\n'+
     'BLP: '+bound.length+'\n'+
-    'ILP: '+inner.length);
+    'ILP: '+inner.length+'\n'+
+    'TLP: '+(bound.length+inner.length));
 }
 
 // Initialize renderer
