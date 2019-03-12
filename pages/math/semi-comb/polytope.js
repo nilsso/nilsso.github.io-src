@@ -142,8 +142,25 @@ function updateVisiblity() {
   }
 }
 
+function setQueryVertices() {
+  var vertices = encodeURI(txtEdit.val());
+  var url = window.location.pathname + '?v=' + vertices;
+  window.history.pushState(vertices, 'test', url);
+}
+
+window.onpopstate = function(e) {
+  txtEdit.val(decodeURI(e.state));
+  rebuildPolytope();
+};
+
+const urlParams = new URLSearchParams(window.location.search);
+
+function getQueryVertices() {
+  return urlParams.get('v');
+}
+
 // Rebuilt polytope from vertex textarea data
-function polytopeRebuild() {
+function rebuildPolytope() {
   console.log('REBUILDING POLYTOPE');
   txtEdit.val(txtEdit.val().trim());
   var coords = txtEdit.val().split(/\s+/);
@@ -155,6 +172,7 @@ function polytopeRebuild() {
     alert('Algorithm requires at least 4 points');
     return;
   }
+  setQueryVertices();
   if (geo) {
     geo.dispose();
     geoLine.dispose();
@@ -218,12 +236,12 @@ function polytopeRebuild() {
 
   dualMeshA = new THREE.Mesh(dualGeo, meshMatB);
   dualMeshA.material.side = THREE.BackSide; // back faces
-  dualMeshA.renderOrder = 0;
+  dualMeshA.renderOrder = 2;
   group.add(dualMeshA);
 
   dualMeshB = new THREE.Mesh(dualGeo, meshMatB.clone());
   dualMeshB.material.side = THREE.FrontSide; // front faces
-  dualMeshB.renderOrder = 1;
+  dualMeshB.renderOrder = 3;
   group.add(dualMeshB);
 
   geoLineMesh = new THREE.LineSegments(geoLine, lineMatA);
@@ -253,7 +271,7 @@ function polytopeInit() {
   document.body.appendChild(renderer.domElement);
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x000000);
+  scene.background = new THREE.Color(0xffffff);
 
   camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
   camera.position.set(15, 20, 30);
@@ -273,19 +291,19 @@ function polytopeInit() {
   group.add(axis);
 
   meshMatA = new THREE.MeshLambertMaterial({
-    color: 0xffffff,
+    color: 0xffaaaa,
     opacity: 0.5,
     transparent: true
   });
 
   meshMatB = new THREE.MeshLambertMaterial({
-    color: 0x7777ff,
+    color: 0xaaaaff,
     opacity: 0.25,
     transparent: true
   });
 
-  lineMatA = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 1 });
-  lineMatB = new THREE.LineBasicMaterial({ color: 0x7777ff, linewidth: 1 });
+  lineMatA = new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: 1 });
+  lineMatB = new THREE.LineBasicMaterial({ color: 0x0000ff, linewidth: 1 });
 
   var loader = new THREE.TextureLoader();
   var texture = loader.load('disc.png');
@@ -343,24 +361,30 @@ $(function() {
   $('#controls').click(function() {
     $('#left-controls').toggle();
     $('#right-controls').toggle();
-  })
+  });
+
+  //txtEdit.keydown(function(e) {
+    //if (e.which == 13) {
+      //btnRebuild.focus().click();
+    //}
+  //});
 
   selShape.change(function() {
     txtEdit.val($(this).val());
-    polytopeRebuild();
+    rebuildPolytope();
   });
 
   rngDilation.on('input', function() {
     lblDilation.text($(this).val());
-    polytopeRebuild();
+    rebuildPolytope();
   });
 
-  btnRebuild.click(polytopeRebuild);
+  btnRebuild.click(rebuildPolytope);
 
   btnDual.click(function() {
     var [A, b] = HyperplaneDescription(geo, chkExpNorm.prop('checked'));
     txtEdit.val(A.map(r => r.join(' ')).join('\n'));
-    polytopeRebuild();
+    rebuildPolytope();
   });
 
   btnRando.click(function() {
@@ -371,7 +395,7 @@ $(function() {
       return String(n);
     });
     txtEdit.val(math.reshape(r, [r.length/3, 3]).map(r => r.join(' ')).join('\n'));
-    polytopeRebuild();
+    rebuildPolytope();
   });
 
   chkAxis.change(function() {
@@ -382,8 +406,8 @@ $(function() {
     spin = $(this).prop('checked');
   });
 
-  chkWire.change(polytopeRebuild);
-  chkExpNorm.change(polytopeRebuild);
+  chkWire.change(rebuildPolytope);
+  chkExpNorm.change(rebuildPolytope);
 
   chkDual.change(updateVisiblity);
   radNone.change(updateVisiblity);
@@ -396,6 +420,10 @@ $(function() {
   lblDilation.text(rngDilation.val());
   axis.visible = chkAxis.prop('checked');
   spin = chkSpin.prop('checked');
-  polytopeRebuild();
+
+  var vertices = getQueryVertices();
+  if (vertices)
+    txtEdit.val(vertices);
+  rebuildPolytope();
   animate();
 });

@@ -3,7 +3,7 @@
   padding: 0;
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   font-size: 10pt;
-  color: white;
+  /*color: white;*/
 }
 
 body {
@@ -16,7 +16,7 @@ body * {
 }
 
 select, textarea, button {
-  color: black;
+  /*color: black;*/
 }
 
 select {
