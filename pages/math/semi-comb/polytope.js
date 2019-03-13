@@ -13,6 +13,18 @@ var pointsDef, pointsBound, pointsInner, points;
 var dilation;
 var spin, spinSpeed = 0.001;
 
+const urlParams = new URLSearchParams(window.location.search);
+
+//function lightTheme() {
+  //var theme = $('#light-theme');
+  //theme.href = 'https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css';
+//}
+
+//function darkTheme() {
+  //var theme = $('#dark-theme');
+  //theme.href = 'https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css';
+//}
+
 // Cartesian product and helper functions
 // https://stackoverflow.com/questions/12303989/\
 //   cartesian-product-of-multiple-arrays-in-javascript
@@ -36,8 +48,14 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function randomPoints() {
-  return rando;
+function setQueryVertices() {
+  var vertices = encodeURI(txtEdit.val());
+  var url = window.location.pathname + '?v=' + vertices;
+  window.history.pushState(vertices, 'test', url);
+}
+
+function getQueryVertices() {
+  return urlParams.get('v');
 }
 
 // HyperplaneDescription can be used to return an array of the A matrix and b
@@ -142,23 +160,6 @@ function updateVisiblity() {
   }
 }
 
-function setQueryVertices() {
-  var vertices = encodeURI(txtEdit.val());
-  var url = window.location.pathname + '?v=' + vertices;
-  window.history.pushState(vertices, 'test', url);
-}
-
-window.onpopstate = function(e) {
-  txtEdit.val(decodeURI(e.state));
-  rebuildPolytope();
-};
-
-const urlParams = new URLSearchParams(window.location.search);
-
-function getQueryVertices() {
-  return urlParams.get('v');
-}
-
 // Rebuilt polytope from vertex textarea data
 function rebuildPolytope() {
   console.log('REBUILDING POLYTOPE');
@@ -172,7 +173,6 @@ function rebuildPolytope() {
     alert('Algorithm requires at least 4 points');
     return;
   }
-  setQueryVertices();
   if (geo) {
     geo.dispose();
     geoLine.dispose();
@@ -257,10 +257,10 @@ function rebuildPolytope() {
   camera.updateProjectionMatrix();
 
   txtData.text(
-    ' #V: '+geo.vertices.length+'\n'+
-    'BLP: '+bound.length+'\n'+
-    'ILP: '+inner.length+'\n'+
-    'TLP: '+(bound.length+inner.length));
+    '#Verts: '+geo.vertices.length+'\n'+
+    '  #BLP: '+bound.length+'\n'+
+    '  #ILP: '+inner.length+'\n'+
+    '  #TLP: '+(bound.length+inner.length));
 }
 
 // Initialize renderer
@@ -364,6 +364,15 @@ $(function() {
     $('#right-controls').toggle();
   });
 
+  $('#light-dark').click(function() {
+  });
+
+  window.onpopstate = function(e) {
+    var url = window.location;
+    txtEdit.val(decodeURI(e.state));
+    rebuildPolytope();
+  };
+
   //txtEdit.keydown(function(e) {
     //if (e.which == 13) {
       //btnRebuild.focus().click();
@@ -373,6 +382,7 @@ $(function() {
   selShape.change(function() {
     txtEdit.val($(this).val());
     rebuildPolytope();
+    setQueryVertices();
   });
 
   rngDilation.on('input', function() {
@@ -380,7 +390,10 @@ $(function() {
     rebuildPolytope();
   });
 
-  btnRebuild.click(rebuildPolytope);
+  btnRebuild.click(function() {
+    rebuildPolytope();
+    setQueryVertices();
+  });
 
   btnDual.click(function() {
     var [A, b] = HyperplaneDescription(geo, chkExpNorm.prop('checked'));

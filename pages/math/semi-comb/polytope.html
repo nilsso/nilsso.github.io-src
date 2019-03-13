@@ -7,22 +7,28 @@ layout: none
     <title>Polytopes!</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css">-->
     <link rel="stylesheet" href="polytope.css"/>
   </head>
   <body>
     <div id="left-controls">
+      <h1>Premades</h1>
       <select id="shape">
         {% include_relative polytope-shapes.html %}
       </select>
+      <hr/>
       <h1>Vertices</h1>
       <textarea id="vertices" rows="4" cols="10"></textarea>
       <h1>Dilation: <label id="dilationLabel" for="dilation"></label></h1>
       <input type="range" id="dilation" name="dilation" min="1" max="10" value="1">
-      <button id="rebuild">Rebuild</button>
-      <button id="makeDual">Dual</button>
-      <button id="rando">Random!</button>
+      <button id="rebuild" class="btn btn-light">Rebuild</button>
+      <button id="makeDual" class="btn btn-light">Dual</button>
+      <button id="rando" class="btn btn-light">Random!</button>
     </div>
     <div id="right-controls">
+      <h1>Misc. options</h1>
       <div>
         <input type="checkbox" id="axis">
         <label for="axis">Axis</label>
@@ -43,8 +49,9 @@ layout: none
         <input type="checkbox" id="experimentalNormals">
         <label for="experimentalNormals">Experimental normals</label>
       </div>
+      <hr/>
+      <h1>Point rendering</h1>
       <div>
-        <h1>Point rendering</h1>
         <input type="radio" id="verticesNone" name="renderVertices" checked>
         <label for="verticesNone">None</label>
       </div>
@@ -56,13 +63,19 @@ layout: none
         <input type="radio" id="verticesLattice" name="renderVertices">
         <label for="verticesLattice">Lattice</label>
       </div>
-      <textarea id="data" rows="4" title="Bounding latice points&#013;Interior latice points" readonly></textarea>
+      <hr/>
+      <h1>Data</h1>
+      <textarea id="data" rows="4" title=
+"Number of vertices&#013;
+Number of bounding latice points&#013;
+Number of interior latice points&#013;
+Total number of lattice points" readonly></textarea>
     </div>
     <div id="nav">
       <a href="https://github.com/{{site.github_username}}">nilsso</a> /
       <a href="{{ site.url }}">home</a> /
       <a href="{{ site.url }}/pages/math/semi-comb">semi-comb</a>
-      <a id="controls" href="#">controls</a>
+      <a id="controls" class="media-hide" role="button">controls</a>
     </div>
   </body>
   <script src="{{ site.url }}/assets/js/three/build/three.js"></script>
