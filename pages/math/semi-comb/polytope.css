@@ -61,6 +61,7 @@ canvas {
 #left-controls, #right-controls {
   margin: 2px 8px;
   top: 0;
+  bottom: 24px;
   overflow-y: auto;
 }
 
