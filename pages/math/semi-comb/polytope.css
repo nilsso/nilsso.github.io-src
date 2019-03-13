@@ -13,15 +13,11 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   width: 100%;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 body * {
   margin: 2px 0;
-}
-
-select, textarea, button {
-  /*color: black;*/
 }
 
 select {
@@ -53,7 +49,6 @@ canvas {
   position: fixed;
   margin: 2px 8px;
   top: 0;
-  bottom: 24px;
   overflow-y: auto;
 }
 
@@ -68,6 +63,7 @@ canvas {
 
 #nav {
   position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 24px;
@@ -89,9 +85,9 @@ canvas {
   cursor: pointer;
 }
 
-/*@media (max-width: 720px) {*/
-  /*.media-hide {*/
-    /*visibility: hidden;*/
-  /*}*/
-/*}*/
+@media (max-width: 720px) {
+  #nav-links {
+    float: left;
+  }
+}
 
