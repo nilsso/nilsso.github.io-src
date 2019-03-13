@@ -54,7 +54,7 @@ canvas {
   resize: none;
 }
 
-#left-controls, #right-controls, #nav, #toggle-controls {
+#left-controls, #right-controls, #nav, #save-and-controls {
   position: fixed;
 }
 
@@ -73,7 +73,7 @@ canvas {
   right: 10px;
 }
 
-#nav, #toggle-controls {
+#nav, #save-and-controls {
   bottom: 0;
   height: 24px;
   margin: 4px 12px;
@@ -85,7 +85,7 @@ canvas {
   right: 0;
 }
 
-#toggle-controls {
+#save-and-controls {
   right: 0;
   cursor: pointer;
 }

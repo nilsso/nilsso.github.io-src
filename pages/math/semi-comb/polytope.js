@@ -2,7 +2,7 @@ var selShape, txtEdit, txtData, rngDilation, lblDilation, rngSpinSpeed;
 var btnRebuild, btnRando, btnDual;
 var chkSpin, chkAxis, chkDual, chkWire, chkExpNorm;
 var radNone, radDef, radLattice;
-var renderer, scene, camera, controls, group;
+var renderer, svgRenderer, scene, camera, controls, group;
 var meshMatA, meshMatB, pointMatA, pointMatB;
 var lineMatA, lineMatB;
 var axis, geoMeshA, geoMeshB, dualMeshA, dualMeshB;
@@ -150,14 +150,14 @@ function updateVisiblity() {
   dualLineMesh.visible = dual && wire;
 
   // Lattice points
-  points.forEach(p => p.visible=false);
-  if (radDef.prop('checked')) {
-    pointsDef.visible = true;
-  }
-  if (radLattice.prop('checked')) {
-    pointsBound.visible = true;
-    pointsInner.visible = true;
-  }
+  //points.forEach(p => p.visible=false);
+  //if (radDef.prop('checked')) {
+    //pointsDef.visible = true;
+  //}
+  //if (radLattice.prop('checked')) {
+    //pointsBound.visible = true;
+    //pointsInner.visible = true;
+  //}
 }
 
 // Rebuilt polytope from vertex textarea data
@@ -206,9 +206,15 @@ function rebuildPolytope() {
   vertsInner = new THREE.Geometry();
   vertsInner.setFromPoints(inner);
 
+  for (var i = group.children.length - 1; i >= 1; i--) {
+    group.remove(group.children[i]);
+  }
+
   pointsDef = new THREE.Points(vertsDef, pointMatA);
   pointsBound = new THREE.Points(vertsBound, pointMatA);
   pointsInner = new THREE.Points(vertsInner, pointMatB);
+  //pointsBound = new THREE.Points(vertsBound);
+  //pointsInner = new THREE.Points(vertsInner);
   points = [pointsDef, pointsBound, pointsInner];
 
   [A, b] = HyperplaneDescription(geo, chkExpNorm.prop('checked'));
@@ -219,10 +225,6 @@ function rebuildPolytope() {
   dualVertsDef.scale(dilation, dilation, dilation);
   dualGeo = new THREE.ConvexGeometry(dualVertsDef.vertices);
   dualGeoLine = new THREE.EdgesGeometry(dualGeo);
-
-  for (var i = group.children.length - 1; i >= 1; i--) {
-    group.remove(group.children[i]);
-  }
 
   geoMeshA = new THREE.Mesh(geo, meshMatA);
   geoMeshA.material.side = THREE.BackSide; // back faces
@@ -263,9 +265,37 @@ function rebuildPolytope() {
     '  #TLP: '+(bound.length+inner.length));
 }
 
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', text);
+  element.setAttribute('download', filename);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
+function saveImage() {
+  var w = 256, h = 256;
+  camera.aspect = w/h;
+  camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+  var data = renderer.domElement.toDataURL();
+  onWindowResize();
+  var serializer = new XMLSerializer();
+  //var source = serializer.serializeToString(data);
+  var source = data;
+  var url = "data:image/png;chakset=utf-8,"+source;
+  download('polytope.png', url);
+}
+
 // Initialize renderer
 function polytopeInit() {
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    preserveDrawingBuffer: true
+  });
+  svgRenderer = new THREE.SVGRenderer();
   var w = window.innerWidth, h = window.innerHeight;
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(w, h);
@@ -306,6 +336,7 @@ function polytopeInit() {
   lineMatA = new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: 1 });
   lineMatB = new THREE.LineBasicMaterial({ color: 0x0000ff, linewidth: 1 });
 
+  //var loader = new THREE.SVGLoader();
   var loader = new THREE.TextureLoader();
   var texture = loader.load('disc.png');
   pointMatA = new THREE.PointsMaterial({
@@ -313,6 +344,7 @@ function polytopeInit() {
     map: texture,
     alphaTest: 0.5,
     size: 1,
+    //sizeAttenuation: false
   });
   pointMatB = pointMatA.clone();
   pointMatB.color = new THREE.Color(0xff8000);
@@ -365,8 +397,7 @@ $(function() {
     $('#right-controls').toggle();
   });
 
-  $('#light-dark').click(function() {
-  });
+  $('#save-img').click(saveImage);
 
   window.onpopstate = function(e) {
     var url = window.location;
