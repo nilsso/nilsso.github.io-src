@@ -45,8 +45,20 @@ canvas {
   display: flex;
 }
 
-#left-controls, #right-controls {
+#vertices {
+  width: 100px;
+  resize: both;
+}
+
+#data {
+  resize: none;
+}
+
+#left-controls, #right-controls, #nav, #toggle-controls {
   position: fixed;
+}
+
+#left-controls, #right-controls {
   margin: 2px 8px;
   top: 0;
   overflow-y: auto;
@@ -57,37 +69,29 @@ canvas {
 }
 
 #right-controls {
-  top: 10px;
   right: 10px;
 }
 
-#nav {
-  position: fixed;
+#nav, #toggle-controls {
   bottom: 0;
-  left: 0;
-  right: 0;
   height: 24px;
   margin: 4px 12px;
   text-align: center;
 }
 
-#vertices {
-  width: 100px;
-  resize: both;
+#nav {
+  left: 0;
+  right: 0;
 }
 
-#data {
-  resize: none;
-}
-
-#controls {
-  float: right;
+#toggle-controls {
+  right: 0;
   cursor: pointer;
 }
 
 @media (max-width: 720px) {
-  #nav-links {
-    float: left;
+  #nav {
+    right: unset;
   }
 }
 

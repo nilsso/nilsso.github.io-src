@@ -359,7 +359,7 @@ $(function() {
   radLattice = $('#verticesLattice');
 
   // Handlers
-  $('#controls').click(function() {
+  $('#toggle-controls').click(function() {
     $('#left-controls').toggle();
     $('#right-controls').toggle();
   });
