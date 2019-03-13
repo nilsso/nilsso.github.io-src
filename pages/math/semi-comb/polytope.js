@@ -1,4 +1,4 @@
-var selShape, txtEdit, txtData, rngDilation, lblDilation;
+var selShape, txtEdit, txtData, rngDilation, lblDilation, rngSpinSpeed;
 var btnRebuild, btnRando, btnDual;
 var chkSpin, chkAxis, chkDual, chkWire, chkExpNorm;
 var radNone, radDef, radLattice;
@@ -345,6 +345,7 @@ $(function() {
   txtEdit = $('#vertices');
   txtData = $('#data');
   rngDilation = $('#dilation');
+  rngSpinSpeed = $('#spin-speed');
   lblDilation = $('#dilationLabel');
   btnRebuild = $('#rebuild');
   btnDual = $('#makeDual');
@@ -388,6 +389,10 @@ $(function() {
   rngDilation.on('input', function() {
     lblDilation.text($(this).val());
     rebuildPolytope();
+  });
+
+  rngSpinSpeed.on('input', function() {
+    spinSpeed = parseFloat($(this).val());
   });
 
   btnRebuild.click(function() {
