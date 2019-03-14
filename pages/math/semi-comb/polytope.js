@@ -12,7 +12,7 @@ var pointsDef, pointsBound, pointsInner, points;
 
 var dilation;
 var spin, spinSpeed = 0.01;
-var imgW = 256, imgH = 256;
+var imgW = 512, imgH = 512;
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -271,9 +271,7 @@ function saveImage() {
   camera.updateProjectionMatrix();
   renderer.setSize(imgW, imgH);
   renderer.render(scene, camera);
-  var mime = 'image/jpeg';
-  var data = renderer.domElement.toDataURL(mime);
-  download('polytope.jpg', data);
+  download('polytope.png', renderer.domElement.toDataURL('image/png'));
   onWindowResize();
 }
 
