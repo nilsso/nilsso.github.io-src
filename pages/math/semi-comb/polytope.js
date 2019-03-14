@@ -2,7 +2,7 @@ var selShape, txtEdit, txtData, rngDilation, lblDilation, rngSpinSpeed;
 var btnRebuild, btnRando, btnDual;
 var chkSpin, chkAxis, chkDual, chkWire, chkExpNorm;
 var radNone, radDef, radLattice;
-var renderer, svgRenderer, scene, camera, controls, group;
+var renderer, scene, camera, controls, group;
 var meshMatA, meshMatB, pointMatA, pointMatB;
 var lineMatA, lineMatB;
 var axis, geoMeshA, geoMeshB, dualMeshA, dualMeshB;
@@ -11,19 +11,10 @@ var vertsDef, dualVertsDef, vertsBound, vertsInner;
 var pointsDef, pointsBound, pointsInner, points;
 
 var dilation;
-var spin, spinSpeed = 0.001;
+var spin, spinSpeed = 0.01;
+var imgW = 256, imgH = 256;
 
 const urlParams = new URLSearchParams(window.location.search);
-
-//function lightTheme() {
-  //var theme = $('#light-theme');
-  //theme.href = 'https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css';
-//}
-
-//function darkTheme() {
-  //var theme = $('#dark-theme');
-  //theme.href = 'https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css';
-//}
 
 // Cartesian product and helper functions
 // https://stackoverflow.com/questions/12303989/\
@@ -150,14 +141,14 @@ function updateVisiblity() {
   dualLineMesh.visible = dual && wire;
 
   // Lattice points
-  //points.forEach(p => p.visible=false);
-  //if (radDef.prop('checked')) {
-    //pointsDef.visible = true;
-  //}
-  //if (radLattice.prop('checked')) {
-    //pointsBound.visible = true;
-    //pointsInner.visible = true;
-  //}
+  points.forEach(p => p.visible=false);
+  if (radDef.prop('checked')) {
+    pointsDef.visible = true;
+  }
+  if (radLattice.prop('checked')) {
+    pointsBound.visible = true;
+    pointsInner.visible = true;
+  }
 }
 
 // Rebuilt polytope from vertex textarea data
@@ -276,17 +267,14 @@ function download(filename, text) {
 }
 
 function saveImage() {
-  var w = 256, h = 256;
-  camera.aspect = w/h;
+  camera.aspect = imgW/imgH;
   camera.updateProjectionMatrix();
+  renderer.setSize(imgW, imgH);
   renderer.render(scene, camera);
-  var data = renderer.domElement.toDataURL();
+  var mime = 'image/jpeg';
+  var data = renderer.domElement.toDataURL(mime);
+  download('polytope.jpg', data);
   onWindowResize();
-  var serializer = new XMLSerializer();
-  //var source = serializer.serializeToString(data);
-  var source = data;
-  var url = "data:image/png;chakset=utf-8,"+source;
-  download('polytope.png', url);
 }
 
 // Initialize renderer
@@ -295,7 +283,6 @@ function polytopeInit() {
     antialias: true,
     preserveDrawingBuffer: true
   });
-  svgRenderer = new THREE.SVGRenderer();
   var w = window.innerWidth, h = window.innerHeight;
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(w, h);
@@ -336,7 +323,6 @@ function polytopeInit() {
   lineMatA = new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: 1 });
   lineMatB = new THREE.LineBasicMaterial({ color: 0x0000ff, linewidth: 1 });
 
-  //var loader = new THREE.SVGLoader();
   var loader = new THREE.TextureLoader();
   var texture = loader.load('disc.png');
   pointMatA = new THREE.PointsMaterial({
