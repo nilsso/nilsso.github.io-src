@@ -321,17 +321,19 @@ function polytopeInit() {
   lineMatA = new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: 1 });
   lineMatB = new THREE.LineBasicMaterial({ color: 0x0000ff, linewidth: 1 });
 
-  var loader = new THREE.TextureLoader();
-  var texture = loader.load('disc.png');
-  pointMatA = new THREE.PointsMaterial({
-    color: 0x0080ff,
-    map: texture,
-    alphaTest: 0.5,
-    size: 1,
-    //sizeAttenuation: false
-  });
-  pointMatB = pointMatA.clone();
-  pointMatB.color = new THREE.Color(0xff8000);
+  //var loader = new THREE.TextureLoader();
+  //var texture = loader.load('disc.png');
+  //pointMatA = new THREE.PointsMaterial({
+    //color: 0x0080ff,
+    //map: texture,
+    //alphaTest: 0.5,
+    //size: 1
+  //});
+  //pointMatB = pointMatA.clone();
+  //pointMatB.color = new THREE.Color(0xff8000);
+  pointMatA = new THREE.Material({ color: 0x0080ff });
+  pointMatB = new THREE.Material({ color: 0xff8000 });
+  console.log(pointMatA, pointMatB);
 
   window.addEventListener('resize', onWindowResize, false);
 }
