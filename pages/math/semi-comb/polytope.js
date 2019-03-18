@@ -4,26 +4,14 @@ var btnBuild, btnSave, btnRando;
 var chkMesh, chkWire, chkSpin, chkAxis, chkDual;
 var radNone, radDefining, radLattice;
 
-var renderer, scene, camera, controls, light;
 var w, h;
-
-var vertices = [
-  new THREE.Vector3(-1,-1,-1),
-  new THREE.Vector3( 1,-1,-1),
-  new THREE.Vector3(-1, 1,-1),
-  new THREE.Vector3(-1,-1, 1),
-  //new THREE.Vector3( 1, 1, 1)
-  //new THREE.Vector3(-1, 1, 1),
-  //new THREE.Vector3( 1,-1, 1),
-  //new THREE.Vector3( 1, 1,-1),
-];
-
 var fov;
 var dilation;
 var radius;
 var segments = 10;
 var spin, spinSpeed;
 
+var renderer, scene, camera, controls, light;
 var meshMaterialA, meshMaterialB;
 var lineMaterialA, lineMaterialB;
 var nodeMaterialA, nodeMaterialB;
