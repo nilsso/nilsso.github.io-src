@@ -82,6 +82,7 @@
 %
 %
 %
+
 \noindent
 \begin{quote}
   (13) \emph{Flow polytopes.}
@@ -102,17 +103,17 @@
 
 % 1.2 Flows on Graphs notes
 
-A graph $G=(V,E)$ is a collection of $V$ a set of vertices and $E$ a set of
-edges between these vertices. Now, a graph doesn't have to have any vertices or
-any edges (except that if it has edges there must be vertices to which those edges
-connect).
-Also note that the vertices of a graph can be elements of some arbitrary $\F^n$
-space, but for this report we'll only concern ourselves with graphs in $\Z^2$
-Euclidean space.
+A graph $G=(V,E)$ is a collection of $V$, a set of vertices, and $E$, a set of
+edges between the vertices. Now, a graph doesn't have to have any vertices, nor
+does it have to to have any edges (except that if it has edges there must be
+vertices to which those edges connect).
+Also note that the vertices of a graph can be elements of some arbitrary
+d-dimensional space, but for this report we'll only concern ourselves with
+graphs in some two-dimensional space.
 \begin{definition}[Component, connected component]
   A \emph{connected component} (or simply a \emph{component}) of a graph $G$ is
   a subgraph (a subset of the vertices and edges of $G$) in which any two
-  vertices are either directed connect via an edge or are connected to
+  vertices are either directly connected via an edge or are connected to
   one-another via a \emph{path} (a series of vertices and edges). A single
   vertex with no connecting edges is in itself a connected component.
 \end{definition}
@@ -120,7 +121,7 @@ Any graph then is the disjoint union of connected components.
 For example figure~\ref{fig:disjoint-union} can be called a single graph that is the disjoint
 union of three distinct connected components.
 \begin{figure}[h]
-  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=black,inner sep=1}]
     \path
       (.5,.5) node (a) {}
       (0,0) node (b) {} (1,0) node (c) {} (1,1) node (d) {} (0,1) node (e) {}
@@ -141,14 +142,14 @@ union of three distinct connected components.
 \end{lemma}
 \begin{definition}[Bridge]
   A \emph{bridge} is a single edge which serves as a connection between two connected
-  components which if removed would increase the number of connected
+  components which, if removed, would increase the number of connected
   components of the graph by one.
 \end{definition}
 For example, removing the bridge in figure~\ref{fig:bridge} turns a single
 connected component into two triangular connected components:
 one single connected graph into a graph with two connected subgraphs.
 \begin{figure}[h]
-  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=black,inner sep=1}]
     \path
       (-.5,.5) node (a) {} ($({-(1+sqrt(3))/2},0)$) node (b) {} ($({-(1+sqrt(3))/2},1)$) node (c) {}
       ( .5,.5) node (d) {} ($({ (1+sqrt(3))/2},0)$) node (e) {} ($({ (1+sqrt(3))/2},1)$) node (f) {};
@@ -157,7 +158,7 @@ one single connected graph into a graph with two connected subgraphs.
     \draw[dashed] (a) -- (d);
   \end{tikzpicture}
   \hspace{1cm}
-  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=black,inner sep=1}]
     \path
       (-.5,.5) node (a) {} ($({-(1+sqrt(3))/2},0)$) node (b) {} ($({-(1+sqrt(3))/2},1)$) node (c) {}
       ( .5,.5) node (d) {} ($({ (1+sqrt(3))/2},0)$) node (e) {} ($({ (1+sqrt(3))/2},1)$) node (f) {};
@@ -167,9 +168,10 @@ one single connected graph into a graph with two connected subgraphs.
   \caption[Bridges]{A graph with and without a bridge.}
   \label{fig:bridge}
 \end{figure}
-So far we've only looked at graph which are \emph{unoriented}.
+So far we've only looked at \emph{unoriented} graphs, but
+now we introduce directions within graphs.
 \begin{definition}[Directed, oriented graph]
-  A \emph{directed} or \emph{oriented graph} is a graph is a graph on which we
+  A \emph{directed} or \emph{oriented graph} is a graph on which we
   define an \emph{orientation} via a subset $\rho$ of the edges $E$ of the
   graph. For each edge $e=v_i v_j\in E$ (connecting the vertices $v_i,v_j\in
   V$) with $i<j$ we direct:
@@ -189,7 +191,7 @@ with five vertices and an orientation $\rho=\{14,23,24\}$.
 \begin{figure}[h]
   \begin{subfigure}[t]{0.3\textwidth}
     \centering
-    \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+    \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=black,inner sep=1}]
       \path
         (0,1) node (v_1)[label=left:$v_1$]{}
         (1,1) node (v_2)[label=right:$v_2$]{}
@@ -203,7 +205,7 @@ with five vertices and an orientation $\rho=\{14,23,24\}$.
   \begin{subfigure}[t]{0.3\textwidth}
     \centering
     \begin{tikzpicture}[
-        every node/.style={draw,shape=circle,fill=white,inner sep=1},
+        every node/.style={draw,shape=circle,fill=black,inner sep=1},
         decoration={markings,mark=at position 0.5 with {\arrow{>}}}
       ]
       \path
@@ -222,7 +224,7 @@ with five vertices and an orientation $\rho=\{14,23,24\}$.
   \begin{subfigure}[t]{0.3\textwidth}
     \centering
     \begin{tikzpicture}[
-        every node/.style={draw,shape=circle,fill=white,inner sep=1},
+        every node/.style={draw,shape=circle,fill=black,inner sep=1},
         decoration={markings,mark=at position 0.5 with {\arrow{>}}}
       ]
       \path
@@ -253,7 +255,7 @@ figure~\ref{fig:path-finding} where the edge with weight 5 now becomes most
 expensive to traverse versus the one with weight 2).
 \begin{figure}[h]
   \begin{tikzpicture}[
-    dot/.style={draw,shape=circle,fill=white,inner sep=1},
+    dot/.style={draw,shape=circle,fill=black,inner sep=1},
     decoration={markings,mark=at position 0.5 with {\arrow{>}}}
   ]
     \path (0,0) node[dot] (a){} (2,0) node[dot] (b){};
@@ -262,7 +264,7 @@ expensive to traverse versus the one with weight 2).
   \end{tikzpicture}
   \hspace{1cm}
   \begin{tikzpicture}[
-    dot/.style={draw,shape=circle,fill=white,inner sep=1},
+    dot/.style={draw,shape=circle,fill=black,inner sep=1},
     decoration={markings,mark=at position 0.5 with {\arrow{>}}}
   ]
     \path (0,0) node[dot] (a){} (2,0) node[dot] (b){};
@@ -318,6 +320,57 @@ As it happens\ldots
   $G$ will not have any nowhere-zero flow if $G$ has a \emph{bridge}---an edge
   whose removal increases the number of connected components of $G$.
 \end{lemma}
+
+\begin{figure}[h]
+  \begin{subfigure}[t]{.3\textwidth}
+    \begin{tikzpicture}[
+        gdot/.style={draw,shape=circle,fill=black,inner sep=1},
+        ddot/.style={draw,shape=circle,fill=white,inner sep=1},
+        decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+      ]
+      \draw (0,0) node[gdot](a){} -- (1,0) node[gdot](b){};
+      \node[ddot](c) at (.5,-.5) {};
+      \draw (c) to [out=180,in=90,looseness=60] (c);
+    \end{tikzpicture}
+    \caption{Simplest graph with a bridge.}
+  \end{subfigure}
+  \begin{subfigure}[t]{.3\textwidth}
+    \begin{tikzpicture}[
+        gdot/.style={draw,shape=circle,fill=black,inner sep=1},
+        ddot/.style={draw,shape=circle,fill=white,inner sep=1},
+        decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+      ]
+      \draw (0,0) node[gdot]{} -- (1,0) node[gdot]{} -- ($(1/2,{sqrt(3)/2})$) node [gdot]{} -- cycle;
+      \node[ddot] (a) at ($(1/2,{-sqrt(2)/3})$) {};
+      \node[ddot] (b) at ($(1/2,{sqrt(3)/6})$) {};
+      \draw (a) -- (b);
+      \draw (a) to [out=180,in=135,looseness=4] (b);
+      \draw (a) to [out=0,in=45,looseness=4] (b);
+    \end{tikzpicture}
+    \caption{A complete graph.}
+  \end{subfigure}
+  \begin{subfigure}[t]{.3\textwidth}
+    \begin{tikzpicture}[
+      gdot/.style={draw,shape=circle,fill=black,inner sep=1},
+      ddot/.style={draw,shape=circle,fill=white,inner sep=1},
+      decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+    ]
+      \draw (0,0) node[gdot]{} -- (0,1) node[gdot]{};
+      \draw (0,0) node[gdot]{} -- ($({sqrt(3)/2},1/2)$) node[gdot]{} -- (0,1) node[gdot]{} -- ($({-sqrt(3)/2},1/2)$) node[gdot]{} -- cycle;
+      \node[ddot] (a) at (0,-1/2){};
+      \node[ddot] (b) at ($({-sqrt(3)/6},1/2)$){};
+      \node[ddot] (c) at ($({ sqrt(3)/6},1/2)$){};
+      \draw (a) to [out=135,in=240] (b);
+      \draw (a) to [out=180,in=120,looseness=4] (b);
+      \draw (a) to [out=45,in=300] (c);
+      \draw (a) to [out=0,in=60,looseness=4] (c);
+      \draw (b) -- (c);
+    \end{tikzpicture}
+    \caption{Graph with two connected components.}
+  \end{subfigure}
+  \caption{Various graphs and their duals.}
+  \label{fig:graphs-and-duals}
+\end{figure}
 
 % 7.6 Graph Flows and Totally Cyclic Orientations notes
 
