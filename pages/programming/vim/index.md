@@ -13,6 +13,28 @@ title: "Vim"
 <kbd>&lt;c-b&gt;</kbd> | Move screen up a page (cursor to first line)
 <kbd>&lt;c-f&gt;</kbd> | Move screen down a page (cursor to last line)
 
+# Writing LaTeX
+
+There's a lot of editors out there solely made for writing $\rm\LaTeX$, but
+vim is just as capable in making the experience seamless. I happen to think
+it surpasses most of these editors in being as unobtrusive as desired. I for
+one do not one my editor loaded down with snippets and auto-completion when
+I don't explicitly want it.
+
+## Concealing
+
+The ability of vim to hide/replace search patterns is extremely useful when
+it comes to writing math using LaTeX. In fact it's so well implemented
+that I'm surprised most dedicated editors don't have some sort of alternative.
+The gist is that vim can visually replace patterns with single characters,
+and in the case of math replace the tex commands with their equivalent math
+character representations. `\int` becomes ∫, `\sqrt` becomes √,
+`\in` becomes ∈, etc.
+
+You can also add your own such concealments
+
+![conceal toggle](conceal-toggle.gif)
+
 <!--
 ---
 

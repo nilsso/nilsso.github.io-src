@@ -493,8 +493,8 @@ function initThreeEnvironment() {
     linewidth: 2
   });
 
-  nodeMaterialA = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-  nodeMaterialB = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  nodeMaterialA = new THREE.MeshToonMaterial({ color: 0xff0000 });
+  nodeMaterialB = new THREE.MeshToonMaterial({ color: 0x00ff00 });
 
   window.addEventListener('resize', onWindowResize, false);
 }
