@@ -78,6 +78,9 @@
   \newcommand{\sbmx}[1]{{\left[\begin{smallmatrix}#1\end{smallmatrix}\right]}}
 \newcommand{\smallxymatrix}[2]{\xymatrix@C-=#1cm@R-=#1cm{#2}}
 \renewcommand\labelitemi{\small$\bullet$}
+%
+\tikzstyle{gdot}=[draw,shape=circle,fill=black,inner sep=1]
+\tikzstyle{ddot}=[draw,shape=circle,fill=white,inner sep=1]
 \begin{document}
 %
 %
@@ -104,12 +107,15 @@
 % 1.2 Flows on Graphs notes
 
 A graph $G=(V,E)$ is a collection of $V$, a set of vertices, and $E$, a set of
-edges between the vertices. Now, a graph doesn't have to have any vertices, nor
+edges between the vertices.
+Now, a graph doesn't have to have any vertices, nor
 does it have to to have any edges (except that if it has edges there must be
 vertices to which those edges connect).
-Also note that the vertices of a graph can be elements of some arbitrary
+Also note that the nodes of a graph can be elements of some arbitrary
 d-dimensional space, but for this report we'll only concern ourselves with
 graphs in some two-dimensional space.
+(Note that the word ``node'' is analogous to ``vertex'' and that this paper
+will do plenty of haphazard switching between the two of them.)
 \begin{definition}[Component, connected component]
   A \emph{connected component} (or simply a \emph{component}) of a graph $G$ is
   a subgraph (a subset of the vertices and edges of $G$) in which any two
@@ -147,7 +153,7 @@ union of three distinct connected components.
 \end{definition}
 For example, removing the bridge in figure~\ref{fig:bridge} turns a single
 connected component into two triangular connected components:
-one single connected graph into a graph with two connected subgraphs.
+one complete graph into a graph with two complete subgraphs.
 \begin{figure}[h]
   \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=black,inner sep=1}]
     \path
@@ -302,7 +308,7 @@ If $\sgsupp(f)=E$ (all $e$ edges have $f(e)\ne0$), then $f$ is considered
 nowhere-zero $\Z_n$-flows, in particular with counting how many of them can be
 made for any particular graph and Abelian group.
 (So going forward, $G$ will always refer to a graph in $\Z^2$ with $V$ vertices
-and $E$ edges, $\rho$ to an arbitrary (but fixed) orientation of $G$,
+and $E$ edges, $\rho$ to an arbitrary (but fixed) orientation of $G$
 and $\Z_n$ an Abelian group to which $f$ a $\Z_n$-flow maps.)
 \begin{definition}
   Define a counting function:
@@ -316,11 +322,49 @@ As it happens\ldots
   $\rho$ of $G$.
 \end{prop}
 (Todo:? Describe the proof of this proposition.)
-\begin{lemma}
+\begin{prop}
   $G$ will not have any nowhere-zero flow if $G$ has a \emph{bridge}---an edge
   whose removal increases the number of connected components of $G$.
-\end{lemma}
+\end{prop}
 
+Now we introduce the concept of the \emph{dual graph} of a graph. Consider a
+graph $G$ as subdividing the plane into discrete regions; if two points lie
+within a region then they can be connected without intersecting an edge of $G$.
+Regions which are neighbors have an edge of $G$ which separate them
+(their topological closures sharing a proper 1-dimensional part of their
+boundaries).
+\begin{definition}[Dual graph]
+  The \emph{dual graph} of a graph $G$ is the graph $G^*=(V^*,E^*)$ with
+  vertices corresponding to the regions of $G$.
+  Two $V^*$ vertices are connected via edge $e^*\in E^*$ if an original edge $e$
+  of $G$ is properly contained within the boundaries of their corresponding
+  regions.
+\end{definition}
+Figure~\ref{fig:dual-incomplete} shows a graph with four vertices (solid)
+along with the vertices (hollow) of its dual to demonstrate the regions which
+$G$ subdivides the plane into.
+(However the edges are omitted.
+See figure~\ref{fig:graphs-and-duals} for complete illustrations of graphs and
+their duals.)
+\begin{figure}[h]
+    \begin{tikzpicture}
+      \path
+        (0,0) node (a)[gdot]{}
+        (1,0) node (b)[gdot]{}
+        (1,1) node (c)[gdot]{}
+        (0,1) node (d)[gdot]{};
+      \draw (a) -- (b) -- (c) -- (d) -- (a);
+      \path (.5,.5) node[ddot]{} (1.5,.5) node[ddot]{};
+  \end{tikzpicture}
+  \caption{A graph and its (incompletely portrayed) dual graph.}
+  \label{fig:dual-incomplete}
+\end{figure}
+
+Another way to think of the $e^*$ edges is that there is one for every edge $e$
+that bounds two regions of $G$ (connecting the $G^*$ vertices corresponding to
+the two regions), and that $e^*$ crosses-over its corresponding $e$ edge.
+Figure~\ref{fig:graphs-and-duals} illustrates some examples of graphs
+(with solid dot vertices) and their duals (with hollow dot vertices).
 \begin{figure}[h]
   \begin{subfigure}[t]{.3\textwidth}
     \begin{tikzpicture}[
@@ -370,6 +414,23 @@ As it happens\ldots
   \end{subfigure}
   \caption{Various graphs and their duals.}
   \label{fig:graphs-and-duals}
+\end{figure}
+
+What naturally follows is that if $G$ is a directed graph, we should want
+$G^*$ to also be some sort of directed graph.
+So, given an orientation of $G$, an orientation on $G^*$ can be induced by
+``rotating'' the direction of the edge clockwise. That is, the dual edge $e^*$
+will ``point'' east assuming that the primal edge $e$ points north:
+\begin{figure}[h]
+  \begin{tikzpicture}
+    \draw[->,thick] (.25,0) .. controls (.25,.5) and (.75,.5) .. (.75,1);
+    \draw[->] (0,.5) -- (1,.5);
+  \end{tikzpicture}
+  \hspace{1cm}
+  \begin{tikzpicture}
+    \draw[<-,thick] (.25,0) .. controls (.25,.5) and (.75,.5) .. (.75,1);
+    \draw[<-] (0,.5) -- (1,.5);
+  \end{tikzpicture}
 \end{figure}
 
 % 7.6 Graph Flows and Totally Cyclic Orientations notes
