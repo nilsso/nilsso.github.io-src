@@ -1,0 +1,328 @@
+\documentclass{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+%\usepackage[margin=1in]{geometry}
+\usepackage[inline]{enumitem}
+%\usepackage{rotating}
+%\usepackage{color}
+%\usepackage{tabu}
+%\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{calc}
+\usepackage{xfrac}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+%\usepackage{xcolor-solarized}
+%\usepackage{minted}
+%\usepackage{MnSymbol}
+%\usepackage[libertine]{newtxmath}
+%\newcommand*\circled[1]{\tikz[baseline= (char.base)]{
+    %\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%\usepackage{xypic}
+%\usepackage[tightpage]{preview} % display
+% Math operators
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\C}{\mathbb{C}}
+\DeclareMathOperator{\F}{\mathbb{F}}
+\DeclareMathOperator{\sge}{\mathsf{e}}
+\DeclareMathOperator{\sgm}{\mathsf{m}}
+\DeclareMathOperator{\sgG}{\mathsf{G}}
+\DeclareMathOperator{\sgg}{\mathsf{g}}
+\DeclareMathOperator{\sgF}{\mathsf{F}}
+\DeclareMathOperator{\sgt}{\mathsf{t}}
+\DeclareMathOperator{\sgL}{\mathsf{L}}
+\DeclareMathOperator{\sgZ}{\mathsf{Z}}
+\DeclareMathOperator{\sgAp}{Ap}
+\DeclareMathOperator{\sgPF}{PF}
+\DeclareMathOperator{\sgconv}{conv}
+\DeclareMathOperator{\sgsupp}{supp}
+\DeclareMathOperator{\calO}{\mathcal{O}}
+\DeclareMathOperator{\Grho}{\prescript{}{\rho}G}
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{claim}{Claim}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{conj}{Conjecture}
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+% Paired math operators
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+% Math helper functions
+\newcommand{\congr}[2]{{[#1]}_{#2}}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\genset}[1]{{\langle{}#1\rangle{}}}
+\newcommand{\abs}[1]{\lvert{}#1\rvert{}}
+\newcommand{\norm}[1]{\lVert{}#1\rVert{}}
+\newcommand{\bmx}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\pmx}[1]{\begin{pmatrix}#1\end{pmatrix}}
+  \newcommand{\sbmx}[1]{{\left[\begin{smallmatrix}#1\end{smallmatrix}\right]}}
+\newcommand{\smallxymatrix}[2]{\xymatrix@C-=#1cm@R-=#1cm{#2}}
+\renewcommand\labelitemi{\small$\bullet$}
+\begin{document}
+%
+%
+%
+\noindent
+\begin{quote}
+  (13) \emph{Flow polytopes.}
+  A \emph{directed graph} is a collection of dots (called \emph{vertices}) and
+  arrow between them (called \emph{edges}). A \emph{flow} on a directed graph is a
+  way to label each edge of $G$ by an element of $\Z$ (or $\Z_n$) so that at each
+  vertex $v$, the sum of the edges entering $v$ equals the sum of the edges
+  leaving $v$ (i.e.\ the in \emph{flow} at each vertex equals the \emph{out
+  flow}). The flows on a given directed graph can be counted using a certain
+  family of polytopes, whose integer points each coincide with a flow on $G$.
+  \\[1em]
+  \noindent
+  Source:
+  \emph{Combinatorial reciprocity theorems} (M. Beck, R. Sanyal), Chapters 1 and 7.
+\end{quote}
+
+\hrulefill
+
+% 1.2 Flows on Graphs notes
+
+A graph $G=(V,E)$ is a collection of $V$ a set of vertices and $E$ a set of
+edges between these vertices. Now, a graph doesn't have to have any vertices or
+any edges (except that if it has edges there must be vertices to which those edges
+connect).
+Also note that the vertices of a graph can be elements of some arbitrary $\F^n$
+space, but for this report we'll only concern ourselves with graphs in $\Z^2$
+Euclidean space.
+\begin{definition}[Component, connected component]
+  A \emph{connected component} (or simply a \emph{component}) of a graph $G$ is
+  a subgraph (a subset of the vertices and edges of $G$) in which any two
+  vertices are either directed connect via an edge or are connected to
+  one-another via a \emph{path} (a series of vertices and edges). A single
+  vertex with no connecting edges is in itself a connected component.
+\end{definition}
+Any graph then is the disjoint union of connected components.
+For example figure~\ref{fig:disjoint-union} can be called a single graph that is the disjoint
+union of three distinct connected components.
+\begin{figure}[h]
+  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+    \path
+      (.5,.5) node (a) {}
+      (0,0) node (b) {} (1,0) node (c) {} (1,1) node (d) {} (0,1) node (e) {}
+      (2,1) node (f) {} (2,0) node (g) {} (3,0) node (h) {};
+    \draw (a);
+    \draw (b) -- (c) -- (d) -- (e) -- (b);
+    \draw (f) -- (g) -- (h);
+  \end{tikzpicture}
+  \caption[Disjoin union]{}
+  \label{fig:disjoint-union}
+\end{figure}
+\begin{lemma}
+  A connected component of the graph $G$ is a maximal subgraph of $G$ in which
+  any two nodes are connect by a path.
+\end{lemma}
+\begin{lemma}
+  A graph $G$ is \emph{connected} if it has only one connected component.
+\end{lemma}
+\begin{definition}[Bridge]
+  A \emph{bridge} is a single edge which serves as a connection between two connected
+  components which if removed would increase the number of connected
+  components of the graph by one.
+\end{definition}
+For example, removing the bridge in figure~\ref{fig:bridge} turns a single
+connected component into two triangular connected components:
+one single connected graph into a graph with two connected subgraphs.
+\begin{figure}[h]
+  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+    \path
+      (-.5,.5) node (a) {} ($({-(1+sqrt(3))/2},0)$) node (b) {} ($({-(1+sqrt(3))/2},1)$) node (c) {}
+      ( .5,.5) node (d) {} ($({ (1+sqrt(3))/2},0)$) node (e) {} ($({ (1+sqrt(3))/2},1)$) node (f) {};
+    \draw (a) -- (b) -- (c) -- (a);
+    \draw (d) -- (e) -- (f) -- (d);
+    \draw[dashed] (a) -- (d);
+  \end{tikzpicture}
+  \hspace{1cm}
+  \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+    \path
+      (-.5,.5) node (a) {} ($({-(1+sqrt(3))/2},0)$) node (b) {} ($({-(1+sqrt(3))/2},1)$) node (c) {}
+      ( .5,.5) node (d) {} ($({ (1+sqrt(3))/2},0)$) node (e) {} ($({ (1+sqrt(3))/2},1)$) node (f) {};
+    \draw (a) -- (b) -- (c) -- (a);
+    \draw (d) -- (e) -- (f) -- (d);
+  \end{tikzpicture}
+  \caption[Bridges]{A graph with and without a bridge.}
+  \label{fig:bridge}
+\end{figure}
+So far we've only looked at graph which are \emph{unoriented}.
+\begin{definition}[Directed, oriented graph]
+  A \emph{directed} or \emph{oriented graph} is a graph is a graph on which we
+  define an \emph{orientation} via a subset $\rho$ of the edges $E$ of the
+  graph. For each edge $e=v_i v_j\in E$ (connecting the vertices $v_i,v_j\in
+  V$) with $i<j$ we direct:
+  \[
+    v_i\stackrel{e}{\leftarrow}v_j\text{ if }e\in\rho\text{, and }
+    v_i\stackrel{e}{\rightarrow}v_j\text{ if }e\notin\rho.
+  \]
+\end{definition}
+This definition may be confusing at first glance because $\rho$
+may be missing some of the edges of $E$. What this definition attempts to succinctly
+encapsulate is only the edges with their direction pointing from the vertex of higher
+index to the vertex of lower index (which does certainly feel backwards),
+with all the remaining edges not in $\rho$ directed in the opposite direction,
+from lower to higher index.
+Figure~\ref{fig:directed-graph} tries to illustrate this encapsulation for a graph
+with five vertices and an orientation $\rho=\{14,23,24\}$.
+\begin{figure}[h]
+  \begin{subfigure}[t]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}[every node/.style={draw,shape=circle,fill=white,inner sep=1}]
+      \path
+        (0,1) node (v_1)[label=left:$v_1$]{}
+        (1,1) node (v_2)[label=right:$v_2$]{}
+        (1,0) node (v_3)[label=right:$v_3$]{}
+        (0,0) node (v_4)[label=left:$v_4$]{};
+      \draw (v_4) -- (v_3) -- (v_2) -- (v_1) -- (v_4) -- (v_2);
+    \end{tikzpicture}
+    \caption{The undirected graph.}
+  \end{subfigure}
+  %\hspace{1cm}
+  \begin{subfigure}[t]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}[
+        every node/.style={draw,shape=circle,fill=white,inner sep=1},
+        decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+      ]
+      \path
+        (0,1) node (v_1)[label=left:$v_1$]{}
+        (1,1) node (v_2)[label=right:$v_2$]{}
+        (1,0) node (v_3)[label=right:$v_3$]{}
+        (0,0) node (v_4)[label=left:$v_4$]{};
+      \draw[postaction={decorate}] (v_4) -- (v_1);
+      \draw[postaction={decorate}] (v_4) -- (v_2);
+      \draw[postaction={decorate}] (v_3) -- (v_2);
+      \draw (v_3) -- (v_4);
+      \draw (v_1) -- (v_2);
+    \end{tikzpicture}
+    \caption{$\rho$ edges marked.}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}[
+        every node/.style={draw,shape=circle,fill=white,inner sep=1},
+        decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+      ]
+      \path
+        (0,1) node (v_1)[label=left:$v_1$]{}
+        (1,1) node (v_2)[label=right:$v_2$]{}
+        (1,0) node (v_3)[label=right:$v_3$]{}
+        (0,0) node (v_4)[label=left:$v_4$]{};
+      \draw[postaction={decorate}] (v_4) -- (v_1);
+      \draw[postaction={decorate}] (v_4) -- (v_2);
+      \draw[postaction={decorate}] (v_3) -- (v_2);
+      \draw[postaction={decorate}] (v_3) -- (v_4);
+      \draw[postaction={decorate}] (v_1) -- (v_2);
+    \end{tikzpicture}
+    \caption{$E\setminus\rho$ edges marked.}
+  \end{subfigure}
+  \caption[A directed graph]{A directed graph.}
+  \label{fig:directed-graph}
+\end{figure}
+
+As an aside, directed graphs are the subject of many algorithms in computer
+science, often pertaining to finding optimal ways to traverse the paths of said
+graphs. In some models each edge is considered to be of equal ``weight'' as any
+other. That is if two edges originating from the same node both point to the
+same node, there should be no real preference to traveling down one edge or the
+other to get to the destination. On the other hand we might assign a weight to
+each edge, presenting a cost-benefit analysis in choosing a path to take (as in
+figure~\ref{fig:path-finding} where the edge with weight 5 now becomes most
+expensive to traverse versus the one with weight 2).
+\begin{figure}[h]
+  \begin{tikzpicture}[
+    dot/.style={draw,shape=circle,fill=white,inner sep=1},
+    decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+  ]
+    \path (0,0) node[dot] (a){} (2,0) node[dot] (b){};
+    \draw[postaction=decorate] (a) to [out=45, in=135] node[above]{} (b);
+    \draw[postaction=decorate] (a) to [out=315,in=225] node[below]{$\phantom 5$} (b);
+  \end{tikzpicture}
+  \hspace{1cm}
+  \begin{tikzpicture}[
+    dot/.style={draw,shape=circle,fill=white,inner sep=1},
+    decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+  ]
+    \path (0,0) node[dot] (a){} (2,0) node[dot] (b){};
+    \draw[postaction=decorate] (a) to [out=45, in=135] node[above]{$2$} (b);
+    \draw[postaction=decorate] (a) to [out=315,in=225] node[below]{$5$} (b);
+  \end{tikzpicture}
+  \caption{A directed graph with and without weights.}
+  \label{fig:path-finding}
+\end{figure}
+
+Intuitively these weights are often simple $\Z$ integers.
+But moving on, we now we introduce \emph{flow} values to edges; similar
+values to weights, but living not within $\Z$ but instead within an Abelian
+group $\Z_n=\sfrac\Z n$. (There may also be optimal path algorithms associated
+with flow values, but for this paper our focus is elsewhere.)
+\begin{definition}[$\Z_n$-flow]
+  A \emph{$\Z_n$-flow} is a map $f:E\to\Z_n$ which to each $e$ edge of $E$
+  assigns a flow ${f(e)\in\Z_n}$ such that there is ``conservation of flow'' at
+  every $v\in V$ vertex, by which me mean the sum of the flows into a vertex $v$
+  is equivalent to the sum of the flows out it:
+  \[
+    \sum_{\stackrel e \to v}f(e)=\sum_{v\stackrel e \to}f(e).
+  \]
+\end{definition}
+And it's important to note equivalence here since $\sum f(e)\in\Z_n$.
+\begin{definition}[$f$ support]
+  The \emph{support} of $f$, denoted $\sgsupp(f)$, is the subset of edges $e$
+  whose flows are non-zero:
+  \[
+    \sgsupp(f)=\{e\in E:f(e)\ne 0\}\subseteq E
+  \] 
+\end{definition}
+If $\sgsupp(f)=E$ (all $e$ edges have $f(e)\ne0$), then $f$ is considered
+``nowhere-zero''. For the rest of this report we'll be concerned with these
+nowhere-zero $\Z_n$-flows, in particular with counting how many of them can be
+made for any particular graph and Abelian group.
+(So going forward, $G$ will always refer to a graph in $\Z^2$ with $V$ vertices
+and $E$ edges, $\rho$ to an arbitrary (but fixed) orientation of $G$,
+and $\Z_n$ an Abelian group to which $f$ a $\Z_n$-flow maps.)
+\begin{definition}
+  Define a counting function:
+  \[
+    \varphi_G(n)=\text{the number of $f$ nowhere-zero $\Z_n$-flows on $G$}
+  \] 
+\end{definition}
+As it happens\ldots
+\begin{prop}
+  The flow-counting function $\varphi_G(n)$ is independent of the orientation
+  $\rho$ of $G$.
+\end{prop}
+(Todo:? Describe the proof of this proposition.)
+\begin{lemma}
+  $G$ will not have any nowhere-zero flow if $G$ has a \emph{bridge}---an edge
+  whose removal increases the number of connected components of $G$.
+\end{lemma}
+
+% 7.6 Graph Flows and Totally Cyclic Orientations notes
+
+%
+%
+%
+\end{document}
+
