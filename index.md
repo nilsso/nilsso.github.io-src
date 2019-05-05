@@ -29,6 +29,7 @@ Math /
 Programming /
 [LaTeX](pages/programming/latex/) /
 [Python](pages/programming/python/) /
+[Rust](pages/programming/rust/) /
 [Git](pages/programming/git/) /
 [Vim](pages/programming/vim/) /
 [Web](pages/programming/web/) /
