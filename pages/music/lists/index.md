@@ -19,6 +19,8 @@ Wagner
 Debussy, Ravel, Satie
 
 ## Metal
+- [Deathfests](https://www.deathfests.com/)
+- [Roadburn](https://roadburn.com/)
 
 ### Post-metal
 
