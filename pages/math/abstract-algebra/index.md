@@ -1,7 +1,7 @@
 ---
 title: Abstract Algebra
 math: True
-<!--anchor: True-->
+anchor: True
 ---
 <!--
 # Arithmetic in $\Z$
