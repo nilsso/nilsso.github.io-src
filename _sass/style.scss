@@ -11,18 +11,27 @@ $color-d: #bfbfbf; // Gray (light)
 
 //$font-size-normal: 0.9em;
 $font-size-normal: 14px;
-$font-size-small:  80%;
-$font-size-big:    120%;
-$font-size-Big:    160%;
-$font-size-BIG:    200%;
+$font-size-small: 80%;
+$font-size-big: 120%;
+$font-size-Big: 160%;
+$font-size-BIG: 200%;
+
+$font-normal:
+    //'Noto Serif', serif;
+    'Roboto', sans-serif;
+    //'Roboto Slab', serif; 
+    //'Merriweather', serif; 
+$font-header:
+    //'Noto Serif', serif;
+    //'Roboto', sans-serif;
+    'Roboto Slab', serif; 
+    //'Merriweather', serif; 
+$font-code: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 
 html {
   color: $color-a;
   font-size: $font-size-normal;
-  //font-family: 'Roboto', sans-serif;
-  //font-family: 'Roboto Slab', serif; 
-  //font-family: 'Merriweather', serif; 
-  font-family: 'Noto Serif', serif;
+  font-family: $font-normal;
   line-height: 1.5;
 }
 
@@ -32,10 +41,7 @@ body {
 }
 
 nav, .nav, h1, h2, h3, h4, h5, h6 {
-  //font-family: 'Roboto', sans-serif;
-  //font-family: 'Roboto Slab', serif;
-  //font-family: 'Merriweather', serif; 
-  font-family: 'Noto Serif', serif;
+  font-family: $font-header;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -120,7 +126,7 @@ blockquote {
 }
 
 code, pre, kbd {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  font-family: $font-code;
   font-size: 0.9rem;
 }
 

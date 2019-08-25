@@ -20,7 +20,8 @@ Math /
 [AbsAlg](pages/math/abstract-algebra/) /
 [SemiComb](pages/math/semi-comb/) /
 [AdvCalc1](pages/math/adv-calc-1/) /
-[AdvCalc2](pages/math/adv-calc-2/)
+[AdvCalc2](pages/math/adv-calc-2/) /
+[DynamicalSystems](pages/math/dynamical-systems/)
 <br/>
 Math /
 [Generator Project](problem-generator/) /
@@ -38,8 +39,8 @@ Programming /
 [Haskell](pages/programming/haskell/)
 <br/>
 Vidya /
-[WoW](pages/vidya/wow/) /
-[Tarkov](pages/vidya/tarkov/)
+[WoW](pages/vidya/wow/)
+<!--[Tarkov](pages/vidya/tarkov/)-->
 </span>
 
 <hr>

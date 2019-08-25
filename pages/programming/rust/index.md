@@ -25,6 +25,10 @@ println!("{:?}", plus_one(Some(5))); // Some(6)
 println!("{:?}", plus_one(None)); // None
 ```
 
+## `AsRef`
+
+Basically borrowed into.
+
 ## Foreign Languages
 Dealing with foreign languages is inevitable for some applications,
 but in particular with games using Rust wrappers for C rendering libraries.
