@@ -35,8 +35,7 @@ Programming /
 [Vim](pages/programming/vim/) /
 [Web](pages/programming/web/) /
 [C++](pages/programming/cpp/) /
-[Java](pages/programming/java/) /
-[Haskell](pages/programming/haskell/)
+[Java](pages/programming/java/)
 <br/>
 Vidya /
 [WoW](pages/vidya/wow/)
