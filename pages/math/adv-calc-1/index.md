@@ -21,7 +21,7 @@ $$
 <!-- Ch 3.1 ................................................................ -->
 # Sequences and their limits
 
-{% include theorem.html text="Definition 3.1.1" content="
+{% include boxed.html text="Definition 3.1.1" content="
 A **sequence** is a function whose domain is a subset of integers o the form
 $\seq{N_0,N_0+1,N_0+2,\cdots}$ where $N_0\in\N$. If we refer to this functionas
 $f$, then $f(n)$ is usually denoted $a_n$ for $n=N_0,N_0+1,N_0+2,\cdots$. The
@@ -32,7 +32,7 @@ if the value of $N_0$ is obvious.
 
 ### Subsequences
 
-{% include theorem.html text="Definition 3.2.2" content="
+{% include boxed.html text="Definition 3.2.2" content="
 A **subsequence** of a sequence $\seq{a_n}\_{n=1}^\infty$ is formed by selecting
 the terms $a_n$ that correspond to the values of $n$ taken as a strictly
 increasing sequence. If $n_1<n_2<\ldots<n_k<n_{k+1}<\ldots$ is a strictly
@@ -43,14 +43,14 @@ $\seq{a_{n_k}}\_{k=1}^\infty$ is a subsequence of $\seq{a_n}_{n=1}^\infty$.
 <!-- Ch 3.2 ................................................................ -->
 ## Limits
 
-{% include theorem.html text="Definition 3.2.1<br/>Proposition 3.2.1" content="
+{% include boxed.html text="Definition 3.2.1<br/>Proposition 3.2.1" content="
 The limit of the sequence $\seq{a_n}$ (denoted $\lim_{n\to\infty}a_n=L$) is a
 unique value $L$ which exists if:
 
 $$ \forall\epsilon>0,\exists N\in\N,\forall n\geq N,|a_n-L|<\epsilon $$
 " %}
 
-{% include theorem.html text="Proposition 3.2.2" content="
+{% include boxed.html text="Proposition 3.2.2" content="
 And if a sequence $\seq{a_n}$ converges to a limit $L$ then so do all
 subsequences $\seq{a_{n_k}}$.
 " %}
@@ -59,11 +59,11 @@ subsequences $\seq{a_{n_k}}$.
 ### Properties of sequence limits
 
 <ul>
-{% include theorem.html text="Proposition 3.3.1" content="
+{% include boxed.html text="Proposition 3.3.1" content="
 <li>The limit of a constant sequence $c$ is $c$.</li>
 " %}
 
-{% include theorem.html text="Proposition 3.3.2" content="
+{% include boxed.html text="Proposition 3.3.2" content="
 <li>
 Assume that $c$ is a constant and $\lim_{n\to\infty}a_n$ exists then:
 $$
@@ -71,7 +71,7 @@ $$
 $$
 </li>" %}
 
-{% include theorem.html text="Proposition 3.3.3" content="
+{% include boxed.html text="Proposition 3.3.3" content="
 <li>
 (Sum rule) Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences, then
 $\lim_{n\to\infty}(a_n+b_n)$ exists and:
@@ -80,7 +80,7 @@ $$
 $$
 </li>" %}
 
-{% include theorem.html text="Proposition 3.3.5" content="
+{% include boxed.html text="Proposition 3.3.5" content="
 <li>
 (Product rule) Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences, then
 $$
@@ -89,7 +89,7 @@ $$
 $$
 </li>" %}
 
-{% include theorem.html text="Proposition 3.3.6" content="
+{% include boxed.html text="Proposition 3.3.6" content="
 <li>
 (Quotient rule) Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences, then
 $$
@@ -98,7 +98,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Proposition 3.3.7" content="
+{% include boxed.html text="Proposition 3.3.7" content="
 <li>
 Fix $\seq{a_n}$ and $\seq{b_n}$ converging sequences.
 If $\forall n\in\N,a_n<b_n$ then
@@ -107,7 +107,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Corollary 3.3.8" content="
+{% include boxed.html text="Corollary 3.3.8" content="
 <li>
 Assume that $\forall n\in\N,a_n<M$ and $\lim_{n\to\infty}a_n$ exists then:
 $$
@@ -118,13 +118,13 @@ $$
 
 ### Bounded sequences
 
-{% include theorem.html text="Definition 3.3.1" content="
+{% include boxed.html text="Definition 3.3.1" content="
 A sequence $\seq{a_n}$ is said to be **bounded** if
 $\exists M\in\R,M\geq 0,\forall n\in\N,|a_n|\leq M$.
 " %}
 
 <ul>
-{% include theorem.html text="Proposition 3.3.4" content="
+{% include boxed.html text="Proposition 3.3.4" content="
 <li>
 A convergent sequence is bounded.
 </li>" %}
@@ -133,7 +133,7 @@ A convergent sequence is bounded.
 <!-- Ch 3.4 ................................................................ -->
 ## Cauchy sequences
 
-{% include theorem.html text="Definition 3.4.1" content="
+{% include boxed.html text="Definition 3.4.1" content="
 A sequence $\seq{a_n}_{n=1}^\infty$ is a **Cauchy sequence** if
 
 $$
@@ -153,7 +153,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Proposition 3.4.1<br/>Axiom 1" content="
+{% include boxed.html text="Proposition 3.4.1<br/>Axiom 1" content="
 We have then that sequences that converge are necessarily Cauchy sequences (at
 least of real number sequences) and converge to a real number.
 " %}
@@ -169,7 +169,7 @@ least of real number sequences) and converge to a real number.
 
 Let $S\subset\R$, then:
 
-{% include theorem.html text="Definition 3.7.1<br/>Notation 3.1" content="
+{% include boxed.html text="Definition 3.7.1<br/>Notation 3.1" content="
 - The number $L$ is called the **least upper bound** of $S$ if $L$ is the
 smallest number such that $\forall a\in S,a\leq L$. It is also called the
 **supremum** and denoted $\sup S$.
@@ -180,7 +180,7 @@ greatest number such that $\forall a\in S,a\geq L$. It is also called the
 
 Additionally we have that:
 
-{% include theorem.html text="Theorem 3.7.2" content="
+{% include boxed.html text="Theorem 3.7.2" content="
 - If $S$ is bounded above then $\sup S$ exists,
 - If $S$ is bounded below then $\inf S$ exists.
 " %}
@@ -192,7 +192,7 @@ All together we call this the least upper bound principle.
 
 A sequence $\seq{a_n}$ is said to be
 
-{% include theorem.html text="Definition 3.8.1" content="
+{% include boxed.html text="Definition 3.8.1" content="
 - **non-decreasing** or **increasing** if $\forall n\in\N$, $a_n\leq a_{n+1}$,
 - **strictly increasing** if $\forall n\in\N$, $a_n<a_{n+1}$,
 - **non-increasing** or **decreasing** if $\forall n\in\N$, $a_n\geq a_{n+1}$,
@@ -204,7 +204,7 @@ monotone increasing, monotone decreasing, etc).
 
 ### Monotone convergence principle
 
-{% include theorem.html text="Theorem 3.8.1" content="
+{% include boxed.html text="Theorem 3.8.1" content="
 - A monotone increasing sequence $\seq{a_n}$ of real numbers that is bounded
 above has a limit $L$ and $\forall n\in\N$, $a_n\leq L$.
 - A monotone decreasing sequence $\seq{a_n}$ of real numbers that is bounded
@@ -216,7 +216,7 @@ below has a limit $l$ and $\forall n\in\N$, $a_n\geq l$.
 
 We say the limit of the sequence $\seq{a_n}$ is:
 
-{% include theorem.html text="Definition 3.9.1" content="
+{% include boxed.html text="Definition 3.9.1" content="
 - $+\infty$ (denoted as $\lim_{n\to\infty}a_n=+\infty$) if $\forall M>0,\exists
 N\in\N,\forall n\in\N,n\geq N,a_n> M$,
 - $-\infty$ (denoted as $\lim_{n\to\infty}a_n=-\infty$) if $\forall M>0,\exists
@@ -226,24 +226,24 @@ N\in\N,\forall n\in\N,n\geq N,a_n< -M$.
 ### Properties of infinite limits
 
 <ul>
-{% include theorem.html text="Proposition 3.9.1" content="
+{% include boxed.html text="Proposition 3.9.1" content="
 <li>
 $ \lim_{n\to\infty}a_n=-\infty \Leftrightarrow \lim_{n\to\infty}-a_n=\infty $
 </li> " %}
 
-{% include theorem.html text="Proposition 3.9.2" content="
+{% include boxed.html text="Proposition 3.9.2" content="
 <li>
 Assume that for some $N_0$, $a_n>0$ for all $n>N_0$ and $lim_{n\to\infty}a_n=0$,
 then: $ \lim_{n\to\infty}\frac{1}{a_n}=+\infty $
 </li> " %}
 
-{% include theorem.html text="Proposition 3.9.3" content="
+{% include boxed.html text="Proposition 3.9.3" content="
 <li>
 Assume that $\lim_{n\to\infty}a_n>0$ or $\lim_{n\to\infty}a_n=+\infty$ and
 $\lim_{n\to\infty}b_n=+\infty$ then $\lim_{n\to\infty}a_n b_n=+\infty$
 </li> " %}
 
-{% include theorem.html text="Proposition 3.9.4" content="
+{% include boxed.html text="Proposition 3.9.4" content="
 <li>
 Assume that $\lim_{n\to\infty}a_n=L$ or $\lim_{n\to\infty}a_n=+\infty$, then
 $\lim_{n\to\infty}(a_n+b_n)=+\infty$
@@ -257,7 +257,7 @@ $\lim_{n\to\infty}(a_n+b_n)=-\infty$.
 <!-- Ch 3.10 ............................................................... -->
 ## Cluster points
 
-{% include theorem.html text="Definition 3.10.1<br/>Proposition 3.10.2" content="
+{% include boxed.html text="Definition 3.10.1<br/>Proposition 3.10.2" content="
 A point $s$ is said to be a **cluster point** of the sequence $\seq{a_n}$ if
 $\forall\epsilon>0$ there exists infinitely many terms of $\seq{a_n}$ in the
 interval $(s-\epsilon,s+\epsilon)$. This is equivalent to the statement:
@@ -267,7 +267,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Proposition 3.10.2" content="
+{% include boxed.html text="Proposition 3.10.2" content="
 We also have that $s$ is a cluster point of the sequence
 $\seq{a_n}\_{n=1}^\infty$ if and only if there exists a subsequence
 $\seq{a_{n_j}}_{j=1}^\infty$ that converges to $s$.
@@ -275,14 +275,14 @@ $\seq{a_{n_j}}_{j=1}^\infty$ that converges to $s$.
 
 ### Bolzano-Weierstrass theorem for sequences
 
-{% include theorem.html text="Theorem 3.10.3" content="
+{% include boxed.html text="Theorem 3.10.3" content="
 Every bounded sequence of real numbers has a convergent subsequence and
 therefore has a cluster point.
 " %}
 
 ### Upper and lower limits of sequences
 
-{% include theorem.html text="Definition 3.11.1<br/>Notation 3.11.1" content="
+{% include boxed.html text="Definition 3.11.1<br/>Notation 3.11.1" content="
 Assume that a sequence $\seq{a_n}$ has a cluster point and denote $S$ the set of
 cluster points, then:
 
@@ -300,7 +300,7 @@ denoted $\Liminf a_n$ or $\liminf a_n$.
 
 #### Corollaries, propositions and properties:
 
-{% include theorem.html text="Proposition 3.11.1<br/>Proposition 3.11.2" content="
+{% include boxed.html text="Proposition 3.11.1<br/>Proposition 3.11.2" content="
 We also have that for $\seq{a_n}$ with cluster points:
 
 - If it is bounded above then
@@ -326,7 +326,7 @@ supposing the converse of either statement and showing there exist infinitely
 many elements $a_n$ above or below $s$.
 " %}
 
-{% include theorem.html text="Proposition 3.11.3" content="
+{% include boxed.html text="Proposition 3.11.3" content="
 If the $\Limsup$ and $\Liminf$ of a sequence $\seq{a_n}$ exist, then they are
 equal to one another if and only if they also equal the limit of $a_n$ which
 exists:
@@ -338,11 +338,11 @@ $$
 
 If the sequence $\seq{a_n}$ is:
 <ul>
-{% include theorem.html text="Definition 3.11.2" content="
+{% include boxed.html text="Definition 3.11.2" content="
 <li>Not bounded above we set $\Limsup a_n=+\infty$,</li>
 <li>Not bounded below we set $\Liminf a_n=-\infty$,</li>
 " %}
-{% include theorem.html text="Definition 3.11.3" content="
+{% include boxed.html text="Definition 3.11.3" content="
 <li>Bounded above, does not have any lower bound and does not have any cluster
 points, we set $\Limsup a_n=-\infty$,</li>
 <li>Bounded below, does not have an upper bound and does not have any cluster
@@ -350,14 +350,14 @@ points, we set $\Liminf a_n=+\infty$.</li>
 " %}
 </ul>
 
-{% include theorem.html text="Proposition 3.11.4" content="
+{% include boxed.html text="Proposition 3.11.4" content="
 We also have that:
 
 - $\Limsup a_n=-\infty \Leftrightarrow \lim_{n\to\infty}a_n=-\infty$
 - $\Liminf a_n=+\infty \Leftrightarrow \lim_{n\to\infty}a_n=+\infty$
 " %}
 
-{% include theorem.html text="Proposition 3.11.5" content="
+{% include boxed.html text="Proposition 3.11.5" content="
 Lastly, assume that $\forall n\in\N,a_n\geq 0,b_n\geq 0$ and
 $\lim_{n\to\infty}b_n>0$, then:
 
@@ -379,7 +379,7 @@ $$
 <!-- Ch 4.1 ................................................................ -->
 ## Finite limits
 
-{% include theorem.html text="Definition 4.1.1" content="
+{% include boxed.html text="Definition 4.1.1" content="
 Given a function $f:D\to R\subset\R$, a point $x_0$, eventually not in $D$, and $L\in\R$, finite, we say that **the limit of the function $f$ at $x_0$ is $L$** if and only if:
 
 $$
@@ -395,7 +395,7 @@ x\neq x_0,
 $$
 " %}
 
-{% include theorem.html text="Def 4.1.2" content="
+{% include boxed.html text="Def 4.1.2" content="
 Or alternatively by the substitution $h=x-x_0$:
 
 $$
@@ -411,7 +411,7 @@ h\neq 0,
 $$
 " %}
 
-{% include theorem.html text="Definition 4.1.3" content="
+{% include boxed.html text="Definition 4.1.3" content="
 We also have the definition of finite limits from the right:
 
 $$
@@ -450,14 +450,14 @@ $$
 
 ### Sequential characterization of limits
 
-{% include theorem.html text="Theorem 4.1.1" content="
+{% include boxed.html text="Theorem 4.1.1" content="
 Given a function $f:D\to \R$ and a point $x_0$, eventually not in $D$, then
 $\lim_{x\to x_0}f(x)=L$ if and only if any sequence $\seq{x_n}$ where $\forall
 n\in\N$, $x_n\in D$ and where $\lim_{n\to\infty}x_n=x_0$ we have
 $\lim_{n\to\infty}f(x_n)=L$.
 " %}
 
-{% include theorem.html text="Theorem 4.1.2" content="
+{% include boxed.html text="Theorem 4.1.2" content="
 Assume that $f:[a,b]\to\R$ is an increasing or decreasing function. Then:
 
 <center>
@@ -486,7 +486,7 @@ Note that assumptions about continuity are not required here.
 
 ### Cauchy condition for the limit of a function
 
-{% include theorem.html text="Theorem 4.1.3" content="
+{% include boxed.html text="Theorem 4.1.3" content="
 <ol>
 <li>
 Assume that $f(x)$ is defined for $x\in(c,c+\delta_0)$, $\forall\delta_0\in\R$.
@@ -528,7 +528,7 @@ about what said limits could be.
 <!-- Ch 4.2 ................................................................ -->
 ## Infinite limits
 
-{% include theorem.html text="Definition 4.2.1" content="
+{% include boxed.html text="Definition 4.2.1" content="
 Let a function $f:D\to R\subset\R$, we have for limits going to positive
 infinity:
 
@@ -550,7 +550,7 @@ the right or from the left.
 
 ### Properties of infinite limits
 
-{% include theorem.html text="Proposition 4.2.1" content="
+{% include boxed.html text="Proposition 4.2.1" content="
 Assume that $\forall x\in(a,b)$, $f(x)>0$, let $x_0\in(a,b)$ such that
 $\lim_{x\to x_0}f(x)=0.$ Then:
 
@@ -566,7 +566,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Proposition 4.2.2" content="
+{% include boxed.html text="Proposition 4.2.2" content="
 Assume that $\lim_{x\to x_0}f(x)=L>0$ (finite) or $\lim_{x\to x_0}f(x)=+\infty$
 and $\lim_{x\to x_0}g(x)=+\infty$. Then:
 
@@ -575,7 +575,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Proposition 4.2.3" content="
+{% include boxed.html text="Proposition 4.2.3" content="
 Assume that $\lim_{x\to x_0}f(x)=L$ (finite) or $\lim_{x\to x_0}f(x)=+\infty$
 and $\lim_{x\to x_0}g(x)=+\infty$. Then:
 
@@ -601,7 +601,7 @@ $\lim_{x\to x_0}f(x)g(x)=+\infty$.
 <!-- Ch 4.3 ................................................................ -->
 ## Limits at infinity
 
-{% include theorem.html text="Definition 4.3.1" content="
+{% include boxed.html text="Definition 4.3.1" content="
 Of finite limits at infinity:
 
 $$
@@ -619,7 +619,7 @@ $$
 $$
 " %}
 
-{% include theorem.html text="Definition 4.3.2" content="
+{% include boxed.html text="Definition 4.3.2" content="
 And of infinite limits at infinity:
 
 $$
@@ -653,7 +653,7 @@ $$
 
 Similar to the monotone convergence principle of sequences, we have:
 
-{% include theorem.html text="Theorem 4.3.1" content="
+{% include boxed.html text="Theorem 4.3.1" content="
 Assume that $f$ is monotone increasing on $[a,+\infty$).
 
 If $\exists M>0$, $\forall x\geq a$, $f(x)<M$ then $\lim_{x\to+\infty}f(x)$
@@ -664,7 +664,7 @@ If such $M$ does not exist then $\lim_{x\to+\infty}f(x)=+\infty$.
 
 ### Cauchy condition for limits at infinity
 
-{% include theorem.html text="Theorem 4.3.2" content="
+{% include boxed.html text="Theorem 4.3.2" content="
 Let a function $f:[a,+\infty)\to\R$ then $\lim_{x\to+\infty}f(x)$ exists and is
 finite if and only if:
 
@@ -709,7 +709,7 @@ $$
 # Derivatives
 
 <!-- Ch 6.1 ................................................................ -->
-{% include theorem.html text="Proposition 6.1.1" content="
+{% include boxed.html text="Proposition 6.1.1" content="
 Let a function $f(x)$ defined over an open domain $D$. Let $x_0\in D$. The
 **derivative** of $f$ at $x_0$, and denoted $f'(x_0)$, is defined by
 
@@ -720,18 +720,18 @@ $$
 Providing that the limit exists.
 " %}
 
-{% include theorem.html text="Definition 6.1.2" content="
+{% include boxed.html text="Definition 6.1.2" content="
 If the derivative of $f$ at a point $x_0$ exists then $f$ is said to be
 differentiable at $x_0$.
 " %}
 
-{% include theorem.html text="Proposition 6.1.1" content="
+{% include boxed.html text="Proposition 6.1.1" content="
 Assume that $f$ is differentiable at $x_0$. Then $f$ is continuous at $x_0$.
 " %}
 Note that a function being continuous does not mean it is differentiable.
 The classic example is the absolute value function.
 
-{% include theorem.html text="Definition 6.1.2" content="
+{% include boxed.html text="Definition 6.1.2" content="
 Let a function $f(x):D\to R\subset\R$. The associated **derivative function**
 $f'(x):D'\to R'\subset\R$ is defined as
 
@@ -752,7 +752,7 @@ $x$ is applied.
 
 A commonly used symbol for denoting variation is $\Delta$ (Delta).
 
-{% include theorem.html text="Notation 6.1" content="
+{% include boxed.html text="Notation 6.1" content="
 We re-notate the derivative as:
 
 $$
@@ -777,21 +777,21 @@ Assume functions $f(x)$ and $g(x)$ differentiable at $x$, and $c$ is a constant
 value in $\R$. We have the following properties of derivatives of functions:
 
 <ul>
-{% include theorem.html text="Proposition 6.3.3" content="
+{% include boxed.html text="Proposition 6.3.3" content="
 <li>
 $(cf)'(x)=cf'(x)$
 <div class='float-right'>(Multiplication by a constant)</div>
 </li>
 " %}
 
-{% include theorem.html text="Proposition 6.3.1" content="
+{% include boxed.html text="Proposition 6.3.1" content="
 <li>
 $f(x)=c$, then $f'(x)=0$.
 <div class='float-right'>(Constant rule)</div>
 </li>
 " %}
 
-{% include theorem.html text="Proposition 6.3.2" content="
+{% include boxed.html text="Proposition 6.3.2" content="
 <li>
 $\forall x\in\R$ (eventually $\forall x\in\R/\{0\}$), then
 $\forall n\in\Z,(x^n)'=nx^{n-1}$
@@ -799,7 +799,7 @@ $\forall n\in\Z,(x^n)'=nx^{n-1}$
 </li>
 " %}
 
-{% include theorem.html text="" content="
+{% include boxed.html text="" content="
 <li>
 $g(x)\ne 0$, then
 ${\left(\frac{f}{g}\right)}'(x)=\frac{f'(g(x)-f(x)g'(x)}{g^2(x)}$
@@ -812,7 +812,7 @@ ${\left(\frac{f}{g}\right)}'(x)=\frac{f'(g(x)-f(x)g'(x)}{g^2(x)}$
 <!-- Ch 6.5 ................................................................ -->
 ## Higher order derivatives
 
-{% include theorem.html text="Definition 6.5.1" content="
+{% include boxed.html text="Definition 6.5.1" content="
 The second-order derivative of $f$ is defined and denoted by
 
 $$
@@ -827,7 +827,7 @@ $$
 $f(x+\Delta x)-f(x)$ represents the increment of $f$ when we increment $x$ by
 $\Delta x$ (just as $\Delta x$ represents the increment of $x$).
 
-{% include theorem.html text="Definition 6.6.1" content="
+{% include boxed.html text="Definition 6.6.1" content="
 This quantity is called the **differential** of $f$
 at the basepoint $x$ and with increment $\Delta x$.
 It is denoted and defined by:
@@ -846,7 +846,7 @@ $$
 With this we can restate the theorem on linear approximations with this change
 of notation.
 
-{% include theorem.html text="Theorem 6.6.1" content="
+{% include boxed.html text="Theorem 6.6.1" content="
 Assume $f$ is differentiable at $x$. Then
 
 $$

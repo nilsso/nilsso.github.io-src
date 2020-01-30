@@ -49,7 +49,7 @@ $$
 
 # Numerical Semigroups
 
-{% include theorem.html text="Definition: Numerical Semigroup" content="
+{% include boxed.html text="Definition: Numerical Semigroup" content="
 A set $S\subset\ZP$ is a numerical semigroup if
 
 1. It is closed under addition ($a,b\in S\Rightarrow a+b\in S$)
@@ -78,7 +78,7 @@ denoted.
    -isomorphism.
    -->
 
-{% include theorem.html text="Proposition" content="
+{% include boxed.html text="Proposition" content="
 $S=\langle n_1,\ldots,n_k\rangle$ is a numerical semigroup if and only if
 $\gcd(n_1,\ldots,n_k)=1$.
 "%}
@@ -101,7 +101,7 @@ $\gcd(n_1,\ldots,n_k)=1$.
    -nor is 41 ($6\cdot 6+17$), and $S=\langle 6,17,27\rangle$.
    -->
 
-{% include theorem.html text="Proposition" content="
+{% include boxed.html text="Proposition" content="
 Every numerical semigroup has a unique minimal generating set with respect
 to containment.
 "%}
@@ -112,7 +112,7 @@ and $b$ in that same generating set can be eliminated from the generating set.
 For example, $\genset{3,4,12}$ containing $12=3\cdot 2$ can be simplified to
 $\genset{3,4}$.
 
-{% include theorem.html text="Definition: Embedding dimension, multiplicity" content="
+{% include boxed.html text="Definition: Embedding dimension, multiplicity" content="
 Given a numerical semigroup $S$ its *embedding dimension* denoted $\sge(S)$ is
 the number of minimal generators and its *multiplicity* denoted $\sgm(S)$ is
 the smallest non-zero element.
@@ -139,7 +139,7 @@ there are two elements in the minimal generating set $\genset{3,4}$).
    -(max embedding dimension?)
    -->
 
-{% include theorem.html text="Definition: Gaps" content="
+{% include boxed.html text="Definition: Gaps" content="
 Given a numerical semigroup $S$, non-elements (elements in $S$ complement,
 $\ZP\setminus S$) are called gaps, $\sgG(S)$ is the set of such gaps,
 and $\sgg(S)$ the *genus* is equal to the number of gaps (the cardinality of
@@ -155,7 +155,7 @@ The simplest way to know when there will be no more gap in the set is when
 $\sgm(S)$ consecutive elements appear. These were underlined in the examples
 above.
 
-{% include theorem.html text="Definition: Frobenius number" content="
+{% include boxed.html text="Definition: Frobenius number" content="
 Given a numerical semigroup $S$, its Frobenius $\sgF(S)$ is the largest gap.
 
 $$
@@ -167,7 +167,7 @@ And $\sgm(S)-1\le \sgg(S)\le \sgF(s)$.
 
 From the previous examples, $\sgF(S_1)=4$ and $\sgF(S_2)=13$.
 
-{% include theorem.html text="Definition: Apéry set" content="
+{% include boxed.html text="Definition: Apéry set" content="
 Fix $S$ a numerical semigroup.
 
 For some non-zero element $n$ of $S$, $\sgAp(S;n)$ is the set containing $n$
@@ -206,7 +206,7 @@ From the previous examples:
    -$Ap(S_2;4)=\set{0,17,6,7}$.
    -->
 
-{% include theorem.html text="Proposition" content="
+{% include boxed.html text="Proposition" content="
 $$\sgF(S)=\max(\sgAp(S))-\sgm(S)$$
 "%}
 
@@ -219,7 +219,7 @@ $\sgF(S)=\max(\sgAp(S))-\sgm(S)=32-7=25$.
 
 # Factorizations
 
-{% include theorem.html text="Definition: Factorization" content="
+{% include boxed.html text="Definition: Factorization" content="
 Let $S=\langle n_1,\ldots,n_k\rangle$ and $n\in S$.
 A factorization of $n$ is an expression of form
 
@@ -243,7 +243,7 @@ For example:
 
 # Pseudo-Frobenius numbers, symmetry & irreducibility
 
-{% include theorem.html text="Definition: Pseudo-frobenius numbers" content="
+{% include boxed.html text="Definition: Pseudo-frobenius numbers" content="
 Given a numerical semigroup $S$, a gap $m$ is called a pseudo-frobenius number
 if $m+n\in S$ for every $n$ in $S$, and $\calPF(S)$ is the set of such numbers.
 
@@ -253,7 +253,7 @@ $$
 "%}
 
 
-{% include theorem.html text="Definition: Symmetry & irreducibility" content="
+{% include boxed.html text="Definition: Symmetry & irreducibility" content="
 Fix a numerical semigroup $S$. For $\sgF(S)$ odd, the following are
 equivalent:
 
@@ -278,7 +278,7 @@ We say that $S$ is irreducible if it is symmetric or pseudo-symmetric.
 
 # Polytopes
 
-{% include theorem.html text="Definition: Convex polytopes" content="
+{% include boxed.html text="Definition: Convex polytopes" content="
 A d-polytope $\calP$ is a convex hull in $\R^d$ space which can be described in
 both the following ways:
 
@@ -293,7 +293,7 @@ polytope in $\R^2$ space.
 
 <!--One way we can describe polytopes is as a collection of vertices.-->
 
-{% include theorem.html text="Definition: Vertex description" content="
+{% include boxed.html text="Definition: Vertex description" content="
 The vertex description of a polytope is a finite set of points defining its
 convex hull, and is notated
 
@@ -302,7 +302,7 @@ $$
 $$
 "%}
 
-{% include theorem.html text="Definition: Hyperplane description" content="
+{% include boxed.html text="Definition: Hyperplane description" content="
 The hyperplane description of a polytope is as the bounded intersections of
 finitely many half-spaces and hyperplanes.
 "%}

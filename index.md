@@ -38,8 +38,9 @@ Programming /
 [Java](pages/programming/java/) /
 [Haskell](pages/programming/haskell/)
 <br/>
-Vidya /
-[WoW](pages/vidya/wow/)
+Other /
+[WoW](pages/vidya/wow/) /
+[Jotto](pages/jotto/)
 <!--[Tarkov](pages/vidya/tarkov/)-->
 </span>
 

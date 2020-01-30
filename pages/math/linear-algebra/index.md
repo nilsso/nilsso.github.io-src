@@ -482,7 +482,7 @@ $$
 Based on these definitions we can prove that the product of vector spaces is
 a vector space.
 
-{% include theorem.html text="Theorem: Product of vector spaces is a vector space" content="
+{% include boxed.html text="Theorem: Product of vector spaces is a vector space" content="
 Suppose $V_1,\ldots,V_m$ are vector spaces over $\F$.
 Then $V_1\times\cdots\times V_m$ is a vector space over $\F$.
 "%}
@@ -503,7 +503,7 @@ $$
 \right\}
 $$
 
-{% include theorem.html text="Theorem: Dimension of a product is the sum of dimensions" content="
+{% include boxed.html text="Theorem: Dimension of a product is the sum of dimensions" content="
 Suppose $V_1,\ldots,V_m$ are finite-dimensional vector spaces.
 Then $V_1\timesV_m$
 
@@ -557,7 +557,7 @@ $$
 Every spanning list in a vector space can be reduced to a basis of the vector
 space.
 
-{% include theorem.html text="Method: Spanning list contains a basis" content="
+{% include boxed.html text="Method: Spanning list contains a basis" content="
 Suppose $v_1,\ldots,v_n$ spans vectorspace $V$. We want to remove linearly
   dependent vectors from $v_1,\ldots,v_n$ so that the remaining set form a basis
   for $V$:
@@ -659,7 +659,7 @@ described by using different coefficients for the different base.
 
 # Bases
 
-{% include theorem.html text="Definition: Bases" content="
+{% include boxed.html text="Definition: Bases" content="
 A *basis* of $V$ is a list of linearly independent vectors in $V$ that
 spans $V$.
 "%}
@@ -668,12 +668,12 @@ spans $V$.
 
 # Polynomial space
 
-{% include theorem.html text="Definition: Finite-dimensional vector space" content="
+{% include boxed.html text="Definition: Finite-dimensional vector space" content="
 A vector space is called *finite-dimensional* if some list of vectors in it span
 the space (And recall that any list has finite length).
 "%}
 
-{% include theorem.html text="Definition: Polynomials" content="
+{% include boxed.html text="Definition: Polynomials" content="
 A function $p:\F\to\F$ is called a *polynomial* with coefficients in $\F$
 if there exist $a_0,\ldots,a_m\in\F$ such that
 
@@ -686,7 +686,7 @@ And $\P(\F)$ is the set of all polynomials (of all degrees)
 with coefficients in $\F$.
 "%}
 
-{% include theorem.html text="Definition: Polynomial degree" content="
+{% include boxed.html text="Definition: Polynomial degree" content="
 A polynomial $p\in\P(\F)$ is said to have degree $m$ if there exist scalars
 $a_0,a_1,\ldots,a_m\in\F$ with $a_m\ne 0$ such that
 
@@ -699,7 +699,7 @@ For all $z\in\F$. If $p$ has degree $m$ we write $\deg p=m$.
 The polynomial that is identically 0 is said to have degree $-\infty$.
 "%}
 
-{% include theorem.html text="Definition: $\P_m(\F)$" content="
+{% include boxed.html text="Definition: $\P_m(\F)$" content="
 For $m$ a nonnegative integer, $\P_m(\F)$ denote the set of all polynomials
 with coefficients in $\F$ and degree at most $m$.
 "%}
