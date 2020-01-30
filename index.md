@@ -39,7 +39,7 @@ Programming /
 <br/>
 Other /
 [WoW](pages/vidya/wow/) /
-[Jotto](pages/jotto/)
+[Jotto](pages/jotto.html)
 <!--[Tarkov](pages/vidya/tarkov/)-->
 </span>
 
