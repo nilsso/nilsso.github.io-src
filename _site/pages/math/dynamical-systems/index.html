@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+<!-- MathJax -->
+<!--
+   -<script type='text/x-mathjax-config'>
+   -MathJax = {
+   -    tex: {
+   -        macros: {
+   -            N: '\\mathbb{N}',
+   -            W: '\\mathbb{W}',
+   -            Z: '\\mathbb{Z}',
+   -            ZP: '\\mathbb{Z}_{\\ge 0}',
+   -            R: '\\mathbb{R}',
+   -            C: '\\mathbb{C}',
+   -            F: '\\mathbb{F}'
+   -        },
+   -        inlineMath: [ ['\\(','\\)'] ],
+   -        displayMath: [ ['\\[', '\\]'] ],
+   -        packages: ['base', 'ams']
+   -    },
+   -    loader: {
+   -        load: ['[tex]/ams']
+   -    },
+   -    svg: {
+   -        fontCache: 'global'
+   -    }
+   -};
+   -</script> 
+   -<script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
+   -<script id='MathJax-script' async
+   -        src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js'></script>
+   -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+        / <span id="page-title">Discrete Dynamical Systems & Chaos</span>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <div id="mathjax-preamble" style="display:none;">
+$$
+$$
+</div>
+<ul id="markdown-toc">
+  <li><a href="#dynamical-systems" id="markdown-toc-dynamical-systems">Dynamical systems</a></li>
+  <li><a href="#maps" id="markdown-toc-maps">Maps</a></li>
+</ul>
+<hr />
+
+<h1 id="dynamical-systems">Dynamical systems</h1>
+
+<p>A <em>dynamical system</em> consists of a set of possible states, together with a rule
+that determines the present state in terms of past states.
+<!-- -->
+If the present state can be determined uniquely—without randomness—the rule
+is <em>deterministic</em>.
+<!-- -->
+If the present state relies on a element of randomness we do not have a
+dynamical system and instead a <em>random</em>, or <em>stochastic</em>, <em>process</em>.
+<!-- -->
+Two types of dynamical systems will be emphasized: <em>discrete-time</em> and
+<em>continuous-time</em>, the rule of the latter involving sets of differential
+equations. Of course if time in between discrete-time measurements
+goes to zero, $\Delta t\to 0$, you have a continuous-time system.</p>
+
+<h1 id="maps">Maps</h1>
+
+<figure>
+    <h3>Definition: Maps</h3>
+    <hr />
+    <div>
+<p>A function with the same domain and range spaces is called a <em>map</em>.
+Fix $x$ a point and $f$ a map. The sequence ${x,f(x),f^2(x)}$ is called the
+<em>orbit</em> of $x$, and $x$ is called the <em>initial value</em> of the orbit.
+A point $\rho$ is a <em>fixed point</em> of the map $f$ if $f(\rho)=\rho$.</p>
+</div>
+</figure>
+
+<p>Kinds of fixed points, $f(p)=p$, based on that pertubation theory.
+On $n^{th}$ iteration, if $x_n=p+\varepsilon_n$ the distance from the fixed
+point still small:
+<script type="math/tex">% <![CDATA[
+\begin{aligned}
+|\varepsilon_n|\ll 1
+&\Rightarrow\varepsilon_{n+1}\approx f'(p)\varepsilon_n \\
+&\Rightarrow\varepsilon_{n+k}\approx f'(p)\int^k\varepsilon_n
+\end{aligned} %]]></script></p>
+
+<figure>
+    <h3>Definition: $\varepsilon$-neighborhood</h3>
+    <hr />
+    <div>
+<table>
+  <tbody>
+    <tr>
+      <td>$N_\varepsilon&lt;P1={x\in\mathbb{R}:</td>
+      <td>x-p</td>
+      <td>&lt;\varepsilon}$.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</figure>
+
+<figure>
+    <h3>Definition: Attractor/Repeller</h3>
+    <hr />
+    <div>
+<p>If all points sufficiently close to fixed point $p$ are attracted to $p$,
+then $p$ is called a sink or an attracting fixed point.</p>
+
+<p>If all points sufficiently close to fixed point $p$ are repelled from $p$
+(except for $p$ itself), then $p$ is called a source or an repelling fixed
+point.</p>
+</div>
+</figure>
+
+<p>Taylorizations</p>
+
+<p>Let $f$ be a smooth map, $p$ a fixed point.
+Then if the derivative at $p$ is less than one, $|f’(p)|&lt;1$,
+then $p$ is an sink, or if larger than 1, $|f’(p)|&gt;1$, then $p$ is a source.</p>
+
+<p>Theorem does not require any particularly sized epsilon.
+Can be very small, but still be an attractor.</p>
+
+<p>As an example with $a=2$, $g(x)=2x(1-x)$:
+Logistic map, $g_a(x)=ax(1-x)$.
+To identify the attracting/repelling fixed points.</p>
+
+<ul>
+  <li>Fixed points at $x_1=0$ and $x_2=1/2$.</li>
+  <li>Stability $g’(x)=2-4x=2(1-2x)$.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$x_1$:$</td>
+          <td>g’(x_1)</td>
+          <td>=</td>
+          <td>g’(0)</td>
+          <td>=2&gt;1\Rightarrow$ a repeller.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>$x_2$:$|g’(x_2)|=|g’(1/2)|=0&lt;1\Rightarrow$ an attractor
+(even “super attracting”).</li>
+</ul>
+
+<figure>
+    <h3>Definition: Attractor/Repeller</h3>
+    <hr />
+    <div>
+<p>The basic of attraction of an attracting fixed point $p$,
+denoted $B(p)$, is set of points such that if
+$x\in B(p)\Rightarrow\lim_{k\to\infty}f^k(x)=p$.</p>
+</div>
+</figure>
+
+<p>Informally can talk about the basin of attraction of things that aren’t points,
+like infinity, or of unstable fixed points.</p>
+
+<p>Back with that example:</p>
+
+<ul>
+  <li>“$B(0)={0,1}$”</li>
+  <li>$B(1/2)=(0,1)$</li>
+  <li>“$B(\infty)=(-\infty,0)\cup(1,\infty)$”</li>
+</ul>
+
+<p>And those in quotes do not meet the formal definition, since there is either
+not attraction or involves something other than a fixed point.</p>
+
+<p>Prove that distance at next time step is smaller than distance at previous, i.e. inductive:
+$\varepsilon_{n+1}&lt;\varepsilon_n$
+(Looking for $|f(x)-p|&lt;k|x-p|:k&lt;1$, bounding).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+|2x(10x)-1/2| &= 2|x(1-x)-1/4|$ \\
+&= 2(-x^2+x-1/4| \\
+&= 2|x^2-x+(1/2)^2)| \\
+&= 2|x-1/2|^2 \\
+&= 2|x-1/2||x-1/2| \Rightarrow 2|x-1/2| = k
+\end{aligned} %]]></script>
+
+<table>
+  <tbody>
+    <tr>
+      <td>If $A&lt;1$, then $\f(x-p)</td>
+      <td>&lt;</td>
+      <td>x-p</td>
+      <td>$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<script type="math/tex; mode=display">% <![CDATA[
+|x-1/2|<1/2 \Rightarrow 0<x<1 %]]></script>
+
+<p>But this technique isn’t usually that easy as finding something to bound by can
+be difficult.</p>
+
+<p>As another example, $g(x)=\frac{3x-x^3}{2}$</p>
+
+<ul>
+  <li>Fixed points at $x_{-1}=-1$, $x_0=0$ and $x_{+1}=1$.</li>
+  <li>Check stability, $g’(x)=\frac{3(1-x^2)}{2}$</li>
+  <li>$g’(x_{\pm 1})=0&lt;1$: “super” attractive.</li>
+  <li>$g’(x_0)&gt;1$: repellent.</li>
+</ul>
+
+<p>$I_1=(0,\sqrt 3)\subset B(1)$. Any other points that get to mapped to $I_1$?</p>
+
+<p>$g(I_2)$</p>
+
+<p>$\pm\sqrt 5$ periodic fixed points: $\sqrt 5$ mapped to $-\sqrt $ and $-\sqrt 5$ mapped to $-\sqrt 5$.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Infinite sequence of intervals of basins of attraction bounded by $</td>
+      <td>\sqrt 5</td>
+      <td>$.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+<script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+<script type="text/javascript">
+    anchors.add('#content h1, #content h2, #content h3');
+</script>
+
+
+
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <h2 id="jenv-home">jenv (<a href="http://www.jenv.be/">home</a>)</h2>
+
+<p>Managing separate installations of Java can be accomplished by using jenv, a
+tool similar to Python’s virtualenv or Ruby’s rbenv.</p>
+<h3 id="installing-jdk-versions">Installing JDK versions</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Add the caskroom versions repository and install versions</span>
+brew tap caskroom/versions
+brew cask search java
+brew cask <span class="nb">install</span> &lt;java-version&gt;
+
+<span class="c"># And then getting where JDKs are installed</span>
+/usr/libexec/java_home <span class="nt">-V</span>
+</code></pre></div></div>
+
+<h3 id="setting-up-jenv">Setting up jenv</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install</span>
+brew <span class="nb">install </span>jenv
+
+<span class="c"># Then add the paths of the different JDKs to jenv (remember how these are found above)</span>
+jenv add &lt;java-version/Contents/Home&gt;
+
+<span class="c"># Once they are all added list them and switch to the desired version</span>
+jenv versions
+jenv global &lt;java-version&gt;
+
+<span class="c"># And then lastly execute something with the version (javarepl only</span>
+<span class="c"># seems to work with java8, which is what led me to learn this tool in</span>
+<span class="c"># the first place).</span>
+jenv <span class="nb">exec </span>java <span class="nt">-version</span>
+jenv <span class="nb">exec </span>javarepl
+</code></pre></div></div>
+
+<h2 id="javarepl-home">javarepl (<a href="http://www.javarepl.com/term.html">home</a>)</h2>
+
+<p>Only seems to work with Java version 8, so following the section above for
+managing multiple installations, make sure java8 is installed through
+<a href="https://github.com/caskroom/homebrew-versions">homebrew-caskroom-versions</a>. With version 8 added through jenv and
+set to the global version, just start javarepl through jevn</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jenv <span class="nb">eval </span>javarepl
+</code></pre></div></div>
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+
+
+    </footer>
+</body>
+</html>
+

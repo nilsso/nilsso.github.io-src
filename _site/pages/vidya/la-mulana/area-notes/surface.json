@@ -1,0 +1,232 @@
+{
+  "name": "Surface",
+  "num_row": "5",
+  "num_col": 12,
+  "rooms": [
+    {
+      "name": "Sound Canyon",
+      "row": 1,
+      "col": 9,
+      "ss": "img/surface/room_I1.png"
+    },
+    {
+      "name": "Gazing Hill",
+      "row": 1,
+      "col": 10,
+      "ss": "img/surface/room_J1.png",
+      "feat": [
+        { "type": "sign", "data": "Rapid water beyond this point.\nWeaklings should turn back here." }
+      ]
+    },
+    {
+      "name": "Bahrun's Waterfall",
+      "row": 1,
+      "col": 11,
+      "ss": "img/surface/room_K1.png"
+    },
+    {
+      "name": "Bahrun's Waterfall",
+      "row": 1,
+      "col": 12,
+      "ss": "img/surface/room_L1.png"
+    },
+    {
+      "name": "Foothill",
+      "row": 2,
+      "col": 8,
+      "ss": "img/surface/room_H2.png"
+    },
+    {
+      "name": "Sound Canyon",
+      "row": 2,
+      "col": 9,
+      "ss": "img/surface/room_I2.png",
+      "feat": [
+        { "type": "treasure", "data": "Shell Horn" }
+      ]
+    },
+    {
+      "name": "Gazing Hill",
+      "row": 2,
+      "col": 10,
+      "ss": "img/surface/room_J2.png"
+    },
+    {
+      "name": "Bahrun's Waterfall",
+      "row": 2,
+      "col": 11,
+      "ss": "img/surface/room_K2.png"
+    },
+    {
+      "name": "Bahrun's Waterfall",
+      "row": 2,
+      "col": 12,
+      "ss": "img/surface/room_L2.png",
+      "feat": [
+        { "type": "seal" },
+        { "type": "treasure" }
+      ]
+    },
+    {
+      "name": "Altar Hill",
+      "row": 3,
+      "col": 2,
+      "ss": "img/surface/room_B3.png"
+    },
+    {
+      "name": "Altar Hill",
+      "row": 3,
+      "col": 3,
+      "ss": "img/surface/room_C3.png",
+      "feat": [
+        { "type": "npc", "data": "Legend has it that #red#Argus#red#, a monster with\na blue body that is covered in eyes, is weak\nagainst the #green#Serpent Staff#green#" },
+        { "type": "sign", "data": "Danger!!!\nNo entry beyond this point." }
+      ]
+    },
+    {
+      "name": "Cliff in front of the Altar",
+      "row": 3,
+      "col": 4,
+      "ss": "img/surface/room_D3.png",
+      "feat": [
+        { "type": "seal" }
+      ]
+    },
+    {
+      "name": "Outskirts of the Village",
+      "row": 3,
+      "col": 5,
+      "ss": "img/surface/room_E3.png"
+    },
+    {
+      "name": "Foothill",
+      "row": 3,
+      "col": 6,
+      "ss": "img/surface/room_G3.png"
+    },
+    {
+      "name": "Gate of Departure",
+      "row": 3,
+      "col": 8,
+      "ss": "img/surface/room_H3.png"
+    },
+    {
+      "name": "Sound Canyon",
+      "row": 3,
+      "col": 9,
+      "ss": "img/surface/room_I3.png",
+      "feat": [
+        { "type": "treasure", "data": "deathv.exe" }
+      ]
+    },
+    {
+      "name": "Waterfall of the Goddess",
+      "row": 3,
+      "col": 11,
+      "ss": "img/surface/room_K3.png",
+      "feat": [
+        {
+          "type": "research",
+          "data": "[Research Mode]\nThe rocks in this area are a lighter shade."
+        }
+      ]
+    },
+    {
+      "name": "Waterfall of the Goddess",
+      "row": 3,
+      "col": 12,
+      "ss": "img/surface/room_L3.png"
+    },
+    {
+      "name": "Cliff in front of the Altar",
+      "row": 4,
+      "col": 4,
+      "ss": "img/surface/room_E4.png",
+      "feat": [
+        { "type": "spring" }
+      ]
+    },
+    {
+      "name": "Outskirts of the Village",
+      "row": 4,
+      "col": 5,
+      "ss": "img/surface/room_E4.png"
+    },
+    {
+      "name": "Village of Departure",
+      "row": 4,
+      "col": 6,
+      "ss": "img/surface/room_F4.png",
+      "feat": [
+        {
+          "type": "npc",
+          "data": "There's a #blue#hot spring#blue# on the outskirts of the\nvillage, on the way to the alter.\nIt's a good way to rest your bones."
+        },
+        {
+          "type": "npc",
+          "sells": [ "Weight", "yagomap.exe", "reader.exe" ]
+        }
+      ]
+    },
+    {
+      "name": "Village of Departure",
+      "row": 4,
+      "col": 7,
+      "ss": "img/surface/room_G4.png",
+      "feat": [
+        {
+          "type": "npc",
+          "name": "Xelpud"
+        },
+        {
+          "type": "npc",
+          "sells": [ "Buckler", "Waterproof Case", "Pistol" ]
+        },
+        {
+          "type": "npc",
+          "sells": [ "Scanner", "?", "Shuriken Ammo" ]
+        },
+        {
+          "type": "save",
+          "data": "This is a #blue#Holy Grail Tablet#blue#.\nYou can pick up from the last Holy Grail Tablet you touched, or\nsave by pressing #down#.\nEveryone, make sure to follow the rules when using the Holy\nGrail Tablet.\n\nFrom Elder Xelpud"
+        }
+      ]
+    },
+    {
+      "name": "Gate of Departure",
+      "row": 4,
+      "col": 8,
+      "ss": "img/surface/room_H4.png"
+    },
+    {
+      "name": "Mother's Split Gate",
+      "row": 5,
+      "col": 8,
+      "ss": "img/surface/room_H5.png",
+      "feat": [
+        {
+          "type": "feature",
+          "name": "Split Gate",
+          "data": "[Archaeology Dictionary: Split Gate]\nSimilar to the Candi Bentar of Bali Island, but decorated\ndifferently."
+        }
+      ]
+    },
+    {
+      "name": "Entrance to La-Mulana Ruins",
+      "row": 5,
+      "col": 9,
+      "ss": "img/surface/room_I5.png",
+      "feat": [
+        {
+          "type": "feature",
+          "name": "The Mural of Departure",
+          "data": "[La-Mulana Ruins Dictionary: The Mural of Departure]\nA relatively new mural in the ruins.\nIt looks like the history of the La-Mulana ruins is detailed here."
+        },
+        {
+          "type": "tablet",
+          "data": "Those entering the ruins, beware.\n\"They\" lurk within this land of ordeals.\nDeath awaits the powerless.\nThey will speak only to those who have learned.\nthe seven histories and overcome the challenges herein."
+        }
+      ]
+    }
+  ]
+}

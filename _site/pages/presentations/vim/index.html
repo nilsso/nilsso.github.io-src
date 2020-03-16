@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/js/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="/assets/js/reveal.js/css/theme/black.css" id="theme">
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+<link rel="stylesheet" href="/assets/css/asciinema-player.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+<style>
+pre, code, asciinema-player {
+    font-family: "Hack", monospace !important;
+}
+</style>
+
+
+
+        <link rel="stylesheet" href="/assets/css/presentation.css">
+    </head>
+    <style>
+.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto !important;
+}
+    </style>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                         data-separator="^---"
+                         data-separator-vertical="^--">
+                    <script type="text/template">
+                        ![vim-logo](https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg)
+<!-- { .element: class="no-style" } -->
+
+--
+
+# Vim?
+
+- Terminal based text editor
+<!-- .element: class="fragment" -->
+- Ubiquitous (it's on all Linux/Mac computers)
+<!-- .element: class="fragment" -->
+- Extensible (configuration, plugins)
+<!-- .element: class="fragment" -->
+- Can be used for basically everything
+<!-- .element: class="fragment" -->
+
+--
+
+# Modal?
+
+Different modes for doing different things
+<!-- .element: class="fragment" -->
+
+<div class="fragment">
+  ### Normal mode
+  For navigating a file and entering commands
+</div>
+
+<div class="fragment">
+  ### Insert mode
+  For inserting text
+</div>
+
+(and Visual mode for selecting things)
+<!-- .element: class="fragment" -->
+
+---
+
+# Writing a file
+
+- Open a terminal session
+- <kbd>vim test.md</kbd>
+- `i`, `# This is markdown`
+- `esc`
+- `:wq`
+
+---
+
+# Plugins!
+
+--
+
+`vim-scripts/loremipsum.vim`
+
+<asciinema-player src="recordings/plug-lorem.cast" autoplay loop theme="solarized-dark"></asciinema-player>
+
+--
+
+`tpope/vim-surround.vim`
+
+<div style="position:relative;">
+  <span class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+    <asciinema-player src="recordings/plug-surround.cast" autoplay loop theme="solarized-dark"></asciinema-player>
+  </span>
+  <span class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+    Examples:
+    <table class="borderless">
+      <tr>
+        <td><small>`ysap<div>`</small></td>
+        <td><small>Surround *a paragraph* with the tag `<div>`</small></td>
+      </tr>
+      <tr>
+        <td><small>`ggVG<html>`</small></td>
+        <td><small>Visually select all, surround with tag `<html>`</small></td>
+      </tr>
+    </table>
+  </span>
+</div>
+
+                    </script>
+                </section>
+            </div>
+        </div>
+        <script src="/assets/js/reveal.js/lib/js/head.min.js"></script>
+        <script src="/assets/js/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                history: true,
+                dependencies: [
+                    { src: "/assets/js/reveal.jslib/js/classList.js",
+                        condition: function() { return !document.body.classList; }},
+                    { src: "/assets/js/reveal.js/plugin/markdown/marked.js",
+                        condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: "/assets/js/reveal.js/plugin/markdown/markdown.js",
+                        condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: "/assets/js/reveal.js/plugin/zoom-js/zoom.js", async: true },
+                    { src: "/assets/js/reveal.js/plugin/notes/notes.js", async: true }
+                ]
+            });
+        </script>
+        <footer>
+            
+
+<!-- Asciinema -->
+<script src="/assets/js/asciinema-player.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.min.js"></script>-->
+
+
+        </footer>
+    </body>
+</html>

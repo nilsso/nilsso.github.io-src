@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+        / <span id="page-title">C++ Notes</span>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <h2 id="naming-things">Naming things</h2>
+
+<p>Unfortunately everyone has a different style for programming (see
+<a href="llvm.org/docs/CodingStandards.html">LLVM</a>, <a href="https://google.github.io/styleguide/cppguide.html">Google</a>, <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style">Mozilla</a>), so
+finding the right one is often just a personal preference. I think I most
+closely follow Google’s.</p>
+
+<!--
+   -Naming conventions for things like member variables can be very personal, almost
+   -dogmatic, but for good reason. Names are important, in life just as in
+   -programming. Being able to refer to different "things" easily and meaningfully
+   -is one of the very first steps in creating source-code that we as mere mortals
+   -can easily comprehend and share with one-another (or review by ourselves
+   -sometime down the line). So I think having a consistent dogma for creating
+   -meaningful and useful variables names is as good a religion as any to follow.
+   -
+   -Two justification for having such naming conventions:
+   -
+   -1. Visible distinction between public members and private members
+   -2. Able to declare accessor function with the same name as the member *minus*
+   -   the prefix (e.g. `int a()`, `void a(int)` as getters and setters to a member
+   -   named `int m_a`). No need for `getThis` or `setThat`.
+   -
+   -(I thought [this post][link] also had some good suggestions, but my particular
+   -style differs quite a bit)
+   -->
+
+<h3 id="my-convensions">My convensions</h3>
+
+<ol>
+  <li>Variables are <a href="https://en.wikipedia.org/wiki/Camel_case"><em>camelCase</em></a></li>
+  <li>Member variables end with an underscore</li>
+</ol>
+
+<!--
+   -*Here's an example of how I do my naming:*
+   -
+   -
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++">   <span class="o">-</span><span class="k">class</span> <span class="nc">A</span>
+   <span class="o">-</span><span class="p">{</span>
+   <span class="o">-</span>  <span class="k">public</span><span class="o">:</span>
+   <span class="o">-</span>    <span class="n">A</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span>
+   <span class="o">-</span>      <span class="n">m_a</span><span class="p">{</span><span class="n">a</span><span class="p">}</span>
+   <span class="o">-</span>    <span class="p">{}</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="kt">int</span> <span class="n">a</span><span class="p">()</span> <span class="k">const</span>
+   <span class="o">-</span>    <span class="p">{</span> <span class="k">return</span> <span class="n">m_a</span><span class="p">;</span> <span class="p">}</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="kt">void</span> <span class="n">a</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span>
+   <span class="o">-</span>    <span class="p">{</span> <span class="n">m_a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="p">}</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">h</span><span class="p">()</span>
+   <span class="o">-</span>    <span class="p">{</span> <span class="k">return</span> <span class="n">s_h</span><span class="p">;</span> <span class="p">}</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="k">static</span> <span class="kt">void</span> <span class="n">h</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">h</span><span class="p">)</span>
+   <span class="o">-</span>    <span class="p">{</span> <span class="n">s_h</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span> <span class="p">}</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">ZERO</span><span class="p">()</span>
+   <span class="o">-</span>    <span class="p">{</span> <span class="k">return</span> <span class="n">s_ZERO</span><span class="p">;</span> <span class="p">}</span>
+   <span class="o">-</span>
+   <span class="o">-</span>  <span class="k">private</span><span class="o">:</span>
+   <span class="o">-</span>    <span class="c1">// Non-static members have 'm_'</span>
+   <span class="o">-</span>    <span class="kt">int</span> <span class="n">m_a</span><span class="p">;</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="c1">// Static members have 's_'</span>
+   <span class="o">-</span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">s_h</span><span class="p">;</span>
+   <span class="o">-</span>
+   <span class="o">-</span>    <span class="c1">// Const things are all caps (except the prefix)</span>
+   <span class="o">-</span>    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">s_ZERO</span><span class="p">;</span>
+   <span class="o">-</span><span class="p">};</span>
+   <span class="o">-</span>
+   <span class="o">-</span><span class="kt">int</span> <span class="n">A</span><span class="o">::</span><span class="n">s_h</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+   <span class="o">-</span>
+   <span class="o">-</span><span class="k">const</span> <span class="kt">int</span> <span class="n">A</span><span class="o">::</span><span class="n">s_ZERO</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="o">-</span>
+   <span class="o">-</span></code></pre></figure>
+
+   -->
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+
+
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+<!-- MathJax -->
+<!--
+   -<script type='text/x-mathjax-config'>
+   -MathJax = {
+   -    tex: {
+   -        macros: {
+   -            N: '\\mathbb{N}',
+   -            W: '\\mathbb{W}',
+   -            Z: '\\mathbb{Z}',
+   -            ZP: '\\mathbb{Z}_{\\ge 0}',
+   -            R: '\\mathbb{R}',
+   -            C: '\\mathbb{C}',
+   -            F: '\\mathbb{F}'
+   -        },
+   -        inlineMath: [ ['\\(','\\)'] ],
+   -        displayMath: [ ['\\[', '\\]'] ],
+   -        packages: ['base', 'ams']
+   -    },
+   -    loader: {
+   -        load: ['[tex]/ams']
+   -    },
+   -    svg: {
+   -        fontCache: 'global'
+   -    }
+   -};
+   -</script> 
+   -<script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
+   -<script id='MathJax-script' async
+   -        src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js'></script>
+   -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+        / <span id="page-title">Linear Algebra</span>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <div id="mathjax-preamble" style="display:none;">
+$$
+\newcommand{\set}[1]{ \{#1\} }
+\DeclareMathOperator{\span}{\text{span}}
+\DeclareMathOperator{\calL}{\mathcal{L}}
+\DeclareMathOperator{\calP}{\mathcal{P}}
+$$
+</div>
+
+<ul id="markdown-toc">
+  <li><a href="#linear-systems" id="markdown-toc-linear-systems">Linear systems</a></li>
+  <li><a href="#elementary-operations" id="markdown-toc-elementary-operations">Elementary operations</a>    <ul>
+      <li><a href="#scalar-multiplication" id="markdown-toc-scalar-multiplication">Scalar multiplication</a></li>
+      <li><a href="#addition" id="markdown-toc-addition">Addition</a></li>
+      <li><a href="#swap" id="markdown-toc-swap">Swap</a></li>
+    </ul>
+  </li>
+  <li><a href="#matrices" id="markdown-toc-matrices">Matrices</a>    <ul>
+      <li><a href="#matrix-operations" id="markdown-toc-matrix-operations">Matrix operations</a>        <ul>
+          <li><a href="#scalar-multiplication-1" id="markdown-toc-scalar-multiplication-1">Scalar multiplication</a></li>
+          <li><a href="#matrix-addition" id="markdown-toc-matrix-addition">Matrix addition</a></li>
+          <li><a href="#matrix-multiplication" id="markdown-toc-matrix-multiplication">Matrix multiplication</a></li>
+        </ul>
+      </li>
+      <li><a href="#matrix-abbreviation-of-linear-systems" id="markdown-toc-matrix-abbreviation-of-linear-systems">Matrix abbreviation of linear systems</a></li>
+    </ul>
+  </li>
+  <li><a href="#linear-systems-cont" id="markdown-toc-linear-systems-cont">Linear Systems (cont.)</a>    <ul>
+      <li><a href="#gaussian-elimination" id="markdown-toc-gaussian-elimination">Gaussian Elimination</a></li>
+      <li><a href="#gauss-jordan-elimination" id="markdown-toc-gauss-jordan-elimination">Gauss-Jordan Elimination</a></li>
+      <li><a href="#elementary-matrices-and-operations" id="markdown-toc-elementary-matrices-and-operations">Elementary Matrices and Operations</a></li>
+      <li><a href="#vectors" id="markdown-toc-vectors">Vectors</a></li>
+    </ul>
+  </li>
+  <li><a href="#vector-spaces" id="markdown-toc-vector-spaces">Vector spaces</a>    <ul>
+      <li><a href="#products-of-vector-spaces" id="markdown-toc-products-of-vector-spaces">Products of Vector Spaces</a>        <ul>
+          <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+        </ul>
+      </li>
+      <li><a href="#basis-span-and-dependence" id="markdown-toc-basis-span-and-dependence">Basis, span and dependence</a></li>
+      <li><a href="#inner-product-spaces" id="markdown-toc-inner-product-spaces">Inner product spaces</a></li>
+    </ul>
+  </li>
+  <li><a href="#transformations" id="markdown-toc-transformations">Transformations</a>    <ul>
+      <li><a href="#change-in-basis" id="markdown-toc-change-in-basis">Change in basis</a></li>
+    </ul>
+  </li>
+  <li><a href="#bases" id="markdown-toc-bases">Bases</a></li>
+  <li><a href="#polynomial-space" id="markdown-toc-polynomial-space">Polynomial space</a></li>
+  <li><a href="#linear-maps" id="markdown-toc-linear-maps">Linear Maps</a>    <ul>
+      <li><a href="#examples-1" id="markdown-toc-examples-1">Examples</a>        <ul>
+          <li><a href="#r3tor2" id="markdown-toc-r3tor2">$\R^3\to\R^2$</a></li>
+          <li><a href="#fntofm" id="markdown-toc-fntofm">$\F^n\to\F^m$</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="linear-systems">Linear systems</h1>
+
+<p>A <em>linear equation</em> is simply an equation involving variables/indeterminates
+with powers one (or zero). $x=4$ is linear while $x^2=4$ is not (quadratic).
+Linear equations take the form</p>
+
+<script type="math/tex; mode=display">a_1 x_1+a_2 x_2+\cdots+a_n x_n = d</script>
+
+<p>Linear equations have a set of solutions with values for the variables which
+solve the equation consistently. For $x=4$, the only solution for the
+variable x is 4 such that $4=4$. This is consistent with the definition of the
+equation.</p>
+
+<p>A <em>linear system</em> is when we consider several equations to be related. A linear
+system has the form (where rows/equations are labeled $p_1,\ldots,p_j$)</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+p_1&: & a_{1,1}x_1+a_{1,2}x_2+\cdots+a_{1,n}x_n &= d_1 \\
+\vdots \\
+p_i&: & a_{i,1}x_1+a_{i,2}x_2+\cdots+a_{i,n}x_n &= d_i \\
+\vdots \\
+p_j&: & a_{j,1}x_1+a_{j,2}x_2+\cdots+a_{j,n}x_n &= d_j
+\end{aligned} %]]></script>
+
+<p>Solutions to a linear system are values which solve all the equations at the
+same time. For example the linear system</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+x &= 1 \\
+x + y &= 3
+\end{aligned} %]]></script>
+
+<p>Has a solution when $x=1$ and $y=2$, denoted as the tuple $(1,2)$.
+This is verifiable by plugging the first equation into the second and solving
+for y. This method often works well enough but <em>elementary operations</em> allow us
+to more easily solve systems.</p>
+
+<h1 id="elementary-operations">Elementary operations</h1>
+
+<p>We can manipulate linear systems to make them appear simpler and potentially
+lead to the solutions of the system. We call these manipulations elementary
+operations, row operations, or Gaussian, and we have <em>addition</em>, <em>scalar
+multiplication</em> and <em>swapping</em>. For the operations, consider the example system</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+p_1&: & x &= 1 \\ p_2&: & x + y &= 3 \end{aligned} %]]></script>
+
+<h3 id="scalar-multiplication">Scalar multiplication</h3>
+
+<p>In the scalar multiplication operation we are allowed to multiple every term in
+a single row by some number (a scalar) and replace what was there.
+For the example we start my multiplying row 1 by -1</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\xrightarrow{(-1)p_1}~:
+\begin{aligned} -x &= -1 \\ x + y &= 3 \end{aligned} %]]></script>
+
+<h3 id="addition">Addition</h3>
+
+<p>In the addition operation we are allowed to add the terms of one equation to
+the terms of another and replace what was there with the new sum. For the
+example system replace row 2 by addition rows 1 and 2 together</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\xrightarrow{p_1+p_2}~:
+\begin{aligned} -x &= -1 \\ (-x)+x+y &= (-1)+3 \end{aligned}
+\Rightarrow
+\begin{aligned} -x &= -1 \\ y &= 2 \end{aligned} %]]></script>
+
+<p>We would then want to again multiply row 1 by -1 to get a solution in terms of x
+and y</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\xrightarrow{(-1)p_1}~:
+\begin{aligned} x &= 1 \\ y &= 2 \end{aligned} %]]></script>
+
+<p>But starting from the beginning, we could have done both operations at once:
+multiplying row 1 by -1 before adding it to row 2 (consider this subtracting one
+row from another)</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\xrightarrow{(-1)p_1+p_2}~:
+\begin{aligned} x &= 1 \\ y &= 2 \end{aligned} %]]></script>
+
+<h3 id="swap">Swap</h3>
+
+<p>In the swap operation we are allowed to exchange any two rows with one another.
+In this previous example it isn’t useful, but when systems contain rows with out
+of order leading terms, we want to swap them into a sort of descending order.
+For example</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{array}{ 4*r }
+  & y & + & z = d \\
+x &   & + & z = e \\
+  &   &   & z = f
+\end{array}
+\Rightarrow~
+\xrightarrow{p_1\leftrightarrow p_2}~:
+\begin{array}{ 4*r }
+x &   & + & z = e \\
+  & y & + & z = d \\
+  &   &   & z = f
+\end{array} %]]></script>
+
+<p>Swapping rows 1 and 2 tidy up the system, and is important for future methods.</p>
+
+<h1 id="matrices">Matrices</h1>
+
+<p>A matrix is a rectangular array of elements.
+A matrix has dimensions <em>m</em> rows and <em>n</em> columns written as $m\times n$.
+The location of an element is given by its i<sup>th</sup> row
+and j<sup>th</sup> column positions, and is the j<sup>th</sup> element.
+These exact location of elements are crucial.
+The form of a matrix is such</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1j} \\
+a_{21} & a_{22} & \cdots & a_{2j} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{i1} & a_{i2} & \cdots & a_{ij}
+\end{pmatrix}
+= [a_{ij}]\in \R^{m\times n} %]]></script>
+
+<p>For example</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+0 & 6 & 1 \\
+2 & 4 & 3
+\end{pmatrix}
+= \begin{pmatrix}
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23}
+\end{pmatrix}
+\Rightarrow
+\begin{array}{3*c}
+b_{11}=0 & b_{12}=6 & b_{13}=1 \\
+b_{21}=2 & b_{22}=4 & b_{23}=3
+\end{array} %]]></script>
+
+<p>A matrix with with values only in one dimension is called a vector. If it’s only
+a column then it’s a <em>column vector</em>, and a <em>row vector</em> if it’s only a row.
+Vectors are denoted with an arrow over the symbol.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\vec u = \begin{pmatrix} a \\ b \\ c \end{pmatrix}
+\quad
+\vec v = \begin{pmatrix} a & b & c \end{pmatrix} %]]></script>
+
+<h2 id="matrix-operations">Matrix operations</h2>
+
+<p>Similar to equations in linear systems, we can apply operations to matrices, in
+particular <em>addition</em>, <em>scalar multiplication</em> and <em>matrix multiplication</em>.</p>
+
+<h3 id="scalar-multiplication-1">Scalar multiplication</h3>
+
+<p>In scalar multiplication a new matrix is produced by multiplying a number to
+every term in a matrix.
+Given a matrix $A=[a_{ij}]\in\R^{m\times n}$ and a scalar $k$</p>
+
+<script type="math/tex; mode=display">k\cdot A = [k\cdot a_{ij}]\in\R^{m\times n}</script>
+
+<h3 id="matrix-addition">Matrix addition</h3>
+
+<p>In matrix addition a new matrix is produced by adding the terms of two
+matrices together corresponding to location.
+Given matrices $A=[a_{ij}]\in\R^{m\times n}$ and $B=[b_{ij}]\in\R^{m\times n}$</p>
+
+<script type="math/tex; mode=display">A+B = [a_{ij}+b_{ij}]\in\R^{m\times n}</script>
+
+<h3 id="matrix-multiplication">Matrix multiplication</h3>
+
+<p>Matrix multiplication is a binary operation between two matrices, <em>left</em> and
+<em>right</em>, which produces a new matrix. The conditions is if left has <em>n</em> columns,
+then right must have <em>n</em> rows. That is, left has dimensions $m\times n$ and
+right has dimensions $n\times p$.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A\times B
+= \begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+\begin{pmatrix}
+  b_{11} & \cdots & b_{1p} \\
+  b_{21} & \cdots & b_{2p} \\
+  \vdots & \ddots & \vdots \\
+  b_{n1} & \cdots & b_{np}
+\end{pmatrix} %]]></script>
+
+<p>The number of rows in left and the number of columns in right are arbitrary but
+will change the dimensions of the resulting matrix. The result will have only as
+many rows as left and only as many columns as right.
+The operation is highly algorithmic and follows the same pattern.
+Multiplying two $2\times 2$ matrices is a good example</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+  \color{red}{a_1} & \color{red}{a_2} \\
+  \color{green}{a_3} & \color{green}{a_4}
+\end{pmatrix}
+\begin{pmatrix}
+  \color{blue}{b_1} & \color{orange}{b_2} \\
+  \color{blue}{b_3} & \color{orange}{b_4}
+\end{pmatrix} =
+\begin{pmatrix}
+  \color{red}{a_1}\color{blue}{b_1}+\color{red}{a_2}\color{blue}{b_3} &
+  \color{red}{a_1}\color{orange}{b_2}+\color{red}{a_2}\color{orange}{b_4} \\
+  \color{green}{a_3}\color{blue}{b_1}+\color{green}{a_4}\color{blue}{b_3} &
+  \color{green}{a_3}\color{orange}{b_2}+\color{green}{a_4}\color{orange}{b_4}
+\end{pmatrix} %]]></script>
+
+<p>Considering the arbitrary dimensions, if left had only 1 row then so would the
+result, and if right had only 1 column then so would the result.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+  \color{red}{a_1} & \color{red}{a_2}
+\end{pmatrix}
+\begin{pmatrix}
+  \color{blue}{b_1} & \color{orange}{b_2} \\
+  \color{blue}{b_3} & \color{orange}{b_4}
+\end{pmatrix} =
+\begin{pmatrix}
+  \color{red}{a_1}\color{blue}{b_1}+\color{red}{a_2}\color{blue}{b_3} &
+  \color{red}{a_1}\color{orange}{b_2}+\color{red}{a_2}\color{orange}{b_4}
+\end{pmatrix}
+\\
+\begin{pmatrix}
+  \color{red}{a_1} & \color{red}{a_2} \\
+  \color{green}{a_3} & \color{green}{a_4}
+\end{pmatrix}
+\begin{pmatrix}
+  \color{blue}{b_1} \\
+  \color{blue}{b_2}
+\end{pmatrix} =
+\begin{pmatrix}
+  \color{red}{a_1}\color{blue}{b_1}+\color{red}{a_2}\color{blue}{b_2} \\
+  \color{green}{a_3}\color{blue}{b_1}+\color{green}{a_4}\color{blue}{b_2}
+\end{pmatrix} %]]></script>
+
+<h2 id="matrix-abbreviation-of-linear-systems">Matrix abbreviation of linear systems</h2>
+
+<p>Applying elementary operations to equations in linear systems is be notationally
+tedious. To make life better if we treat each indeterminate as a column position
+in a matrix and each equation as a row position we can represent the system as
+a matrix with values corresponding to the coefficients of the indeterminates.
+Whatever falls on the right side of the equation will be placed into an extra
+column on the right of the matrix, separated from the indeterminate columns by a
+line. This is called an <em>augmented matrix</em>.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{array}{ *7r }
+     x & + &  y &   &    & = & 0 \\
+    2x & - &  y & + & 3z & = & 3 \\
+     x & - & 2y & - &  z & = & 3
+  \end{array}
+  \Leftrightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    2 & -1 & 3 & 3 \\
+    1 & -2 & -1 & 3
+  \end{array}\right) %]]></script>
+
+<p>Operating on system becomes notationally simpler.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    2 & -1 & 3 & 3 \\
+    1 & -2 & -1 & 3
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    -2p_1+p_2 \\
+    -p_1+p_3
+  \end{array}
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & -3 & 3 & 3 \\
+    0 & -3 & -1 & 3
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    -p_2+p_3 \\
+    \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & -3 & 3 & 3 \\
+    0 & 0 & -4 & 0
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    -\frac{1}{3}p_2 \\
+    -\frac{1}{4}p_3 \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & 1 & -1 & -1 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)
+  \begin{array}{r}
+    \\
+    p_3+p_2 \\
+    \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 1 & 0 & 0 \\
+    0 & 1 & 0 & -1 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)
+  \begin{array}{r}
+    -p_2+p_1 \\
+    \\
+    \\
+  \end{array} \\
+  &\Rightarrow
+  \left(\begin{array}{@{}rrr|r@{}}
+    1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & -1 \\
+    0 & 0 & 1 & 0
+  \end{array}\right)
+\end{aligned} %]]></script>
+
+<p>And we can express the solution to a linear system as a vector</p>
+
+<script type="math/tex; mode=display">\vec s = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}</script>
+
+<h1 id="linear-systems-cont">Linear Systems (cont.)</h1>
+
+<h2 id="gaussian-elimination">Gaussian Elimination</h2>
+
+<h2 id="gauss-jordan-elimination">Gauss-Jordan Elimination</h2>
+
+<h2 id="elementary-matrices-and-operations">Elementary Matrices and Operations</h2>
+
+<p>An elementary matrix is defined as a variation of the identity matrix but with a
+single element changed. Because any matrix can be expressed as the result of a
+series of matrix operations, then any non-elementary matrix can be expressed as
+the product of a series of elementary matrix. In other words the operations we
+applied on linear systems previously in syntax like $p_1+p_3$ (store $p_3$) can
+be expressed as matrix operations involving elementary matrices.</p>
+
+<h2 id="vectors">Vectors</h2>
+
+<p>A vector can be described as an ordered set of coordinates in $n$ dimensions,
+but also as a direction to move in space and the amount which to move. Both are
+valid. Notationally, a vector can have an arrow above the symbol
+($\vec{u}$) or can be bold ($\mathbf u$), but both express the same
+meaning in that the symbol u is a vector. What is not inherently encoded is the
+dimension the vector is in, that that depends on context.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A vector</td>
+      <td>$\vec u=\langle u_1,u_2,\cdots,u_n\rangle\in\mathbb R^n$</td>
+    </tr>
+    <tr>
+      <td>Closure of addition</td>
+      <td>$\vec u+\vec v=\langle (u_1+w_1),\cdots,(u_n+w_n)\rangle\in\mathbb R^n$</td>
+    </tr>
+    <tr>
+      <td>Closure of scalar multiplication</td>
+      <td>$\alpha\vec u=\langle \alpha u_1,\cdots,\alpha u_n\rangle\in\mathbb R^n$</td>
+    </tr>
+    <tr>
+      <td>Zero element</td>
+      <td>$\vec 0=\langle 0_1,\cdots,0_n\rangle\in\mathbb R^n$</td>
+    </tr>
+    <tr>
+      <td>Associativity of additon</td>
+      <td>$\vec u+(\vec v+\vec w)=(\vec u+\vec v)+\vec w$</td>
+    </tr>
+    <tr>
+      <td>Commutativity of addition</td>
+      <td>$\vec u+\vec v=\vec v+\vec u$</td>
+    </tr>
+    <tr>
+      <td>Identity element of addition</td>
+      <td>$\vec v+\vec 0=\vec v$</td>
+    </tr>
+    <tr>
+      <td>Inverse elements of addition</td>
+      <td>$\vec v+(-\vec v)=0$</td>
+    </tr>
+    <tr>
+      <td>Identity element of multiplication</td>
+      <td>$ 0\cdot\vec u=\vec 0$</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>$1\cdot\vec v=\vec v$</td>
+    </tr>
+    <tr>
+      <td>Distributivity of scalar multiplication</td>
+      <td>$\alpha(\vec v+\vec u)=\alpha\vec u+\alpha\vec v$</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>$(\alpha+\beta)\vec u=\alpha\vec u+\beta\vec u$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="vector-spaces">Vector spaces</h1>
+
+<p>A <em>vector space</em> $(V,+,\lambda*)$ is a collection of vector elements  which can
+be added together or be multiplied by scalars. Of the properties of a vector
+space, closure properties guarantee that addition or scalar multiplication
+return a value that is also a member of the vector space. A vector space must
+have these two properties to be considered a vector space.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Additive commutativity</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Closure of addition</td>
+      <td>$\vec u+\vec v\in V$</td>
+    </tr>
+    <tr>
+      <td>Closure of scalar multiplication</td>
+      <td>$\alpha\vec v\in V$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>However, what we don’t have inherently in a vector space is multiplication
+between elements.
+Instead the dot-product may or may-not be defined (and cross-product).</p>
+
+<!--
+   -$$
+   -\begin{gathered}
+   -  x\cdot y\in\R \\
+   -  x\times y\in\R^n \\
+   -  xy^T\in\R^{n\times n}
+   -\end{gathered}
+   -$$
+   -->
+
+<p>If we define such an element based multiplication it would necessitate
+the following</p>
+
+<script type="math/tex; mode=display">\begin{bmatrix}a\\b\end{bmatrix} \Leftrightarrow p(x)=a+bx \\
+  \begin{bmatrix}c\\d\end{bmatrix} \Leftrightarrow q(x)=c+dx \\
+  %
+  \begin{bmatrix}a\\b\end{bmatrix}
+  \begin{bmatrix}c\\d\end{bmatrix}
+  = \begin{bmatrix}ac\\bc\end{bmatrix} \Leftrightarrow
+  p(x)q(x)=(ac)+(bd)x</script>
+
+<p>Clearly it does not make sense for $p(x)q(x)=(a+bx)(c+dx)=(ac)+(bd)x$.</p>
+
+<h2 id="products-of-vector-spaces">Products of Vector Spaces</h2>
+
+<p>Suppose $V_1,\ldots,V_m$ are all vector spaces over a field $\F$.</p>
+
+<ol>
+  <li>The <em>product</em> $V_1\times\cdots\times V_m$ is defined by
+<script type="math/tex">V_1\times\cdots\times V_m
+= \{(v_1,\ldots,v_m):(v_1\in V_1),\ldots,(v_m\in V_m)\}</script></li>
+  <li>Addition on $V_1\times\cdots\times V_m$ is defined by
+<script type="math/tex">(u_1,\ldots,u_m)+(v_1,\ldots,v_m)=(u_1+v_1,\ldots,u_m+v_m)</script></li>
+  <li>Scalar multiplication on $V_1\times\cdots\times V_m$ is defined by
+<script type="math/tex">\lambda(v_1,\ldots,v_m)=(\lambda v_1,\ldots,\lambda v_m)</script></li>
+</ol>
+
+<p>Based on these definitions we can prove that the product of vector spaces is
+a vector space.</p>
+
+<figure>
+    <h3>Theorem: Product of vector spaces is a vector space</h3>
+    <hr />
+    <div>
+<p>Suppose $V_1,\ldots,V_m$ are vector spaces over $\F$.
+Then $V_1\times\cdots\times V_m$ is a vector space over $\F$.</p>
+</div>
+</figure>
+
+<h3 id="examples">Examples</h3>
+
+<ul>
+  <li>A basis for $\calP_2(\F)$ is given by ${1,z,z^2}$</li>
+  <li>A basis for $\F$ is given by ${(1,0,0),(0,1,0),(0,0,1)}$</li>
+  <li>Elements in $\calP_2(\F)\times\F^3$ are of the form $p(z)\in\calP_2(\F),v\in\F^3)$</li>
+  <li>We can build a basis:</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left\{
+\begin{matrix}
+(1,(0,0,0)) & (z,(0,0,0)), & (z^2,(0,0,0)) \\
+(0,(1,0,0)) & (0,(0,1,0)), & (0,(0,0,1))
+\end{matrix}
+\right\} %]]></script>
+
+<figure>
+    <h3>Theorem: Dimension of a product is the sum of dimensions</h3>
+    <hr />
+    <div>
+<p>Suppose $V_1,\ldots,V_m$ are finite-dimensional vector spaces.
+Then $V_1\timesV_m$</p>
+
+<p>…</p>
+</div>
+</figure>
+
+<h2 id="basis-span-and-dependence">Basis, span and dependence</h2>
+
+<p>A <em>span</em> is the set of all possible vectors from a linear combination of
+vectors. Two non-parallel vectors have the span of all vectors within the plane
+on which the two vectors lie; three non-parallel vectors have the span of all
+three-dimensional space.</p>
+
+<p>The <em>basis</em> of a vector space is a set of <em>n</em> linearly independent vectors that
+span the full space in <em>n</em>-dimensions. In the case of the two vectors defining
+the span within a plane, the basis of that span are the two original vectors.
+The basis set of three unit vectors in the direction of the x-axis, the y-axis
+and z-axies respectively is called the <em>standard</em> basis, and notated as
+$\hat\imath$, $\hat\jmath$ and $\hat k$ (i-hat, j-hat, k-hat).</p>
+
+<script type="math/tex; mode=display">\begin{gather}
+\hat \imath=e_1=e_{x}=(1,0,0)\\
+\hat \jmath=e_2=e_{y}=(0,1,0)\\
+\hat k=e_3=e_{z}=(0,0,1)
+\end{gather}</script>
+
+<p>By defining the basis of a vector space we can describe any vector in that space
+as the linear combination of the basis vectors.</p>
+
+<script type="math/tex; mode=display">\vec A=(A_{x})\hat\imath+(A_{y})\hat\jmath+(A_z)\hat k</script>
+
+<p>For a set of vectors to be basis they must all be linearly independent;
+basically meaning that of the vectors in the set, none are multiples. Consider a
+set of three vectors of which two are parallel. Because any point on the line
+on which both the parallel vectors lie can be produced by multiplying either of
+the vectors by some scalar, we could reduce the set and have no loss of span by
+removing one of the parallel vectors.</p>
+
+<p>A list $v_1,\ldots,v_n$ of vectors in vectorspace $V$ is a basis for $V$
+if and only if for all $v$ can be written uniquely in the form</p>
+
+<script type="math/tex; mode=display">v=\sum_{l=1}^n a_l v_l,~ a_1,\ldots,a_n\in\F</script>
+
+<p>Every spanning list in a vector space can be reduced to a basis of the vector
+space.</p>
+
+<figure>
+    <h3>Method: Spanning list contains a basis</h3>
+    <hr />
+    <div>
+<p>Suppose $v_1,\ldots,v_n$ spans vectorspace $V$. We want to remove linearly
+  dependent vectors from $v_1,\ldots,v_n$ so that the remaining set form a basis
+  for $V$:</p>
+
+<ol>
+  <li>Start with $B=\set{v_1,\ldots,v_n}$</li>
+  <li>If $v_1=0$ delete it from $B$</li>
+  <li>If $v_j\in\span(v_1,\ldots,v_{j-1})$ delete $v_j$ from $B$</li>
+</ol>
+
+<p>And repeat until $j=n$. The final $B$ list still spans $V$ and contains only
+linear independent vectors, leaving us with a basis.</p>
+</div>
+</figure>
+
+<h2 id="inner-product-spaces">Inner product spaces</h2>
+
+<p>TODO!</p>
+
+<h1 id="transformations">Transformations</h1>
+
+<p>Given T, a linear transformation of vector v from vector space V into W,
+the <em>kernel</em> is a subset of V where $T(\vec v)=0$. Since $\text{kern}(t)$ is
+a subspace of V, then it must have the following properties of closure:</p>
+
+<ul>
+  <li>$T(\alpha\vec v)=0=\alpha T(\vec v)$</li>
+  <li>$T(\vec v+\vec w)=T(\vec v)+T(\vec w)$</li>
+</ul>
+
+<p>Range of T is the set of all vectors in W of the form $T(\vec v)$, thus
+$\text{range}(T)$ is a subspace of $W$.</p>
+
+<!--
+
+If $\vec w\in\text{range}(T)$ then $\vec w=T(\vec v)$ for some $\vec v$ in $V$.
+
+$\alpha\vec w=\alpha(T(\vec v))=T(\alpha\vec v)\Rightarrow\alpha\vec w \in\text{range}(T)$
+
+If $\vec w_1,\vec w_2\in\text{range}(T)$ then $\vec w_1=T(\vec v_1),\vec
+w_2=T(\vec v_2)$
+
+- $T$ is injective (1 to 1) if $\text{kern}(T)=\{0\}$. A function $f(x)$ is 1 to
+    1 if $x_1\neq x_2\Rightarrow f(x_1)\neq f(x_2)$ following the horizontal line
+    test.
+- $T$ is surjective (onto) if $\text{range}(T)=W$.
+
+How to show if kernel is injective?
+
+If $T$ a linear transformation is 1 to 1 then $\text{kern}(T)=\{0\}$.
+Given $\vec{v_1},\vec{v_2}\in V$ then
+
+$$
+\begin{gather}
+T(T(\vec{v_1})=T(\vec{v_2} \\
+T(\vec{v_1})-T(\vec{v_2})=0 \\
+T(\vec{v_1}-\vec{v_2})=0 \\
+\text{if kern}(T)=\{0\}
+v1-v2=0
+v1=v2
+If ker(T) = 0 then T is 1-1
+
+\end{gather}
+$$
+
+Assume that $T$ is 1 to 1, show for ker(T)={0}
+
+T(0)=0 by linear
+0 is in ker(T)
+If $T$ is 1 to 1 then $\vec 0$ is only vector that
+$T(v)=0\Rightarrow \text{ker}(T)=\{0\}$.
+
+If T:V->V is a linear transofmration and T is 1 to 1, then what we say about the
+matrix of T? (V is finite dimensional)
+
+If T is 1 to 1 then T^-1 exists
+
+T: v->w->T^{-1}(v)
+Then the matrix A (of T) also must have an inverse A^{-1}.
+
+-->
+
+<h2 id="change-in-basis">Change in basis</h2>
+
+<p>Given a vector $\vec v$ defined by it’s coordinates $\langle v_1,v_2\rangle$
+within the standard basis $S=\langle u_1,u_2\rangle=\langle e_i,e_j\rangle$,
+how can we describe these coordinates in a non-standard basis? Given a second
+basis $W=\langle w_1,w_2\rangle$ that is non-standard ( $W\neq\langle
+e_i,e_j\rangle$) we can convert the standard coordinates of the vector $\vec v$
+to non-standard ordinates by applying the inverse of the matrix representing
+basis $W$.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+W=\left[\begin{matrix}w_{1x}&w_{1y}\\w_{2x}&w_{2y}\end{matrix}\right];\
+W^{-1}(\vec v)_S\rightarrow(\vec v)_W %]]></script>
+
+<p>In any change of the base the actually vector remains the same, but is now
+described by using different coefficients for the different base.</p>
+
+<p><img src="img-change-of-basis.svg" alt="change-of-basis" width="512px" /></p>
+
+<hr />
+
+<h1 id="bases">Bases</h1>
+
+<figure>
+    <h3>Definition: Bases</h3>
+    <hr />
+    <div>
+<p>A <em>basis</em> of $V$ is a list of linearly independent vectors in $V$ that
+spans $V$.</p>
+</div>
+</figure>
+
+<hr />
+
+<h1 id="polynomial-space">Polynomial space</h1>
+
+<figure>
+    <h3>Definition: Finite-dimensional vector space</h3>
+    <hr />
+    <div>
+<p>A vector space is called <em>finite-dimensional</em> if some list of vectors in it span
+the space (And recall that any list has finite length).</p>
+</div>
+</figure>
+
+<figure>
+    <h3>Definition: Polynomials</h3>
+    <hr />
+    <div>
+<p>A function $p:\F\to\F$ is called a <em>polynomial</em> with coefficients in $\F$
+if there exist $a_0,\ldots,a_m\in\F$ such that</p>
+
+<p><script type="math/tex">p(z)=a_0+a_1 z+a_2 z^2+\cdots+a_m z^m</script>
+For all $z\in\F$.</p>
+
+<p>And $\P(\F)$ is the set of all polynomials (of all degrees)
+with coefficients in $\F$.</p>
+</div>
+</figure>
+
+<figure>
+    <h3>Definition: Polynomial degree</h3>
+    <hr />
+    <div>
+<p>A polynomial $p\in\P(\F)$ is said to have degree $m$ if there exist scalars
+$a_0,a_1,\ldots,a_m\in\F$ with $a_m\ne 0$ such that</p>
+
+<script type="math/tex; mode=display">p(z)=a_0+a_1 z+a_2 z^2+\cdots+a_m z^m</script>
+
+<p>For all $z\in\F$. If $p$ has degree $m$ we write $\deg p=m$.</p>
+
+<p>The polynomial that is identically 0 is said to have degree $-\infty$.</p>
+</div>
+</figure>
+
+<figure>
+    <h3>Definition: $\P_m(\F)$</h3>
+    <hr />
+    <div>
+<p>For $m$ a nonnegative integer, $\P_m(\F)$ denote the set of all polynomials
+with coefficients in $\F$ and degree at most $m$.</p>
+</div>
+</figure>
+
+<hr />
+
+<h1 id="linear-maps">Linear Maps</h1>
+
+<p>$\calL$</p>
+
+<!--- The zero map -->
+<ul>
+  <li>Identity $I\in\calL(V,V)$ defined by</li>
+</ul>
+
+<script type="math/tex; mode=display">Iv\equiv I(v)=v</script>
+
+<ul>
+  <li>Differentiation $D\in\calL(\P(\F),\P(\F))$ defined by</li>
+</ul>
+
+<script type="math/tex; mode=display"></script>
+
+<ul>
+  <li>Integration $T\in\calL(\P(\R),\R)$ defined by</li>
+</ul>
+
+<script type="math/tex; mode=display">T_p\equiv T(p)=\int_0^1 p(x)~dx</script>
+
+<ul>
+  <li>Backward shift $T\in\calL(\F^\infty,\F^\infty)$ (even though the indexes are
+shifted forward) defined by</li>
+</ul>
+
+<script type="math/tex; mode=display">T(z_1,z_2,\ldots)=T(z_2,z_3,\ldots)</script>
+
+<h2 id="examples-1">Examples</h2>
+
+<h3 id="r3tor2">$\R^3\to\R^2$</h3>
+
+<p>Define $T\in\calL(\R^3,\R^2)$ as</p>
+
+<script type="math/tex; mode=display">T(x,y,z)=(x-y+z,\pi x+e^\pi y+z)</script>
+
+<h3 id="fntofm">$\F^n\to\F^m$</h3>
+
+<p>Here $T\in\calL(\F^n,\F^m)$ is defined as</p>
+
+<script type="math/tex; mode=display">T(x_1,\ldots,x_n)
+= (A_{1,1}x_1+\cdots+A_{1,n}x_n,\ldots,A_{m,1}x_1+\cdots+A_{m,n}x_n)</script>
+
+<p>For scalars $A_{i,j}$ and $x_i$.
+Every linear map $\F^n\to\F^m$ can be written in this form.</p>
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+
+
+    </footer>
+</body>
+</html>
+

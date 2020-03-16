@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "anchor-js": "^3.2.2",
+    "bundler": "^0.8.0",
+    "jshint": "^2.9.5",
+    "lodash": ">=4.17.13",
+    "three": ">=0.1",
+    "webgl": "0.0.7"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+        / <span id="page-title">World of Warcraft</span>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <p>These days I don’t play much WoW,
+but when I do I only play on private legacy servers like
+<a href="https://en.nostalrius.org/">Nostalrius</a> (RIP) and <a href="https://elysium-project.org/">Elysium</a>. Private servers run older
+versions of the game, as you would have played years ago when those versions
+were considered “live” and “retail”. The demand for these kinds of servers
+appears to me to be growing. Nostalrius and Elysium are “Vanilla” servers; that
+is they run the very first, original, expansion of the game (specifically for
+client version 1.12).</p>
+
+<h1 id="interface-addons">Interface AddOns</h1>
+
+<p>AddOns for World of Warcraft will always have a special place in my heart as I
+taught myself how to program by writing a few. Here are some of the AddOns I have written for or ported
+to Vanilla World of Warcraft.</p>
+
+<h3 id="sjmacro-github">sjMacro (<a href="https://github.com/nilsso/sjMacro">github</a>)</h3>
+
+<p>An addon that provides mouse-over casting to 1.12, something that wasn’t added
+until burning crusade. Seeks to be minimal, and only provides global Lua
+functions which can be used in macros.</p>
+
+<h3 id="sjlinkspoof-github-demo">sjLinkSpoof (<a href="https://github.com/nilsso/sjLinkSpoof">github</a>) (<a href="https://raw.githubusercontent.com/nilsso/sjLinkSpoof/master/sjls-demo.gif">demo</a>)</h3>
+
+<p>Links in World of Warcraft are just specially formatted strings. You click on one it
+might open a small frame with information about an item, or it might open a URL window
+(if you have a chat addon). I wanted a tool to be able to easily create fake links,
+so I wrote this. Just don’t spam global or trade, unless you want to piss-off GMs.</p>
+
+<h3 id="swing-github-demo">Swing (<a href="https://github.com/nilsso/Swing">github</a>) (<a href="#">demo</a>)</h3>
+
+<p>I wrote this because I couldn’t find a satisfactory weapon-swing tracker. I’d seen
+them on people’s streams (for Vanilla that is), but couldn’t find a truly compatable
+version. If dual-weilding it does an adequate job at calculating which hand was swung
+(but this does not work with non-player targets as the functionality to determine target
+off-hand speed isn’t in this version of the game). Also included is a joke meter which
+turns into an energy ticker when playing rogue/cat druid (I might split this out to
+its own dedicated addon in the future).</p>
+
+<h3 id="dark-souls-death-screen-github-demo">Dark Souls Death Screen (<a href="https://github.com/nilsso/DSDS">github</a>) (<a href="https://raw.githubusercontent.com/nilsso/DSDS/master/dsds.webm">demo</a>)</h3>
+
+<p>Written at a request, displays the graphic and plays the sound of the ubiquitous
+YOU DIED message from Dark Souls on death. The trouble was that the 1.12 client
+has none of the animation framework used in the retail addon
+<a href="www.wowace.com/addons/dark-souls-death-screen">Dark Souls Death Screen</a> from
+which the idea for this port came. So I used a timer library for tweening and
+several functions to define animations.</p>
+
+<h3 id="color-picker-plus-github">Color Picker Plus (<a href="https://github.com/nilsso/ColorPickerPlus_4Vanilla">github</a>)</h3>
+
+<p>A port of color to work with the 1.12 client. Provides RGBA channel values,
+hex-codes, and a copy and paste buffer.</p>
+
+<h2 id="old-projects">Old projects</h2>
+
+<h3 id="sjuf-github">sjUF (<a href="https://github.com/nilsso/sjUF">github</a>)</h3>
+
+<p>An attempted solution to raid frames. The most popular at the time of writing this is still <a href="https://github.com/Aviana/LunaUnitFrames">Luna</a>, but my favorite was <a href="http://addons.us.to/addon/sraidframes-improved">sRaidFrames</a>. Both have features that the other don’t and that’s what drove me to want to write my own. Additionally I rewrote the HealComm because the legacy version doesn’t send a few useful things. I wouldn’t say any of my efforts were production-ready though.</p>
+
+<h3 id="sjui-github">sjUI (<a href="https://github.com/nilsso/sjUI">github</a>)</h3>
+
+<p>A (nearly) complete overhaul of the default UI. I personally used it for a few months but decided to ditch it as well as most addons (asside from the least intrusive and the bare essentials).</p>
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+
+
+    </footer>
+</body>
+</html>
+

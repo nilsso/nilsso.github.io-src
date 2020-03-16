@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+<!-- MathJax -->
+<!--
+   -<script type='text/x-mathjax-config'>
+   -MathJax = {
+   -    tex: {
+   -        macros: {
+   -            N: '\\mathbb{N}',
+   -            W: '\\mathbb{W}',
+   -            Z: '\\mathbb{Z}',
+   -            ZP: '\\mathbb{Z}_{\\ge 0}',
+   -            R: '\\mathbb{R}',
+   -            C: '\\mathbb{C}',
+   -            F: '\\mathbb{F}'
+   -        },
+   -        inlineMath: [ ['\\(','\\)'] ],
+   -        displayMath: [ ['\\[', '\\]'] ],
+   -        packages: ['base', 'ams']
+   -    },
+   -    loader: {
+   -        load: ['[tex]/ams']
+   -    },
+   -    svg: {
+   -        fontCache: 'global'
+   -    }
+   -};
+   -</script> 
+   -<script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
+   -<script id='MathJax-script' async
+   -        src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js'></script>
+   -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+        / <span id="page-title">LaTeX Notes</span>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <p>I wrote this because many classmates and friends had little or no
+experience with $\rm\LaTeX$ before the MATH-340 class. It can seem tedious, and
+sometimes it is, but I hope to provide a few short snippets and tables
+for recalling the simple things.</p>
+
+<p>In regards to Jupyter notebooks, perhaps the only non-relevant
+information in this document is on environments and packages (anything
+$\rm\LaTeX$ specific as opposed to Math specific). All math detail should be
+relevant.</p>
+
+<p>(Unfortunately inline code highlighting doesn’t seem to work for Github Pages)</p>
+
+<hr />
+
+<ul id="markdown-toc">
+  <li><a href="#rmlatex-math" id="markdown-toc-rmlatex-math">$\rm\LaTeX$ Math</a>    <ul>
+      <li><a href="#writing-math" id="markdown-toc-writing-math">Writing math</a></li>
+      <li><a href="#subscript-and-superscript" id="markdown-toc-subscript-and-superscript">Subscript and superscript</a></li>
+      <li><a href="#groupings" id="markdown-toc-groupings">Groupings</a></li>
+      <li><a href="#commands" id="markdown-toc-commands">Commands</a>        <ul>
+          <li><a href="#square-root" id="markdown-toc-square-root">Square-root</a></li>
+          <li><a href="#fractions" id="markdown-toc-fractions">Fractions</a></li>
+          <li><a href="#parenthesis" id="markdown-toc-parenthesis">Parenthesis</a></li>
+        </ul>
+      </li>
+      <li><a href="#common-symbols" id="markdown-toc-common-symbols">Common symbols</a></li>
+    </ul>
+  </li>
+  <li><a href="#rmlatex-stuff" id="markdown-toc-rmlatex-stuff">$\rm\LaTeX$ Stuff</a>    <ul>
+      <li><a href="#macros-def-and-newcommand" id="markdown-toc-macros-def-and-newcommand">Macros, <code class="highlighter-rouge">\def</code> and <code class="highlighter-rouge">\newcommand</code></a></li>
+      <li><a href="#environments" id="markdown-toc-environments">Environments</a>        <ul>
+          <li><a href="#math-environments" id="markdown-toc-math-environments">Math environments</a></li>
+        </ul>
+      </li>
+      <li><a href="#packages" id="markdown-toc-packages">Packages</a>        <ul>
+          <li><a href="#highlighted-code-with-minted" id="markdown-toc-highlighted-code-with-minted">Highlighted code with <code class="highlighter-rouge">minted</code></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="rmlatex-math">$\rm\LaTeX$ Math</h1>
+
+<h2 id="writing-math">Writing math</h2>
+
+<p>Math in $\rm\LaTeX$ is expressed either in an inline block, <code class="tex highlighter-rouge">$...$</code> or <code class="highlighter-rouge">\(...\)</code>
+or in a display block, <code class="highlighter-rouge">$$...$$</code> or <code class="highlighter-rouge">$$...$$</code> In the former symbols
+appear smaller in order for the expression to appear reasonable within
+the middle of a line of text. In the latter the expression sits centered
+on the page and at full size, as to be displayed. Consider the following
+expression as an inline block, $\sum_{j=0}^n a_j$, and as a display block</p>
+
+<script type="math/tex; mode=display">\sum_{j=0}^n a_j</script>
+
+<p>We can also force
+inline blocks to look like a display block by including <code class="tex highlighter-rouge">\displaystyle</code>.
+For example, <code class="tex highlighter-rouge">$\displaystyle\sum_{j=0}^n a_j$</code> produces
+$\displaystyle \sum_{j=0}^n a_j$. And vice versa we can force display
+blocks to appear like inline by using the <code class="highlighter-rouge">\textstyle</code> command.</p>
+
+<script type="math/tex; mode=display">\textstyle \sum_{j=0}^n a_j</script>
+
+<p>Produced by <code class="highlighter-rouge">$$\textstyle \sum_{j=0}^n a_j$$</code></p>
+
+<h2 id="subscript-and-superscript">Subscript and superscript</h2>
+
+<p>Subscript and superscript text is set using the underscore and carrot
+characters, <code class="highlighter-rouge">_</code> and <code class="highlighter-rouge">^</code>, respectively. For example</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">$a_b$</code> produces $a_b$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$a^b$</code> produces $a^b$</p>
+  </li>
+</ul>
+
+<p>Some symbols have special interactions with these, such as the summation
+and limit commands which place the group above/below or to the side when
+in either text or display styles</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">$\sum_{j=0}^n$</code> produces inline $\sum_{j=0}^n$ and display style
+$\displaystyle \sum_{j=0}^n$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$\lim{x\to\infty}f(x)=L$</code> produces inline $\lim_{x\to\infty}f(x)=L$
+and display style $\displaystyle \lim_{x\to\infty}f(x)=L$</p>
+  </li>
+</ul>
+
+<h2 id="groupings">Groupings</h2>
+
+<p>Quantities can be grouped with braces { and }. This is needed when we
+want multi-digit numbers and such. Groups are often used with subscript
+and superscript. For example</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">$2^{32}$</code> produces $2^{32}$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$2_{32}$</code> produces $2_{32}$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$\lim_{x\to 0^+}\ln x=-\infty$</code> produces
+$\lim_{x\to 0^+}\ln x = -\infty$</p>
+  </li>
+</ul>
+
+<p>Personally, when an argument to a command only ends up being a single
+character I omit the brace groups, and often add a space after the
+character just to make the code a bit more legible. Can see this above
+in <code class="highlighter-rouge">0\^+</code> a plus character in superscript to the zero.</p>
+
+<h2 id="commands">Commands</h2>
+
+<p>$\rm\LaTeX$ features plenty of commands. Here’s an overview of a few.</p>
+
+<h3 id="square-root">Square-root</h3>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">$\sqrt x$</code> produces $\displaystyle \sqrt x$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$\sqrt x+5$</code> produces $\displaystyle \sqrt x + 1$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$\sqrt{x+5}$</code> produces $\displaystyle \sqrt{x+1}$</p>
+  </li>
+</ul>
+
+<h3 id="fractions">Fractions</h3>
+
+<p>The <code class="highlighter-rouge">\frac</code> command simply places the first argument in the numerator and
+second argument in the denominator. (Like <code class="highlighter-rouge">sqrt</code> this command works without
+brace groups too as long as the arguments are single characters, as
+<code class="highlighter-rouge">$\frac x y$</code> produces $\frac x y$, though might be hard to read).</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">$\frac{1+\sqrt 5}{2}$</code> produces $\displaystyle \frac{1+\sqrt 5}{2}$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$\frac{1+p}{2}{\left(\frac{p}{1-p+p^2}\right)}^{21}$</code> produces
+$\displaystyle \frac{1+p}{2}{\left(\frac{p}{1-p+p^2}\right)}^{21}$</p>
+  </li>
+</ul>
+
+<h3 id="parenthesis">Parenthesis</h3>
+
+<p>Parenthesis, brackets, braces and some other symbols can grow to fit
+their contents. The easiest way to do this is with the <code class="highlighter-rouge">\left</code> and <code class="highlighter-rouge">\right</code>
+commands. For example</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">$(\frac{1+\sqrt 5}\{2\})$</code> produces
+$\displaystyle (\frac{1+\sqrt 5}{2})$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$\left(\frac{1+\sqrt 5}{2}\right)$</code> produces
+$\displaystyle \left(\frac{1+\sqrt 5}{2}\right)$</p>
+  </li>
+</ul>
+
+<p>These commands also have some other uses</p>
+
+<ul>
+  <li><code class="highlighter-rouge">$y'(5)=\left.\frac{1}{x^2}\right|_{x=5}=\frac{1}{5^2}$</code> produces
+$\displaystyle y’(5)=\left.\frac{1}{x^2}\right|_{x=5}=\frac{1}{5^2}$</li>
+</ul>
+
+<h2 id="common-symbols">Common symbols</h2>
+
+<p>If there’s a symbol you want to use and know what it should look like
+then try the <a href="http://detexify.kirelabs.org/classify.html">Detexify</a>
+website where you can draw the symbol out and it will try to find the
+$\rm\LaTeX$ command for it. It’s highly likely that if there’s a math or
+science symbol you desire that it is already defined within one of the
+AMS-Math packages</p>
+
+<ul>
+  <li>
+    <p><a href="https://www.ctan.org/pkg/amsmath"><code class="highlighter-rouge">amsmath</code></a> adds a lot of math
+symbols and improvements to the math system in general.</p>
+  </li>
+  <li>
+    <p><a href="https://www.ctan.org/pkg/amsthm"><code class="highlighter-rouge">amsthm</code></a> implements functionality
+to add and use theorem-like structures in a document as well as some
+additional symbols.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">amssymb</code> adds even more symbols, especially relational/logical
+ones.</p>
+  </li>
+</ul>
+
+<p>There’s a lot of <a href="https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf">lists of the symbols</a> out there (along with the
+<a href="https://www.ams.org/publications/authors/tex/amslatex">documentation</a>) but here’s a list of my own of a few of the
+seemingly most common symbols</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Description</td>
+      <td>Math command</td>
+      <td>Output</td>
+    </tr>
+    <tr>
+      <td>Circular functions</td>
+      <td><code class="highlighter-rouge">\sin</code> <code class="highlighter-rouge">\cos</code></td>
+      <td>$\sin$, $\cos$</td>
+    </tr>
+    <tr>
+      <td>Pi</td>
+      <td><code class="highlighter-rouge">\pi</code></td>
+      <td>$\pi$</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td><code class="highlighter-rouge">\infty</code></td>
+      <td>$\infty$</td>
+    </tr>
+    <tr>
+      <td>Multiplication dot</td>
+      <td><code class="highlighter-rouge">\cdot</code></td>
+      <td>$\cdot$</td>
+    </tr>
+    <tr>
+      <td>Multiplication cross</td>
+      <td><code class="highlighter-rouge">\times</code></td>
+      <td>$\times$</td>
+    </tr>
+    <tr>
+      <td>Arrow (i.e. limits)</td>
+      <td><code class="highlighter-rouge">\to</code></td>
+      <td>$\to$</td>
+    </tr>
+    <tr>
+      <td>Arrow (i.e. condition)</td>
+      <td><code class="highlighter-rouge">\Rightarrow</code></td>
+      <td>$\Rightarrow$</td>
+    </tr>
+    <tr>
+      <td>Sum</td>
+      <td><code class="highlighter-rouge">\sum</code></td>
+      <td>$\displaystyle \sum$</td>
+    </tr>
+    <tr>
+      <td>Product</td>
+      <td><code class="highlighter-rouge">\prod</code></td>
+      <td>$\displaystyle \prod$</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h1 id="rmlatex-stuff">$\rm\LaTeX$ Stuff</h1>
+
+<h2 id="macros-def-and-newcommand">Macros, <code class="highlighter-rouge">\def</code> and <code class="highlighter-rouge">\newcommand</code></h2>
+
+<p>The <code class="highlighter-rouge">\def</code> command creates a alias to some $\rm\LaTeX$ snippet while the
+<code class="highlighter-rouge">\newcommand</code> command allows you to define a function which can accept
+arguments. I wont bother with <code class="highlighter-rouge">\newcommand</code> though. To define a macro,
+<code class="highlighter-rouge">\def</code> is followed by the new macro name and then by a group containing the
+snippet.</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\def\smirk</span><span class="p">{</span>😏<span class="p">}</span>
+<span class="k">\def\fear</span><span class="p">{</span>😨<span class="p">}</span>
+
+<span class="k">\huge</span><span class="p">{</span><span class="k">\sqrt</span><span class="p">{</span><span class="k">\smirk</span><span class="p">^</span>2<span class="p">}</span>=<span class="k">\fear</span><span class="p">}</span>
+</code></pre></div></div>
+
+<script type="math/tex; mode=display">\def\smirk{😏}
+\def\fear{😨}
+
+\huge{\sqrt{\smirk^2}=\fear}</script>
+
+<p>It’s common to be entering repetitive and long commands in $\rm\LaTeX$ that
+become less of a chore to enter when made into a macro. For instance when typing
+up calculus I’d often define a macro to reduce a little bit of tedium. So that</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\frac</span><span class="p">{</span>d<span class="p">}{</span>dx<span class="p">}</span> y(x)
+= <span class="k">\frac</span><span class="p">{</span>d<span class="p">}{</span>dx<span class="p">}</span><span class="k">\left</span>(<span class="k">\frac</span><span class="p">{</span>x<span class="p">^</span>2<span class="p">}{</span>1+x<span class="p">}</span><span class="k">\right</span>)
+= <span class="k">\frac</span><span class="p">{</span>(1+x)<span class="k">\frac</span><span class="p">{</span>d<span class="p">}{</span>dx<span class="p">}</span>(x<span class="p">^</span>2)-x<span class="p">^</span>2<span class="k">\frac</span><span class="p">{</span>d<span class="p">}{</span>dx<span class="p">}</span>(1+x)<span class="p">}{{</span>(1+x)<span class="p">}^</span>2<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Becomes</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\def\ddx</span><span class="p">{</span><span class="k">\frac</span><span class="p">{</span>d<span class="p">}{</span>dx<span class="p">}}</span>
+<span class="k">\ddx</span> y(x)
+= <span class="k">\ddx\left</span>(<span class="k">\frac</span><span class="p">{</span>x<span class="p">^</span>2<span class="p">}{</span>1+x<span class="p">}</span><span class="k">\right</span>)
+= <span class="k">\frac</span><span class="p">{</span>(1+x)<span class="k">\ddx</span>(x<span class="p">^</span>2)-x<span class="p">^</span>2<span class="k">\ddx</span>(1+x)<span class="p">}{{</span>(1+x)<span class="p">}^</span>2<span class="p">}</span>
+</code></pre></div></div>
+
+<p>But which both still produce the same thing</p>
+
+<script type="math/tex; mode=display">\def\ddx{\frac{d}{dx}}
+\ddx y(x)
+= \ddx\left(\frac{x^2}{1+x}\right)
+= \frac{(1+x)\ddx(x^2)-x^2\ddx(1+x)}{{(1+x)}^2}</script>
+
+<h2 id="environments">Environments</h2>
+
+<p>In $\rm\LaTeX$ environments provide styles over all the text which they
+contain. For example the <code class="highlighter-rouge">center</code> environment can be used to center text
+or a table</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{center}</span>
+  This is centered
+<span class="nt">\end{center}</span>
+</code></pre></div></div>
+
+<p>In fact the code snippet there is itself an environment (the <code class="highlighter-rouge">minted</code>
+environment) as well is the entire document. Tables are a common use of
+environments; the table of symbols above was produced by the following,
+using the <code class="highlighter-rouge">tabu</code> environment from the package of the same name. The first line
+defines a shortcut to the <code class="highlighter-rouge">\mintinline</code> command called <code class="highlighter-rouge">\mil</code>, which ends up
+being a lot less typing</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\def\mil\mintinline</span>
+<span class="nt">\begin{tabu}</span><span class="p">{</span>llc<span class="p">}</span>
+  <span class="k">\toprule</span>
+  Description <span class="p">&amp;</span> Math command <span class="p">&amp;</span> Output <span class="k">\\</span>
+  <span class="k">\midrule</span>
+  Circular functions <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\sin</span><span class="p">}</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\\</span>cos<span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\sin</span><span class="p">$</span>, <span class="p">$</span><span class="nv">\cos</span><span class="p">$</span> <span class="k">\\</span>
+  Pi <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\pi</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\pi</span><span class="p">$</span> <span class="k">\\</span>
+  Infinity <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\infty</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\infty</span><span class="p">$</span> <span class="k">\\</span>
+  Multiplication dot <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\cdot</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\cdot</span><span class="p">$</span> <span class="k">\\</span>
+  Multiplication cross <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\times</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\times</span><span class="p">$</span> <span class="k">\\</span>
+  Arrow (i.e.<span class="k">\ </span>limits) <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\to</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\to</span><span class="p">$</span> <span class="k">\\</span>
+  Arrow (i.e.<span class="k">\ </span>condition) <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\Rightarrow</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\Rightarrow</span><span class="p">$</span> <span class="k">\\</span>
+  Sum <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\sum</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\displaystyle</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">$</span> <span class="k">\\</span>
+  Product <span class="p">&amp;</span> <span class="k">\mil</span><span class="p">{</span>tex<span class="p">}{</span><span class="k">\prod</span><span class="p">}</span> <span class="p">&amp;</span> <span class="p">$</span><span class="nv">\displaystyle</span><span class="nb"> </span><span class="nv">\prod</span><span class="p">$</span> <span class="k">\\</span>
+  <span class="k">\bottomrule</span>
+<span class="nt">\end{tabu}</span>
+</code></pre></div></div>
+
+<h3 id="math-environments">Math environments</h3>
+
+<p>The most common math environments besides <code class="highlighter-rouge">$$...$$</code> has to be the
+<code class="highlighter-rouge">align</code> and <code class="highlighter-rouge">gather</code> environments. Both allow math to be broken into
+several lines, but align allows you to… align. For example</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+2 &= 10-4\cdot 2 \\
+  &= 10-2(24-10\cdot 2) \\
+  &= (34-24)-2(24-2(34-24)) \\
+  &= 34-24-2\cdot 24+4(34-24) \\
+  &= 34-24-2\cdot 24+4\cdot 34-4\cdot 24 \\
+  &= 5\cdot 34-7\cdot 24
+\end{aligned} %]]></script>
+
+<p>Is produced by making the equals signs the
+alignment character by putting an ampersand <code class="highlighter-rouge">&amp;</code> in front of them and
+breaking lines with a double backslash <code class="highlighter-rouge">\\</code></p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{align*}</span>
+2 <span class="p">&amp;</span>= 10-4<span class="k">\cdot</span> 2 <span class="k">\\</span>
+  <span class="p">&amp;</span>= 10-2(24-10<span class="k">\cdot</span> 2) <span class="k">\\</span>
+  <span class="p">&amp;</span>= (34-24)-2(24-2(34-24)) <span class="k">\\</span>
+  <span class="p">&amp;</span>= 34-24-2<span class="k">\cdot</span> 24+4(34-24) <span class="k">\\</span>
+  <span class="p">&amp;</span>= 34-24-2<span class="k">\cdot</span> 24+4<span class="k">\cdot</span> 34-4<span class="k">\cdot</span> 24 <span class="k">\\</span>
+  <span class="p">&amp;</span>= 5<span class="k">\cdot</span> 34-7<span class="k">\cdot</span> 24
+<span class="nt">\end{align*}</span>
+</code></pre></div></div>
+
+<p>The star in <code class="highlighter-rouge">align*</code> just removes equation numbers.</p>
+
+<h2 id="packages">Packages</h2>
+
+<h3 id="highlighted-code-with-minted">Highlighted code with <code class="highlighter-rouge">minted</code></h3>
+
+<p>Minted is probably the best package for adding syntax highlighted verbatim
+code to $\rm\LaTeX$ documents right now but it depends on the Python
+<a href="https://pypi.org/project/Pygments/">Pygments</a> package, a popular syntax highlighter used all over the
+place (especially for static website generators like Jekyll, which made this
+very page). So after installing Pygements with</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pygments
+</code></pre></div></div>
+
+<p>Which provides the <code class="highlighter-rouge">pygmentize</code> command (if your <code class="highlighter-rouge">pip</code> package installation
+directory is correctly added to you <code class="highlighter-rouge">PATH</code> environment variable), we can now
+use <code class="highlighter-rouge">minted</code> (and I’m assuming <code class="highlighter-rouge">minted</code> is installed already since most big
+$\rm\LaTeX$ distributions seem to come with it). In a test tex-file, include in
+the preamble the following</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>minted<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then in the body include</p>
+
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{minted}</span><span class="p">{</span>python<span class="p">}</span>
+def fib(n, a=0, b=1):
+    for i in range(n):
+        b, a = a, a+b
+        yield b
+<span class="nt">\end{minted}</span>
+</code></pre></div></div>
+
+<p>But to compile you must include the <code class="highlighter-rouge">-shell-escape</code> flag, as in</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdflatex <span class="nt">-shell-escape</span> test.tex
+</code></pre></div></div>
+
+<p>Then if all goes well the output PDF should have</p>
+
+<p><img src="minted.png" alt="minted example" width="300px" /></p>
+
+<p>Delve into the documentation at <a href="https://ctan.org/pkg/minted">minted</a> to see how to change styles and
+what not, but because why not, try installing the
+<a href="https://pypi.org/project/pygments-solarized-style/#history">Solarized</a> style via <code class="highlighter-rouge">pip3 install pygments-solarized-style</code>,
+include in the test file preamble <code class="highlighter-rouge">\usemintedstyle{solarizedlight}</code> and compile.
+The output PDF should have</p>
+
+<p><img src="minted-solarized.png" alt="minted solarized example" width="300px" /></p>
+
+<p>Then to go even further beyond I wanted to use the <a href="https://github.com/tonsky/FiraCode">Fira (Fura) Code Font</a>
+with ligatures as my monospaced font. On Mac this font is best installed via
+<code class="highlighter-rouge">brew cask install font-firacode-nerd-font</code> (or <code class="highlighter-rouge">font-fira-code</code> if you don’t want
+all of them icons). To then use it in $\rm\LaTeX$ add:</p>
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>fontspec<span class="p">}</span>
+<span class="k">\setmonofont</span><span class="na">[Contextuals={Alternate}]</span><span class="p">{</span>FuraCode Nerd Font<span class="p">}</span>
+</code></pre></div></div>
+<p>Although the font name is bound to be different depending on which package you
+install and/or what OS you’re using.</p>
+
+<!--
+   -## Music
+   -
+   -Outlined in [this article][music-with-latex] it's very possible to
+   -
+   -[music-with-latex]: https://martin-thoma.com/how-to-write-music-with-latex/
+   -->
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+<script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+<script type="text/javascript">
+    anchors.add('#content h1, #content h2, #content h3');
+</script>
+
+
+
+    </footer>
+</body>
+</html>
+

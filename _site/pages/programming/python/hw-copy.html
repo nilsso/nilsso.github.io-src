@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>nilsso</title>
+
+
+
+	<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"> 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    <span>
+        <a href="https://github.com/nilsso">nilsso</a>
+        / <a href="/">home</a>
+        
+    </span>
+</nav>
+
+    <hr>
+    <article>
+        <div id="content">
+            <p>Script I wrote to copy assignments to and from a Google Drive for grading</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-i'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">'store_true'</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-o'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">'store_true'</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'num'</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num</span><span class="p">)</span> 
+
+<span class="n">drivepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s">'/drive'</span>
+<span class="n">tmppath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s">'/tmp'</span>
+
+<span class="n">in_or_out</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">i</span>
+<span class="c1"># i.e. To move files from drive to tmp or graded files from temp to drive
+</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s">'One'</span><span class="p">,</span> <span class="s">'Two'</span><span class="p">,</span> <span class="s">'Three'</span><span class="p">,</span> <span class="s">'Four'</span><span class="p">,</span> <span class="s">'Five'</span><span class="p">,</span>
+        <span class="s">'Six'</span><span class="p">,</span> <span class="s">'Seven'</span><span class="p">,</span> <span class="s">'Eight'</span><span class="p">,</span> <span class="s">'Nine'</span><span class="p">,</span> <span class="s">'Ten'</span><span class="p">,</span>
+        <span class="s">'Eleven'</span><span class="p">,</span> <span class="s">'Twelve'</span> <span class="p">]</span>
+
+<span class="n">dirpattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span>
+        <span class="s">r'([A-Za-z\-]+) ([A-Za-z\-]+)'</span><span class="p">)</span>
+
+<span class="n">snums</span> <span class="o">=</span> <span class="s">'|'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="n">filepattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span>
+        <span class="s">r'(\d+'</span><span class="o">+</span><span class="p">(</span><span class="s">''</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">snums</span> <span class="k">else</span> <span class="p">(</span><span class="s">'|'</span><span class="o">+</span><span class="n">snums</span><span class="o">+</span><span class="s">'|'</span><span class="o">+</span><span class="n">snums</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span><span class="o">+</span><span class="s">').*</span><span class="err">\</span><span class="s">.(ipynb|pdf)'</span><span class="p">)</span>
+
+<span class="n">gradedpattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span>
+        <span class="s">r'([A-Za-z\-]+)_([A-Za-z\-]+)_Assignment\d+_graded.*'</span><span class="p">)</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">check_num</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="k">if</span> <span class="n">in_or_out</span><span class="p">:</span>
+    <span class="c1"># Copy files from drive to tmp
+</span>    <span class="k">for</span> <span class="n">dirname</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">drivepath</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">dirpattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">last</span><span class="p">,</span> <span class="n">first</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+        <span class="n">studentdirpath</span> <span class="o">=</span> <span class="n">drivepath</span><span class="o">+</span><span class="s">'/'</span><span class="o">+</span><span class="n">dirname</span>
+        <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">studentdirpath</span><span class="p">):</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">filepattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">check_num</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+            <span class="n">suffix</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="n">N</span><span class="p">:</span>
+                <span class="n">filepath</span> <span class="o">=</span> <span class="n">studentdirpath</span><span class="o">+</span><span class="s">'/'</span><span class="o">+</span><span class="n">filename</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">last</span><span class="o">+</span><span class="s">'_'</span><span class="o">+</span><span class="n">first</span><span class="o">+</span><span class="s">'_Assignment</span><span class="si">%02</span><span class="s">d.'</span><span class="o">+</span><span class="n">suffix</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+                <span class="c1"># print("%s\n%s\n" % (filepath, out))
+</span>                <span class="c1"># shutil.copyfile(filepath, './tmp/'+out)
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Copy graded files from tmp to drive
+</span>    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">tmppath</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">gradedpattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">last</span><span class="p">,</span> <span class="n">first</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">for</span> <span class="n">dirname</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">drivepath</span><span class="p">):</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">dirpattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span> <span class="o">==</span> <span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">first</span><span class="p">):</span>
+                <span class="n">inpath</span> <span class="o">=</span> <span class="n">tmppath</span><span class="o">+</span><span class="s">'/'</span><span class="o">+</span><span class="n">filename</span>
+                <span class="n">outpath</span> <span class="o">=</span> <span class="n">drivepath</span><span class="o">+</span><span class="s">'/'</span><span class="o">+</span><span class="n">dirname</span><span class="o">+</span><span class="s">'/'</span><span class="o">+</span><span class="n">filename</span>
+                <span class="c1"># outpath = drivepath+'-test/'+dirname+'/'+filename
+</span>                <span class="c1"># print(last, first)
+</span>                <span class="c1"># print('inpath', inpath)
+</span>                <span class="c1"># print('outpath', outpath)
+</span>                <span class="c1"># print("")
+</span>                <span class="c1"># shutil.copyfile(inpath, outpath)
+</span>
+
+</code></pre></div></div>
+
+
+        </div>
+    </article>
+    <hr>
+    <footer>
+        
+
+
+    </footer>
+</body>
+</html>
+
