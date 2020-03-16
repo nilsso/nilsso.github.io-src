@@ -1,18 +1,18 @@
 <div id="{{ include.tag }}-accordion" class="panel panel-default" role="tablist" aria-multiselectable="true">
-  <div id="{{ include.tag }}-heading" class="panel-heading" role="tab">
-    <h4 class="panel-title">
-      <a role="button" data-toggle="collapse" data-parent="#{{ include.tag }}-accordion" href="#{{ include.tag }}-collapse">
-        {{ include.title }}
-      </a>
-    </h4>
-  </div>
-  <div id="{{ include.tag }}-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ include.tag }}-heading">
-    <div class="panel-body">
-      {% capture contents %}
-      {% if include.content %}{{ include.content }}{% endif %}
-      {% if include.file %}{% include_relative {{ include.file }}.md %}{% endif %}
-      {% endcapture %}
-      {{ contents | markdownify }}
+    <div id="{{ include.tag }}-heading" class="panel-heading" role="tab">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#{{ include.tag }}-accordion" href="#{{ include.tag }}-collapse">
+                {{ include.title }}
+            </a>
+        </h4>
     </div>
-  </div>
+    <div id="{{ include.tag }}-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ include.tag }}-heading">
+        <div class="panel-body">
+            {% capture contents %}
+            {% if include.content %}{{ include.content }}{% endif %}
+            {% if include.file %}{% include_relative {{ include.file }}.md %}{% endif %}
+            {% endcapture %}
+            {{ contents | markdownify }}
+        </div>
+    </div>
 </div>

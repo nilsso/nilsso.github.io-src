@@ -264,3 +264,14 @@ $$
 Where $\forall i\in\N$, $p_i(x)$ is an irreducible polynomial.
 Moreover, this expression is unique up-to reordering and unit multiples.
 " %}
+
+# Groups
+
+$\circ$ | $I$   | $r_1$ | $r_2$ | $r_3$ | $R_1$ | $R_2$
+------- | ----- | ----- | ----- | ----- | ----- | -----
+    $I$ | $I$   | $r_1$ | $r_2$ | $r_3$ | $R_1$ | $R_2$
+  $r_1$ | $r_1$ |
+  $r_2$ | $r_2$ |
+  $r_3$ | $r_3$ |
+  $R_1$ | $R_1$ |
+  $R_2$ | $R_2$ |

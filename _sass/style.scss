@@ -247,6 +247,11 @@ footer {
   overflow-y: hidden;
 }
 
+.vexflow svg {
+    display: block;
+    margin: 0 auto;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;

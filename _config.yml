@@ -9,15 +9,16 @@ github_username: nilsso
 github_dotfiles: dotfiles
 
 defaults:
-  -
-    values:
-      layout: "default"
+    -
+        values:
+            layout: "default"
 
 exclude:
-  - node_modules
-  - Gemfile
-  - Gemfile.lock
+    - node_modules
+    - Gemfile
+    - Gemfile.lock
 
 plugins:
+    - jekyll-katex
 
 extensions: [fenced_code_blocks]

@@ -4,7 +4,7 @@ asciinema: True
 
 <span class="nav">
 Music /
-[Lists](pages/music/lists/) /
+<!--[Lists](pages/music/lists/) /-->
 [Theory](pages/music/theory/) /
 [Synthesis](pages/music/synthesis/)
 <br/>
@@ -21,7 +21,8 @@ Math /
 [SemiComb](pages/math/semi-comb/) /
 [AdvCalc1](pages/math/adv-calc-1/) /
 [AdvCalc2](pages/math/adv-calc-2/) /
-[DynamicalSystems](pages/math/dynamical-systems/)
+[DynamicalSystems](pages/math/dynamical-systems/) /
+[Matroids](pages/math/matroids/)
 <br/>
 Math /
 [Generator Project](problem-generator/) /
