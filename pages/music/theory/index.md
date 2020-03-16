@@ -43,7 +43,9 @@ function helper(ele, groups) {
 {% katexmm %}
 # Pitch and pitch class intervals
 
+$$
 (5-10)\bmod 12\equiv 7
+$$
 
 <div class='vexflow' id='vf-1' data='c/4,d/4|e/4,f/4|g/4,a/4'></div>
 
@@ -131,8 +133,8 @@ it's now easier than ever to integrate into a Jekyll website.
 
 ## Setting music on the web
 
-I set musical expressions on this page using another JavaScript library,
-[VexFlow][vexflow].
+Musical expressions are displayed using another JavaScript library, [VexFlow][vexflow],
+though learning and using it was a pretty involved process.
 
 <!-- Links -->
 [mathjax]: https://www.mathjax.org/
