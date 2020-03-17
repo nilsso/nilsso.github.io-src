@@ -15,6 +15,7 @@ exclude:
     - Gemfile.lock
 
 plugins:
+    - jekyll-toc
     - jekyll-katex
 
 extensions: [fenced_code_blocks]
