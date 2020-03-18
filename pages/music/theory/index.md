@@ -7,83 +7,140 @@ toc: true
 
 <!-- VexFlow -->
 <script type='text/javascript' src='https://unpkg.com/vexflow/releases/vexflow-min.js'></script>
-<script type='text/javascript'>
-var VF = Vex.Flow;
-
-var renderer_width = 600;
-var renderer_height = 100;
-var stave_total_width = 600;
-var NOTES = {
-    0:  'C', 1:  'C#',
-    2:  'D', 3:  'D#',
-    4:  'E',
-    5:  'F', 6:  'F#',
-    7:  'G', 8:  'G#',
-    9:  'A', 10: 'A#',
-    11: 'B'
-};
-
-function helper(div, data) {
-    var groups = data.split('|');
-	var num_staves = groups.length;
-	var stave_width = stave_total_width / num_staves;
-
-    var factory = new VF.Factory({
-        renderer: {
-            elementId: div,
-            width: renderer_width,
-            height: renderer_height
-        }
-    });
-    var score = factory.EasyScore();
-	var context = factory.getContext();
-
-    groups.forEach(function(notes, i) {
-        var stave = new VF.Stave(i*stave_width, 0, stave_width);
-        var notes = score.notes(notes);
-        if (i == 0)
-            stave.addClef('treble');
-		if (i == num_staves - 1)
-            stave.setEndBarType(VF.Barline.type.END);
-		else
-            stave.setEndBarType(VF.Barline.type.DOUBLE);
-        stave.setContext(context).draw();
-        VF.Formatter.FormatAndDraw(context, stave, notes);
-    });
-}
-
-function random_note() {
-    return NOTES[Math.floor(12*Math.random())].concat('4');
-}
-
-function random_notes(n) {
-    var notes = new Array(n);
-    for (var i = 0; i < notes.length; i++)
-        notes[i] = random_note();
-    return notes;
-}
-
-function random_staff_notes(n) {
-    var notes = random_notes(n);
-    return [notes[0].concat('/q')].concat(notes.slice(1)).join(',');
-}
-</script>
+<script type='text/javascript' src='front.js'></script>
 
 {% katexmm %}
 
-<div class='vexflow' data='random'></div>
+<div class='vexflow' data='random-3-2'></div>
 
 # Fundamentals of atonal music
 
-## Pitch and pitch class intervals
+## Modular arithmetic
+
+In this section we'll try to understand what is meant by the following statements or expressions:
+
+- "$a$ is congruent/equivalent to $b$ modulo $n$",
+- "$[a]_n$ is the congruence class of $a$ modulo $n$",
+
+### Quotient-remainder theorem
+
+Chances are you know about *Euclidean* division.
+For example, $1\div 2$ is 1 divided by 2 (or 2 dividing 1) and represents symbolically the number of
+times 2 goes into 1 plus some remainder.
+What might not be as familiar are the two parts of Euclidean division taken separately:
+the *quotient* and the *remainder*.
+
+Let $a$ and $b$ both be integers.
+
+- The quotient $q$ of $a\div b$ is the number of multiples of $b$ that go into $a$, and
+- The remainder $r$ of $a\div b$ is what ever is left from subtracting $qb$ from $a$.
+
+And can express $a$ as the sum:
 
 $$
-(5-10)\bmod 12\equiv 7
+a = qb + r.
 $$
+
+> As an aside on notation, mathematicians are often lazy. The "let" statement above could be
+> alternatively expressed "fix $a,b\in\Z$",
+> where the symbol $\in$ means that $a$ and $b$ are variables with values taken from $\Z$, where
+> $\Z=\{\ldots,‐2,‐1,0,1,2,\ldots\}$ is the set containing all integers. The $\{\ldots\}$ notation
+> is called set-builder notation, and is a way to group things, in this case integers, without
+> repetition. A set can be finite or infinite, for example: $\{0,1,2\}$ is a finite set containing
+> only the integers 0, 1 and 2; $\{1,2,3,\ldots\}$ is an infinite set containing all of the positive
+> integers, commonly denoted $\Z^+$ or $\N$.
+> We can also define sets using rules, as for example the positive integers can also be expressed
+> as $\{d\in\Z:d>0\}$, meaning the set of any integer $d$ as long as $d$ is greater than zero.
+> Also to note is the *without repetition* part, meaning
+> sets expressed as containing multiple of the same element (multiple, not multiples of!) can be
+> reduced to include it only one, e.g.: $\{1,1\}=\{1\}$.
+
+Here's a few example of quotient-remainder theorem when $b=12$ for a few different values of $a$:
+
+- If $a=12$, then $12=(1)12+(0)$.
+- If $a=1$, then $1=(0)12+(1)$.
+- If $a=‐5$, then $‐5=(0)12+(‐5)=(‐1)12+(7)$.
+
+### Modular congruence
+
+With the last of the examples above you might notice that there were written two different ways to
+express -5 as a sum of a multiple of 12 and a remainder. But these aren't the only ways, in-fact
+there is an infinite number of ways to express -5 using quotient remainder theorem since for any
+arbitrary quotient $q$ there is a unique remainder $r$ such that $a=qb+r$:
+
+$$
+\begin{alignedat}{3}
+    ‐5 &= & (‐2)12 &+ &         (19)& \\
+    ‐5 &= & (‐1)12 &+ &          (7)& \\
+    ‐5 &= &  (0)12 &+ &  (‐5)& \\
+    ‐5 &= &  (1)12 &+ & (‐17)& \\
+    ‐5 &= &  (2)12 &+ & (‐29)&
+\end{alignedat} \\
+$$
+
+What we're getting at is that these remainders are all equal to -5 when we add some multiple of 12,
+and we call these remainders *congruent/equivalent* to one-another *modulo 12*.
+
+Fix $a,b,n\in\Z$ where $a$ and $b$ are congruent modulo $n$.
+We express this congruence:
+
+$$
+a\equiv b\bmod n.
+$$
+
+In the example above we saw that there are an infinite number of numbers congruent to -5 modulo 12.
+Instead of listing them out (which might take a while, since there's an infinite number of them),
+we call this set of congruent integers the *congruence class* of 5 modulo 12, and denote it:
+
+$$
+[5]_{12} = \{\ldots,19,7,‐5,‐17,‐29,\ldots\}.
+$$
+
+Generically, for a divisor $n$ and an integer $a$, we call $[a]_n$ the congruence class of $a$
+modulo $n$, and denote it:
+
+$$
+[a]_n
+= \{\ldots,‐1\cdot n+a,0\cdot n+a,1\cdot n+a,\ldots\}
+= \{b:b\equiv a\bmod n\}.
+$$
+
+As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
+containing n elements:
+
+$$
+\Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}.
+$$
+
+## Pitch and pitch class intervals
 
 <div class='vexflow' data='C4/q,D4|E4/q,F4|G4/q,A4'></div>
 
-Unordered pitch interval is the absolute value of ordered pitch interval.
+<!--Unordered pitch interval is the absolute value of ordered pitch interval.-->
+
+Apply $T_{10}$ to the pitch set $[3~4~7]$.
+
+$$
+\begin{array}{c} 3 \\ 4 \\ 7 \end{array}
+\xrightarrow{T_{10}}
+\begin{array}{r}
+    3+10 = 13 \equiv 1 \\
+    4+10 = 14 \equiv 2 \\
+    7+10 = 17 \equiv 5
+\end{array}
+$$
+
+Apply $I_6$ to the pitch set $[10~11~2]$.
+
+$$
+\begin{array}{c} 10 \\ 11 \\ 2 \end{array}
+\xrightarrow{I_6}
+\begin{array}{r}
+    6-10 = -5 \equiv 8 \\
+    6-11 = -5 \equiv 7 \\
+    6-2  = 4
+\end{array}
+$$
 
 ---
 
@@ -189,16 +246,4 @@ though learning and using it was a pretty involved process.
 
 {% endkatexmm %}
 
-<script>
-$(".vexflow").each(function() {
-    var data = $(this).attr('data');
-    if (data == 'random') {
-        var data = Array(3);
-        for (var i = 0; i < data.length; i++)
-            data[i] = random_staff_notes(2) 
-        helper(this, data.join('|'));
-    } else {
-        helper(this, data);
-    }
-});
-</script>
+<script type='text/javascript' src='end.js'></script>
