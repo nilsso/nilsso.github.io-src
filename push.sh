@@ -6,6 +6,6 @@ function acp {
 }
 
 msg="$@"
-bundle exec jekyll b -I -b 'https://nilsso.github.io'
+bundle exec jekyll b
 (cd _site; acp "$msg (live)")
 acp "$msg (source)"
