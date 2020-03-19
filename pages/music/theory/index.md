@@ -88,9 +88,9 @@ $$
 a\equiv b\bmod n.
 $$
 
-In the example above we saw that there are an infinite number of numbers congruent to -5 modulo 12.
-Instead of listing them out (which might take a while, since there's an infinite number of them),
-we call this set of congruent integers the *congruence class* of 5 modulo 12, and denote it:
+In the example above we saw that there is an infinite amount of remainders congruent to -5 modulo
+12. Instead of listing them out (which might take a while, since there's an infinite number of
+them), we call this set of congruent integers the *congruence class* of 5 modulo 12, and denote it:
 
 $$
 [5]_{12} = \{\ldots,19,7,‐5,‐17,‐29,\ldots\}.
@@ -105,12 +105,14 @@ $$
 = \{b:b\equiv a\bmod n\}.
 $$
 
-As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
-containing n elements:
-
-$$
-\Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}.
-$$
+<!--
+   -As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
+   -containing n elements:
+   -
+   -$$
+   -\Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}.
+   -$$
+   -->
 
 ## Pitch and pitch class intervals
 
