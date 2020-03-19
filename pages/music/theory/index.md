@@ -93,6 +93,13 @@ $$
 a\equiv b\bmod n.
 $$
 
+> The $\equiv$ symbol means equivalence/congruence and is not the same as equality. For example, -5
+> and 7 are not equal to one-another, but they are congruent to one-another modulo 12:
+> $$ -5 \ne 7 \text{, but } -5 \equiv 7\bmod 12. $$
+> Also note that whenever we "fix" variables, they are completely new meanings to the variables, and
+> no other variables are assumed to exist. In the definition of congruence, the variables $a$ and
+> $b$ are unrelated to the $a$ and $b$ used in the definition of the quotient-remainder theorem.
+
 In the example above we saw that there is an infinite amount of remainders congruent
 to -5 modulo 12. Instead of listing them out (which might take a while, since there's an infinite
 number of them), we call this set of congruent integers the *congruence class* of 5 modulo 12, and
