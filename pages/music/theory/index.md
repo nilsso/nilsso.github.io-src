@@ -118,14 +118,9 @@ $$
 = \{b:b\equiv a\bmod n\}.
 $$
 
-<!--
-   -As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
-   -containing n elements:
-   -
-   -$$
-   -\Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}.
-   -$$
-   -->
+> As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
+> of $n$ elements where every element is itself an infinite set:
+> $$ \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}. $$
 
 ---
 
