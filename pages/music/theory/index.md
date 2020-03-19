@@ -2,6 +2,7 @@
 layout: default
 title: 'Music'
 math: true
+anchor: true
 toc: true
 ---
 
@@ -16,6 +17,10 @@ toc: true
 # Fundamentals of atonal music
 
 ## Modular arithmetic
+
+> If math *really* isn't of interest to you then feel free to skip this section and instead head
+> straight to [pitch class](#pitch-class), but know that most atonal music techniques are built upon
+> the notion of modular arithmetic, which this section will briefly build up.
 
 In this section we'll try to understand what is meant by the following statements or expressions:
 
@@ -88,9 +93,10 @@ $$
 a\equiv b\bmod n.
 $$
 
-In the example above we saw that there is an infinite amount of remainders congruent to -5 modulo
-12. Instead of listing them out (which might take a while, since there's an infinite number of
-them), we call this set of congruent integers the *congruence class* of 5 modulo 12, and denote it:
+In the example above we saw that there is an infinite amount of remainders congruent
+to -5 modulo 12. Instead of listing them out (which might take a while, since there's an infinite
+number of them), we call this set of congruent integers the *congruence class* of 5 modulo 12, and
+denote it:
 
 $$
 [5]_{12} = \{\ldots,19,7,‐5,‐17,‐29,\ldots\}.
@@ -114,7 +120,17 @@ $$
    -$$
    -->
 
-## Pitch and pitch class intervals
+---
+
+<div class='vexflow' data='random-3-2'></div>
+
+## Pitch class
+
+---
+
+<div class='vexflow' data='random-3-2'></div>
+
+## Pitch intervals
 
 <div class='vexflow' data='C4/q,D4|E4/q,F4|G4/q,A4'></div>
 
