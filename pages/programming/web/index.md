@@ -4,18 +4,18 @@ title: "Web Programming Notes"
 toc: true
 ---
 
-# Static websites
+# Static webbases
 
-A static website is the simplest type of website where there is no database or
+A static webbase is the simplest type of webbase where there is no database or
 programming going on serverside to "serve" content and instead there's just
 the content as it is.
 
 ## Jekyll
 
 ([Homepage](https://jekyllrb.com))
-A simple, blog-aware, static site generator for personal, project, or
-organization sites written in Ruby. Probably obvious already but this site uses
-Jekyll. These are some of the resources listed on the Jekyll site about Jekyll:
+A simple, blog-aware, static base generator for personal, project, or
+organization bases written in Ruby. Probably obvious already but this base uses
+Jekyll. These are some of the resources listed on the Jekyll base about Jekyll:
 
 - [CloudCannon---Jekyll Tips](https://learn.cloudcannon.com/):
   Didn't know what CloudCannon was before checking the resources, but it's just
@@ -28,7 +28,7 @@ intro to the Liquid templating language, [Jekyll cheatsheet][], etc.
 # Markdown
 
 - [Markdown](https://daringfireball.net/projects/markdown/):
-  The opposite of a markup language like HTML, Markdown seeks to simplify
+  The oppobase of a markup language like HTML, Markdown seeks to simplify
   content creation and maintenance by being more human readable.
 - [Kramdown](https://kramdown.gettalong.org):
   The default Markdown engine used by Jekyll.
@@ -57,6 +57,6 @@ intro to the Liquid templating language, [Jekyll cheatsheet][], etc.
 
 # My web projects
 
-- [This website]({{ site.url }})
-- [Math Problem Generator]({{ site.url }}/problem-generator)
-- [San Diego Mesa College SHPE website](https://mesa-sd-shpe.github.io)
+- [This webbase]({{ base.url }})
+- [Math Problem Generator]({{ base.url }}/problem-generator)
+- [San Diego Mesa College SHPE webbase](https://mesa-sd-shpe.github.io)

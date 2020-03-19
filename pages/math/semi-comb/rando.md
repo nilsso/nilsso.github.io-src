@@ -6,10 +6,10 @@ rainbow: true
 interPoints: true
 dilation: 3
 ---
-<script src='{{ site.url }}/assets/js/three/build/three.js'></script>
-<script src='{{ site.url }}/assets/js/three/modules/QuickHull.js'></script>
-<script src='{{ site.url }}/assets/js/three/modules/geometries/ConvexGeometry.js'></script>
-<script src='{{ site.url }}/assets/js/three/modules/controls/OrbitControls.js'></script>
+<script src='{{ base.url }}/assets/js/three/build/three.js'></script>
+<script src='{{ base.url }}/assets/js/three/modules/QuickHull.js'></script>
+<script src='{{ base.url }}/assets/js/three/modules/geometries/ConvexGeometry.js'></script>
+<script src='{{ base.url }}/assets/js/three/modules/controls/OrbitControls.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.6.0/math.js"></script>
 <script src='polytopes/polytope.js'></script>
 <style>
