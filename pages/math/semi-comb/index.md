@@ -6,10 +6,10 @@ axes: true
 spin: true
 rainbow: false
 ---
-<script src='{{ base.url }}/assets/js/three/build/three.js'></script>
-<script src='{{ base.url }}/assets/js/three/modules/QuickHull.js'></script>
-<script src='{{ base.url }}/assets/js/three/modules/geometries/ConvexGeometry.js'></script>
-<script src='{{ base.url }}/assets/js/three/modules/controls/OrbitControls.js'></script>
+<script src='{{ '/assets/js/three/build/three.js' | relative_url }}'></script>
+<script src='{{ '/assets/js/three/modules/QuickHull.js' | relative_url }}'></script>
+<script src='{{ '/assets/js/three/modules/geometries/ConvexGeometry.js' | relative_url }}'></script>
+<script src='{{ '/assets/js/three/modules/controls/OrbitControls.js' | relative_url }}'></script>
 <script src='polytopes/polytope.js'></script>
 
 <div id="mathjax-preamble" style="display:none;">

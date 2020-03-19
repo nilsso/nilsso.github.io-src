@@ -57,6 +57,6 @@ intro to the Liquid templating language, [Jekyll cheatsheet][], etc.
 
 # My web projects
 
-- [This webbase]({{ base.url }})
-- [Math Problem Generator]({{ base.url }}/problem-generator)
-- [San Diego Mesa College SHPE webbase](https://mesa-sd-shpe.github.io)
+- [This website](/)
+- [Math Problem Generator]({{ "/problem-generator" | relative_url }})
+- [San Diego Mesa College SHPE website](https://mesa-sd-shpe.github.io)
