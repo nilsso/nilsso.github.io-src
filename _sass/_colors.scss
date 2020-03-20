@@ -66,3 +66,9 @@ $color_sets: (
     "muted": $muted,
     "bright": $bright
 );
+
+@for $i from 0 through 11 {
+    $hue: $i * 30;
+    $set: color_set(hsla($hue, 100, 50, 1));
+    $color_sets: map-merge(("c#{$hue}": $set), $color_sets);
+}
