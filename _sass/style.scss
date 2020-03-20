@@ -4,32 +4,39 @@
 //@import "fonts";
 //@import "rouge";
 
-$color-a: #404040; // Gray (dark)
-$color-b: #6bb0e1; // Blue (light)
-$color-c: #277fbe; // Blue (dark)
-$color-d: #e5e5e5; // Gray (light)
+
+$gray-dark:  #404040;
+$gray-light: #E5E5E5;
+
+@import "functions";
+$muted:  color_set(hsla(210, 25, 75, 1));
+$bright: color_set(hsla(210, 50, 50, 1));
 
 //$font-size-normal: 0.9em;
 $font-size-normal: 14px;
-$font-size-small: 80%;
-$font-size-big: 120%;
-$font-size-Big: 160%;
-$font-size-BIG: 200%;
+$font-size-small:  80%;
+$font-size-big:    120%;
+$font-size-Big:    160%;
+$font-size-BIG:    200%;
+
+$quote-padding: 1rem;
+$quote-border-width: 4px;
 
 $font-normal:
-//'Noto Serif', serif;
-'Roboto', sans-serif;
-//'Roboto Slab', serif; 
-//'Merriweather', serif; 
+    //'Noto Serif', serif;
+    'Roboto', sans-serif;
+    //'Roboto Slab', serif; 
+    //'Merriweather', serif; 
 $font-header:
-//'Noto Serif', serif;
-//'Roboto', sans-serif;
-'Roboto Slab', serif; 
-//'Merriweather', serif; 
+    //'Noto Serif', serif;
+    //'Roboto', sans-serif;
+    'Roboto Slab', serif; 
+    //'Merriweather', serif; 
+
 $font-code: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 
 html {
-    color: $color-a;
+    //color: $cShade-60;
     font-size: $font-size-normal;
     font-family: $font-normal;
     line-height: 1.5;
@@ -49,16 +56,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2, h3, h4, h5, h6 {
-    color: $color-a;
 }
 
 h1 {
     width: max-content;
     margin: 2rem auto;
     padding-bottom: 1em;
-    border-bottom: solid 1px $color-d;
+    border-bottom: solid 1px $gray-light;
     font-size: $font-size-BIG;
-    color: $color-a;
 }
 
 h2 {
@@ -78,27 +83,27 @@ li {
 }
 
 a {
-    color: $color-c;
+    //color: $base-color;
+    color: map-get($bright, "base");
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: $color-b;
+    //color: $cComplementary;
 }
 
 a small {
-    color: #777;
+    @extend a;
     margin-top: -0.3rem;
     display: block;
 }
 
 a:hover small {
-    color: #777;
+    @extend a, :hover;
     font-size: 80%;
 }
 
 strong {
-    color: #222;
     font-weight: 700;
 }
 
@@ -108,16 +113,16 @@ small {
 
 hr {
     border: 0;
-    background: $color-d;
+    background: $gray-light;
     height: 1px;
     margin: 2rem 0;
 }
 
 blockquote {
     font-size: inherit;
-    border-left: 1px solid $color-d;
+    border-left: $quote-border-width solid $gray-light;
     margin: 0;
-    padding: 0 0 0 2rem;
+    padding-left: $quote-padding;
     font-style: normal;
 }
 
@@ -127,8 +132,6 @@ code, pre, kbd {
 }
 
 kbd {
-    color: white;
-    background: $color-a;
     padding: 2px 4px;
     margin: 0 2px;
     border-radius: 2px;
@@ -139,7 +142,7 @@ figure {
     padding: 0 1rem;
     background: #f8f8f8;
     border-radius: 5px;
-    border: 1px solid $color-d;
+    border: 1px solid $gray-light;
     overflow-x: auto;
 
     hr {
@@ -165,17 +168,15 @@ table {
 }
 
 dt {
-    color: #444;
     font-weight: 700;
 }
 
 th {
-    color: #444;
 }
 
 th, td {
     padding: 5px 10px;
-    border-bottom: 1px solid $color-d;
+    border-bottom: 1px solid $gray-light;
 }
 
 tr:last-child {
@@ -195,7 +196,6 @@ img {
 }
 
 #page-title {
-    color: $color-a;
     margin-top: 0;
 }
 
@@ -218,13 +218,11 @@ footer {
 }
 
 .message {
-    color: $color-d;
     position:absolute;
     left:50%;
     transform:translateX(-50%);
 
     h1 {
-        color: inherit;
         margin: 0;
     }
 }
@@ -256,8 +254,6 @@ footer {
 .tooltip-text {
     visibility: hidden;
     white-space: nowrap;
-    background-color: $color-c;
-    color: white;
     text-align: center;
     padding: 5px 10px;
     border-radius: 6px;
@@ -268,6 +264,36 @@ footer {
 
 .tooltip:hover .tooltip-text {
     visibility: visible;
+}
+
+.thm {
+    padding-left: $quote-padding;
+    border-left: solid $quote-border-width $gray-light;
+}
+
+.thm-theorem {
+    @extend .thm;
+    border-color: map-get($bright, "base");
+}
+
+.thm-proposition {
+    @extend .thm;
+    border-color: map-get($bright, "complement");
+}
+
+.thm-lemma {
+    @extend .thm;
+    border-color: map-get($bright, "split-complementary-1");
+}
+
+.thm-corollary {
+    @extend .thm;
+    border-color: map-get($bright, "split-complementary-2");
+}
+
+.thm-definition {
+    @extend .thm;
+    border-color: map-get($bright, "analogous-1");
 }
 
 @media (max-width: 960px) {

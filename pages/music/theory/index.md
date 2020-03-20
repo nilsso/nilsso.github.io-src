@@ -86,12 +86,14 @@ $$
 What we're getting at is that these remainders are all equal to -5 when we add some multiple of 12,
 and we call these remainders *congruent/equivalent* to one-another *modulo 12*.
 
-Fix $a,b,n\in\Z$ where $a$ and $b$ are congruent modulo $n$.
+{% thm d Congruence/equivalence %}
+Fix $a$, $b$ and $n$ all be integers where $a$ and $b$ are congruent modulo $n$.
 We express this congruence:
 
 $$
 a\equiv b\bmod n.
 $$
+{% endthm %}
 
 > The $\equiv$ symbol means equivalence/congruence and is not the same as equality. For example, -5
 > and 7 are not equal to one-another, but they are congruent to one-another modulo 12:
@@ -109,18 +111,40 @@ $$
 [5]_{12} = \{\ldots,19,7,‐5,‐17,‐29,\ldots\}.
 $$
 
-Generically, for a divisor $n$ and an integer $a$, we call $[a]_n$ the congruence class of $a$
-modulo $n$, and denote it:
+{% thm d Congruence class %}
+Fix an integer $a$, and another integer $n$ the divisor
+We call $[a]_n$ the congruence class of $a$ modulo $n$, and denote it:
 
 $$
 [a]_n
 = \{\ldots,‐1\cdot n+a,0\cdot n+a,1\cdot n+a,\ldots\}
 = \{b:b\equiv a\bmod n\}.
 $$
+{% endthm %}
 
 > As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
 > of $n$ elements where every element is itself an infinite set:
 > $$ \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}. $$
+
+{% thm t %}
+Test
+{% endthm %}
+
+{% thm p %}
+Test
+{% endthm %}
+
+{% thm l %}
+Test
+{% endthm %}
+
+{% thm c %}
+Test
+{% endthm %}
+
+{% thm d %}
+Test
+{% endthm %}
 
 ---
 

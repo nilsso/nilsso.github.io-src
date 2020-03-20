@@ -1,0 +1,48 @@
+//@import 'functions';
+
+//@include color_set(wow, wow);
+
+$complementary:         180;  // 1 more color
+$split-complementary:    150;  // 2 more colors
+$analogous:             30;   // 2 more colors
+$triadic:               120;  // 2 more colors
+$tetradic-square:        90;   // 3 more colors
+$tetradic-rectangle:     60;   // 3 more colors
+
+@function color_set($base) {
+    $result: (
+        "base"                  : $base,
+        "complement"            : complement($base),
+        "split-complementary-1" : adjust-hue($base, $split-complementary),
+        "split-complementary-2" : adjust-hue($base, ($split-complementary * -1)),
+        "analogous-1"           : adjust-hue($base, $analogous),
+        "analogous-2"           : adjust-hue($base, ($analogous * -1)),
+        "triadic-1"             : adjust-hue($base, $triadic),
+        "triadic-2"             : adjust-hue($base, (-$triadic * -1)),
+        "tetradic-1"            : adjust-hue($base, $tetradic-square),
+        "tetradic-2"            : adjust-hue($base, ($tetradic-square * -1)),
+        "tetradic-3"            : adjust-hue($base, (($tetradic-square*2) * -1)),
+        "tetradic-rectangle-1"  : adjust-hue($base, $tetradic-rectangle),
+        "tetradic-rectangle-2"  : adjust-hue($base, ($tetradic-rectangle * -1)),
+        "tetradic-rectangle-3"  : adjust-hue($base, (($tetradic-rectangle*2) * -1)),
+        "tint-10"               : mix(White, $base, 10%),
+        "tint-20"               : mix(White, $base, 20%),
+        "tint-30"               : mix(White, $base, 30%),
+        "tint-40"               : mix(White, $base, 40%),
+        "tint-50"               : mix(White, $base, 50%),
+        "tint-60"               : mix(White, $base, 60%),
+        "tint-70"               : mix(White, $base, 70%),
+        "tint-80"               : mix(White, $base, 80%),
+        "tint-90"               : mix(White, $base, 90%),
+        "shade-10"              : mix(Black, $base, 10%),
+        "shade-20"              : mix(Black, $base, 20%),
+        "shade-30"              : mix(Black, $base, 30%),
+        "shade-40"              : mix(Black, $base, 40%),
+        "shade-50"              : mix(Black, $base, 50%),
+        "shade-60"              : mix(Black, $base, 60%),
+        "shade-70"              : mix(Black, $base, 70%),
+        "shade-80"              : mix(Black, $base, 80%),
+        "shade-90"              : mix(Black, $base, 90%)
+    );
+    @return $result;
+}
