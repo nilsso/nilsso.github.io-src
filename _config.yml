@@ -4,6 +4,7 @@ email: nilso@enosis.net
 description: My personal site
 github_username: nilsso
 github_dotfiles: dotfiles
+base_hue: 210
 
 defaults:
     - values:

@@ -4,13 +4,7 @@
 //@import "fonts";
 //@import "rouge";
 
-
-$gray-dark:  #404040;
-$gray-light: #E5E5E5;
-
-@import "functions";
-$muted:  color_set(hsla(210, 25, 75, 1));
-$bright: color_set(hsla(210, 50, 50, 1));
+@import "colors";
 
 //$font-size-normal: 0.9em;
 $font-size-normal: 14px;
@@ -36,13 +30,14 @@ $font-header:
 $font-code: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 
 html {
-    //color: $cShade-60;
+    color: Color("muted", "shade-60");
     font-size: $font-size-normal;
     font-family: $font-normal;
     line-height: 1.5;
 }
 
 body {
+    background-color: Color("muted", "tint-90");
     width: 860px;
     margin: 2rem auto 50vh auto;
 }
@@ -52,10 +47,8 @@ nav, .nav, h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: Color("bright", "shade-60");
     line-height: 1.1;
-}
-
-h2, h3, h4, h5, h6 {
 }
 
 h1 {
@@ -83,13 +76,12 @@ li {
 }
 
 a {
-    //color: $base-color;
-    color: map-get($bright, "base");
+    color: Color("bright", "base");
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    //color: $cComplementary;
+    color: Color("bright", "complement");
 }
 
 a small {

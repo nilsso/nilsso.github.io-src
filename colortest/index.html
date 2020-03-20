@@ -1,0 +1,31 @@
+---
+layout: none
+color_sets: [muted, bright]
+color_rows: [
+        [base, complement],
+        [split-complementary-1, split-complementary-2],
+        [analogous-1, analogous-2],
+        [triadic-1, triadic-2],
+        [tetradic-1, tetradic-2, tetradic-3],
+        [tetradic-rectangle-1, tetradic-rectangle-2, tetradic-rectangle-3],
+        [tint-10, tint-20, tint-30, tint-40, tint-50, tint-60, tint-70, tint-80, tint-90],
+        [shade-10, shade-20, shade-30, shade-40, shade-50, shade-60, shade-70, shade-80, shade-90]
+    ]
+---
+
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="colortest.css">
+    </head>
+    <body>{% for color_set in page.color_sets %}
+        <div class="{{ color_set }}">{% for row in page.color_rows %}
+            <div class="row row-{{ row.size }}">{% for color in row %}
+                <div class="{{ color_set}}-{{ color }}">
+                    <p>{{ color_set }}<br>{{ color }}</p>
+                </div>{% endfor %}
+            </div>{% endfor %}
+        </div>{% endfor %}
+    </body>
+</html>

@@ -1,13 +1,14 @@
-//@import 'functions';
+// Color set generator "borrowed" from https://codepen.io/davidhalford/pen/wlDxL
 
-//@include color_set(wow, wow);
+// -------------------------------------------------------------------------------------------------
+// 1. Setup
 
-$complementary:         180;  // 1 more color
-$split-complementary:    150;  // 2 more colors
-$analogous:             30;   // 2 more colors
-$triadic:               120;  // 2 more colors
-$tetradic-square:        90;   // 3 more colors
-$tetradic-rectangle:     60;   // 3 more colors
+$complementary       : 180; // 1 more color
+$split-complementary : 150; // 2 more colors
+$analogous           :  30; // 2 more colors
+$triadic             : 120; // 2 more colors
+$tetradic-square     :  90; // 3 more colors
+$tetradic-rectangle  :  60; // 3 more colors
 
 @function color_set($base) {
     $result: (
@@ -46,3 +47,22 @@ $tetradic-rectangle:     60;   // 3 more colors
     );
     @return $result;
 }
+
+@function Color($set_name, $color_name) {
+    $set: map-get($color_sets, $set_name);
+    @return map-get($set, $color_name);
+}
+
+// -------------------------------------------------------------------------------------------------
+// 2. Website colors:
+
+$gray-dark:  #404040;
+$gray-light: #E5E5E5;
+
+$muted:  color_set(hsla(210, 25, 75, 1));
+$bright: color_set(hsla(210, 50, 50, 1));
+
+$color_sets: (
+    "muted": $muted,
+    "bright": $bright
+);

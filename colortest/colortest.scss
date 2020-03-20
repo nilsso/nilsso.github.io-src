@@ -1,0 +1,48 @@
+---
+---
+
+@import "colors";
+
+@function Contrast($n) {
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+  @if abs($color-brightness) < ($light-color/2.8){
+    @return mix(White, $n, 80%);
+  }
+  @else {
+    @return mix(Black, $n, 80%);
+  }
+}
+
+body {
+    margin: 0;
+    font-family: 'Fira Mono', monospace;
+    font-size: 100%;
+}
+
+.row {
+    display: flex;
+    height: 10vh;
+
+    p {
+        margin: auto;
+    }
+}
+
+@for $i from 1 through 10 {
+    .row-#{$i} div {
+        display: flex;
+        flex: #{$i};
+    }
+}
+
+@each $set_name, $set in $color_sets {
+    @each $color_name, $color in $set {
+        .#{$set_name}-#{$color_name} {
+            $color: Color($set_name, $color_name);
+            background-color: $color;
+            color: Contrast($color);
+        }
+    }
+}
