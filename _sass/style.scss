@@ -18,13 +18,14 @@ $quote-border-width: 4px;
 
 $font-normal:
     //'Noto Serif', serif;
-    'Roboto', sans-serif;
+    //'Roboto', sans-serif;
     //'Roboto Slab', serif; 
-    //'Merriweather', serif; 
+    'Merriweather', serif; 
 $font-header:
     //'Noto Serif', serif;
+    'Roboto Mono', monospace;
     //'Roboto', sans-serif;
-    'Roboto Slab', serif; 
+    //'Roboto Slab', serif; 
     //'Merriweather', serif; 
 
 $font-code: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
@@ -110,12 +111,35 @@ hr {
     margin: 2rem 0;
 }
 
-blockquote {
-    font-size: inherit;
-    border-left: $quote-border-width solid $gray-light;
-    margin: 0;
+blockquote, .thm {
+    margin: 1rem 0;
     padding-left: $quote-padding;
-    font-style: normal;
+    border-left: $quote-border-width solid $gray-light;
+}
+
+.thm-theorem {
+    @extend .thm;
+    border-color: map-get($bright, "base");
+}
+
+.thm-proposition {
+    @extend .thm;
+    border-color: map-get($bright, "complement");
+}
+
+.thm-lemma {
+    @extend .thm;
+    border-color: map-get($bright, "split-complementary-1");
+}
+
+.thm-corollary {
+    @extend .thm;
+    border-color: map-get($bright, "split-complementary-2");
+}
+
+.thm-definition {
+    @extend .thm;
+    border-color: map-get($bright, "analogous-1");
 }
 
 code, pre, kbd {
@@ -163,12 +187,14 @@ dt {
     font-weight: 700;
 }
 
-th {
-}
-
 th, td {
+    text-align: center;
     padding: 5px 10px;
     border-bottom: 1px solid $gray-light;
+}
+
+th {
+    font-family: $font-header;
 }
 
 tr:last-child {
@@ -199,10 +225,9 @@ footer {
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.toc-entry {
-    .toc-h4, .toc-h5, .toc-h6 {
-        display: none;
-    }
+.section-nav {
+    font-family: $font-header;
+    font-size: $font-size-small;
 }
 
 .anchorjs-link {
@@ -256,36 +281,6 @@ footer {
 
 .tooltip:hover .tooltip-text {
     visibility: visible;
-}
-
-.thm {
-    padding-left: $quote-padding;
-    border-left: solid $quote-border-width $gray-light;
-}
-
-.thm-theorem {
-    @extend .thm;
-    border-color: map-get($bright, "base");
-}
-
-.thm-proposition {
-    @extend .thm;
-    border-color: map-get($bright, "complement");
-}
-
-.thm-lemma {
-    @extend .thm;
-    border-color: map-get($bright, "split-complementary-1");
-}
-
-.thm-corollary {
-    @extend .thm;
-    border-color: map-get($bright, "split-complementary-2");
-}
-
-.thm-definition {
-    @extend .thm;
-    border-color: map-get($bright, "analogous-1");
 }
 
 @media (max-width: 960px) {

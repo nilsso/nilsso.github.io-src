@@ -20,9 +20,17 @@ module Jekyll
 
         def initialize(tag_name, params, tokens)
             super
-            header_key, name = params.match(/(?:(\w)\s+)(?:(.*?)\s+$)?/).captures
-            @header = '<h4>' + @@HEADERS[header_key] + (name ? ' (%s)' % name : '') + '</h4>'
-            @class = 'thm' + @@CLASSES[header_key]
+            matches = params.match(/(?:(\w)\s+)(?:(.*?)\s+$)?/)
+            if matches
+                header_key, name = matches.captures
+                @header =
+                    '<h4 class="no_toc">' + @@HEADERS[header_key] +
+                    (name ? ' (%s)' % name : '') + '</h4>'
+                @class = 'thm' + @@CLASSES[header_key]
+            else
+                @header = ''
+                @class = 'thm'
+            end
         end
 
         def render(context)

@@ -46,49 +46,21 @@ Other /
 
 <hr>
 
-# About Me
+I'm a music student, math student, programmer, singer, and game enthusiast,
+have two associates degress in
+Mathematics and Pre-Engineering Studies: Computer Science,
+and in Arts Music Studies,
+and am currently an undergraduate student at San Diego State University, double majoring in the
+Bachelor of Arts in Music and Bachelor of Science in Applied Mathematics: Computational Science
+programs. I sing in the SDSU Chamber Singers ensemble as a bass.
 
-I'm a music student, math student, programmer, singer, and game enthusiast.
+I'm also a staunch Vim enthusiast.
 
-I love music in a lot of genres. I've studdied classical voice, piano, and
-composition, have an Associate of Arts Music Studies degree, and sing regularly.
-I also love computers and math. I've worked on a lot of programming projects,
-have my other associates level degree is in Mathematics and Pre-Engineering
-Studies (Computer Science), and am a staunch Vim enthusiast.
-<!--
-   -A few of the genres I listen to the most are
-   -[metal](pages/music/lists/#metal/),
-   -[post-rock](pages/music/lists/#post-rock/),
-   -Americana,
-   -[electronic](pages/music/lists/#electronic/) and
-   -[classical](pages/music/lists/#classical/).
-   -->
-
-Currently I'm an undergraduate student at San Diego State University, double
-majoring in the Bachelor of Arts in Music and Bachelor of Science in Applied
-Mathematics---Computational Science programs. I sing in the SDSU Chamber Singers
-ensemble as a bass.
-
-<!--
-On Steam I'm [SweedJesus][steam], and on the Vanilla private server [Elysium
-(Anathema)][elysium] my main is Miraculin, 60 priest in [Titans of War][tow] (a
-guild which has since moved to play on other servers).
-
-[elysium]: https://elysium-project.org
-[tow]: http://titansofwar.org
-[steam]: https://steamcommunity.com/id/SweedJesus
--->
-
-# About this site
-
-Built using [Jekyll][jekyll]. Originally using the [Minimal][minimal] theme
-by [GitHub Pages][github-pages], but now using my own simple layouts and style sheets.
-Also sometimes using [AnchorJS][anchorjs], [MathJax][mathjax], and [VexFlow][vexflow].
-
-[jekyll]: https://jekyllrb.com
-[github-pages]: https://pages.github.com
-[minimal]: https://pages-themes.github.io/minimal
-[anchorjs]: https://bryanbraun.com/anchorjs
-[mathjax]: https://mathjax.org
-[vexflow]: http://vexflow.com
+Website built with
+[Jekyll](https://jekyllrb.com),
+[liquid](https://shopify.github.io/liquid/) and
+[scss](https://sass-lang.com), and including
+[AnchorJS](https://bryanbraun.com/anchorjs) for links,
+[KaTeX](https://katex.org) for math and
+[VexFlow](http://vexflow.com) for music.
 

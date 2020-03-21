@@ -126,25 +126,7 @@ $$
 > of $n$ elements where every element is itself an infinite set:
 > $$ \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}. $$
 
-{% thm t %}
-Test
-{% endthm %}
-
-{% thm p %}
-Test
-{% endthm %}
-
-{% thm l %}
-Test
-{% endthm %}
-
-{% thm c %}
-Test
-{% endthm %}
-
-{% thm d %}
-Test
-{% endthm %}
+But how does modular arithmetic relate to music?
 
 ---
 
@@ -152,13 +134,91 @@ Test
 
 ## Pitch class
 
+If you are familiar with music, then you know that there are 12 distinct pitches, each with various
+octaves. For example, middle C lies at the center of a piano and is also the note called C4, and C3
+and C5 lie one octave below and above C4 respectively. However several notes may be indistinct to
+one-another, that is they are *enharmonic*. For example the notes D-sharp 2 and E-flat 2 are
+enharmonic.
+If you are familiar with music theory, then you also know that a C-major chord is called a C-major
+chord regardless of what octave of C it is built upon. Nevertheless octaves of the same pitch are
+still distinct; C4 and C5 are different notes on the keyboard or on a music staff, just as 0 is not
+equal to 12.
+
+<div class='vexflow' data='C4/q,C5'></div>
+
+On the other hand, different octaves of C are *equivalent* to one-another in that they are all C.
+
+{% thm d Pitch class %}
+A pitch class is a collection of pitches related by octave and/or enharmonic equivalence.
+{% endthm %}
+
+With this definition we can draw a relation between music and modular arithmetic by associating
+each pitch class with a congruence class over the integers modulus 12
+(pitch class, congruence class, notice the naming similarities here):
+
+Pitch class                  | Congruence class | Pitch class                  | Congruence class
+---------------------------- | ---------------- | ---------------------------- | ----------------
+$\text C$                    |       $[0]_{12}$ | $\text F\sharp/\text G\flat$ | $[6]_{12}$
+$\text C\sharp/\text D\flat$ |       $[1]_{12}$ | $\text G$                    | $[7]_{12}$
+$\text D$                    |       $[2]_{12}$ | $\text G\sharp/\text A\flat$ | $[8]_{12}$
+$\text D\sharp/\text E\flat$ |       $[3]_{12}$ | $\text A$                    | $[9]_{12}$
+$\text E$                    |       $[4]_{12}$ | $\text A\sharp/\text B\flat$ | $[10]_{12}$
+$\text F$                    |       $[5]_{12}$ | $\text B$                    | $[11]_{12}$
+
+{% thm %}
+{% markdown %}
+In math parlance we can formalize this transformation of the pitch classes into integers
+by defining a *map*.
+
+{% thm d Map %}
+A map $f:A\mapsto B$ is a function $f$ such that for every $a\in A$ there is a unique $f(a)\in B$,
+and the sets $B$ and $A$ are called the image and preimage (or range and domain) respectively.
+The names map and function are largely used interchangeably.
+{% endthm %}
+
+Fix $\mathcal P$ the set of musical pitch classes.
+Let $g:\mathcal P\mapsto\Z$ be the map from the pitch classes to congruence classes over the
+integers modulus, which we define:
+
+$$
+\begin{aligned}
+g(\text{C}) &= [0]_{12} \\
+g(\text{C}\sharp/\text{D}\flat) &= [1]_{12} \\
+&\vdots \\
+g(\text{A}\sharp/\text{B}\flat) &= [10]_{12} \\
+g(\text{B}) &= [11]_{12}
+\end{aligned}
+$$
+
+It is worth pointing out that this map is *bijective*.
+
+{% thm d Injective, surjective, bijective %}
+{% markdown %}
+A map $f:A\mapsto B$ is called injective, or "one-to-one", if whenever $f(a)=f(b)$ also $a=b$.
+In other words, every element in the preimage is mapped to a unique value in the image.
+
+A map $f:A\mapsto B$ is called surjective, or "onto", if for every $b\in B$ there is an element
+$a\in A$ such that $f(a)=b$.
+In other words, every element in the image is mapped to by $f$, from at least one element in the
+preimage.
+
+A map is called bijective if it is both injective and surjective
+(a bijective map is also called a bijection).
+A function $f$ admits an inverse function $f^{-1}$ if and only if it is bijective.
+{% endmarkdown %}
+{% endthm %}
+
+Since $g$ is a bijection, we can map freely between the pitch classes and the congruence classes.
+In fact this map is an *isomorphism* between the two sets, but I'll leave it at that and skip
+the necessary definitions and explanations for some other time.
+{% endmarkdown %}
+{% endthm %}
+
 ---
 
 <div class='vexflow' data='random-3-2'></div>
 
 ## Pitch intervals
-
-<div class='vexflow' data='C4/q,D4|E4/q,F4|G4/q,A4'></div>
 
 <!--Unordered pitch interval is the absolute value of ordered pitch interval.-->
 
@@ -186,75 +246,75 @@ $$
 \end{array}
 $$
 
----
-
-# Physics of sound
-
-## Pitch
-
-Where frequency is a measure of vibrations per second, pitch is the
-corresponding perceptual experience. A single pitch is really just a named
-frequency, such as middle C being the name for the frequency of 523.251 Hz,
-a value that doesn't so much roll off of the tongue.
-
-## Intervals
-
-Individual pitches represent distinct frequencies of sound, and the distances
-between these distinct pitches are known as *intervals*.
-
-### Unisons and octaves
-
-When the interval between two frequencies is equal to zero we call it a unison,
-because for the distance between them to be zero they must be equal. Pitches
-that are a unison apart have a one to one (1:1) ratio and are identical. When
-two frequencies have the ratio of two to one (2:1) the interval between them is
-called an octave, and are considered the same pitch. Pitches that are an octave
-apart are equivalent to one another but not identical, because although they can
-be distinguished by sound, they serve the same musical purpose.
-
-Pitches can sound the same but be higher or lower in frequency. We call these
-different octaves of the same pitch. Any octave of a reference pitch can be
-calculated given the following equation:
-
-$$
-f_x = f_R \cdot 2^x, \quad x \in \mathbb{Z}
-$$
-
-Where $f_R$ is the frequency of the reference pitch, $x$ is the number
-of octaves above or below the reference pitch (and is an element of the set of
-all integers [$\mathbb{Z}$)][integers], and $f_x$ is the frequency of
-the pitch that is $x$ octaves above or below the reference pitch. Examples
-of integers are 0, 2, 4, and -1.
-
-[integers]: https://en.wikipedia.org/wiki/Integer
-
-Frequencies of different octaves of A starting with
-reference frequency $f_R = 440$ (also known as A4 and concert A):
-
-$$
-\begin{array}{ll}
-x = 0, & \quad f_x = 440 \cdot 2^{0} = 440 \mathrm{~Hz} \\
-x = 1, & \quad f_x = 440 \cdot 2^{1} = 880 \mathrm{~Hz} \\
-x = -1, & \quad f_x = 440 \cdot 2^{-1} = 220 \mathrm{~Hz} \\
-\end{array}
-$$
-
-## Arbitrary intervals
-
-Any distance between two pitches make an interval, even if those pitches are the
-same (unison) or an octave apart. But for these other intervals, we need to
-extend this formula to [$\mathbb{R}$][real], the set real numbers---of
-numbers in beyond just integers, and thus intervals between and beyond unisons
-and octaves:
-
-[real]: https://en.wikipedia.org/wiki/Real_number
-
-$$
-f_x = f_R \cdot 2^x, \quad x \in \mathbb{R}
-$$
-
-Where the variable $x$ is now an element of the set of all real numbers
-$\mathbb{R}$, not just integers.
+<!--
+   -# Physics of sound
+   -
+   -## Pitch
+   -
+   -Where frequency is a measure of vibrations per second, pitch is the
+   -corresponding perceptual experience. A single pitch is really just a named
+   -frequency, such as middle C being the name for the frequency of 523.251 Hz,
+   -a value that doesn't so much roll off of the tongue.
+   -
+   -## Intervals
+   -
+   -Individual pitches represent distinct frequencies of sound, and the distances
+   -between these distinct pitches are known as *intervals*.
+   -
+   -### Unisons and octaves
+   -
+   -When the interval between two frequencies is equal to zero we call it a unison,
+   -because for the distance between them to be zero they must be equal. Pitches
+   -that are a unison apart have a one to one (1:1) ratio and are identical. When
+   -two frequencies have the ratio of two to one (2:1) the interval between them is
+   -called an octave, and are considered the same pitch. Pitches that are an octave
+   -apart are equivalent to one another but not identical, because although they can
+   -be distinguished by sound, they serve the same musical purpose.
+   -
+   -Pitches can sound the same but be higher or lower in frequency. We call these
+   -different octaves of the same pitch. Any octave of a reference pitch can be
+   -calculated given the following equation:
+   -
+   -$$
+   -f_x = f_R \cdot 2^x, \quad x \in \mathbb{Z}
+   -$$
+   -
+   -Where $f_R$ is the frequency of the reference pitch, $x$ is the number
+   -of octaves above or below the reference pitch (and is an element of the set of
+   -all integers [$\mathbb{Z}$)][integers], and $f_x$ is the frequency of
+   -the pitch that is $x$ octaves above or below the reference pitch. Examples
+   -of integers are 0, 2, 4, and -1.
+   -
+   -[integers]: https://en.wikipedia.org/wiki/Integer
+   -
+   -Frequencies of different octaves of A starting with
+   -reference frequency $f_R = 440$ (also known as A4 and concert A):
+   -
+   -$$
+   -\begin{array}{ll}
+   -x = 0, & \quad f_x = 440 \cdot 2^{0} = 440 \mathrm{~Hz} \\
+   -x = 1, & \quad f_x = 440 \cdot 2^{1} = 880 \mathrm{~Hz} \\
+   -x = -1, & \quad f_x = 440 \cdot 2^{-1} = 220 \mathrm{~Hz} \\
+   -\end{array}
+   -$$
+   -
+   -## Arbitrary intervals
+   -
+   -Any distance between two pitches make an interval, even if those pitches are the
+   -same (unison) or an octave apart. But for these other intervals, we need to
+   -extend this formula to [$\mathbb{R}$][real], the set real numbers: of
+   -numbers in beyond just integers, and thus intervals between and beyond unisons
+   -and octaves:
+   -
+   -[real]: https://en.wikipedia.org/wiki/Real_number
+   -
+   -$$
+   -f_x = f_R \cdot 2^x, \quad x \in \mathbb{R}
+   -$$
+   -
+   -Where the variable $x$ is now an element of the set of all real numbers
+   -$\mathbb{R}$, not just integers.
+   -->
 
 ---
 
