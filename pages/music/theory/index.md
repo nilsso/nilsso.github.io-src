@@ -180,7 +180,7 @@ Fix $\mathcal P$ the set of musical pitch classes.
 Let $g:\mathcal P\mapsto\Z$ be the map from the pitch classes to congruence classes over the
 integers modulus, which we define:
 
-$$
+{% katex display %}
 \begin{aligned}
 g(\text{C}) &= [0]_{12} \\
 g(\text{C}\sharp/\text{D}\flat) &= [1]_{12} \\
@@ -188,7 +188,7 @@ g(\text{C}\sharp/\text{D}\flat) &= [1]_{12} \\
 g(\text{A}\sharp/\text{B}\flat) &= [10]_{12} \\
 g(\text{B}) &= [11]_{12}
 \end{aligned}
-$$
+{% endkatex %}
 
 It is worth pointing out that this map is *bijective*.
 
