@@ -352,6 +352,7 @@ Then to go even further beyond I wanted to use the [Fira (Fura) Code Font][fira]
 with ligatures as my monospaced font. On Mac this font is best installed via
 `brew cask install font-firacode-nerd-font` (or `font-fira-code` if you don't want
 all of them icons). To then use it in $\rm\LaTeX$ add:
+
 ```latex
 \usepackage{fontspec}
 \setmonofont[Contextuals={Alternate}]{FuraCode Nerd Font}

@@ -67,7 +67,7 @@ function random_staff_notes(n) {
 }
 
 function parse_note(token) {
-    const note_pattern = /(\w)(#|b)?(\d)((?:[qh]|\d{1,2})(d)?r?)/;
+    const note_pattern = /(\w)(#|b)?(\d)((?:[qhw]|\d{1,2})(d)?r?)/;
     let [_, n, acc, oct, dur, dot] = token.match(note_pattern);
     let note = new VF.StaveNote({keys: [n.concat('\/', oct)], duration: dur})
     if (acc) note.addAccidental(0, new VF.Accidental(acc))
@@ -75,23 +75,23 @@ function parse_note(token) {
     return note;
 };
 
-function simple_score(ele, params, music) {
+function simple_score(div, params, music) {
+    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG)
+        .resize(params.width, params.height);
     var formatter = new VF.Formatter();
-    var div = document.getElementById(ele)
-    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
-    renderer.resize(params.width, params.height);
     var context = renderer.getContext();
     // context.setFont('Arial', 10, '').setBackgroundFillStyle('#eed');
 
     // Set up measures aka staves (special cases for first and last)
     let measures = music.split(/\s+\|\s+/);
+    let w = params.stave_width;
+    let f = params.first_stave_width
+    let x = params.x;
     var staves = measures.map(function(_, i) {
-        let w = params.stave_width;
-        let x = params.first_stave_width+(i-1)*w;
-        return new VF.Stave(x, 0, w);
+        return new VF.Stave(x+f+(i-1)*w, params.y, w);
     });
     staves[0]
-        .setX(0)
+        .setX(params.x)
         .setWidth(params.first_stave_width)
         .addClef('treble')
         .addTimeSignature('2/4');

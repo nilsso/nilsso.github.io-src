@@ -12,6 +12,7 @@ $font-size-small:  80%;
 $font-size-big:    120%;
 $font-size-Big:    160%;
 $font-size-BIG:    200%;
+$font-size-code:   90%;
 
 $quote-padding: 1rem;
 $quote-border-width: 4px;
@@ -40,7 +41,7 @@ html {
 body {
     background-color: Color("muted", "tint-90");
     width: 860px;
-    margin: 2rem auto 50vh auto;
+    margin: 2em auto 50vh auto;
 }
 
 nav, .nav, h1, h2, h3, h4, h5, h6 {
@@ -54,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     width: max-content;
-    margin: 2rem auto;
+    margin: 2em auto;
     padding-bottom: 1em;
     border-bottom: solid 1px $gray-light;
     font-size: $font-size-BIG;
@@ -69,11 +70,11 @@ h3 {
 }
 
 ol, ul {
-    padding-left: 2rem;
+    padding-left: 2em;
 }
 
 li {
-    padding-left: 1rem;
+    padding-left: 1em;
 }
 
 a {
@@ -87,7 +88,7 @@ a:hover, a:focus {
 
 a small {
     @extend a;
-    margin-top: -0.3rem;
+    margin-top: -0.3em;
     display: block;
 }
 
@@ -108,11 +109,14 @@ hr {
     border: 0;
     background: $gray-light;
     height: 1px;
-    margin: 2rem 0;
+    margin: 2em 0;
 }
 
+// -------------------------------------------------------------------------------------------------
+// Block quotes and special environments (theorems)
+
 blockquote {
-    margin: 1rem 0;
+    margin: 1em 0;
     padding-left: $quote-padding;
     border-left: $quote-border-width solid $gray-light;
 }
@@ -149,41 +153,32 @@ blockquote {
     border-color: map-get($bright, "analogous-1");
 }
 
-code, pre, kbd {
+// -------------------------------------------------------------------------------------------------
+// Code and figures
+
+code, kbd {
     font-family: $font-code;
-    font-size: 0.9rem;
+    font-size: $font-size-code;
+    padding: 0 0.3em;
 }
 
-kbd {
-    padding: 2px 4px;
-    margin: 0 2px;
-    border-radius: 2px;
+.highlighter-rouge {
+    border-radius: 3pt;
+    border: 1pt solid $gray-light;
 }
 
-figure {
-    margin: 1rem 2rem;
-    padding: 0 1rem;
-    background: #f8f8f8;
-    border-radius: 5px;
-    border: 1px solid $gray-light;
-    overflow-x: auto;
+div.highlighter-rouge {
+    padding: 0.5em 1em;
 
-    hr {
-        margin: 1rem -1rem;
-    }
-
-    h1, h2, h3, div {
-        margin: 1rem 0;
+    code, kbd, pre {
+        border: none;
+        margin: 0;
+        padding: 0;
     }
 }
 
-div > .highlighter-rouge {
-    @extend figure;
-}
-
-pre {
-    margin: 0;
-}
+// -------------------------------------------------------------------------------------------------
+// Tables
 
 table {
     border-collapse: collapse;
@@ -209,6 +204,8 @@ tr:last-child {
         border-bottom: none;
     }
 }
+
+// Images and floats
 
 .float-right {
     float: right;
@@ -265,13 +262,12 @@ footer {
     overflow-y: hidden;
 }
 
-svg {
-    width: 100%;
-}
+.vf {
+    display: flex;
 
-.vexflow svg {
-    display: block;
-    margin: 0 auto;
+    svg {
+        margin: 0 auto;
+    }
 }
 
 .tooltip {

@@ -6,17 +6,27 @@ anchor: true
 toc: true
 ---
 
+<!--
+NOTES TO SELF:
+- Use Liquid tags SPARINGLY. Wrapping the entire content in katexmm destroys the build time
+-->
+
 <!-- VexFlow -->
 <script type='text/javascript' src='https://unpkg.com/vexflow/releases/vexflow-min.js'></script>
 <script type='text/javascript' src='front.js'></script>
 
-{% katexmm %}
-
-<div class='vexflow' data='random-3-2'></div>
+<div class='vf helper' data='random-3-2'></div>
 
 # Fundamentals of atonal music
 
-<div id='vf-2b'></div>
+<div class='vf simple-score'
+    {% capture music %}
+F4q F4q | R4qr Ab4q | Ab4q G3q | G3q F#4q | R48r Bb3qd |
+E4qd R48r | C5q C#4q | C#4q D5q | D5q R4qr | B4q B4q
+    {% endcapture %}
+    params='{ "width": 860 }'
+    music='{{ music }}'>
+</div>
 
 ## Modular arithmetic
 
@@ -28,8 +38,8 @@ the notion of modular arithmetic, which this section will briefly build up.
 
 In this section we'll try to understand what is meant by the following statements or expressions:
 
-- "$a$ is congruent/equivalent to $b$ modulo $n$",
-- "$[a]_n$ is the congruence class of $a$ modulo $n$",
+- “$a$ is congruent/equivalent to $b$ modulo $n$”,
+- “$[a]_n$ is the congruence class of $a$ modulo $n$”,
 
 ### Quotient-remainder theorem
 
@@ -51,10 +61,9 @@ a = qb + r.
 $$
 
 {% thm %}
-{% katexmm %}
 As an aside on notation, mathematicians are often lazy. The "let" statement above could be
 alternatively expressed "fix $a,b\in\Z$", where the symbol $\in$ means that $a$ and $b$ are
-variables with values taken from $\Z$, where $\Z=\{\ldots,‐2,‐1,0,1,2,\ldots\}$ is the set
+variables with values taken from $\Z$, where $\Z=\{\ldots,-2,-1,0,1,2,\ldots\}$ is the set
 containing all integers.
 
 The $\{\ldots\}$ notation is called set-builder notation, and is a way to group things, in this case
@@ -66,15 +75,14 @@ integer $d$ as long as $d$ is greater than zero.
 
 Also to note is the *without repetition* part, meaning sets expressed as containing multiple of the
 same element (multiple, not multiples of!) can be reduced to include it only once, e.g.:
-$\{1,1\}=\{1\}$.
-{% endkatexmm %}
+{1,1}={1}.
 {% endthm %}
 
 Here's a few example of quotient-remainder theorem when $b=12$ for a few different values of $a$:
 
 - If $a=12$, then $12=(1)12+(0)$.
 - If $a=1$, then $1=(0)12+(1)$.
-- If $a=‐5$, then $‐5=(0)12+(‐5)=(‐1)12+(7)$.
+- If $a=-5$, then $-5=(0)12+(-5)=(-1)12+(7)$.
 
 ### Modular congruence
 
@@ -85,11 +93,11 @@ arbitrary quotient $q$ there is a unique remainder $r$ such that $a=qb+r$:
 
 $$
 \begin{alignedat}{3}
-    ‐5 &= & (‐2)12 &+ &         (19)& \\
-    ‐5 &= & (‐1)12 &+ &          (7)& \\
-    ‐5 &= &  (0)12 &+ &  (‐5)& \\
-    ‐5 &= &  (1)12 &+ & (‐17)& \\
-    ‐5 &= &  (2)12 &+ & (‐29)&
+    -5 &= & (-2)12 &+ & ( 19)& \\
+    -5 &= & (-1)12 &+ &   (7)& \\
+    -5 &= &  (0)12 &+ &  (-5)& \\
+    -5 &= &  (1)12 &+ & (-17)& \\
+    -5 &= &  (2)12 &+ & (-29)&
 \end{alignedat} \\
 $$
 
@@ -108,7 +116,11 @@ $$
 {% thm %}
 The $\equiv$ symbol means equivalence/congruence and is not the same as equality. For example, -5
 and 7 are not equal to one-another, but they are congruent to one-another modulo 12:
-$$ -5 \ne 7 \text{, but } -5 \equiv 7\bmod 12. $$
+
+$$
+-5 \ne 7 \text{, but } -5 \equiv 7\bmod 12.
+$$
+
 Also note that whenever we "fix" variables, they are completely new meanings to the variables, and
 no other variables are assumed to exist. In the definition of congruence, the variables $a$ and
 $b$ are unrelated to the $a$ and $b$ used in the definition of the quotient-remainder theorem.
@@ -120,7 +132,7 @@ number of them), we call this set of congruent integers the *congruence class* o
 denote it:
 
 $$
-[5]_{12} = \{\ldots,19,7,‐5,‐17,‐29,\ldots\}.
+[5]_{12} = \{\ldots,19,7,-5,-17,-29,\ldots\}.
 $$
 
 {% thm d Congruence class %}
@@ -129,7 +141,7 @@ We call $[a]_n$ the congruence class of $a$ modulo $n$, and denote it:
 
 $$
 [a]_n
-= \{\ldots,‐1\cdot n+a,0\cdot n+a,1\cdot n+a,\ldots\}
+= \{\ldots,-1\cdot n+a,0\cdot n+a,1\cdot n+a,\ldots\}
 = \{b:b\equiv a\bmod n\}.
 $$
 {% endthm %}
@@ -144,8 +156,6 @@ But how does modular arithmetic relate to music?
 
 ---
 
-<div class='vexflow' data='random-3-2'></div>
-
 ## Pitch class
 
 If you are familiar with music, then you know that there are 12 distinct pitches, each with various
@@ -153,12 +163,13 @@ octaves. For example, middle C lies at the center of a piano and is also the not
 and C5 lie one octave below and above C4 respectively. However several notes may be indistinct to
 one-another, that is they are *enharmonic*. For example the notes D-sharp 2 and E-flat 2 are
 enharmonic.
+
 If you are familiar with music theory, then you also know that a C-major chord is called a C-major
 chord regardless of what octave of C it is built upon. Nevertheless octaves of the same pitch are
 still distinct; C4 and C5 are different notes on the keyboard or on a music staff, just as 0 is not
 equal to 12.
 
-<div class='vexflow' data='C4/q,C5'></div>
+<div class='vf helper' data='C4/q,C5'></div>
 
 On the other hand, different octaves of C are *equivalent* to one-another in that they are all C.
 
@@ -180,7 +191,6 @@ $\text E$                    |       $[4]_{12}$ | $\text A\sharp/\text B\flat$ |
 $\text F$                    |       $[5]_{12}$ | $\text B$                    | $[11]_{12}$
 
 {% thm %}
-{% markdown %}
 In math parlance we can formalize this transformation of the pitch classes into integers
 by defining a *map*.
 
@@ -194,20 +204,19 @@ Fix $\mathcal P$ the set of musical pitch classes.
 Let $g:\mathcal P\mapsto\Z$ be the map from the pitch classes to congruence classes over the
 integers modulus, which we define:
 
-{% katex display %}
-\begin{aligned}
-g(\text{C}) &= [0]_{12} \\
-g(\text{C}\sharp/\text{D}\flat) &= [1]_{12} \\
-&\vdots \\
-g(\text{A}\sharp/\text{B}\flat) &= [10]_{12} \\
-g(\text{B}) &= [11]_{12}
-\end{aligned}
-{% endkatex %}
+$$
+\begin{gathered}
+g(\text{C}) = [0]_{12} \\
+g(\text{C}\sharp/\text{D}\flat) = [1]_{12} \\
+\vdots \\
+g(\text{A}\sharp/\text{B}\flat) = [10]_{12} \\
+g(\text{B}) = [11]_{12}
+\end{gathered}
+$$
 
 It is worth pointing out that this map is *bijective*.
 
 {% thm d Injective, surjective, bijective %}
-{% markdown %}
 A map $f:A\mapsto B$ is called injective, or "one-to-one", if whenever $f(a)=f(b)$ also $a=b$.
 In other words, every element in the preimage is mapped to a unique value in the image.
 
@@ -219,18 +228,16 @@ preimage.
 A map is called bijective if it is both injective and surjective
 (a bijective map is also called a bijection).
 A function $f$ admits an inverse function $f^{-1}$ if and only if it is bijective.
-{% endmarkdown %}
 {% endthm %}
 
 Since $g$ is a bijection, we can map freely between the pitch classes and the congruence classes.
 In fact this map is an *isomorphism* between the two sets, but I'll leave it at that and skip
 the necessary definitions and explanations for some other time.
-{% endmarkdown %}
 {% endthm %}
 
 ---
 
-<div class='vexflow' data='random-3-2'></div>
+<div class='vf helper' data='random-3-2'></div>
 
 ## Pitch intervals
 
@@ -334,26 +341,26 @@ $$
 
 # Resources
 
-<h2 class='no_toc'>
-Setting math on the web
-</h2>
+## Setting math and music on the web
 
-~~I set mathematical expressions on this page using the JavaScript library,
-[MathJax][mathjax]. Conveniently this library uses [LaTeX][latex] syntax. To
-take a look at the syntax of any of the expressions on this page simply right
-click expression and click "Math Settings > Plain Source" or "Show Math As > TeX
-Commands".~~
+Mathematical expressions are displayed using the Javascript library
+[KaTeX](https://katex.org/), which is faster than [MathJax][mathjax] and
+supports practically all of the same features.
+For example, the following code:
 
-I've changed to using [KaTeX](https://katex.org/), an even faster math rendering engine supporting
-practically all of the same features as [MathJax][mathjax]. Also with the [jekyll-katex][] plug-in
-it's now easier than ever to integrate into a Jekyll website.
 
-<h2 class='no_toc'>
-Setting music on the web
-</h2>
+```latex
+|r|<1 \Rightarrow \sum_{k=0}^\infty ar^k = \frac{a}{1-r}
+```
 
-Musical expressions are displayed using another JavaScript library, [VexFlow][vexflow],
-though learning and using it was a pretty involved process.
+Renders as:
+
+$$
+|r|<1 \Rightarrow \sum_{k=0}^\infty ar^k = \frac{a}{1-r}
+$$
+
+Musical expressions are displayed using another JavaScript library,
+[VexFlow][vexflow], though learning and using it was a pretty involved process.
 
 <!-- Links -->
 [mathjax]: https://www.mathjax.org/
@@ -361,7 +368,5 @@ though learning and using it was a pretty involved process.
 [VexFlow]: https://github.com/0xfe/vexflow
 [lydown]: http://ciconia.github.io/lydown/
 [jekyll-katex]: https://github.com/linjer/jekyll-katex
-
-{% endkatexmm %}
 
 <script type='text/javascript' src='end.js'></script>
