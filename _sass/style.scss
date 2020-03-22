@@ -111,10 +111,17 @@ hr {
     margin: 2rem 0;
 }
 
-blockquote, .thm {
+blockquote {
     margin: 1rem 0;
     padding-left: $quote-padding;
     border-left: $quote-border-width solid $gray-light;
+}
+
+.thm {
+    @extend blockquote;
+    nav, h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+    }
 }
 
 .thm-theorem {
@@ -258,6 +265,10 @@ footer {
     overflow-y: hidden;
 }
 
+svg {
+    width: 100%;
+}
+
 .vexflow svg {
     display: block;
     margin: 0 auto;
@@ -285,7 +296,6 @@ footer {
 
 @media (max-width: 960px) {
     html {
-        font-size: 60%;
         padding: 0 15px;
     }
 
@@ -296,19 +306,11 @@ footer {
     nav, h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
+}
 
-    ul, ol {
-        padding-left: 0;
-        white-space: nowrap;
-    }
-
-    li {
-        list-style-position: inside;
-        overflow-x: scroll;
-    }
-
-    .float-right {
-        float: none;
+@media (max-width: 540px) {
+    html {
+        font-size: 60%;
     }
 }
 
