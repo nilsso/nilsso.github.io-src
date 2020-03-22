@@ -98,7 +98,7 @@ $$
     -5 &= &  (0)12 &+ &  (-5)& \\
     -5 &= &  (1)12 &+ & (-17)& \\
     -5 &= &  (2)12 &+ & (-29)&
-\end{alignedat} \\
+\end{alignedat}
 $$
 
 What we're getting at is that these remainders are all equal to -5 when we add some multiple of 12,
