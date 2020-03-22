@@ -65,3 +65,54 @@ function random_staff_notes(n) {
     var notes = random_notes(n);
     return [notes[0].concat('/q')].concat(notes.slice(1)).join(',');
 }
+
+function parse_note(token) {
+    const note_pattern = /(\w)(#|b)?(\d)((?:[qh]|\d{1,2})(d)?r?)/;
+    let [_, n, acc, oct, dur, dot] = token.match(note_pattern);
+    let note = new VF.StaveNote({keys: [n.concat('\/', oct)], duration: dur})
+    if (acc) note.addAccidental(0, new VF.Accidental(acc))
+    if (dot) note.addDot(0);
+    return note;
+};
+
+function simple_score(ele, params, music) {
+    var formatter = new VF.Formatter();
+    var div = document.getElementById(ele)
+    var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+    renderer.resize(params.width, params.height);
+    var context = renderer.getContext();
+    // context.setFont('Arial', 10, '').setBackgroundFillStyle('#eed');
+
+    // Set up measures aka staves (special cases for first and last)
+    let measures = music.split(/\s+\|\s+/);
+    var staves = measures.map(function(_, i) {
+        let w = params.stave_width;
+        let x = params.first_stave_width+(i-1)*w;
+        return new VF.Stave(x, 0, w);
+    });
+    staves[0]
+        .setX(0)
+        .setWidth(params.first_stave_width)
+        .addClef('treble')
+        .addTimeSignature('2/4');
+    staves
+        .slice(-1)[0]
+        .setEndBarType(VF.Barline.type.END);
+
+    // Draw staves
+    for (let stave of staves) {
+        stave.setContext(context).draw();
+    }
+
+    // Draw notes
+    measures.forEach(function(tokens, i) {
+        var notes = tokens.split(/\s+/).map(parse_note);
+        var voices = [
+            new VF.Voice({num_beats: params.beats_per_measure, beat_value: 4})
+            .addTickables(notes)
+        ];
+        var stave = staves[i];
+        formatter.formatToStave(voices, stave);
+        voices.forEach(function(v) { v.draw(context, stave); })
+    });
+}

@@ -35,11 +35,14 @@ module Jekyll
 
         def render(context)
             content = super
-
+            site = context.registers[:site]
+            converter = site
+                .find_converter_instance(
+                    ::Jekyll::Converters::Markdown)
             <<-HTML.gsub /^\s+/, ''
             <div class='#{@class}'>
             #{@header}
-            #{content}
+            #{converter.convert(content)}
             </div>
             HTML
         end

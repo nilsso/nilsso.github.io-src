@@ -14,3 +14,16 @@ $(".vexflow").each(function() {
     }
 });
 
+
+params = {
+    width: 860,
+    height: 120,
+    stave_width: 80,
+    first_stave_width: 140,
+    beats_per_measure: 2,
+};
+
+let music = 'F4q F4q | R4qr Ab4q | Ab4q G3q | G3q F#4q | R48r Bb3qd | E4qd R48r | C5q C#4q | C#4q D5q | D5q R4qr | B4q B4q';
+
+simple_score('vf-2b', params, music);
+

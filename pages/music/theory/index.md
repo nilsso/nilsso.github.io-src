@@ -16,11 +16,15 @@ toc: true
 
 # Fundamentals of atonal music
 
+<div id='vf-2b'></div>
+
 ## Modular arithmetic
 
-> If math *really* isn't of interest to you then feel free to skip this section and instead head
-> straight to [pitch class](#pitch-class), but know that most atonal music techniques are built upon
-> the notion of modular arithmetic, which this section will briefly build up.
+{% thm %}
+If math *really* isn't of interest to you then feel free to skip this section and instead head
+straight to [pitch class](#pitch-class), but know that most atonal music techniques are built upon
+the notion of modular arithmetic, which this section will briefly build up.
+{% endthm %}
 
 In this section we'll try to understand what is meant by the following statements or expressions:
 
@@ -46,19 +50,25 @@ $$
 a = qb + r.
 $$
 
-> As an aside on notation, mathematicians are often lazy. The "let" statement above could be
-> alternatively expressed "fix $a,b\in\Z$",
-> where the symbol $\in$ means that $a$ and $b$ are variables with values taken from $\Z$, where
-> $\Z=\{\ldots,‐2,‐1,0,1,2,\ldots\}$ is the set containing all integers. The $\{\ldots\}$ notation
-> is called set-builder notation, and is a way to group things, in this case integers, without
-> repetition. A set can be finite or infinite, for example: $\{0,1,2\}$ is a finite set containing
-> only the integers 0, 1 and 2; $\{1,2,3,\ldots\}$ is an infinite set containing all of the positive
-> integers, commonly denoted $\Z^+$ or $\N$.
-> We can also define sets using rules, as for example the positive integers can also be expressed
-> as $\{d\in\Z:d>0\}$, meaning the set of any integer $d$ as long as $d$ is greater than zero.
-> Also to note is the *without repetition* part, meaning
-> sets expressed as containing multiple of the same element (multiple, not multiples of!) can be
-> reduced to include it only one, e.g.: $\{1,1\}=\{1\}$.
+{% thm %}
+{% katexmm %}
+As an aside on notation, mathematicians are often lazy. The "let" statement above could be
+alternatively expressed "fix $a,b\in\Z$", where the symbol $\in$ means that $a$ and $b$ are
+variables with values taken from $\Z$, where $\Z=\{\ldots,‐2,‐1,0,1,2,\ldots\}$ is the set
+containing all integers.
+
+The $\{\ldots\}$ notation is called set-builder notation, and is a way to group things, in this case
+integers, without repetition. A set can be finite or infinite, for example: $\{0,1,2\}$ is a finite
+set containing only the integers 0, 1 and 2; $\{1,2,3,\ldots\}$ is an infinite set containing all of
+the positive integers, commonly denoted $\Z^+$ or $\N$. We can also define sets using rules, as for
+example the positive integers can also be expressed as $\{d\in\Z:d>0\}$, meaning the set of any
+integer $d$ as long as $d$ is greater than zero.
+
+Also to note is the *without repetition* part, meaning sets expressed as containing multiple of the
+same element (multiple, not multiples of!) can be reduced to include it only once, e.g.:
+$\{1,1\}=\{1\}$.
+{% endkatexmm %}
+{% endthm %}
 
 Here's a few example of quotient-remainder theorem when $b=12$ for a few different values of $a$:
 
@@ -95,12 +105,14 @@ a\equiv b\bmod n.
 $$
 {% endthm %}
 
-> The $\equiv$ symbol means equivalence/congruence and is not the same as equality. For example, -5
-> and 7 are not equal to one-another, but they are congruent to one-another modulo 12:
-> $$ -5 \ne 7 \text{, but } -5 \equiv 7\bmod 12. $$
-> Also note that whenever we "fix" variables, they are completely new meanings to the variables, and
-> no other variables are assumed to exist. In the definition of congruence, the variables $a$ and
-> $b$ are unrelated to the $a$ and $b$ used in the definition of the quotient-remainder theorem.
+{% thm %}
+The $\equiv$ symbol means equivalence/congruence and is not the same as equality. For example, -5
+and 7 are not equal to one-another, but they are congruent to one-another modulo 12:
+$$ -5 \ne 7 \text{, but } -5 \equiv 7\bmod 12. $$
+Also note that whenever we "fix" variables, they are completely new meanings to the variables, and
+no other variables are assumed to exist. In the definition of congruence, the variables $a$ and
+$b$ are unrelated to the $a$ and $b$ used in the definition of the quotient-remainder theorem.
+{% endthm %}
 
 In the example above we saw that there is an infinite amount of remainders congruent
 to -5 modulo 12. Instead of listing them out (which might take a while, since there's an infinite
@@ -122,9 +134,11 @@ $$
 $$
 {% endthm %}
 
-> As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
-> of $n$ elements where every element is itself an infinite set:
-> $$ \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}. $$
+{% thm %}
+As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
+of $n$ elements where every element is itself an infinite set:
+$$ \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}. $$
+{% endthm %}
 
 But how does modular arithmetic relate to music?
 
