@@ -11,7 +11,7 @@ defaults:
         layout: "default"
 
 kramdown:
-    math_engine: none
+    math_engine: +nil+
 
 exclude:
     - node_modules

@@ -304,7 +304,16 @@ footer {
     }
 }
 
-@media (max-width: 540px) {
+// -------------------------------------------------------------------------------------------------
+// Media queries
+
+@media (max-width: 800px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 400px) {
     html {
         font-size: 60%;
     }

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 'Music'
-math: true
+title: 'Music theory'
 anchor: true
+math: true
 toc: true
 ---
 
@@ -38,23 +38,23 @@ the notion of modular arithmetic, which this section will briefly build up.
 
 In this section we'll try to understand what is meant by the following statements or expressions:
 
-- “$a$ is congruent/equivalent to $b$ modulo $n$”,
-- “$[a]_n$ is the congruence class of $a$ modulo $n$”,
+- “$$a$$ is congruent/equivalent to $$b$$ modulo $$n$$”,
+- “$$[a]_n$$ is the congruence class of $$a$$ modulo $$n$$”,
 
 ### Quotient-remainder theorem
 
 Chances are you know about *Euclidean* division.
-For example, $1\div 2$ is 1 divided by 2 (or 2 dividing 1) and represents symbolically the number of
+For example, $$1\div 2$$ is 1 divided by 2 (or 2 dividing 1) and represents symbolically the number of
 times 2 goes into 1 plus some remainder.
 What might not be as familiar are the two parts of Euclidean division taken separately:
 the *quotient* and the *remainder*.
 
-Let $a$ and $b$ both be integers.
+Let $$a$$ and $$b$$ both be integers.
 
-- The quotient $q$ of $a\div b$ is the number of multiples of $b$ that go into $a$, and
-- The remainder $r$ of $a\div b$ is what ever is left from subtracting $qb$ from $a$.
+- The quotient $$q$$ of $$a\div b$$ is the number of multiples of $$b$$ that go into $$a$$, and
+- The remainder $$r$$ of $$a\div b$$ is what ever is left from subtracting $$qb$$ from $$a$$.
 
-And can express $a$ as the sum:
+And can express $$a$$ as the sum:
 
 $$
 a = qb + r.
@@ -62,34 +62,34 @@ $$
 
 {% thm %}
 As an aside on notation, mathematicians are often lazy. The "let" statement above could be
-alternatively expressed "fix $a,b\in\Z$", where the symbol $\in$ means that $a$ and $b$ are
-variables with values taken from $\Z$, where $\Z=\{\ldots,-2,-1,0,1,2,\ldots\}$ is the set
+alternatively expressed "fix $$a,b\in\Z$$", where the symbol $$\in$$ means that $$a$$ and $$b$$ are
+variables with values taken from $$\Z$$, where $$\Z=\{\ldots,-2,-1,0,1,2,\ldots\}$$ is the set
 containing all integers.
 
-The $\{\ldots\}$ notation is called set-builder notation, and is a way to group things, in this case
-integers, without repetition. A set can be finite or infinite, for example: $\{0,1,2\}$ is a finite
-set containing only the integers 0, 1 and 2; $\{1,2,3,\ldots\}$ is an infinite set containing all of
-the positive integers, commonly denoted $\Z^+$ or $\N$. We can also define sets using rules, as for
-example the positive integers can also be expressed as $\{d\in\Z:d>0\}$, meaning the set of any
-integer $d$ as long as $d$ is greater than zero.
+The $$\{\ldots\}$$ notation is called set-builder notation, and is a way to group things, in this case
+integers, without repetition. A set can be finite or infinite, for example: $$\{0,1,2\}$$ is a finite
+set containing only the integers 0, 1 and 2; $$\{1,2,3,\ldots\}$$ is an infinite set containing all of
+the positive integers, commonly denoted $$\Z^+$$ or $$\N$$. We can also define sets using rules, as for
+example the positive integers can also be expressed as $$\{d\in\Z:d>0\}$$, meaning the set of any
+integer $$d$$ as long as $$d$$ is greater than zero.
 
 Also to note is the *without repetition* part, meaning sets expressed as containing multiple of the
 same element (multiple, not multiples of!) can be reduced to include it only once, e.g.:
-{1,1}={1}.
+$$\{1,1\}=\{1\}$$.
 {% endthm %}
 
-Here's a few example of quotient-remainder theorem when $b=12$ for a few different values of $a$:
+Here's a few example of quotient-remainder theorem when $$b=12$$ for a few different values of $$a$$:
 
-- If $a=12$, then $12=(1)12+(0)$.
-- If $a=1$, then $1=(0)12+(1)$.
-- If $a=-5$, then $-5=(0)12+(-5)=(-1)12+(7)$.
+- If $$a=12$$, then $$12=(1)12+(0)$$.
+- If $$a=1$$, then $$1=(0)12+(1)$$.
+- If $$a=-5$$, then $$-5=(0)12+(-5)=(-1)12+(7)$$.
 
 ### Modular congruence
 
 With the last of the examples above you might notice that there were written two different ways to
 express -5 as a sum of a multiple of 12 and a remainder. But these aren't the only ways, in-fact
 there is an infinite number of ways to express -5 using quotient remainder theorem since for any
-arbitrary quotient $q$ there is a unique remainder $r$ such that $a=qb+r$:
+arbitrary quotient $$q$$ there is a unique remainder $$r$$ such that $$a=qb+r$$:
 
 $$
 \begin{alignedat}{3}
@@ -105,7 +105,7 @@ What we're getting at is that these remainders are all equal to -5 when we add s
 and we call these remainders *congruent/equivalent* to one-another *modulo 12*.
 
 {% thm d Congruence/equivalence %}
-Fix $a$, $b$ and $n$ all be integers where $a$ and $b$ are congruent modulo $n$.
+Fix $$a$$, $$b$$ and $$n$$ all be integers where $$a$$ and $$b$$ are congruent modulo $$n$$.
 We express this congruence:
 
 $$
@@ -114,7 +114,7 @@ $$
 {% endthm %}
 
 {% thm %}
-The $\equiv$ symbol means equivalence/congruence and is not the same as equality. For example, -5
+The $$\equiv$$ symbol means equivalence/congruence and is not the same as equality. For example, -5
 and 7 are not equal to one-another, but they are congruent to one-another modulo 12:
 
 $$
@@ -122,8 +122,8 @@ $$
 $$
 
 Also note that whenever we "fix" variables, they are completely new meanings to the variables, and
-no other variables are assumed to exist. In the definition of congruence, the variables $a$ and
-$b$ are unrelated to the $a$ and $b$ used in the definition of the quotient-remainder theorem.
+no other variables are assumed to exist. In the definition of congruence, the variables $$a$$ and
+$$b$$ are unrelated to the $$a$$ and $$b$$ used in the definition of the quotient-remainder theorem.
 {% endthm %}
 
 In the example above we saw that there is an infinite amount of remainders congruent
@@ -136,8 +136,8 @@ $$
 $$
 
 {% thm d Congruence class %}
-Fix an integer $a$, and another integer $n$ the divisor
-We call $[a]_n$ the congruence class of $a$ modulo $n$, and denote it:
+Fix an integer $$a$$, and another integer $$n$$ the divisor
+We call $$[a]_n$$ the congruence class of $$a$$ modulo $$n$$, and denote it:
 
 $$
 [a]_n
@@ -147,9 +147,12 @@ $$
 {% endthm %}
 
 {% thm %}
-As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite set
-of $n$ elements where every element is itself an infinite set:
-$$ \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}. $$
+As a bonus, $$\Z_n$$ is the set of congruence classes of integers modulo $$n$$, which is a finite set
+of $$n$$ elements where every element is itself an infinite set:
+
+$$
+\Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}.
+$$
 {% endthm %}
 
 But how does modular arithmetic relate to music?
@@ -183,25 +186,25 @@ each pitch class with a congruence class over the integers modulus 12
 
 Pitch class                  | Congruence class | Pitch class                  | Congruence class
 ---------------------------- | ---------------- | ---------------------------- | ----------------
-$\text C$                    |       $[0]_{12}$ | $\text F\sharp/\text G\flat$ | $[6]_{12}$
-$\text C\sharp/\text D\flat$ |       $[1]_{12}$ | $\text G$                    | $[7]_{12}$
-$\text D$                    |       $[2]_{12}$ | $\text G\sharp/\text A\flat$ | $[8]_{12}$
-$\text D\sharp/\text E\flat$ |       $[3]_{12}$ | $\text A$                    | $[9]_{12}$
-$\text E$                    |       $[4]_{12}$ | $\text A\sharp/\text B\flat$ | $[10]_{12}$
-$\text F$                    |       $[5]_{12}$ | $\text B$                    | $[11]_{12}$
+$$\text C$$                    |       $$[0]_{12}$$ | $$\text F\sharp/\text G\flat$$ | $$[6]_{12}$$
+$$\text C\sharp/\text D\flat$$ |       $$[1]_{12}$$ | $$\text G$$                    | $$[7]_{12}$$
+$$\text D$$                    |       $$[2]_{12}$$ | $$\text G\sharp/\text A\flat$$ | $$[8]_{12}$$
+$$\text D\sharp/\text E\flat$$ |       $$[3]_{12}$$ | $$\text A$$                    | $$[9]_{12}$$
+$$\text E$$                    |       $$[4]_{12}$$ | $$\text A\sharp/\text B\flat$$ | $$[10]_{12}$$
+$$\text F$$                    |       $$[5]_{12}$$ | $$\text B$$                    | $$[11]_{12}$$
 
 {% thm %}
 In math parlance we can formalize this transformation of the pitch classes into integers
 by defining a *map*.
 
 {% thm d Map %}
-A map $f:A\mapsto B$ is a function $f$ such that for every $a\in A$ there is a unique $f(a)\in B$,
-and the sets $B$ and $A$ are called the image and preimage (or range and domain) respectively.
+A map $$f:A\mapsto B$$ is a function $$f$$ such that for every $$a\in A$$ there is a unique $$f(a)\in B$$,
+and the sets $$B$$ and $$A$$ are called the image and preimage (or range and domain) respectively.
 The names map and function are largely used interchangeably.
 {% endthm %}
 
-Fix $\mathcal P$ the set of musical pitch classes.
-Let $g:\mathcal P\mapsto\Z$ be the map from the pitch classes to congruence classes over the
+Fix $$\mathcal P$$ the set of musical pitch classes.
+Let $$g:\mathcal P\mapsto\Z$$ be the map from the pitch classes to congruence classes over the
 integers modulus, which we define:
 
 $$
@@ -217,20 +220,20 @@ $$
 It is worth pointing out that this map is *bijective*.
 
 {% thm d Injective, surjective, bijective %}
-A map $f:A\mapsto B$ is called injective, or "one-to-one", if whenever $f(a)=f(b)$ also $a=b$.
+A map $$f:A\mapsto B$$ is called injective, or "one-to-one", if whenever $$f(a)=f(b)$$ also $$a=b$$.
 In other words, every element in the preimage is mapped to a unique value in the image.
 
-A map $f:A\mapsto B$ is called surjective, or "onto", if for every $b\in B$ there is an element
-$a\in A$ such that $f(a)=b$.
-In other words, every element in the image is mapped to by $f$, from at least one element in the
+A map $$f:A\mapsto B$$ is called surjective, or "onto", if for every $$b\in B$$ there is an element
+$$a\in A$$ such that $$f(a)=b$$.
+In other words, every element in the image is mapped to by $$f$$, from at least one element in the
 preimage.
 
 A map is called bijective if it is both injective and surjective
 (a bijective map is also called a bijection).
-A function $f$ admits an inverse function $f^{-1}$ if and only if it is bijective.
+A function $$f$$ admits an inverse function $$f^{-1}$$ if and only if it is bijective.
 {% endthm %}
 
-Since $g$ is a bijection, we can map freely between the pitch classes and the congruence classes.
+Since $$g$$ is a bijection, we can map freely between the pitch classes and the congruence classes.
 In fact this map is an *isomorphism* between the two sets, but I'll leave it at that and skip
 the necessary definitions and explanations for some other time.
 {% endthm %}
@@ -243,7 +246,7 @@ the necessary definitions and explanations for some other time.
 
 <!--Unordered pitch interval is the absolute value of ordered pitch interval.-->
 
-Apply $T_{10}$ to the pitch set $[3~4~7]$.
+Apply $$T_{10}$$ to the pitch set $$[3~4~7]$$.
 
 $$
 \begin{array}{c} 3 \\ 4 \\ 7 \end{array}
@@ -255,7 +258,7 @@ $$
 \end{array}
 $$
 
-Apply $I_6$ to the pitch set $[10~11~2]$.
+Apply $$I_6$$ to the pitch set $$[10~11~2]$$.
 
 $$
 \begin{array}{c} 10 \\ 11 \\ 2 \end{array}
@@ -300,16 +303,16 @@ $$
    -f_x = f_R \cdot 2^x, \quad x \in \mathbb{Z}
    -$$
    -
-   -Where $f_R$ is the frequency of the reference pitch, $x$ is the number
+   -Where $$f_R$$ is the frequency of the reference pitch, $$x$$ is the number
    -of octaves above or below the reference pitch (and is an element of the set of
-   -all integers [$\mathbb{Z}$)][integers], and $f_x$ is the frequency of
-   -the pitch that is $x$ octaves above or below the reference pitch. Examples
+   -all integers [$$\mathbb{Z}$$)][integers], and $$f_x$$ is the frequency of
+   -the pitch that is $$x$$ octaves above or below the reference pitch. Examples
    -of integers are 0, 2, 4, and -1.
    -
    -[integers]: https://en.wikipedia.org/wiki/Integer
    -
    -Frequencies of different octaves of A starting with
-   -reference frequency $f_R = 440$ (also known as A4 and concert A):
+   -reference frequency $$f_R = 440$$ (also known as A4 and concert A):
    -
    -$$
    -\begin{array}{ll}
@@ -323,7 +326,7 @@ $$
    -
    -Any distance between two pitches make an interval, even if those pitches are the
    -same (unison) or an octave apart. But for these other intervals, we need to
-   -extend this formula to [$\mathbb{R}$][real], the set real numbers: of
+   -extend this formula to [$$\mathbb{R}$$][real], the set real numbers: of
    -numbers in beyond just integers, and thus intervals between and beyond unisons
    -and octaves:
    -
@@ -333,8 +336,8 @@ $$
    -f_x = f_R \cdot 2^x, \quad x \in \mathbb{R}
    -$$
    -
-   -Where the variable $x$ is now an element of the set of all real numbers
-   -$\mathbb{R}$, not just integers.
+   -Where the variable $$x$$ is now an element of the set of all real numbers
+   -$$\mathbb{R}$$, not just integers.
    -->
 
 ---
