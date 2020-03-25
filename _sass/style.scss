@@ -8,11 +8,11 @@
 
 //$font-size-normal: 0.9em;
 $font-size-normal: 14px;
-$font-size-small:  80%;
-$font-size-big:    120%;
-$font-size-Big:    160%;
-$font-size-BIG:    200%;
-$font-size-code:   90%;
+$font-size-small: 80%;
+$font-size-big: 120%;
+$font-size-Big: 160%;
+$font-size-BIG: 200%;
+$font-size-code: 90%;
 
 $quote-padding: 1rem;
 $quote-border-width: 4px;
@@ -28,7 +28,6 @@ $font-header:
     //'Roboto', sans-serif;
     //'Roboto Slab', serif; 
     //'Merriweather', serif; 
-
 $font-code: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 
 html {
@@ -62,17 +61,9 @@ h1, h2 {
     padding-bottom: 0.3em;
 }
 
-h1 {
-    font-size: $font-size-BIG;
-}
-
-h2 {
-    font-size: $font-size-Big;
-}
-
-h3 {
-    font-size: $font-size-big;
-}
+h1 { font-size: $font-size-BIG; }
+h2 { font-size: $font-size-Big; }
+h3 { font-size: $font-size-big; }
 
 ol, ul {
     padding-left: 2em;

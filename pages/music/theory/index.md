@@ -6,11 +6,6 @@ math: true
 toc: true
 ---
 
-<!--
-NOTES TO SELF:
-- Use Liquid tags SPARINGLY. Wrapping the entire content in katexmm destroys the build time
--->
-
 <!-- VexFlow -->
 <script type='text/javascript' src='https://unpkg.com/vexflow/releases/vexflow-min.js'></script>
 <script type='text/javascript' src='front.js'></script>
@@ -29,18 +24,16 @@ E4qd R48r | C5q C#4q | C#4q D5q | D5q R4qr | B4q B4q
 </div>
 
 Analyzing post-tonal or atonal music is a far-cry from classical musical analysis of functional
-harmony. The jargon we hvae become so use to---tonic chords, dominant chords, tonicization,
+harmony. The jargon we have become so use to---tonic chords, dominant chords, tonicization,
 modulation, etc.---are gone, and in their place we are left with numbers, sets, and transformations.
-In most ways the transition to post-tonal analysis purly mathematical, which to many is a scary
+In most ways the transition to post-tonal analysis purely mathematical, which to many is a scary
 transition, but as I am a student of mathematics in additional to music, I wont shy away from the
-math that sitting in the backround in these notes.
+math that sitting in the background.
 
 Before discussing anything about music, I think it is more than appropriate to familiarize
 ourselves with this math that will be in the background of all of post-tonal analysis, in particular
-abstract algebra and in particular modular arithmetic. Forthunately, following this math setup
-everything will be simplified notationally: for an integer $a\in(0,12]$, instead of writing
-$[a]_{12}$ we'll just write $a$, with the understanding that $a$ lies within the set of integers
-modulus 12.
+modular arithmetic, a subject in abstract algebra. Fortunately, following this math setup
+everything will be simplified notationally.
 
 ## Modular arithmetic
 
@@ -193,11 +186,11 @@ $$
 \end{gathered}
 $$
 
-We stick with the *canonical* representations of them, which is $[a]_n$ where $0\le a < n$.
+We stick with the *canonical* representations of them: $[a]_n$ where $0\le a < n$.
 
 {% thm %}
 As a bonus, $\Z_n$ is the set of congruence classes of integers modulo $n$, which is a finite
-with respect to equivalence set of $n$ elements where every element is itself an infinite set:
+set, with respect to equivalence, of $n$ elements where every element is itself an infinite set:
 
 $$
 \Z_n = \{[0]_n,[1]_n,[2]_n,\ldots,[n-1]_n\} = \{[a]_n:0\le a\lt n\}.
@@ -297,7 +290,7 @@ and their corresponding pitch classes:
 Value                                  | Pitch class
 -------------------------------------- | -------------------------
 $1=1$                                  | $\text C\sharp$
-$12=0$ since $12\equiv 0\bmod 12$)     | $\text C$
+$12=0$ (since $12\equiv 0\bmod 12$)    | $\text C$
 $13=1$ (since $13\equiv 1\bmod 12$)    | $\text C\sharp$
 $1+1=2$                                | $\text D$
 $1+10=11$                              | $\text B$
