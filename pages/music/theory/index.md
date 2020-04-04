@@ -348,6 +348,15 @@ the necessary definitions and explanations for some other time.
 
 ## Pitch intervals
 
+## Normal and prime forms
+
+{% thm d Normal form %}
+{% endthm %}
+
+{% thm d Prime form %}
+OCPI's ordered least to greatest
+{% endthm %}
+
 <!--Unordered pitch interval is the absolute value of ordered pitch interval.-->
 
 Apply $T_{10}$ to the pitch set $[3~4~7]$.
@@ -373,6 +382,23 @@ $$
     6-2  = 4
 \end{array}
 $$
+
+## Normal form and prime forms
+
+\([10,0,2,3,5]\)
+
+\[
+(10,0,2,3,5)
+\]
+
+<!--
+   -\((0~2~4~5~7)\)
+   -
+   -But the PCI's of this list are 2, 2, 1, 2.
+   -Reversing this list is preferable, as the smallest intervals are at the left: 2, 1, 2, 2.
+   -
+   -\((0~2~3~5~7)\)
+   -->
 
 <!--
    -# Physics of sound
