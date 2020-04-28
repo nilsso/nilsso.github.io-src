@@ -12,7 +12,7 @@ toc: true
 
 <div class='vf helper' data='random-3-2'></div>
 
-# Fundamentals of atonal music
+# Abstract Algebra and Modular arithmetic
 
 <div class='vf simple-score'
     {% capture music %}
@@ -35,7 +35,10 @@ ourselves with this math that will be in the background of all of post-tonal ana
 modular arithmetic, a subject in abstract algebra. Fortunately, following this math setup
 everything will be simplified notationally.
 
-## Modular arithmetic
+We're only going to try to understand what is meant by the following:
+
+- “$a$ is congruent/equivalent to $b$ modulo $n$”,
+- “$[a]_n$ is the congruence class of $a$ modulo $n$.”
 
 <!--
    -{% thm %}
@@ -44,13 +47,13 @@ everything will be simplified notationally.
    -the notion of modular arithmetic, which this section will briefly build up.
    -{% endthm %}
    -->
+{% thm %}
+Whenever I set text with a gray border to the left, like this, I'll either be summarizing some
+mathematical notation and what it means, or going deeper into some of the math previously
+introduced.
+{% endthm %}
 
-In this section we'll try to understand what is meant by the following statements or expressions:
-
-- “$a$ is congruent/equivalent to $b$ modulo $n$”,
-- “$[a]_n$ is the congruence class of $a$ modulo $n$”,
-
-### Quotient-remainder theorem
+## Quotient-remainder theorem
 
 Chances are you know about Euclidean division.
 For example, $1\div 2$ is 1 divided by 2 (or 2 dividing 1) and represents symbolically the number of
@@ -93,7 +96,7 @@ Here's a few example of quotient-remainder theorem when $b=12$ for a few differe
 - If $a=1$, then $1=(0)12+(1)$.
 - If $a=-5$, then $-5=(0)12+(-5)=(-1)12+(7)$.
 
-### Modular congruence and congruence classes
+## Modular congruence and congruence classes
 
 With the last of the examples above you might notice that there were written two different ways to
 express -5 as a sum of a multiple of 12 and a remainder. But these aren't the only ways, in-fact
@@ -203,7 +206,9 @@ But how does modular arithmetic relate to music?
 
 ---
 
-## Pitch class
+# Atonal-Theory
+
+## Pitch classes
 
 If you are familiar with music, then you know that there are 12 distinct pitches, each with various
 octaves. For example, middle C lies at the center of a piano and is also the note called C4, and C3
@@ -221,7 +226,8 @@ equal to 12.
 On the other hand, different octaves of C are *equivalent* to one-another in that they are all C.
 
 {% thm d Pitch class %}
-A pitch class is a collection of pitches related by octave and/or enharmonic equivalence.
+A pitch class is a collection of pitches related by an integer multiple of an octave and/or
+enharmonic equivalence.
 {% endthm %}
 
 With this definition we can draw a relation between music and modular arithmetic by associating each
@@ -342,11 +348,35 @@ In fact this map is an *isomorphism* between the two sets, but I'll leave it at 
 the necessary definitions and explanations for some other time.
 {% endthm %}
 
+Pitch classes will allow us to study music in a mathematical way, where we will quantify distances
+between notes (intervals), and look at relations between set of notes in terms of operations, i.e.
+transposition and inversion.
+
 ---
 
 <div class='vf helper' data='random-3-2'></div>
 
-## Pitch intervals
+## Intervals
+
+Intervals are nothing new to anyone learned in music theory. However, instead of identifying them by
+names like "major third", "perfect fourth", "minor sixth", we'll identify them by the value of the
+semitone distance between pitches.
+
+Interval name | Value
+-- | --
+Unison | 0
+Minor second/augmented unison | 1
+Major second | 2
+Minor third | 3
+Major third | 4
+Perfect fourth | 5
+Augmented fourth/diminished fifth | 6
+Perfect fifth | 7
+Minor sixth | 8
+Major sixth | 9
+Minor seventh | 10
+Major seventh | 11
+Octave | 12
 
 ## Normal and prime forms
 
@@ -384,12 +414,6 @@ $$
 $$
 
 ## Normal form and prime forms
-
-\([10,0,2,3,5]\)
-
-\[
-(10,0,2,3,5)
-\]
 
 <!--
    -\((0~2~4~5~7)\)
