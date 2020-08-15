@@ -2,7 +2,7 @@
 title: Math
 ---
 
-### [Polytope](pages/math/semi-comb/polytope)
+### [Polytope](semi-comb/polytope)
 
 Polytope renderer, written for a topics class on semigroups and combinatorics.
 
