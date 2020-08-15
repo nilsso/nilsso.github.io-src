@@ -5,5 +5,10 @@
         {% if page.title %}
         / <span id="page-title">{{ page.title }}</span>
         {% endif %}
+        {% if page.navs %}
+            {% for nav in page.navs %}
+            / <a href="{{ nav[1] }}">{{ nav[0]}} </a>
+            {% endfor %}
+        {% endif %}
     </span>
 </nav>
